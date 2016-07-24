@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGeneralContentsTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,11 @@ class CreateGeneralContentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('general_contents', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('about');
-            $table->string('phone1');
-            $table->string('phone2');
-            $table->string('email');
-            $table->string('fax');
-
+            $table->string('country');
+            $table->integer('year');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateGeneralContentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('general_contents');
+        Schema::drop('projects');
     }
 }

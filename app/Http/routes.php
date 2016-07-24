@@ -22,7 +22,11 @@ Route::group(['prefix'=>'control-panel'], function(){
     });
 
 
-    Route::get('/general', function () {
-        return view('control-panel.general');
-    });
+    Route::resource('/general', 'GeneralContentsController');
+    Route::resource('/projects', 'ProjectsController');
+    Route::resource('/news', 'NewsController');
 });
+//
+//Route::auth();
+//
+//Route::get('/home', 'HomeController@index');
