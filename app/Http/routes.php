@@ -27,6 +27,7 @@ Route::group(['prefix'=>'control-panel'], function(){
     Route::resource('/general', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');
     Route::resource('/news', 'NewsController');
+    Route::resource('/slider-images', 'SliderImagesController');
 });
 //
 //Route::auth();

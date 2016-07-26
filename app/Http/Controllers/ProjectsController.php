@@ -22,10 +22,6 @@ class ProjectsController extends Controller
 
     public function index()
     {
-
-//        dd($this->_model->find(1));
-
-        //dd('hello');
         $projects = Project::all();
         return view('control-panel.projects.index', compact('projects'));
     }
@@ -88,7 +84,7 @@ class ProjectsController extends Controller
             if ($image = Input::file('project_photo')) {
                 Image::make($image)
                     ->encode('jpg')
-                    ->save('control-panel/images/projects/' . $project->id . '.jpg');
+                    ->save('control-panel/images/slider/' . $project->id . '.jpg');
             }
 
             return $this->index();
@@ -110,7 +106,7 @@ class ProjectsController extends Controller
         if ($project->delete()) {
             if (file_exists(public_path() . '/control-panel/images/projects/' . $id . '.jpg')) {
 //                dd('asdsd');
-                unlink('control-panel/images/projects/' . $id . '.jpg');
+                unlink('control-panel/images/slider/' . $id . '.jpg');
             }
 
             $request->session()->flash('global', "Record deleted successfully");

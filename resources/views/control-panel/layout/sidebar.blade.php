@@ -36,6 +36,12 @@
                 </a>
             </li>
 
+            <li class="@yield('slider-images')">
+                <a href="{!! url('control-panel/slider-images') !!}">
+                    <i class="fa fa-th"></i> <span>Slider Images</span>
+                </a>
+            </li>
+
             <li class="@yield('general')">
                 <a href="{!! url('control-panel/general') !!}">
                     <i class="fa fa-th"></i> <span>General</span>
@@ -47,6 +53,8 @@
                     <i class="fa fa-th"></i> <span>Projects</span>
                 </a>
             </li>
+
+
 
         </ul>
     </section>
