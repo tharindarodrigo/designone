@@ -32,7 +32,7 @@ class GeneralContentsController extends Controller
         if ($home_content->save()) {
             if ($image = Input::file('slider_image')) {
                 Image::make($image)
-                    ->save('images/slides/' . $home_content->id . '.jpg');
+                    ->save('control-panel/images/slides/' . $home_content->id . '.jpg');
 
             }
         }
@@ -62,7 +62,7 @@ class GeneralContentsController extends Controller
         if ($home_content->update()) {
             if ($image = Input::file('slider_image')) {
                 Image::make($image)
-                    ->save('images/slides/' . $home_content->id . '.jpg');
+                    ->save('control-panel/images/slides/' . $home_content->id . '.jpg');
             }
         }
 
