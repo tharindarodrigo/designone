@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $sliderImages = \App\GeneralContent::all();
+    return view('index', compact('sliderImages'));
 });
 
 

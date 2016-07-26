@@ -76,89 +76,11 @@
                 <div class="intro-tp-banner">
                     <ul>
                         <!-- SLIDE  -->
-                        <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
-                            <!-- MAIN IMAGE -->
-                            <img src="img/full/28.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="top center"
-                                 data-bgrepeat="no-repeat">
-
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption lfb ltt tp-resizeme"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="-125"
-                                 data-speed="600"
-                                 data-start="500"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <img src="img/t-logo1.png" alt="logo"/>
-
-                            </div>
-
-                            <!-- LAYER NR. 2 -->
-                            <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
-                                data-x="center" data-hoffset="0"
-                                data-y="center" data-voffset="-25"
-                                data-speed="600"
-                                data-start="700"
-                                data-easing="Power4.easeOut"
-                                data-splitin="none"
-                                data-splitout="none"
-                                data-elementdelay="0.01"
-                                data-endelementdelay="0.1"
-                                data-endspeed="500"
-                                data-endeasing="Power4.easeIn"
-                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">We Are Mazel
-                                One
-                            </h2>
-
-                            <!-- LAYER NR. 3 -->
-                            <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
-                               data-x="center" data-hoffset="0"
-                               data-y="center" data-voffset="40"
-                               data-speed="600"
-                               data-start="900"
-                               data-easing="Power4.easeOut"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-elementdelay="0.01"
-                               data-endelementdelay="0.1"
-                               data-endspeed="500"
-                               data-endeasing="Power4.easeIn"
-                               style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br/>
-                                sodales augue velit cursus nunc.
-                            </p>
-
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption lfb ltt tp-resizeme sc-button"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="125"
-                                 data-speed="600"
-                                 data-start="1100"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <a class="btn btn-md btn-black">Shop Now</a>
-                            </div>
-
-                        </li>
-
-                        <!-- SLIDE  -->
                         @if(!empty($sliderImages))
                             @foreach($sliderImages as $sliderImage)
                                 <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
                                     <!-- MAIN IMAGE -->
-                                    <img src="{!! asset('img/full/'.$sliderImage->id.'.jpg') !!}" alt="slidebg2" data-bgfit="cover"
+                                    <img src="{!! asset('img/full/'.$sliderImage->id.'.jpg') !!}" alt="SliderImages" data-bgfit="cover"
                                          data-bgposition="top center" data-bgrepeat="no-repeat">
 
                                     <!-- LAYER NR. 1 -->
@@ -193,8 +115,8 @@
                                         data-endspeed="500"
                                         data-endeasing="Power4.easeIn"
                                         style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        Flexible
-                                        & Customizable
+                                        <!--Flexible
+                                        & Customizable-->{!! asset($sliderImage->sliderTitle) !!}
                                     </h2>
 
                                     <!-- LAYER NR. 3 -->
@@ -211,12 +133,12 @@
                                        data-endspeed="500"
                                        data-endeasing="Power4.easeIn"
                                        style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br/>
-                                        sodales augue velit cursus nunc.
+                                        <!--A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh-->{!! asset($sliderImage->sliderDescription) !!}<br/>
+
                                     </p>
 
                                     <!-- LAYER NR. 4 -->
-                                    <div class="tp-caption lfb ltt tp-resizeme sc-button"
+                                   <!-- <div class="tp-caption lfb ltt tp-resizeme sc-button"
                                          data-x="center" data-hoffset="0"
                                          data-y="center" data-voffset="125"
                                          data-speed="600"
@@ -229,8 +151,8 @@
                                          data-endspeed="500"
                                          data-endeasing="Power4.easeIn"
                                          style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        <a class="btn btn-md btn-black">Shop Now</a>
-                                    </div>
+
+                                    </div>-->
 
                                 </li>
                             @endforeach
@@ -249,12 +171,12 @@
         <!-- About Section -->
         <section id="about" class="section-padding text-center">
             <div class="container mb-60">
-                <h2>About <span class="text-light">Studio</span></h2>
-                <p class="max-width-700 lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium totam aperiam.</p>
+                <h2>About <span class="text-light">Us</span></h2>
+                <p class="max-width-700 lead"><!--Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium totam aperiam.-->{!! asset($generalContent->about) !!}</p>
             </div>
 
-            <div class="container">
+            <!--<div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.2s"
                          data-wow-duration="2s">
@@ -278,7 +200,7 @@
                             consequatur vel illum qui dolorem eum fugiat quo.</p>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </section>
         <!-- End About Section -->
 
@@ -286,21 +208,21 @@
         <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
                  data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
             <div class="container">
-                <p class="max-width-700 lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium totam aperiam.</p>
-                <a class="btn btn-md btn-color">Download</a>
+                <p class="max-width-700 lead"><!--Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium totam aperiam.-->{!! asset($generalContent->statement) !!}</p>
+
             </div>
         </section>
         <!-- End Statement1 Section -->
 
-        <!-- Team Section -->
+        <!-- Team Section
         <section id="team-people" class="section-padding text-center">
             <div class="container">
                 <h2 class="page-title">Our <span class="text-light">Team</span></h2>
             </div>
             <div class="container">
                 <div class="row">
-                    <!--Team Carousel -->
+
                     <div class="owl-carousel team-carousel nf-carousel-theme">
 
                         <div class="item">
@@ -484,22 +406,22 @@
                         </div>
 
                     </div>
-                    <!--End Team Carousel --->
+
                 </div>
             </div>
         </section>
-        <!-- End Team Section -->
+         End Team Section -->
 
         <hr/>
 
-        <!-- Accordian & Skills Section-->
+        <!-- Accordian & Skills Section
         <section id="accordian_skills" class="section-padding">
             <div class="container text-center">
                 <h2 class="page-title">Skills <span class="text-light">&</span> History</h2>
             </div>
             <div class="container">
                 <div class="row">
-                    <!-- Accordian -->
+
                     <div class="col-md-6 col-sm-6 mb-sm-30">
                         <div class="accordion">
                             <div class="accordion-title">
@@ -525,9 +447,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End Accordian -->
+                     End Accordian -->
 
-                    <!-- Skills -->
+                    <!-- Skills
                     <div class="col-md-6 col-sm-6">
                         <div class="skillbar" data-percent="55%">
                             <h6 class="skillbar-title">Design</h6>
@@ -561,49 +483,42 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End Skills -->
+
                 </div>
             </div>
         </section>
-        <!-- End Accordian & Skills Section-->
+       End Accordian & Skills Section-->
 
-        <!-- Testimonials Section-->
+        <!-- NewsFeed Section-->
+
         <section id="testimonials" class="section-padding bg-image overlay-dark dark-bg text-center"
                  data-stellar-background-ratio="0.5" data-background-img="img/full/05.jpg">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
+
+                    @if(!empty($newsItems))
+                            @foreach($newsItems as $newsItem)
                     <div class="item">
                         <div class="testimonial text-center max-width-700">
-                            <div class="page-icon-sm"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">I got a dummy for Christmas and started teaching myself. I got books and
-                                records and sat in front of the practising.</p>
-                            <h6 class="quote-author">Jeff Dunham <span style="font-weight: 400;">( Appel Studio )</span>
+                            <div class="page-icon-sm">{!! asset($newsItems->title) !!}</div>
+                            <p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and
+                                records and sat in front of the practising.-->{!! asset($newsItems->body) !!}</p>
+                            <h6 class="quote-author"><!-- Jeff Dunham --> {!! asset("- ".$newsItems->date) !!}
                             </h6>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial text-center max-width-700">
-                            <div class="page-icon-sm"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">you can never eat a pet you name. And anyway, I did my first show in the
-                                third grade it would be like a ventriloquist.</p>
-                            <h6 class="quote-author">Alexander Theroux <span style="font-weight: 400;">( USA )</span>
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial text-center max-width-700">
-                            <div class="page-icon-sm"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">We're not leaving here without Buster, man. Leave no crash-test dummy
-                                behind!</p>
-                            <h6 class="quote-author">Adam Savage <span style="font-weight: 400;">( Artist )</span></h6>
-                        </div>
-                    </div>
+
+                        @endforeach
+                    @endif
+
                 </div>
             </div>
         </section>
-        <!-- End Testimonials Section -->
 
-        <!-- Work Process Section -->
+
+        <!-- End NewsFeed Section -->
+
+        <!-- Work Process Section
         <section id="process" class="section-padding">
             <div class="container text-center">
                 <h2 class="page-title">Work <span class="text-light">Process</span></h2>
@@ -657,11 +572,11 @@
                 </div>
             </div>
         </section>
-        <!-- End Work Process Section -->
+         End Work Process Section -->
 
         <hr/>
 
-        <!--Latest Work Section-->
+        <!--Latest Work Section
         <section id="latest-work" class="section-padding">
             <div class="container text-center">
                 <h2 class="page-title">Latest <span class="text-light">Work</span></h2>
@@ -731,7 +646,7 @@
                 </div>
             </div>
         </section>
-        <!-- End Latest Work Section-->
+         End Latest Work Section-->
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="section-padding-t gray-bg">
@@ -750,41 +665,38 @@
 
                 </div>
                 <div class="portfolio-grid-fit row gallery-popup">
+
+
+                    @if(!empty($portfolio))
+                    @foreach($portfolio as $portfolioItem)
                     <!------->
                     <div class="portfolio-item branding photography coffee">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/01.jpg" alt=""/></a>
+                                <img src="{!! asset("img/portfolio/thumb/".$portfolio->thumbImage.".jpg") !!}" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
-                                        <h5>Digital Camera mockup</h5>
-                                        <p>Mockup - Photography - Graphic - Branding</p>
+                                        <h5><!--Digital Camera mockup-->{!! asset($portfolio->title) !!}</h5>
+                                        <p><!--Mockup - Photography - Graphic - Branding-->{!! asset($portfolio->description) !!}</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
                                                 <a class="gallery-popup-link btn btn-color"
-                                                   href="img/portfolio/large/01.jpg" title="Portfolio Image 01"><i
+                                                   href="{!! asset("img/portfolio/large/".$portfolio->fullImage.".jpg") !!}" title="Portfolio Image 01"><i
                                                             class="fa fa-search"></i></a>
                                             </li>
-                                            <li>
-                                                <a class="btn btn-black" target="_blank"
-                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="btn btn-black" target="_blank"
-                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="btn btn-black" target="_blank"
-                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
-                                            </li>
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!------->
+
+                            @endif
+                        @endforeach
+
+                    <!--
                     <div class="portfolio-item">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -818,7 +730,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+
                     <div class="portfolio-item branding photography">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -852,7 +764,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+
                     <div class="portfolio-item creative">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -886,7 +798,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+
                     <div class="portfolio-item creative">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -920,7 +832,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+
                     <div class="portfolio-item branding photography">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -954,7 +866,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+
                     <div class="portfolio-item branding creative coffee">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -988,7 +900,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+
                     <div class="portfolio-item photography">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -1022,7 +934,7 @@
                             </div>
                         </div>
                     </div>
-                    <!------->
+                    -->
 
                 </div>
             </div>
@@ -1033,16 +945,14 @@
         <section id="action-box2" class="action-box action-black">
             <div class="container">
                 <div class="row action-box-left">
-                    <h4 class="action-box-title">Powerfull Onepage Multipurpose Responsive Template ?</h4>
+                    <h4 class="action-box-title"><!--Designs filled with creativity and innovation--> {!! asset($generalContent->portfolioDescription) !!}</h4>
                 </div>
-                <div class="action-box-right">
-                    <a class="btn btn-md btn-color" href="http://google.com/" target="_blank">See More</a>
-                </div>
+
             </div>
         </section>
         <!-- Action Box Section -->
 
-        <!-- Service Section -->
+        <!-- Service Section
         <section id="service" class="section-padding">
             <div class="container mb-60 text-center">
                 <h2>Our <span class="text-light">Service</span></h2>
@@ -1109,7 +1019,7 @@
                 </div>
             </div>
         </section>
-        <!-- End Service Section -->
+        End Service Section -->
 
         <!-- Counter Section -->
         <section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"
@@ -1118,22 +1028,22 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>
-                        <h1 class="counter-title counter-num">103</h1>
-                        <h5 class="counter-sub-title">Awwards</h5>
+                        <h1 class="counter-title counter-num">{!! asset($generalContent->awardCount) !!}</h1>
+                        <h5 class="counter-sub-title">Awards</h5>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>
-                        <h1 class="counter-title counter-num">256</h1>
+                        <h1 class="counter-title counter-num">{!! asset($generalContent->clientCount) !!}</h1>
                         <h5 class="counter-sub-title">client</h5>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>
-                        <h1 class="counter-title counter-num">148</h1>
+                        <h1 class="counter-title counter-num">{!! asset($generalContent->projectCount) !!}</h1>
                         <h5 class="counter-sub-title">Project</h5>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>
-                        <h1 class="counter-title counter-num">23</h1>
+                        <h1 class="counter-title counter-num">{!! asset($generalContent->teamCount) !!}</h1>
                         <h5 class="counter-sub-title">Team</h5>
                     </div>
                 </div>
@@ -1141,7 +1051,7 @@
         </section>
         <!-- End Counter Section -->
 
-        <!-- Pricing Table -->
+        <!-- Pricing Table
         <section id="pricing" class="section-padding">
             <div class="container text-center">
                 <h2 class="page-title">Pricing <span class="text-light">Table</span></h2>
@@ -1226,9 +1136,9 @@
                 </div>
             </div>
         </section>
-        <!-- End Pricing Table -->
+       End Pricing Table -->
 
-        <!-- video Section -->
+        <!-- video Section
         <section id="video-action" class="section-padding bg-image overlay-dark dark-bg"
                  data-stellar-background-ratio="0.5" data-background-img="img/full/02.jpg">
             <div class="container text-center">
@@ -1243,324 +1153,38 @@
                 <h6 class="page-title-alt color mb-0">See Watch Video</h6>
             </div>
         </section>
-        <!-- End video Section -->
+         End video Section -->
 
         <!-- Client Logo -->
         <section id="client" class="section-padding">
             <div class="container text-center">
-                <h2 class="page-title">Happy <span class="text-light">Client</span></h2>
+                <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
             </div>
             <div class="container">
+
+                @if(!empty($clients))
+                    @foreach($clients as $client)
+
                 <div class="owl-carousel client-carousel">
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/01.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/02.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/03.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/04.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/05.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/06.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/08.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/01.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/02.png" alt=""/></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="img/logos/03.png" alt=""/></a>
+                                <img src="{!! asset("img/logos/".$clients->image.".png") !!}" alt=""/></a>
                         </div>
                     </div>
                 </div>
+
+
+
+
             </div>
         </section>
         <!-- End Client Logo -->
 
         <hr/>
 
-        <!-- Tabs & Extra Elements -->
-        <section id="elements" class="section-padding">
-            <div class="container text-center">
-                <h2 class="page-title">Tabs <span class="text-light">&</span> Elements</h2>
-            </div>
-            <div class="container">
 
-                <ul class="tabs-nav alt-icon-tab text-center">
-                    <li class="mb-30 active">
-                        <a href="#tab-video" data-toggle="tab">
-                            <div class="alt-icon-top"><i class="icon icon-basic-video"></i></div>
-                            <h6>Video</h6>
-                        </a>
-                    </li>
-                    <li class="mb-30">
-                        <a href="#tab-image-slider" data-toggle="tab">
-                            <div class="alt-icon-top"><i class="icon icon-basic-picture"></i></div>
-                            <h6>Image Slider</h6>
-                        </a>
-                    </li>
-                    <li class="mb-30">
-                        <a href="#tab-icon-box" data-toggle="tab">
-                            <div class="alt-icon-top"><i class="icon icon-basic-spades"></i></div>
-                            <h6>Icon Box</h6>
-                        </a>
-                    </li>
-                    <li class="mb-30">
-                        <a href="#tab-content-box" data-toggle="tab">
-                            <div class="alt-icon-top"><i class="icon icon-basic-webpage-txt"></i></div>
-                            <h6>Content Box</h6>
-                        </a>
-                    </li>
-                    <li class="mb-30">
-                        <a href="#tab-cover-box" data-toggle="tab">
-                            <div class="alt-icon-top"><i class="icon icon-basic-webpage-multiple"></i></div>
-                            <h6>Cover Box</h6>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tabs-cont">
-                    <div id="tab-video" class="tab-pane active">
-                        <div class="row">
-                            <!--<div class="col-md-6">
-                                <div class="media">
-                                    <iframe src="https://player.vimeo.com/video/37298913?color=ffffff&title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                                </div>-->
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="media">
-                                    <iframe src="https://www.youtube.com/embed/k9EyPfc0FXc?rel=0&amp;controls=0&amp;showinfo=0"
-                                            frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-image-slider" class="tab-pane">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="owl-carousel image-carousel nf-carousel-theme white">
-                                    <div class="item">
-                                        <img src="img/full/06.jpg" alt=""/>
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/full/14.jpg" alt=""/>
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/full/09.jpg" alt=""/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-icon-box" class="tab-pane">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
-                                <div class="content-box alt-left">
-                                    <div class="alt-icon-left">
-                                        <i class="icon icon-basic-cup"></i>
-                                    </div>
-                                    <h5 class="features-title">Branding Design</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                                        molestiae consequatur vel illum.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
-                                <div class="content-box alt-left">
-                                    <div class="alt-icon-left">
-                                        <i class="icon icon-basic-life-buoy"></i>
-                                    </div>
-                                    <h5 class="features-title">Web Design</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                                        molestiae consequatur vel illum.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
-                                <div class="content-box alt-right">
-                                    <div class="alt-icon-right">
-                                        <i class="icon icon-basic-lightbulb"></i>
-                                    </div>
-                                    <h5 class="features-title">App Development</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                                        molestiae consequatur vel illum.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
-                                <div class="content-box alt-left">
-                                    <div class="alt-icon-left">
-                                        <i class="icon icon-basic-star"></i>
-                                    </div>
-                                    <h5 class="features-title">Graphic Design</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                                        molestiae consequatur vel illum.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
-                                <div class="content-box alt-left">
-                                    <div class="alt-icon-left">
-                                        <i class="icon icon-ecommerce-graph1"></i>
-                                    </div>
-                                    <h5 class="features-title">Landscape Photography</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                                        molestiae consequatur vel illum.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
-                                <div class="content-box alt-right">
-                                    <div class="alt-icon-right">
-                                        <i class="icon icon-music-play-button"></i>
-                                    </div>
-                                    <h5 class="features-title">Photo Editing</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                                        molestiae consequatur vel illum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-content-box" class="tab-pane">
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-                                    <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-color"><i class="icon icon-basic-accelerator"></i>
-                                        </div>
-                                        <h5 class="features-title">Branding Design</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                            nihil molestiae consequatur vel illum dolorem.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-                                    <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-color"><i class="icon icon-basic-cup"></i></div>
-                                        <h5 class="features-title">Web Design</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                            nihil molestiae consequatur vel illum dolorem.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-                                    <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-color"><i class="icon icon-basic-anchor"></i></div>
-                                        <h5 class="features-title">App Development</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                            nihil molestiae consequatur vel illum dolorem.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-                                    <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-black"><i class="icon icon-basic-globe"></i></div>
-                                        <h5 class="features-title">Graphic Design</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                            nihil molestiae consequatur vel illum dolorem.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-                                    <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-black"><i class="icon icon-basic-gear"></i></div>
-                                        <h5 class="features-title">Photography</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                            nihil molestiae consequatur vel illum dolorem.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-                                    <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-black"><i class="icon icon-basic-paperplane"></i>
-                                        </div>
-                                        <h5 class="features-title">Photo Editing</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                            nihil molestiae consequatur vel illum dolorem.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-cover-box" class="tab-pane">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="cover-box mb-30">
-                                        <figure class="cover-box-img">
-                                            <img src="img/portfolio/thumb/09.jpg" alt="cover-img"/>
-                                        </figure>
-                                        <div class="cover-box-content">
-                                            <h5>Responsive Design</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut
-                                                dignissimos ea est, impedit incidunt, laboriosam maxime</p>
-                                            <a class="link">Read More <i class="fa fa-angle-right right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="cover-box mb-30">
-                                        <figure class="cover-box-img">
-                                            <img src="img/portfolio/thumb/06.jpg" alt="cover-img"/>
-                                        </figure>
-                                        <div class="cover-box-content">
-                                            <h5>App Development</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut
-                                                dignissimos ea est, impedit incidunt, laboriosam maxime</p>
-                                            <a class="link">Read More <i class="fa fa-angle-right right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="cover-box mb-30">
-                                        <figure class="cover-box-img">
-                                            <img src="img/portfolio/thumb/05.jpg" alt="cover-img"/>
-                                        </figure>
-                                        <div class="cover-box-content">
-                                            <h5>Photography</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut
-                                                dignissimos ea est, impedit incidunt, laboriosam maxime</p>
-                                            <a class="link">Read More <i class="fa fa-angle-right right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </section>
-        <!-- End Tabs & Extra Elements -->
 
         <!-- Contact Form -->
         <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
@@ -1629,25 +1253,22 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
                         <h5 class="features-title">Address</h5>
                         <p>
-                            502, DieSachbearbeiter, Schönhauser Allee,<br/>
-                            167c10435 Berlin,Germany.
+                            {!! asset($generalContent->address) !!}
                         </p>
                     </div>
                     <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
-                        <h5 class="features-title">office Hours</h5>
+                        <h5 class="features-title">Office Hours</h5>
                         <p>
-                            Mon - Fri : 8am to 6pm<br/>
-                            Sat : 10am to 2pm
+                            {!! asset($generalContent->officeHours) !!}
                         </p>
                     </div>
                     <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
                         <h5 class="features-title">Contact</h5>
                         <p class="contact-link">
-                            <a href="mailto:yourname@domain.com"><span class="text-bold">Email :</span> yourname@domain
-                                .com</a><br/>
-                            <a><span class="text-bold">Call :</span> +40 (0) 012 345 6789</a>
+                            <a href="mailto:{!! asset($generalContent->email) !!}"><span class="text-bold">Email :</span>{!! asset($generalContent->email) !!}</a><br/>
+                            <a><span class="text-bold">Call :</span> {!! asset($generalContent->contactNo) !!}</a>
                         </p>
                     </div>
                 </div>
@@ -1659,18 +1280,13 @@
         <footer id="footer" class="footer section-padding gray-bg">
             <div class="container text-center">
 
-                <!--Footer Logo-->
-                <div class="footer-logo mb-25 wow fadeInUp" data-wow-duration="1.5s">
-                    <a class="scroll-top" href="#intro">
-                        <img src="img/logo-dark.png" alt="mazel"/>
-                    </a>
-                </div>
-                <!--End Footer Logo-->
+
+
 
                 <!-- Copyright -->
                 <p class="copyright mb-25">
-                    &copy; 2015 <a><b>Mazel Template</b></a>. All Rights Reserved.<br>
-                    Template by <a href="http://nileforest.com/" target="_blank"><b>nileforest</b></a>
+                    &copy; 2016 <a><b> Design One </b></a>. All Rights Reserved.<br>
+
                 </p>
                 <!-- Copyright -->
 
@@ -1682,12 +1298,7 @@
                     <li>
                         <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li>
-                        <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
-                    </li>
+
                 </ul>
                 <!-- End Social -->
 
