@@ -2,25 +2,27 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Mazel One - Onepage Responsive Html Template</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="creative, portfolio, template, theme, designed, html5, css3, responsive, mazel, onepage" />
+    <meta name="description" content=""/>
+    <meta name="keywords"
+          content="creative, portfolio, template, theme, designed, html5, css3, responsive, mazel, onepage"/>
     <meta name="author" content="nileforest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <!-- Favicone Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}" />
-    <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}" />
-    <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
+    <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
+    <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>
 
     <!-- Css -->
-    <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css" />
-    <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
 
 </head>
 <body>
@@ -39,7 +41,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="#">
-                        <img src="img/logo-light.png" />
+                        <img src="img/logo-light.png"/>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -76,7 +78,8 @@
                         <!-- SLIDE  -->
                         <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
                             <!-- MAIN IMAGE -->
-                            <img src="img/full/28.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="top center" data-bgrepeat="no-repeat">
+                            <img src="img/full/28.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="top center"
+                                 data-bgrepeat="no-repeat">
 
                             <!-- LAYER NR. 1 -->
                             <div class="tp-caption lfb ltt tp-resizeme"
@@ -92,7 +95,7 @@
                                  data-endspeed="500"
                                  data-endeasing="Power4.easeIn"
                                  style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <img src="img/t-logo1.png" alt="logo" />
+                                <img src="img/t-logo1.png" alt="logo"/>
 
                             </div>
 
@@ -109,7 +112,8 @@
                                 data-endelementdelay="0.1"
                                 data-endspeed="500"
                                 data-endeasing="Power4.easeIn"
-                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">We Are Mazel One
+                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">We Are Mazel
+                                One
                             </h2>
 
                             <!-- LAYER NR. 3 -->
@@ -126,7 +130,7 @@
                                data-endspeed="500"
                                data-endeasing="Power4.easeIn"
                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br />
+                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br/>
                                 sodales augue velit cursus nunc.
                             </p>
 
@@ -150,308 +154,87 @@
                         </li>
 
                         <!-- SLIDE  -->
-                        <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
-                            <!-- MAIN IMAGE -->
-                            <img src="img/full/30.jpg" alt="slidebg2" data-bgfit="cover" data-bgposition="top center" data-bgrepeat="no-repeat">
+                        @if(!empty($sliderImages))
+                            @foreach($sliderImages as $sliderImage)
+                                <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
+                                    <!-- MAIN IMAGE -->
+                                    <img src="{!! asset('img/full/'.$sliderImage->id.'.jpg') !!}" alt="slidebg2" data-bgfit="cover"
+                                         data-bgposition="top center" data-bgrepeat="no-repeat">
 
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption lfb ltt tp-resizeme"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="-125"
-                                 data-speed="600"
-                                 data-start="500"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <img src="img/t-logo1.png" alt="logo" />
+                                    <!-- LAYER NR. 1 -->
+                                    <div class="tp-caption lfb ltt tp-resizeme"
+                                         data-x="center" data-hoffset="0"
+                                         data-y="center" data-voffset="-125"
+                                         data-speed="600"
+                                         data-start="500"
+                                         data-easing="Power4.easeOut"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-elementdelay="0.01"
+                                         data-endelementdelay="0.1"
+                                         data-endspeed="500"
+                                         data-endeasing="Power4.easeIn"
+                                         style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        <img src="img/t-logo1.png" alt="logo"/>
 
-                            </div>
+                                    </div>
 
-                            <!-- LAYER NR. 2 -->
-                            <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
-                                data-x="center" data-hoffset="0"
-                                data-y="center" data-voffset="-25"
-                                data-speed="600"
-                                data-start="700"
-                                data-easing="Power4.easeOut"
-                                data-splitin="none"
-                                data-splitout="none"
-                                data-elementdelay="0.01"
-                                data-endelementdelay="0.1"
-                                data-endspeed="500"
-                                data-endeasing="Power4.easeIn"
-                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Flexible & Customizable
-                            </h2>
+                                    <!-- LAYER NR. 2 -->
+                                    <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
+                                        data-x="center" data-hoffset="0"
+                                        data-y="center" data-voffset="-25"
+                                        data-speed="600"
+                                        data-start="700"
+                                        data-easing="Power4.easeOut"
+                                        data-splitin="none"
+                                        data-splitout="none"
+                                        data-elementdelay="0.01"
+                                        data-endelementdelay="0.1"
+                                        data-endspeed="500"
+                                        data-endeasing="Power4.easeIn"
+                                        style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        Flexible
+                                        & Customizable
+                                    </h2>
 
-                            <!-- LAYER NR. 3 -->
-                            <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
-                               data-x="center" data-hoffset="0"
-                               data-y="center" data-voffset="40"
-                               data-speed="600"
-                               data-start="900"
-                               data-easing="Power4.easeOut"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-elementdelay="0.01"
-                               data-endelementdelay="0.1"
-                               data-endspeed="500"
-                               data-endeasing="Power4.easeIn"
-                               style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br />
-                                sodales augue velit cursus nunc.
-                            </p>
+                                    <!-- LAYER NR. 3 -->
+                                    <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
+                                       data-x="center" data-hoffset="0"
+                                       data-y="center" data-voffset="40"
+                                       data-speed="600"
+                                       data-start="900"
+                                       data-easing="Power4.easeOut"
+                                       data-splitin="none"
+                                       data-splitout="none"
+                                       data-elementdelay="0.01"
+                                       data-endelementdelay="0.1"
+                                       data-endspeed="500"
+                                       data-endeasing="Power4.easeIn"
+                                       style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br/>
+                                        sodales augue velit cursus nunc.
+                                    </p>
 
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption lfb ltt tp-resizeme sc-button"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="125"
-                                 data-speed="600"
-                                 data-start="1100"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <a class="btn btn-md btn-black">Shop Now</a>
-                            </div>
+                                    <!-- LAYER NR. 4 -->
+                                    <div class="tp-caption lfb ltt tp-resizeme sc-button"
+                                         data-x="center" data-hoffset="0"
+                                         data-y="center" data-voffset="125"
+                                         data-speed="600"
+                                         data-start="1100"
+                                         data-easing="Power4.easeOut"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-elementdelay="0.01"
+                                         data-endelementdelay="0.1"
+                                         data-endspeed="500"
+                                         data-endeasing="Power4.easeIn"
+                                         style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        <a class="btn btn-md btn-black">Shop Now</a>
+                                    </div>
 
-                        </li>
-
-                        <!-- SLIDE  -->
-                        <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
-                            <!-- MAIN IMAGE -->
-                            <img src="img/full/31.jpg" alt="slidebg3" data-bgfit="cover" data-bgposition="top center" data-bgrepeat="no-repeat">
-
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption lfb ltt tp-resizeme"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="-125"
-                                 data-speed="600"
-                                 data-start="500"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <img src="img/t-logo1.png" alt="logo" />
-
-                            </div>
-
-                            <!-- LAYER NR. 2 -->
-                            <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
-                                data-x="center" data-hoffset="0"
-                                data-y="center" data-voffset="-25"
-                                data-speed="600"
-                                data-start="700"
-                                data-easing="Power4.easeOut"
-                                data-splitin="none"
-                                data-splitout="none"
-                                data-elementdelay="0.01"
-                                data-endelementdelay="0.1"
-                                data-endspeed="500"
-                                data-endeasing="Power4.easeIn"
-                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">I Am a John Doe
-                            </h2>
-
-                            <!-- LAYER NR. 3 -->
-                            <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
-                               data-x="center" data-hoffset="0"
-                               data-y="center" data-voffset="40"
-                               data-speed="600"
-                               data-start="900"
-                               data-easing="Power4.easeOut"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-elementdelay="0.01"
-                               data-endelementdelay="0.1"
-                               data-endspeed="500"
-                               data-endeasing="Power4.easeIn"
-                               style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br />
-                                sodales augue velit cursus nunc.
-                            </p>
-
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption lfb ltt tp-resizeme sc-button"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="125"
-                                 data-speed="600"
-                                 data-start="1100"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <a class="btn btn-md btn-black">Shop Now</a>
-                            </div>
-
-                        </li>
-
-                        <!-- SLIDE  -->
-                        <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
-                            <!-- MAIN IMAGE -->
-                            <img src="img/full/32.jpg" alt="slidebg4" data-bgfit="cover" data-bgposition="top center" data-bgrepeat="no-repeat">
-
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption lfb ltt tp-resizeme"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="-125"
-                                 data-speed="600"
-                                 data-start="500"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <img src="img/t-logo1.png" alt="logo" />
-
-                            </div>
-
-                            <!-- LAYER NR. 2 -->
-                            <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
-                                data-x="center" data-hoffset="0"
-                                data-y="center" data-voffset="-25"
-                                data-speed="600"
-                                data-start="700"
-                                data-easing="Power4.easeOut"
-                                data-splitin="none"
-                                data-splitout="none"
-                                data-elementdelay="0.01"
-                                data-endelementdelay="0.1"
-                                data-endspeed="500"
-                                data-endeasing="Power4.easeIn"
-                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Welcome Studio
-                            </h2>
-
-                            <!-- LAYER NR. 3 -->
-                            <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
-                               data-x="center" data-hoffset="0"
-                               data-y="center" data-voffset="40"
-                               data-speed="600"
-                               data-start="900"
-                               data-easing="Power4.easeOut"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-elementdelay="0.01"
-                               data-endelementdelay="0.1"
-                               data-endspeed="500"
-                               data-endeasing="Power4.easeIn"
-                               style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br />
-                                sodales augue velit cursus nunc.
-                            </p>
-
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption lfb ltt tp-resizeme sc-button"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="125"
-                                 data-speed="600"
-                                 data-start="1100"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <a class="btn btn-md btn-black">Shop Now</a>
-                            </div>
-
-                        </li>
-
-                        <!-- SLIDE  -->
-                        <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
-                            <!-- MAIN IMAGE -->
-                            <img src="img/full/35.jpg" alt="slidebg5" data-bgfit="cover" data-bgposition="top center" data-bgrepeat="no-repeat">
-
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption lfb ltt tp-resizeme"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="-125"
-                                 data-speed="600"
-                                 data-start="500"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <img src="img/t-logo1.png" alt="logo" />
-
-                            </div>
-
-                            <!-- LAYER NR. 2 -->
-                            <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
-                                data-x="center" data-hoffset="0"
-                                data-y="center" data-voffset="-25"
-                                data-speed="600"
-                                data-start="700"
-                                data-easing="Power4.easeOut"
-                                data-splitin="none"
-                                data-splitout="none"
-                                data-elementdelay="0.01"
-                                data-endelementdelay="0.1"
-                                data-endspeed="500"
-                                data-endeasing="Power4.easeIn"
-                                style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">I Am a John Doe
-                            </h2>
-
-                            <!-- LAYER NR. 3 -->
-                            <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
-                               data-x="center" data-hoffset="0"
-                               data-y="center" data-voffset="40"
-                               data-speed="600"
-                               data-start="900"
-                               data-easing="Power4.easeOut"
-                               data-splitin="none"
-                               data-splitout="none"
-                               data-elementdelay="0.01"
-                               data-endelementdelay="0.1"
-                               data-endspeed="500"
-                               data-endeasing="Power4.easeIn"
-                               style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh<br />
-                                sodales augue velit cursus nunc.
-                            </p>
-
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption lfb ltt tp-resizeme sc-button"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="125"
-                                 data-speed="600"
-                                 data-start="1100"
-                                 data-easing="Power4.easeOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500"
-                                 data-endeasing="Power4.easeIn"
-                                 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                <a class="btn btn-md btn-black">Shop Now</a>
-                            </div>
-
-                        </li>
+                                </li>
+                            @endforeach
+                        @endif
 
 
                     </ul>
@@ -467,25 +250,32 @@
         <section id="about" class="section-padding text-center">
             <div class="container mb-60">
                 <h2>About <span class="text-light">Studio</span></h2>
-                <p class="max-width-700 lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam aperiam.</p>
+                <p class="max-width-700 lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium totam aperiam.</p>
             </div>
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
+                    <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.2s"
+                         data-wow-duration="2s">
                         <div class="icon-top"><i class="icon icon-basic-anchor"></i></div>
                         <h5 class="features-title">We’re Creative</h5>
-                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo.</p>
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                            consequatur vel illum qui dolorem eum fugiat quo.</p>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
+                    <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.4s"
+                         data-wow-duration="2s">
                         <div class="icon-top"><i class="icon icon-basic-alarm"></i></div>
                         <h5 class="features-title">TWe have magic</h5>
-                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo.</p>
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                            consequatur vel illum qui dolorem eum fugiat quo.</p>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
+                    <div class="col-md-4 col-sm-6 col-xs-12 content-box mb-sm-30 wow fadeIn" data-wow-delay="0.6s"
+                         data-wow-duration="2s">
                         <div class="icon-top"><i class="icon icon-basic-globe"></i></div>
                         <h5 class="features-title">Why we do it</h5>
-                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo.</p>
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                            consequatur vel illum qui dolorem eum fugiat quo.</p>
                     </div>
                 </div>
             </div>
@@ -493,9 +283,11 @@
         <!-- End About Section -->
 
         <!-- Statement1 Section -->
-        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center" data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
+        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
             <div class="container">
-                <p class="max-width-700 lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam aperiam.</p>
+                <p class="max-width-700 lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium totam aperiam.</p>
                 <a class="btn btn-md btn-color">Download</a>
             </div>
         </section>
@@ -514,17 +306,22 @@
                         <div class="item">
                             <div class="team-item">
                                 <div class="team-item-img">
-                                    <img src="img/team/01.jpg" alt="" />
+                                    <img src="img/team/01.jpg" alt=""/>
                                     <div class="team-item-detail">
                                         <div class="team-item-detail-inner light-color">
                                             <h5>Mitchell KAPPOS</h5>
                                             <p>To portal for some of the world's most high-value net.</p>
                                             <ul class="social">
-                                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                class="fa fa-behance"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -539,17 +336,22 @@
                         <div class="item">
                             <div class="team-item">
                                 <div class="team-item-img">
-                                    <img src="img/team/03.jpg" alt="" />
+                                    <img src="img/team/03.jpg" alt=""/>
                                     <div class="team-item-detail">
                                         <div class="team-item-detail-inner light-color">
                                             <h5>Leonardo da Vinci</h5>
                                             <p>To portal for some of the world's most high-value net.</p>
                                             <ul class="social">
-                                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                class="fa fa-behance"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -564,17 +366,22 @@
                         <div class="item">
                             <div class="team-item">
                                 <div class="team-item-img">
-                                    <img src="img/team/07.jpg" alt="" />
+                                    <img src="img/team/07.jpg" alt=""/>
                                     <div class="team-item-detail">
                                         <div class="team-item-detail-inner light-color">
                                             <h5>John Doe</h5>
                                             <p>To portal for some of the world's most high-value net.</p>
                                             <ul class="social">
-                                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                class="fa fa-behance"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -589,17 +396,22 @@
                         <div class="item">
                             <div class="team-item">
                                 <div class="team-item-img">
-                                    <img src="img/team/04.jpg" alt="" />
+                                    <img src="img/team/04.jpg" alt=""/>
                                     <div class="team-item-detail">
                                         <div class="team-item-detail-inner light-color">
                                             <h5>Michael Lee</h5>
                                             <p>To portal for some of the world's most high-value net.</p>
                                             <ul class="social">
-                                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                class="fa fa-behance"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -614,17 +426,22 @@
                         <div class="item">
                             <div class="team-item">
                                 <div class="team-item-img">
-                                    <img src="img/team/02.jpg" alt="" />
+                                    <img src="img/team/02.jpg" alt=""/>
                                     <div class="team-item-detail">
                                         <div class="team-item-detail-inner light-color">
                                             <h5>Michael Lee</h5>
                                             <p>To portal for some of the world's most high-value net.</p>
                                             <ul class="social">
-                                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                class="fa fa-behance"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -639,17 +456,22 @@
                         <div class="item">
                             <div class="team-item">
                                 <div class="team-item-img">
-                                    <img src="img/team/06.jpg" alt="" />
+                                    <img src="img/team/06.jpg" alt=""/>
                                     <div class="team-item-detail">
                                         <div class="team-item-detail-inner light-color">
                                             <h5>Michael Lee</h5>
                                             <p>To portal for some of the world's most high-value net.</p>
                                             <ul class="social">
-                                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                class="fa fa-behance"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -668,7 +490,7 @@
         </section>
         <!-- End Team Section -->
 
-        <hr />
+        <hr/>
 
         <!-- Accordian & Skills Section-->
         <section id="accordian_skills" class="section-padding">
@@ -684,19 +506,22 @@
                                 <a href="">Jan 14, 2008 (Opening)</a>
                             </div>
                             <div class="accordion-content">
-                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo.
+                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                molestiae consequatur vel illum qui dolorem eum fugiat quo.
                             </div>
                             <div class="accordion-title">
                                 <a href="">FEB 18, 2011 (The best company of the year)</a>
                             </div>
                             <div class="accordion-content">
-                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo.
+                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                molestiae consequatur vel illum qui dolorem eum fugiat quo.
                             </div>
                             <div class="accordion-title">
                                 <a href="">APR 6, 2013 (Opening </a>
                             </div>
                             <div class="accordion-content">
-                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo.
+                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                molestiae consequatur vel illum qui dolorem eum fugiat quo.
                             </div>
                         </div>
                     </div>
@@ -743,27 +568,33 @@
         <!-- End Accordian & Skills Section-->
 
         <!-- Testimonials Section-->
-        <section id="testimonials" class="section-padding bg-image overlay-dark dark-bg text-center" data-stellar-background-ratio="0.5" data-background-img="img/full/05.jpg">
+        <section id="testimonials" class="section-padding bg-image overlay-dark dark-bg text-center"
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/05.jpg">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
                     <div class="item">
                         <div class="testimonial text-center max-width-700">
                             <div class="page-icon-sm"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">I got a dummy for Christmas and started teaching myself. I got books and records and sat in front of the practising.</p>
-                            <h6 class="quote-author">Jeff Dunham <span style="font-weight: 400;">( Appel Studio )</span></h6>
+                            <p class="lead">I got a dummy for Christmas and started teaching myself. I got books and
+                                records and sat in front of the practising.</p>
+                            <h6 class="quote-author">Jeff Dunham <span style="font-weight: 400;">( Appel Studio )</span>
+                            </h6>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testimonial text-center max-width-700">
                             <div class="page-icon-sm"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">you can never eat a pet you name. And anyway, I did my first show in the third grade it would be like a ventriloquist.</p>
-                            <h6 class="quote-author">Alexander Theroux <span style="font-weight: 400;">( USA )</span></h6>
+                            <p class="lead">you can never eat a pet you name. And anyway, I did my first show in the
+                                third grade it would be like a ventriloquist.</p>
+                            <h6 class="quote-author">Alexander Theroux <span style="font-weight: 400;">( USA )</span>
+                            </h6>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testimonial text-center max-width-700">
                             <div class="page-icon-sm"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">We're not leaving here without Buster, man. Leave no crash-test dummy behind!</p>
+                            <p class="lead">We're not leaving here without Buster, man. Leave no crash-test dummy
+                                behind!</p>
                             <h6 class="quote-author">Adam Savage <span style="font-weight: 400;">( Artist )</span></h6>
                         </div>
                     </div>
@@ -779,37 +610,45 @@
             </div>
             <div class="container text-center">
                 <div class="row">
-                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-                        <div class="tipped" data-title="Step1 - Skype Interview" data-tipper-options='{"direction":"top"}'>
+                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.2s"
+                         data-wow-duration="2s">
+                        <div class="tipped" data-title="Step1 - Skype Interview"
+                             data-tipper-options='{"direction":"top"}'>
                             <div class="process-icon alt-icon-top"><i class="icon icon-basic-headset"></i></div>
                             <h6>Interview</h6>
                         </div>
                     </div>
-                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
+                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.4s"
+                         data-wow-duration="2s">
                         <div class="tipped" data-title="Step2 - Project Plan" data-tipper-options='{"direction":"top"}'>
                             <div class="process-icon alt-icon-top"><i class="icon icon-basic-book-pencil"></i></div>
                             <h6>Plan</h6>
                         </div>
                     </div>
-                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
+                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.6s"
+                         data-wow-duration="2s">
                         <div class="tipped" data-title="Step3 - Design" data-tipper-options='{"direction":"top"}'>
-                            <div class="process-icon alt-icon-top"><i class="icon icon-basic-picture-multiple"></i></div>
+                            <div class="process-icon alt-icon-top"><i class="icon icon-basic-picture-multiple"></i>
+                            </div>
                             <h6>Design</h6>
                         </div>
                     </div>
-                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.8s" data-wow-duration="2s">
+                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.8s"
+                         data-wow-duration="2s">
                         <div class="tipped" data-title="Step4 - Development" data-tipper-options='{"direction":"top"}'>
                             <div class="process-icon alt-icon-top"><i class="icon icon-basic-gear"></i></div>
                             <h6>Development</h6>
                         </div>
                     </div>
-                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="1s" data-wow-duration="2s">
+                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="1s"
+                         data-wow-duration="2s">
                         <div class="tipped" data-title="Step5 - Testing" data-tipper-options='{"direction":"top"}'>
                             <div class="process-icon alt-icon-top"><i class="icon icon-ecommerce-graph3"></i></div>
                             <h6>Testing</h6>
                         </div>
                     </div>
-                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="1.2s" data-wow-duration="2s">
+                    <div class="process-box col-md-2 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="1.2s"
+                         data-wow-duration="2s">
                         <div class="tipped" data-title="Step6 - Delivery" data-tipper-options='{"direction":"top"}'>
                             <div class="process-icon alt-icon-top"><i class="icon icon-basic-anticlockwise"></i></div>
                             <h6>Delivery</h6>
@@ -820,7 +659,7 @@
         </section>
         <!-- End Work Process Section -->
 
-        <hr />
+        <hr/>
 
         <!--Latest Work Section-->
         <section id="latest-work" class="section-padding">
@@ -832,16 +671,19 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 mb-sm-30">
-                                <img src="img/mockup01.png" alt="" />
+                                <img src="img/mockup01.png" alt=""/>
                             </div>
                             <div class="col-md-5 col-md-offset-1">
                                 <h4 class="content-title">Project name & Title</h4>
-                                <p>Cras dapibus Vivamus elementum semper nisi Aenean vulputate eleifend tellus Aenean leo ligula, porttitor eu consequat vitae Phasellus viverra nulla ut metus varius laoreet.</p>
+                                <p>Cras dapibus Vivamus elementum semper nisi Aenean vulputate eleifend tellus Aenean
+                                    leo ligula, porttitor eu consequat vitae Phasellus viverra nulla ut metus varius
+                                    laoreet.</p>
                                 <ul class="list-inside">
                                     <li>Branding Design</li>
                                     <li>Web Design</li>
                                 </ul>
-                                <a target="_blank" href="http://google.com/" class="btn btn-md btn-black">Visit Site <i class="fa fa-external-link right"></i></a>
+                                <a target="_blank" href="http://google.com/" class="btn btn-md btn-black">Visit Site <i
+                                            class="fa fa-external-link right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -851,15 +693,18 @@
                         <div class="row">
                             <div class="col-md-5 mb-sm-30">
                                 <h4 class="content-title">Project name & Title</h4>
-                                <p>Cras dapibus Vivamus elementum semper nisi Aenean vulputate eleifend tellus Aenean leo ligula, porttitor eu consequat vitae Phasellus viverra nulla ut metus varius laoreet.</p>
+                                <p>Cras dapibus Vivamus elementum semper nisi Aenean vulputate eleifend tellus Aenean
+                                    leo ligula, porttitor eu consequat vitae Phasellus viverra nulla ut metus varius
+                                    laoreet.</p>
                                 <ul class="list-inside">
                                     <li>Fully Responsive</li>
                                     <li>Web Design</li>
                                 </ul>
-                                <a target="_blank" href="http://google.com/" class="btn btn-md btn-black">Visit Site <i class="fa fa-external-link right"></i></a>
+                                <a target="_blank" href="http://google.com/" class="btn btn-md btn-black">Visit Site <i
+                                            class="fa fa-external-link right"></i></a>
                             </div>
                             <div class="col-md-6 col-md-offset-1">
-                                <img src="img/mockup01.png" alt="" />
+                                <img src="img/mockup01.png" alt=""/>
                             </div>
 
                         </div>
@@ -869,14 +714,17 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 mb-sm-30">
-                                <img src="img/mockup01.png" alt="" />
+                                <img src="img/mockup01.png" alt=""/>
                             </div>
                             <div class="col-md-5 col-md-offset-1">
                                 <h4 class="content-title">Fully Responsive</h4>
-                                <p>Cras dapibus Vivamus elementum semper nisi Aenean vulputate eleifend tellus Aenean leo ligula, porttitor eu consequat vitae Phasellus viverra nulla ut metus varius laoreet.</p>
+                                <p>Cras dapibus Vivamus elementum semper nisi Aenean vulputate eleifend tellus Aenean
+                                    leo ligula, porttitor eu consequat vitae Phasellus viverra nulla ut metus varius
+                                    laoreet.</p>
                                 <p>porttitor eu consequat vitae Phasellus viverra nulla ut metus varius laoreet</p>
                                 <div class="spacer-15"></div>
-                                <a target="_blank" href="http://google.com/" class="btn btn-md btn-black">Visit Site <i class="fa fa-external-link right"></i></a>
+                                <a target="_blank" href="http://google.com/" class="btn btn-md btn-black">Visit Site <i
+                                            class="fa fa-external-link right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -906,7 +754,7 @@
                     <div class="portfolio-item branding photography coffee">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/01.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/01.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -914,16 +762,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/01.jpg" title="Portfolio Image 01"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/01.jpg" title="Portfolio Image 01"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -935,7 +788,7 @@
                     <div class="portfolio-item">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/02.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/02.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -943,16 +796,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/02.jpg" title="Portfolio Image 02"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/02.jpg" title="Portfolio Image 02"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -964,7 +822,7 @@
                     <div class="portfolio-item branding photography">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/03.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/03.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -972,16 +830,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/03.jpg" title="Portfolio Image 03"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/03.jpg" title="Portfolio Image 03"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -993,7 +856,7 @@
                     <div class="portfolio-item creative">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/04.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/04.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -1001,16 +864,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/04.jpg" title="Portfolio Image 04"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/04.jpg" title="Portfolio Image 04"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1022,7 +890,7 @@
                     <div class="portfolio-item creative">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/05.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/05.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -1030,16 +898,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/05.jpg" title="Portfolio Image 05"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/05.jpg" title="Portfolio Image 05"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1051,7 +924,7 @@
                     <div class="portfolio-item branding photography">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/06.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/06.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -1059,16 +932,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/06.jpg" title="Portfolio Image 06"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/06.jpg" title="Portfolio Image 06"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1080,7 +958,7 @@
                     <div class="portfolio-item branding creative coffee">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/07.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/07.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -1088,16 +966,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/07.jpg" title="Portfolio Image 07"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/07.jpg" title="Portfolio Image 07"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1109,7 +992,7 @@
                     <div class="portfolio-item photography">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="img/portfolio/thumb/08.jpg" alt="" /></a>
+                                <img src="img/portfolio/thumb/08.jpg" alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
@@ -1117,16 +1000,21 @@
                                         <p>Mockup - Photography - Graphic - Branding</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
-                                                <a class="gallery-popup-link btn btn-color" href="img/portfolio/large/08.jpg" title="Portfolio Image 08"><i class="fa fa-search"></i></a>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="img/portfolio/large/08.jpg" title="Portfolio Image 08"><i
+                                                            class="fa fa-search"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                                             </li>
                                             <li>
-                                                <a class="btn btn-black" target="_blank" href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1167,47 +1055,55 @@
                         <div class="content-box right wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="icon-right"><i class="icon icon-basic-display"></i></div>
                             <h5 class="features-title">Bootstrap 3</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                         <div class="content-box right wow fadeIn" data-wow-delay="0.2s" data-wow-duration="4s">
                             <div class="icon-right"><i class="icon icon-music-play-button"></i></div>
                             <h5 class="features-title">html5 & Youtube video</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                         <div class="content-box right wow fadeIn" data-wow-delay="0.2s" data-wow-duration="6s">
                             <div class="icon-right"><i class="icon icon-basic-eye"></i></div>
                             <h5 class="features-title">Clean code & design</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                         <div class="content-box right wow fadeIn" data-wow-delay="0.2s" data-wow-duration="8s">
                             <div class="icon-right"><i class="icon icon-basic-webpage-multiple"></i></div>
                             <h5 class="features-title">Unlimited layouts</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                     </div>
                     <div class="col-md-4 hidden-sm hidden-xs text-center">
-                        <img src="img/mockup02.png" alt="" />
+                        <img src="img/mockup02.png" alt=""/>
                     </div>
                     <div class="col-md-4 col-sm-6 pt-30 pt-sm-0">
                         <div class="content-box left wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="icon-left"><i class="icon icon-basic-gear"></i></div>
                             <h5 class="features-title">Flexible & Customizable</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                         <div class="content-box left wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
                             <div class="icon-left"><i class="icon icon-basic-cards-diamonds"></i></div>
                             <h5 class="features-title">Multi Concept & Mutli prapose Theme</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                         <div class="content-box left wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
                             <div class="icon-left"><i class="icon icon-basic-sheet"></i></div>
                             <h5 class="features-title">Well Documented</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                         <div class="content-box left wow fadeIn" data-wow-delay="0.8s" data-wow-duration="2s">
                             <div class="icon-left"><i class="icon icon-basic-headset"></i></div>
                             <h5 class="features-title">Friendly Support</h5>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae vel illum.</p>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                vel illum.</p>
                         </div>
                     </div>
                 </div>
@@ -1216,7 +1112,8 @@
         <!-- End Service Section -->
 
         <!-- Counter Section -->
-        <section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5" data-background-img="img/full/14.jpg">
+        <section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"
+                 data-background-img="img/full/14.jpg">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-sm-30">
@@ -1257,7 +1154,8 @@
                                 <h4>Regular</h4>
                             </div>
                             <div class="pricing-price pricing-padding">
-                                <p><span class="dollar">$</span><span class="pricing-price-lg">49</span><span class="pricing-price-sm">/ month</span></p>
+                                <p><span class="dollar">$</span><span class="pricing-price-lg">49</span><span
+                                            class="pricing-price-sm">/ month</span></p>
                             </div>
                             <div class="pricing-features">
                                 <ul>
@@ -1270,7 +1168,8 @@
                                 </ul>
                             </div>
                             <div class="pricing-button pricing-padding">
-                                <a class="btn btn-md btn-black" href="http://google.com/" target="_blank"><i class="fa fa-user left"></i>Sign Up</a>
+                                <a class="btn btn-md btn-black" href="http://google.com/" target="_blank"><i
+                                            class="fa fa-user left"></i>Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -1280,7 +1179,8 @@
                                 <h4>Standard</h4>
                             </div>
                             <div class="pricing-price pricing-padding">
-                                <p><span class="dollar">$</span><span class="pricing-price-lg color">99</span><span class="pricing-price-sm">/ month</span></p>
+                                <p><span class="dollar">$</span><span class="pricing-price-lg color">99</span><span
+                                            class="pricing-price-sm">/ month</span></p>
                             </div>
                             <div class="pricing-features">
                                 <ul>
@@ -1293,7 +1193,8 @@
                                 </ul>
                             </div>
                             <div class="pricing-button pricing-padding">
-                                <a class="btn btn-md btn-color" href="http://google.com/" target="_blank"><i class="fa fa-user left"></i>Sign Up</a>
+                                <a class="btn btn-md btn-color" href="http://google.com/" target="_blank"><i
+                                            class="fa fa-user left"></i>Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -1303,7 +1204,8 @@
                                 <h4>Advanced</h4>
                             </div>
                             <div class="pricing-price pricing-padding">
-                                <p><span class="dollar">$</span><span class="pricing-price-lg">199</span><span class="pricing-price-sm">/ month</span></p>
+                                <p><span class="dollar">$</span><span class="pricing-price-lg">199</span><span
+                                            class="pricing-price-sm">/ month</span></p>
                             </div>
                             <div class="pricing-features">
                                 <ul>
@@ -1316,7 +1218,8 @@
                                 </ul>
                             </div>
                             <div class="pricing-button pricing-padding">
-                                <a class="btn btn-md btn-black" href="http://google.com/" target="_blank"><i class="fa fa-user left"></i>Sign Up</a>
+                                <a class="btn btn-md btn-black" href="http://google.com/" target="_blank"><i
+                                            class="fa fa-user left"></i>Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -1326,13 +1229,15 @@
         <!-- End Pricing Table -->
 
         <!-- video Section -->
-        <section id="video-action" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5" data-background-img="img/full/02.jpg">
+        <section id="video-action" class="section-padding bg-image overlay-dark dark-bg"
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/02.jpg">
             <div class="container text-center">
                 <div class="page-icon">
-                    <a class="video-popup white" href="https://www.youtube.com/watch?v=JXOXns_gx8k"><i class="icon icon-music-play-button"></i></a>
+                    <a class="video-popup white" href="https://www.youtube.com/watch?v=JXOXns_gx8k"><i
+                                class="icon icon-music-play-button"></i></a>
                 </div>
                 <p class="max-width-700 lead">
-                    We’re developing a number of special projects if interested,<br />
+                    We’re developing a number of special projects if interested,<br/>
                     see the promo video
                 </p>
                 <h6 class="page-title-alt color mb-0">See Watch Video</h6>
@@ -1350,61 +1255,61 @@
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/01.png" alt="" /></a>
+                                <img src="img/logos/01.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/02.png" alt="" /></a>
+                                <img src="img/logos/02.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/03.png" alt="" /></a>
+                                <img src="img/logos/03.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/04.png" alt="" /></a>
+                                <img src="img/logos/04.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/05.png" alt="" /></a>
+                                <img src="img/logos/05.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/06.png" alt="" /></a>
+                                <img src="img/logos/06.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/08.png" alt="" /></a>
+                                <img src="img/logos/08.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/01.png" alt="" /></a>
+                                <img src="img/logos/01.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/02.png" alt="" /></a>
+                                <img src="img/logos/02.png" alt=""/></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="client-logo">
                             <a href="#">
-                                <img src="img/logos/03.png" alt="" /></a>
+                                <img src="img/logos/03.png" alt=""/></a>
                         </div>
                     </div>
                 </div>
@@ -1412,7 +1317,7 @@
         </section>
         <!-- End Client Logo -->
 
-        <hr />
+        <hr/>
 
         <!-- Tabs & Extra Elements -->
         <section id="elements" class="section-padding">
@@ -1463,7 +1368,8 @@
                                 </div>-->
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="media">
-                                    <iframe src="https://www.youtube.com/embed/k9EyPfc0FXc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/k9EyPfc0FXc?rel=0&amp;controls=0&amp;showinfo=0"
+                                            frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -1473,13 +1379,13 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="owl-carousel image-carousel nf-carousel-theme white">
                                     <div class="item">
-                                        <img src="img/full/06.jpg" alt="" />
+                                        <img src="img/full/06.jpg" alt=""/>
                                     </div>
                                     <div class="item">
-                                        <img src="img/full/14.jpg" alt="" />
+                                        <img src="img/full/14.jpg" alt=""/>
                                     </div>
                                     <div class="item">
-                                        <img src="img/full/09.jpg" alt="" />
+                                        <img src="img/full/09.jpg" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -1493,7 +1399,8 @@
                                         <i class="icon icon-basic-cup"></i>
                                     </div>
                                     <h5 class="features-title">Branding Design</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
+                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur vel illum.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
@@ -1502,7 +1409,8 @@
                                         <i class="icon icon-basic-life-buoy"></i>
                                     </div>
                                     <h5 class="features-title">Web Design</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
+                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur vel illum.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
@@ -1511,7 +1419,8 @@
                                         <i class="icon icon-basic-lightbulb"></i>
                                     </div>
                                     <h5 class="features-title">App Development</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
+                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur vel illum.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
@@ -1520,7 +1429,8 @@
                                         <i class="icon icon-basic-star"></i>
                                     </div>
                                     <h5 class="features-title">Graphic Design</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
+                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur vel illum.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
@@ -1529,7 +1439,8 @@
                                         <i class="icon icon-ecommerce-graph1"></i>
                                     </div>
                                     <h5 class="features-title">Landscape Photography</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
+                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur vel illum.</p>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-sm-30">
@@ -1538,7 +1449,8 @@
                                         <i class="icon icon-music-play-button"></i>
                                     </div>
                                     <h5 class="features-title">Photo Editing</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
+                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur vel illum.</p>
                                 </div>
                             </div>
                         </div>
@@ -1548,44 +1460,52 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
                                     <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-color"><i class="icon icon-basic-accelerator"></i></div>
+                                        <div class="icon-top icon-color"><i class="icon icon-basic-accelerator"></i>
+                                        </div>
                                         <h5 class="features-title">Branding Design</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum dolorem.</p>
+                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                                            nihil molestiae consequatur vel illum dolorem.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
                                     <div class="content-box content-box-with-bg">
                                         <div class="icon-top icon-color"><i class="icon icon-basic-cup"></i></div>
                                         <h5 class="features-title">Web Design</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum dolorem.</p>
+                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                                            nihil molestiae consequatur vel illum dolorem.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
                                     <div class="content-box content-box-with-bg">
                                         <div class="icon-top icon-color"><i class="icon icon-basic-anchor"></i></div>
                                         <h5 class="features-title">App Development</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum dolorem.</p>
+                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                                            nihil molestiae consequatur vel illum dolorem.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
                                     <div class="content-box content-box-with-bg">
                                         <div class="icon-top icon-black"><i class="icon icon-basic-globe"></i></div>
                                         <h5 class="features-title">Graphic Design</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum dolorem.</p>
+                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                                            nihil molestiae consequatur vel illum dolorem.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
                                     <div class="content-box content-box-with-bg">
                                         <div class="icon-top icon-black"><i class="icon icon-basic-gear"></i></div>
                                         <h5 class="features-title">Photography</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum dolorem.</p>
+                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                                            nihil molestiae consequatur vel illum dolorem.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-30">
                                     <div class="content-box content-box-with-bg">
-                                        <div class="icon-top icon-black"><i class="icon icon-basic-paperplane"></i></div>
+                                        <div class="icon-top icon-black"><i class="icon icon-basic-paperplane"></i>
+                                        </div>
                                         <h5 class="features-title">Photo Editing</h5>
-                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum dolorem.</p>
+                                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                                            nihil molestiae consequatur vel illum dolorem.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1597,11 +1517,12 @@
                                 <div class="col-md-4">
                                     <div class="cover-box mb-30">
                                         <figure class="cover-box-img">
-                                            <img src="img/portfolio/thumb/09.jpg" alt="cover-img" />
+                                            <img src="img/portfolio/thumb/09.jpg" alt="cover-img"/>
                                         </figure>
                                         <div class="cover-box-content">
                                             <h5>Responsive Design</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam maxime</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut
+                                                dignissimos ea est, impedit incidunt, laboriosam maxime</p>
                                             <a class="link">Read More <i class="fa fa-angle-right right"></i></a>
                                         </div>
                                     </div>
@@ -1609,11 +1530,12 @@
                                 <div class="col-md-4">
                                     <div class="cover-box mb-30">
                                         <figure class="cover-box-img">
-                                            <img src="img/portfolio/thumb/06.jpg" alt="cover-img" />
+                                            <img src="img/portfolio/thumb/06.jpg" alt="cover-img"/>
                                         </figure>
                                         <div class="cover-box-content">
                                             <h5>App Development</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam maxime</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut
+                                                dignissimos ea est, impedit incidunt, laboriosam maxime</p>
                                             <a class="link">Read More <i class="fa fa-angle-right right"></i></a>
                                         </div>
                                     </div>
@@ -1621,11 +1543,12 @@
                                 <div class="col-md-4">
                                     <div class="cover-box mb-30">
                                         <figure class="cover-box-img">
-                                            <img src="img/portfolio/thumb/05.jpg" alt="cover-img" />
+                                            <img src="img/portfolio/thumb/05.jpg" alt="cover-img"/>
                                         </figure>
                                         <div class="cover-box-content">
                                             <h5>Photography</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam maxime</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut
+                                                dignissimos ea est, impedit incidunt, laboriosam maxime</p>
                                             <a class="link">Read More <i class="fa fa-angle-right right"></i></a>
                                         </div>
                                     </div>
@@ -1640,7 +1563,8 @@
         <!-- End Tabs & Extra Elements -->
 
         <!-- Contact Form -->
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60" data-background-img="img/full/20.jpg" data-stellar-background-ratio="0.5">
+        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
+                 data-background-img="img/full/20.jpg" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row text-center">
                     <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
@@ -1652,30 +1576,38 @@
                             <form id="contact" class="contact-form" role="form">
                                 <div class="col-md-12 text-center">
                                     <h5 class="successContent">
-                                        <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been sent successfully.
+                                        <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
+                                        sent successfully.
                                     </h5>
                                     <h5 class="errorContent" style="color: #e1534f;">
-                                        <i class="fa fa-exclamation-circle left"></i>There was a problem validating the form please check!
+                                        <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
+                                        form please check!
                                     </h5>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-field-wrapper">
-                                        <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="Your Name" required />
+                                        <input class="input-md form-full" id="form-name" type="text" name="form-name"
+                                               placeholder="Your Name" required/>
                                     </div>
                                     <div class="form-field-wrapper">
-                                        <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="Email" required />
+                                        <input class="input-md form-full" id="form-email" type="email" name="form-email"
+                                               placeholder="Email" required/>
                                     </div>
                                     <div class="form-field-wrapper">
-                                        <input class="input-md form-full" id="form-subject" type="text" name="form-subject" placeholder="Subject" />
+                                        <input class="input-md form-full" id="form-subject" type="text"
+                                               name="form-subject" placeholder="Subject"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-0">
                                     <div class="form-field-wrapper">
-                                        <textarea class="input-md form-full" id="form-message" rows="7" name="form-message" placeholder="Your Message" required></textarea>
+                                        <textarea class="input-md form-full" id="form-message" rows="7"
+                                                  name="form-message" placeholder="Your Message" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Submit</button>
+                                    <button class="btn-contact-submit btn btn-md btn-color" type="submit"
+                                            id="form-submit" name="submit">Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -1697,7 +1629,7 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
                         <h5 class="features-title">Address</h5>
                         <p>
-                            502, DieSachbearbeiter, Schönhauser Allee,<br />
+                            502, DieSachbearbeiter, Schönhauser Allee,<br/>
                             167c10435 Berlin,Germany.
                         </p>
                     </div>
@@ -1705,7 +1637,7 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
                         <h5 class="features-title">office Hours</h5>
                         <p>
-                            Mon - Fri : 8am to 6pm<br />
+                            Mon - Fri : 8am to 6pm<br/>
                             Sat : 10am to 2pm
                         </p>
                     </div>
@@ -1713,7 +1645,8 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
                         <h5 class="features-title">Contact</h5>
                         <p class="contact-link">
-                            <a href="mailto:yourname@domain.com"><span class="text-bold">Email :</span> yourname@domain.com</a><br />
+                            <a href="mailto:yourname@domain.com"><span class="text-bold">Email :</span> yourname@domain
+                                .com</a><br/>
                             <a><span class="text-bold">Call :</span> +40 (0) 012 345 6789</a>
                         </p>
                     </div>
@@ -1729,7 +1662,7 @@
                 <!--Footer Logo-->
                 <div class="footer-logo mb-25 wow fadeInUp" data-wow-duration="1.5s">
                     <a class="scroll-top" href="#intro">
-                        <img src="img/logo-dark.png" alt="mazel" />
+                        <img src="img/logo-dark.png" alt="mazel"/>
                     </a>
                 </div>
                 <!--End Footer Logo-->
