@@ -11,16 +11,16 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <!-- Favicone Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
-    <link rel="apple-touch-icon" href="img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}" />
+    <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}" />
+    <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}" />
 
     <!-- Css -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/plugins/animate.css" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css" />
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen" />
 
 </head>
 <body>
@@ -1767,29 +1767,29 @@
 <!-- End Page Wraper -->
 
 <!-- Js -->
-<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.easing.1.3.js" type="text/javascript"></script>
-<script src="js/plugins/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.fitvids.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.stellar.min.js" type="text/javascript"></script>
-<script src="js/plugins/isotope.pkgd.min.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.appear.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.fs.tipper.min.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.countTo.js" type="text/javascript"></script>
-<script src="js/plugins/owl.carousel.min.js" type="text/javascript"></script>
+<script src="{!! asset('js/jquery-1.11.2.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.easing.1.3.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/bootstrap.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.fitvids.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.stellar.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/isotope.pkgd.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.appear.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.fs.tipper.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.countTo.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/owl.carousel.min.js') !!}" type="text/javascript"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->
-<script src="rs-plugin/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
-<script src="rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+<script src="{!! asset('rs-plugin/js/jquery.themepunch.tools.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('rs-plugin/js/jquery.themepunch.revolution.min.js') !!}" type="text/javascript"></script>
 <!-- End SLIDER REVOLUTION SCRIPTS  -->
-<script src="js/plugins/jquery.magnific-popup.min.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.singlePageNav.min.js" type="text/javascript"></script>
-<script src="js/plugins/wow.min.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.validate.min.js" type="text/javascript"></script>
-<script src="js/contact-form.js" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.magnific-popup.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.singlePageNav.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/wow.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/plugins/jquery.validate.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('/contact-form.js') !!}" type="text/javascript"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>--}}
-{{--<script src="js/map.js" type="text/javascript"></script>--}}
-<script src="js/theme.js" type="text/javascript"></script>
+{{--<script src="js/map.js') !!}" type="text/javascript"></script>--}}
+<script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
 </body>
 </html>
