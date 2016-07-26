@@ -35,7 +35,7 @@
 
                     <div class="form-group">
                         <div class="btn-group">
-                            <button class="btn btn-primary">Update</button>
+                            <button class="btn btn-primary" type="submit">Update</button>
                             <a class="btn btn-warning" href="{!! route('control-panel.projects.index') !!}">Cancel</a>
                         </div>
                     </div>

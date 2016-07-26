@@ -68,8 +68,8 @@
 @endsection
 
 @section('scripts')
-    <script src="../../../../public/plugins/datatables/dataTables.bootstrap.js"></script>
-    <script src="../../../../public/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../../../../public/control-panel/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="../../../../public/control-panel/plugins/datatables/jquery.dataTables.js"></script>
 @endsection
 
 

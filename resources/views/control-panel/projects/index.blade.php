@@ -47,7 +47,7 @@
 
                     <div class="form-group">
                         <div class="btn-group">
-                            <button class="btn btn-primary">Save</button>
+                            <button class="btn btn-primary" type="submit">Save</button>
                         </div>
                     </div>
                     {!! Form::close() !!}
@@ -68,8 +68,8 @@
 @endsection
 
 @section('scripts')
-    <script src="../../../../public/plugins/datatables/dataTables.bootstrap.js"></script>
-    <script src="../../../../public/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../../../../public/control-panel/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="../../../../public/control-panel/plugins/datatables/jquery.dataTables.js"></script>
 @endsection
 
 

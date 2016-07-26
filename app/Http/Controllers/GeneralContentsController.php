@@ -52,7 +52,7 @@ class GeneralContentsController extends Controller
         try {
             $home_content = GeneralContent::find($id);
         } catch (ModelNotFoundException $e) {
-            $request->session()->flash('The Item was not found');
+            $request->session()->flash('global-error','The Item was not found');
             return redirect()->back();
         }
 

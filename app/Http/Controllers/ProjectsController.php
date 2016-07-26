@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 
 class ProjectsController extends Controller
@@ -31,6 +32,14 @@ class ProjectsController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), Project::$rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $project = new Project();
         $project->country = $request->get('country');
         $project->year = $request->get('year');
@@ -41,7 +50,8 @@ class ProjectsController extends Controller
         if ($project->save()) {
             if ($image = Input::file('project_photo')) {
                 Image::make($image)
-                    ->save('images/projects/' . $project->id . '.jpg');
+                    ->encode('jpg')
+                    ->save('control-panel/images/projects/' . $project->id . '.jpg');
 
             }
         }
@@ -59,19 +69,33 @@ class ProjectsController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        $validator = Validator::make($request->all(), Project::$editRules);
+
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $project = Project::find($id);
         $project->country = $request->get('country');
         $project->year = $request->get('year');
         $project->type = $request->get('type');
 
-        if ($project->save()) {
+        if ($project->update()) {
+
             if ($image = Input::file('project_photo')) {
                 Image::make($image)
-                    ->save('images/projects/' . $project->id . '.jpg');
+                    ->encode('jpg')
+                    ->save('control-panel/images/projects/' . $project->id . '.jpg');
             }
+
+            return $this->index();
+
         }
 
-        return $this->index();
+        return redirect()->back();
     }
 
     public function destroy(Request $request, $id)
@@ -84,8 +108,9 @@ class ProjectsController extends Controller
         }
 
         if ($project->delete()) {
-            if (file_exists(public_path() . '/images/projects/' . $id . '.jpg')) {
-                unlink('images/projects/' . $id . '.jpg');
+            if (file_exists(public_path() . '/control-panel/images/projects/' . $id . '.jpg')) {
+//                dd('asdsd');
+                unlink('control-panel/images/projects/' . $id . '.jpg');
             }
 
             $request->session()->flash('global', "Record deleted successfully");
