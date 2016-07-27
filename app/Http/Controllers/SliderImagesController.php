@@ -39,7 +39,6 @@ class SliderImagesController extends Controller
                 Image::make($image)
                     ->encode('jpg')
                     ->save('control-panel/images/slider-images/' . $sliderImage->id . '.jpg');
-
             }
         }
 

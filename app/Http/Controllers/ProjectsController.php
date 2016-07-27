@@ -84,7 +84,7 @@ class ProjectsController extends Controller
             if ($image = Input::file('project_photo')) {
                 Image::make($image)
                     ->encode('jpg')
-                    ->save('control-panel/images/slider/' . $project->id . '.jpg');
+                    ->save('control-panel/images/projects/' . $project->id . '.jpg');
             }
 
             return $this->index();
@@ -111,6 +111,6 @@ class ProjectsController extends Controller
 
             $request->session()->flash('global', "Record deleted successfully");
         }
-        return redirect()->back();
+        return redirect()->index();
     }
 }

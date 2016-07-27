@@ -21,7 +21,7 @@
 @endsection
 
 @section('sub-title')
-    test sub title
+    Edit
 @endsection
 
 @section('sub-title')
@@ -38,7 +38,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">General Content</h3>
+                    <h3 class="box-title">Projects</h3>
                 </div>
                 <div class="box-body">
                     {!! Form::open(['route'=> ['control-panel.projects.store'], 'files'=>'true']) !!}
@@ -57,7 +57,7 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">General Content</h3>
+                    <h3 class="box-title">Projects List</h3>
                 </div>
                 <div class="box-body">
                     @include('control-panel.projects._partials.list')

@@ -31,11 +31,11 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                {!! Form::open(['route'=>['control-panel.general-contents.store'],'files'=>'true']) !!}
+                {!! Form::model($generalContent,['route'=>['control-panel.general-contents.update', $generalContent->id], 'method' => 'patch','files'=>'true']) !!}
 
                 @include('control-panel.general-content._partials.form')
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
                 {!! Form::close() !!}
             </div>

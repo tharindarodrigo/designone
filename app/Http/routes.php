@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    $sliderImages = \App\GeneralContent::all();
-    return view('index', compact('sliderImages'));
+//    $sliderImages = \App\GeneralContent::all();
+    $generalContent = App\GeneralContent::find(1);
+    $sliderImages = \App\SliderImage::all();
+
+//    dd($sliderImages);
+    return view('index', compact('sliderImages', 'generalContent'));
 });
 
 
@@ -25,7 +29,7 @@ Route::group(['prefix'=>'control-panel'], function(){
     });
 
 
-    Route::resource('/general', 'GeneralContentsController');
+    Route::resource('/general-contents', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');
     Route::resource('/news', 'NewsController');
     Route::resource('/slider-images', 'SliderImagesController');

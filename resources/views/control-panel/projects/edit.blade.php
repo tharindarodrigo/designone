@@ -9,7 +9,7 @@
 @endsection
 
 @section('sub-title')
-    test sub title
+
 @endsection
 
 @section('sub-title')
@@ -26,7 +26,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">General Content</h3>
+                    <h3 class="box-title">Projects</h3>
                 </div>
                 <div class="box-body">
                     {!! Form::model($project, ['route'=> ['control-panel.projects.update', $project->id], 'method'=>'patch', 'files'=>'true']) !!}
@@ -46,7 +46,7 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">List</h3>
+                    <h3 class="box-title">Projects List</h3>
                 </div>
                 <div class="box-body">
                     @include('control-panel.projects._partials.list')

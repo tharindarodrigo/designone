@@ -19,73 +19,66 @@ class GeneralContentsController extends Controller
      */
     public function index()
     {
-        $home_contents = GeneralContent::all();
-        return view('control-panel.general-content.index', compact('home_contents'));
+
+        try {
+            GeneralContent::findOrFail(1);
+            return redirect()->route('control-panel.general-contents.edit', [1]);
+
+        } catch (ModelNotFoundException $e) {
+            return view('control-panel.general-content.index');
+        }
     }
 
     public function store(Request $request)
     {
-        $home_content = new GeneralContent();
-        $home_content->title = $request->get('title');
-        $home_content->sub_title = $request->get('sub_title');
+        $generalContent = new GeneralContent();
+//        dd($request->all());
+        $generalContent->phone1 = $request->get('phone1');
+        $generalContent->phone2 = $request->get('phone2');
+        $generalContent->address = $request->get('address');
+        $generalContent->email = $request->get('email');
+        $generalContent->about = $request->get('about');
+        $generalContent->fax = $request->get('fax');
 
-        if ($home_content->save()) {
-            if ($image = Input::file('slider_image')) {
-                Image::make($image)
-                    ->save('control-panel/images/slides/' . $home_content->id . '.jpg');
-
-            }
+        if ($generalContent->save()) {
+            $request->session()->flash('global-success', 'Successfully saved');
+        } else {
+            $request->session()->flash('global-error', 'The Item was not found');
         }
 
-        return redirect()->back();
+        return $this->index();
     }
 
     public function edit($id)
     {
-        $home_content = GeneralContent::find($id);
-        $home_contents = GeneralContent::all();
-        return view('control-panel.home-contents.edit', compact('home_content', 'home_contents'));
+        $generalContent = GeneralContent::find($id);
+        return view('control-panel.general-content.edit', compact('generalContent'));
     }
 
-    public function Update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         try {
-            $home_content = GeneralContent::find($id);
+            $generalContent = GeneralContent::find($id);
         } catch (ModelNotFoundException $e) {
-            $request->session()->flash('global-error','The Item was not found');
-            return redirect()->back();
+            $request->session()->flash('global-error', 'The Item was not found');
+            return $this->index();
         }
 
-        $home_content->title = $request->get('title');
-        $home_content->sub_title = $request->get('sub_title');
+        $generalContent->phone1 = $request->get('phone1');
+        $generalContent->phone2 = $request->get('phone2');
+        $generalContent->address = $request->get('address');
+        $generalContent->email = $request->get('email');
+        $generalContent->about = $request->get('about');
+        $generalContent->fax = $request->get('fax');
 
-        if ($home_content->update()) {
-            if ($image = Input::file('slider_image')) {
-                Image::make($image)
-                    ->save('control-panel/images/slides/' . $home_content->id . '.jpg');
-            }
+        if ($generalContent->update()) {
+            $request->session()->flash('global-success', 'Successfully saved');
+        } else {
+            $request->session()->flash('global-error', 'The Item was not found');
         }
 
-        return redirect()->back();
+        return $this->index();
     }
 
-    public function destroy(Request $request, $id)
-    {
-        try {
-            $menu_item = GeneralContent::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            $request->session()->flash('global', "The Record wasn't found");
-            return redirect()->back();
-        }
 
-        if ($menu_item->delete()) {
-            if (file_exists(public_path() . '/images/slides/' . $id . '.jpg')) {
-                unlink('images/slides/' . $id . '.jpg');
-            }
-
-            $request->session()->flash('global', "Record deleted successfully");
-        }
-
-        return redirect()->back();
-    }
 }

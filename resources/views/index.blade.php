@@ -57,13 +57,13 @@
                     <ul class="nav-menu-inner">
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#latest-work">Work</a></li>
-                        <li><a href="#service">Service</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
+                        {{--<li><a href="#latest-work">Work</a></li>--}}
+                        {{--<li><a href="#service">Service</a></li>--}}
+                        {{--<li><a href="#pricing">Pricing</a></li>--}}
                         <li><a href="#client">Client</a></li>
-                        <li><a href="#elements">Elements</a></li>
+                        {{--<li><a href="#elements">Elements</a></li>--}}
                         <li><a href="#contact-us">Contact</a></li>
-                        <li><a class="nav-external all-demos-link" href="" target="_blank">Demos</a></li>
+                        {{--<li><a class="nav-external all-demos-link" href="" target="_blank">Demos</a></li>--}}
                     </ul>
                 </div>
                 <!-- End Navigation Menu -->
@@ -77,10 +77,12 @@
                     <ul>
                         <!-- SLIDE  -->
                         @if(!empty($sliderImages))
+                            {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
-                                <li class="dark-bg" data-transition="fade" data-slotamount="5" data-masterspeed="700">
+                                <li class="" data-transition="fade" data-slotamount="5" data-masterspeed="700">
                                     <!-- MAIN IMAGE -->
-                                    <img src="{!! asset('img/full/'.$sliderImage->id.'.jpg') !!}" alt="SliderImages" data-bgfit="cover"
+                                    <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}" alt="SliderImages"
+                                         data-bgfit="cover"
                                          data-bgposition="top center" data-bgrepeat="no-repeat">
 
                                     <!-- LAYER NR. 1 -->
@@ -116,7 +118,7 @@
                                         data-endeasing="Power4.easeIn"
                                         style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
                                         <!--Flexible
-                                        & Customizable-->{!! asset($sliderImage->sliderTitle) !!}
+                                        & Customizable-->{!! $sliderImage->title !!}
                                     </h2>
 
                                     <!-- LAYER NR. 3 -->
@@ -133,26 +135,27 @@
                                        data-endspeed="500"
                                        data-endeasing="Power4.easeIn"
                                        style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        <!--A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh-->{!! asset($sliderImage->sliderDescription) !!}<br/>
+                                        <!--A donec sodales sagittis magna. Sed consequat, leo eget bibendum amet nibh-->{!! $sliderImage->description !!}
+                                        <br/>
 
                                     </p>
 
                                     <!-- LAYER NR. 4 -->
-                                   <!-- <div class="tp-caption lfb ltt tp-resizeme sc-button"
-                                         data-x="center" data-hoffset="0"
-                                         data-y="center" data-voffset="125"
-                                         data-speed="600"
-                                         data-start="1100"
-                                         data-easing="Power4.easeOut"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-elementdelay="0.01"
-                                         data-endelementdelay="0.1"
-                                         data-endspeed="500"
-                                         data-endeasing="Power4.easeIn"
-                                         style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                    <!-- <div class="tp-caption lfb ltt tp-resizeme sc-button"
+                                          data-x="center" data-hoffset="0"
+                                          data-y="center" data-voffset="125"
+                                          data-speed="600"
+                                          data-start="1100"
+                                          data-easing="Power4.easeOut"
+                                          data-splitin="none"
+                                          data-splitout="none"
+                                          data-elementdelay="0.01"
+                                          data-endelementdelay="0.1"
+                                          data-endspeed="500"
+                                          data-endeasing="Power4.easeIn"
+                                          style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
 
-                                    </div>-->
+                                     </div>-->
 
                                 </li>
                             @endforeach
@@ -173,7 +176,7 @@
             <div class="container mb-60">
                 <h2>About <span class="text-light">Us</span></h2>
                 <p class="max-width-700 lead"><!--Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium totam aperiam.-->{!! asset($generalContent->about) !!}</p>
+                    doloremque laudantium totam aperiam.-->{!! $generalContent->about !!}</p>
             </div>
 
             <!--<div class="container">
@@ -209,7 +212,7 @@
                  data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
             <div class="container">
                 <p class="max-width-700 lead"><!--Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium totam aperiam.-->{!! asset($generalContent->statement) !!}</p>
+                    doloremque laudantium totam aperiam.-->{!! $generalContent->statement !!}</p>
 
             </div>
         </section>
@@ -412,7 +415,7 @@
         </section>
          End Team Section -->
 
-        <hr/>
+        {{--<hr/>--}}
 
         <!-- Accordian & Skills Section
         <section id="accordian_skills" class="section-padding">
@@ -449,45 +452,45 @@
                     </div>
                      End Accordian -->
 
-                    <!-- Skills
-                    <div class="col-md-6 col-sm-6">
-                        <div class="skillbar" data-percent="55%">
-                            <h6 class="skillbar-title">Design</h6>
-                            <div class="skill-bar-percent">55%</div>
-                            <div class="skillbar-bar">
-                                <div class="skillbar-bar-child"></div>
-                            </div>
-                        </div>
-
-                        <div class="skillbar" data-percent="80%">
-                            <h6 class="skillbar-title">Development</h6>
-                            <div class="skill-bar-percent">80%</div>
-                            <div class="skillbar-bar">
-                                <div class="skillbar-bar-child"></div>
-                            </div>
-                        </div>
-
-                        <div class="skillbar" data-percent="40%">
-                            <h6 class="skillbar-title">Photography</h6>
-                            <div class="skill-bar-percent">40%</div>
-                            <div class="skillbar-bar">
-                                <div class="skillbar-bar-child"></div>
-                            </div>
-                        </div>
-
-                        <div class="skillbar" data-percent="70%">
-                            <h6 class="skillbar-title">Branding</h6>
-                            <div class="skill-bar-percent">70%</div>
-                            <div class="skillbar-bar">
-                                <div class="skillbar-bar-child"></div>
-                            </div>
-                        </div>
-                    </div>
-
+        <!-- Skills
+        <div class="col-md-6 col-sm-6">
+            <div class="skillbar" data-percent="55%">
+                <h6 class="skillbar-title">Design</h6>
+                <div class="skill-bar-percent">55%</div>
+                <div class="skillbar-bar">
+                    <div class="skillbar-bar-child"></div>
                 </div>
             </div>
-        </section>
-       End Accordian & Skills Section-->
+
+            <div class="skillbar" data-percent="80%">
+                <h6 class="skillbar-title">Development</h6>
+                <div class="skill-bar-percent">80%</div>
+                <div class="skillbar-bar">
+                    <div class="skillbar-bar-child"></div>
+                </div>
+            </div>
+
+            <div class="skillbar" data-percent="40%">
+                <h6 class="skillbar-title">Photography</h6>
+                <div class="skill-bar-percent">40%</div>
+                <div class="skillbar-bar">
+                    <div class="skillbar-bar-child"></div>
+                </div>
+            </div>
+
+            <div class="skillbar" data-percent="70%">
+                <h6 class="skillbar-title">Branding</h6>
+                <div class="skill-bar-percent">70%</div>
+                <div class="skillbar-bar">
+                    <div class="skillbar-bar-child"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+End Accordian & Skills Section-->
 
         <!-- NewsFeed Section-->
 
@@ -497,16 +500,16 @@
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
 
                     @if(!empty($newsItems))
-                            @foreach($newsItems as $newsItem)
-                    <div class="item">
-                        <div class="testimonial text-center max-width-700">
-                            <div class="page-icon-sm">{!! asset($newsItems->title) !!}</div>
-                            <p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and
-                                records and sat in front of the practising.-->{!! asset($newsItems->body) !!}</p>
-                            <h6 class="quote-author"><!-- Jeff Dunham --> {!! asset("- ".$newsItems->date) !!}
-                            </h6>
-                        </div>
-                    </div>
+                        @foreach($newsItems as $newsItem)
+                            <div class="item">
+                                <div class="testimonial text-center max-width-700">
+                                    <div class="page-icon-sm">{!! $newsItem->title !!}</div>
+                                    <p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and
+                                records and sat in front of the practising.-->{!! asset($newsItem->body) !!}</p>
+                                    <h6 class="quote-author"><!-- Jeff Dunham --> {!! asset("- ".$newsItem->date) !!}
+                                    </h6>
+                                </div>
+                            </div>
 
                         @endforeach
                     @endif
@@ -669,34 +672,35 @@
 
                     @if(!empty($portfolio))
                     @foreach($portfolio as $portfolioItem)
-                    <!------->
+                            <!------->
                     <div class="portfolio-item branding photography coffee">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
-                                <img src="{!! asset("img/portfolio/thumb/".$portfolio->thumbImage.".jpg") !!}" alt=""/></a>
+                                <img src="{!! asset('img/portfolio/thumb/'.$portfolioItem->thumbImage.'.jpg') !!}"
+                                     alt=""/></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-tb">
                                     <div class="portfolio-caption-tb-cell">
-                                        <h5><!--Digital Camera mockup-->{!! asset($portfolio->title) !!}</h5>
-                                        <p><!--Mockup - Photography - Graphic - Branding-->{!! asset($portfolio->description) !!}</p>
+                                        <h5><!--Digital Camera mockup-->{!! $portfolioItem->title !!}</h5>
+                                        <p>
+                                            <!--Mockup - Photography - Graphic - Branding-->{!! $portfolioItem->description !!}</p>
                                         <ul class="portfolio-btn-wraper">
                                             <li>
                                                 <a class="gallery-popup-link btn btn-color"
-                                                   href="{!! asset("img/portfolio/large/".$portfolio->fullImage.".jpg") !!}" title="Portfolio Image 01"><i
+                                                   href="{!! asset("img/portfolio/large/".$portfolioItem->fullImage.".jpg") !!}"
+                                                   title="Portfolio Image 01"><i
                                                             class="fa fa-search"></i></a>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                    @endif
 
-                            @endif
-                        @endforeach
-
-                    <!--
+                            <!--
                     <div class="portfolio-item">
                         <div class="portfolio-box">
                             <a class="portfolio-image-wrap">
@@ -945,7 +949,8 @@
         <section id="action-box2" class="action-box action-black">
             <div class="container">
                 <div class="row action-box-left">
-                    <h4 class="action-box-title"><!--Designs filled with creativity and innovation--> {!! asset($generalContent->portfolioDescription) !!}</h4>
+                    <h4 class="action-box-title">
+                        <!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>
                 </div>
 
             </div>
@@ -1028,22 +1033,22 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>
-                        <h1 class="counter-title counter-num">{!! asset($generalContent->awardCount) !!}</h1>
+                        <h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>
                         <h5 class="counter-sub-title">Awards</h5>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>
-                        <h1 class="counter-title counter-num">{!! asset($generalContent->clientCount) !!}</h1>
+                        <h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>
                         <h5 class="counter-sub-title">client</h5>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>
-                        <h1 class="counter-title counter-num">{!! asset($generalContent->projectCount) !!}</h1>
+                        <h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>
                         <h5 class="counter-sub-title">Project</h5>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>
-                        <h1 class="counter-title counter-num">{!! asset($generalContent->teamCount) !!}</h1>
+                        <h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>
                         <h5 class="counter-sub-title">Team</h5>
                     </div>
                 </div>
@@ -1165,16 +1170,17 @@
                 @if(!empty($clients))
                     @foreach($clients as $client)
 
-                <div class="owl-carousel client-carousel">
-                    <div class="item">
-                        <div class="client-logo">
-                            <a href="#">
-                                <img src="{!! asset("img/logos/".$clients->image.".png") !!}" alt=""/></a>
+                        <div class="owl-carousel client-carousel">
+                            <div class="item">
+                                <div class="client-logo">
+                                    <a href="#">
+                                        <img src="{!! asset("img/logos/".$clients->image.".png") !!}" alt=""/></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-
+                    @endforeach
+                @endif
 
 
             </div>
@@ -1182,8 +1188,6 @@
         <!-- End Client Logo -->
 
         <hr/>
-
-
 
 
         <!-- Contact Form -->
@@ -1267,7 +1271,8 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
                         <h5 class="features-title">Contact</h5>
                         <p class="contact-link">
-                            <a href="mailto:{!! asset($generalContent->email) !!}"><span class="text-bold">Email :</span>{!! asset($generalContent->email) !!}</a><br/>
+                            <a href="mailto:{!! asset($generalContent->email) !!}"><span
+                                        class="text-bold">Email :</span>{!! asset($generalContent->email) !!}</a><br/>
                             <a><span class="text-bold">Call :</span> {!! asset($generalContent->contactNo) !!}</a>
                         </p>
                     </div>
@@ -1279,8 +1284,6 @@
         <!--Footer Section-->
         <footer id="footer" class="footer section-padding gray-bg">
             <div class="container text-center">
-
-
 
 
                 <!-- Copyright -->

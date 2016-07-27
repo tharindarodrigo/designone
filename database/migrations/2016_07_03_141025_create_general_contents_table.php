@@ -18,6 +18,7 @@ class CreateGeneralContentsTable extends Migration
             $table->string('phone1');
             $table->string('phone2');
             $table->string('email');
+            $table->string('address');
             $table->string('fax');
 
             $table->timestamps();
