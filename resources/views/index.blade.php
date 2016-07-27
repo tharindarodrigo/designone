@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Mazel One - Onepage Responsive Html Template</title>
+    <title>DesignOne</title>
     <meta name="description" content=""/>
     <meta name="keywords"
           content="creative, portfolio, template, theme, designed, html5, css3, responsive, mazel, onepage"/>
@@ -41,7 +41,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="#">
-                        <img src="img/logo-light.png"/>
+                        <img src="{!! asset('img/logo-light.png')!!}"/>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -165,7 +165,7 @@
 
         <!-- Statement1 Section -->
         <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
+                 data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">
             <div class="container">
 
             </div>
@@ -186,7 +186,7 @@
         <!-- NewsFeed Section-->
 
         <section id="testimonials" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="img/full/05.jpg">
+                 data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/05.jpg') !!}">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
 
@@ -295,7 +295,7 @@
 
         <!-- Counter Section -->
         <section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"
-                 data-background-img="img/full/14.jpg">
+                 data-background-img="{!! asset('img/full/14.jpg') !!}">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-sm-30">
@@ -357,7 +357,7 @@
 
         <!-- Contact Form -->
         <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
-                 data-background-img="img/full/20.jpg" data-stellar-background-ratio="0.5">
+                 data-background-img="{!! asset('img/full/20.jpg') !!}" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row text-center">
                     <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
