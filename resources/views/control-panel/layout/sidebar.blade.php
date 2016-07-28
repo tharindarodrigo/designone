@@ -22,7 +22,7 @@
 
             <li class="@yield('general')">
                 <a href="{!! url('control-panel/general-contents') !!}">
-                    <i class="fa fa-th"></i> <span>General C0ntent</span>
+                    <i class="fa fa-th"></i> <span>General Content</span>
                 </a>
             </li>
 
@@ -33,6 +33,11 @@
             </li>
 
 
+            <li class="@yield('project-types')">
+                <a href="{!! url('control-panel/project-types') !!}">
+                    <i class="fa fa-th"></i> <span>Project Types</span>
+                </a>
+            </li>
 
         </ul>
     </section>

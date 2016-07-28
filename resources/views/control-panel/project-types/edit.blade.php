@@ -5,18 +5,14 @@
 @endsection
 
 @section('title')
-    Projects
+    Project Types
 @endsection
 
 @section('sub-title')
-
+    Edit
 @endsection
 
-@section('sub-title')
-
-@endsection
-
-@section('projects')
+@section('project-types')
     active
 @endsection
 
@@ -29,14 +25,14 @@
                     <h3 class="box-title">Edit Project</h3>
                 </div>
                 <div class="box-body">
-                    {!! Form::model($project, ['route'=> ['control-panel.projects.update', $project->id], 'method'=>'patch', 'files'=>'true']) !!}
+                    {!! Form::model($projectType, ['route'=> ['control-panel.project-types.update', $projectType->id], 'method'=>'patch', 'files'=>'true']) !!}
 
-                    @include('control-panel.projects._partials.form')
+                    @include('control-panel.project-types._partials.form')
 
                     <div class="form-group">
                         <div class="btn-group">
                             <button class="btn btn-primary" type="submit">Update</button>
-                            <a class="btn btn-warning" href="{!! route('control-panel.projects.index') !!}">Cancel</a>
+                            <a class="btn btn-warning" href="{!! route('control-panel.project-types.index') !!}">Cancel</a>
                         </div>
                     </div>
                     {!! Form::close() !!}
@@ -46,10 +42,10 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Projects List</h3>
+                    <h3 class="box-title">Project Type List</h3>
                 </div>
                 <div class="box-body">
-                    @include('control-panel.projects._partials.list')
+                    @include('control-panel.project-types._partials.list')
                 </div>
             </div>
         </div>
