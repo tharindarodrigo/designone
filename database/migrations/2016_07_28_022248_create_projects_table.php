@@ -15,9 +15,12 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('country');
+            $table->integer('project_type_id')->unsigned();
             $table->integer('year');
             $table->string('type');
             $table->timestamps();
+
+            $table->foreign('project_type_id')->references('id')->on('project_types');
         });
     }
 

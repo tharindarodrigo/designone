@@ -45,7 +45,7 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">List</h3>
+                    <h3 class="box-title">Slider Image List</h3>
                 </div>
                 <div class="box-body">
                     @include('control-panel.slider-images._partials.list')

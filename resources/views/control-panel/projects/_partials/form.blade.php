@@ -4,10 +4,18 @@
     <span class="help-block">{{$errors->first('year', ':message')}}</span>
 </div>
 
-<div class="form-group {{$errors->first('type') ? 'has-error' : ''}}" >
-    <label for="type">Type</label>
-    {!! Form::text('type', null, ['class'=>'form-control']) !!}
+<div class="form-group" {{$errors->first('project-type') ? 'has-error' : ''}}>
+    <label for="type">Project Types</label>
+    @foreach(\App\ProjectType::all() as $projectType)
+        <div class="checkbox">
+            <label>
+                {!! Form::checkbox('project_type['.$projectType->id.']', null, null) !!}
+                {!! $projectType->project_type !!}
+            </label>
+        </div>
+    @endforeach
     <span class="help-block">{{$errors->first('type', ':message')}}</span>
+
 </div>
 
 <div class="form-group {{$errors->first('country') ? 'has-error' : ''}}">

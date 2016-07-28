@@ -31,6 +31,7 @@ Route::group(['prefix'=>'control-panel'], function(){
 
     Route::resource('/general-contents', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');
+    Route::resource('/project-types', 'ProjectTypesController');
     Route::resource('/news', 'NewsController');
     Route::resource('/slider-images', 'SliderImagesController');
 });

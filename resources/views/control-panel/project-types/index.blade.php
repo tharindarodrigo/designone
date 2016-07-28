@@ -17,18 +17,14 @@
 @endsection
 
 @section('title')
-    Projects
-@endsection
-
-@section('sub-title')
-    Edit
+    Project Types
 @endsection
 
 @section('sub-title')
 
 @endsection
 
-@section('projects')
+@section('project-types')
     active
 @endsection
 
@@ -38,12 +34,12 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Create Project</h3>
+                    <h3 class="box-title">Create Project Type</h3>
                 </div>
                 <div class="box-body">
-                    {!! Form::open(['route'=> ['control-panel.projects.store'], 'files'=>'true']) !!}
+                    {!! Form::open(['route'=> ['control-panel.project-types.store']]) !!}
 
-                    @include('control-panel.projects._partials.form')
+                    @include('control-panel.project-types._partials.form')
 
                     <div class="form-group">
                         <div class="btn-group">
@@ -57,10 +53,10 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Projects List</h3>
+                    <h3 class="box-title">Project Type List</h3>
                 </div>
                 <div class="box-body">
-                    @include('control-panel.projects._partials.list')
+                    @include('control-panel.project-types._partials.list')
                 </div>
             </div>
         </div>
