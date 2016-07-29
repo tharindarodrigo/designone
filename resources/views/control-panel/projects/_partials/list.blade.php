@@ -15,9 +15,15 @@
             <tr>
                 <td>{!! $project->id !!}</td>
                 <td>{!! $project->year !!}</td>
-                <td>{!! $project->type !!}</td>
+                <td align="left">
+
+                    @foreach($project->projectTypes as $projectType)
+                        {!! $projectType->project_type !!}<br>
+                    @endforeach
+                </td>
                 <td>{!! $project->country !!}</td>
-                <td><img width="100px" src="{!! asset('control-panel/images/projects/'.$project->id.'.jpg') !!}" alt=""></td>
+                <td><img width="100px" src="{!! asset('control-panel/images/projects/'.$project->id.'.jpg') !!}" alt="">
+                </td>
                 <td>
                     <div class="btn-group">
                         {!! Form::open(['route'=>['control-panel.projects.destroy', $project->id], 'method'=>'delete']) !!}

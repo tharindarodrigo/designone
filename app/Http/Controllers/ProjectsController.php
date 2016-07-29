@@ -7,27 +7,24 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 
 class ProjectsController extends Controller
 {
-//private $_model;
-//
-//    public function __construct()
-//    {
-//        $this->_model = new Project();
-//    }
+
 
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::with('projectTypes')->get();
         return view('control-panel.projects.index', compact('projects'));
     }
 
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), Project::$rules);
 
         if ($validator->fails()) {
@@ -39,16 +36,16 @@ class ProjectsController extends Controller
         $project = new Project();
         $project->country = $request->get('country');
         $project->year = $request->get('year');
-        $project->type = $request->get('type');
-
-//        dd(Input::file('project_photo'));
 
         if ($project->save()) {
+            $project->project_type = $request->get('project_type');
+
+            $project->projectTypes()->attach($project->project_type);
+
             if ($image = Input::file('project_photo')) {
                 Image::make($image)
                     ->encode('jpg')
                     ->save('control-panel/images/projects/' . $project->id . '.jpg');
-
             }
         }
 
@@ -60,7 +57,12 @@ class ProjectsController extends Controller
     {
         $projects = Project::all();
         $project = Project::find($id);
-        return view('control-panel.projects.edit', compact('projects', 'project'));
+        $checkedProjectTypes = [];
+        foreach ($project->ProjectTypes as $projectType) {
+            $checkedProjectTypes[] = $projectType->id;
+        }
+
+        return view('control-panel.projects.edit', compact('projects', 'project','checkedProjectTypes'));
     }
 
     public function update(Request $request, $id)
@@ -77,9 +79,10 @@ class ProjectsController extends Controller
         $project = Project::find($id);
         $project->country = $request->get('country');
         $project->year = $request->get('year');
-        $project->type = $request->get('type');
 
         if ($project->update()) {
+
+            $project->projectTypes()->sync($request->get('project_type'));
 
             if ($image = Input::file('project_photo')) {
                 Image::make($image)
@@ -105,8 +108,7 @@ class ProjectsController extends Controller
 
         if ($project->delete()) {
             if (file_exists(public_path() . '/control-panel/images/projects/' . $id . '.jpg')) {
-//                dd('asdsd');
-                unlink('control-panel/images/slider/' . $id . '.jpg');
+                File::delete('control-panel/images/slider/' . $id . '.jpg');
             }
 
             $request->session()->flash('global', "Record deleted successfully");
