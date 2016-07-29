@@ -9,7 +9,8 @@
     @foreach(\App\ProjectType::all() as $projectType)
         <div class="checkbox">
             <label>
-                {!! Form::checkbox('project_type['.$projectType->id.']', null, null) !!}
+                {!! Form::checkbox('project_type[]', $projectType->id,
+                in_array($projectType->id, empty($project) ? array() : $checkedProjectTypes)) !!}
                 {!! $projectType->project_type !!}
             </label>
         </div>
