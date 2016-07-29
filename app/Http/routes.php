@@ -25,12 +25,13 @@ Route::get('/projects', function () {
     $angularList = [];
     foreach ($projects as $project) {
         $projectTypeClasses = [];
+
+        //Append
         foreach ($project->projectTypes as $projectType) {
             $projectTypeClasses[] = snake_case($projectType->project_type);
         }
 
         $projectTypeClasses = implode(" ", $projectTypeClasses);
-
 
         $angularList[] = [
             'headingMain' => $project->project_name ? $project->project_name: 'Heading'.$project->id,
@@ -41,7 +42,7 @@ Route::get('/projects', function () {
 
     }
 
-    return $angularList;
+    return json_encode($angularList);
 });
 
 Route::group(['prefix' => 'control-panel'], function () {
