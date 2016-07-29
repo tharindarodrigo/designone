@@ -42,7 +42,7 @@ Route::get('/projects', function () {
 
     }
 
-    return json_encode($angularList);
+    return ["projects"=>$angularList];
 });
 
 Route::group(['prefix' => 'control-panel'], function () {

@@ -27,13 +27,13 @@
 </head>
 <body>
 
-<!-- Site preloader -->
+<!-- Site pre-loader -->
 <section id="preloader">
     <div class="site-spinner"></div>
 </section>
-<!-- End Site preloader -->
+<!-- End Site pre-loader -->
 
-<!-- Page Wraper -->
+<!-- Page Wrapper -->
 <div id="page-wraper">
     <div class="wrapper">
         <div id="header" class="header">
