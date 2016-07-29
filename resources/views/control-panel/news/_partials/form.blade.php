@@ -5,7 +5,7 @@
 
 <div class="form-group">
     <label for="type">Date</label>
-    {!! Form::text('date', null, ['class'=>'form-control']) !!}
+    {!! Form::date('date', null, ['class'=>'form-control', 'type'=>'date']) !!}
 </div>
 
 <div class="form-group">
