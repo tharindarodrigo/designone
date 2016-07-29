@@ -17,12 +17,22 @@
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>
 
+    <!-- angular stuffs -->
+    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css" />
+
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
+
+
+
+
+
+
+
 
 </head>
 <body>
@@ -222,57 +232,61 @@
 
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="section-padding-t gray-bg">
+        <section id="portfolio" class="section-padding-t gray-bg" ng-app="angular-isotope-demo" ng-controller="designOneCtrl" >
             <div class="container text-center">
                 <h2>Our <span class="text-light">Portfolio</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
-                    <ul class="portfolio-filter categories-filter">
-                        <li><a class="categories active" data-filter="*">All</a></li>
-                        <li><a class="categories" data-filter=".branding">Branding</a></li>
-                        <li><a class="categories" data-filter=".creative">Creative</a></li>
-                        <li><a class="categories" data-filter=".photography">Photography</a></li>
-                        <li><a class="categories" data-filter=".coffee">coffee</a></li>
-                    </ul>
 
+                    <div class="col-md-4">
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div style="color:black" class="btn-group" opt-kind ok-key="filter" >
+
+                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;" class='btn categories btn-default active' ok-sel="*">Show All</button>
+                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".branding">branding</button>
+                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".creative">creative</button>
+                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".transport">transport</button>
+                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".residence ">residence </button>
+
+                        </div>
+
+
+
+                    </div>
                 </div>
-                <div class="portfolio-grid-fit row gallery-popup">
+                <!-- ISOTOPECONTAINER -->
+                <div class="row gallery-popup ng-cloak">
 
+                    <div id="isotopeContainer" isotope-container ng-cloak class="ng-cloak">
+                        <div ng-repeat="x in myData" isotope-item class="kindling @{{x.category}}" >
+                            <div class="portfolio-box" style="width:400px;height:200px;margin:5px;">
+                                <a class="portfolio-image-wrap">
+                                    <img src="@{{x.thumb_image}}" alt="" /></a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-tb" >
+                                        <div class="portfolio-caption-tb-cell" >
+                                            <h5>@{{x.headingMain}}</h5>
 
-                    @if(!empty($portfolio))
-                    @foreach($portfolio as $portfolioItem)
-                            <!------->
-                    <div class="portfolio-item branding photography coffee">
-                        <div class="portfolio-box">
-                            <a class="portfolio-image-wrap">
-                                <img src="{!! asset('img/portfolio/thumb/'.$portfolioItem->thumbImage.'.jpg') !!}"
-                                     alt=""/></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-tb">
-                                    <div class="portfolio-caption-tb-cell">
-                                        <h5><!--Digital Camera mockup-->{!! $portfolioItem->title !!}</h5>
-                                        <p>
-                                            <!--Mockup - Photography - Graphic - Branding-->{!! $portfolioItem->description !!}</p>
-                                        <ul class="portfolio-btn-wraper">
-                                            <li>
-                                                <a class="gallery-popup-link btn btn-color"
-                                                   href="{!! asset("img/portfolio/large/".$portfolioItem->fullImage.".jpg") !!}"
-                                                   title="Portfolio Image 01"><i
-                                                            class="fa fa-search"></i></a>
-                                            </li>
-                                        </ul>
+                                            <ul class="portfolio-btn-wraper">
+                                                <li>
+                                                    <a class="gallery-popup-link btn btn-color" href="@{{x.large_image}}" title="@{{x.short_describe}}"><i class="fa fa-search"></i></a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    @endforeach
-                    @endif
 
-
-
-                </div>
+                </div>  <!-- isotop container End  -->
             </div>
         </section>
         <!-- End Portfolio Section -->
@@ -502,6 +516,37 @@
 {{--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>--}}
 {{--<script src="js/map.js') !!}" type="text/javascript"></script>--}}
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
+
+<!-- angular stuffs -->
+<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>
+<script src="{!! asset('scripts/vendor/jquery.isotope.js') !!}"></script>
+<script src="{!! asset('scripts/angular-isotope.js') !!}"></script>
+<script src="{!! asset('http://yandex.st/highlightjs/8.0/highlight.min.js') !!}"></script>
+<script src="{!! asset('http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js') !!}"></script>
+
+<script>
+
+    var app=angular.module("angular-isotope-demo",['iso.directives', 'hljs']);
+
+
+    app.controller("designOneCtrl",function($scope,$http){
+
+
+        $http.get("/projects").then(function (response) {
+
+
+            $scope.myData = response.data.projects;
+
+
+
+        }, function(response){
+
+            $scope.resp="File not found !!! ";
+
+        });
+
+    });
+</script>
 
 </body>
 </html>

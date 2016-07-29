@@ -35,6 +35,7 @@ Route::get('/projects', function () {
 
         $angularList[] = [
             'headingMain' => $project->project_name ? $project->project_name: 'Heading'.$project->id,
+            'short_describe' => 'Short project description',
             'thumb_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
             'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
             'category' => $projectTypeClasses
