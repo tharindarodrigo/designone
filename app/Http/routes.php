@@ -59,7 +59,8 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/news', 'NewsController');
     Route::resource('/slider-images', 'SliderImagesController');
 });
-//
+
+
 //Route::auth();
 //
 //Route::get('/home', 'HomeController@index');
