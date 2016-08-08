@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\ProjectType;
+use Illuminate\Contracts\Encryption\EncryptException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,7 +33,7 @@ class ProjectTypesController extends Controller
         $projectType->project_type = $request->get('project_type');
 
         if ($projectType->save()) {
-            $request->session()->flash('gobal-success', 'Successfully Created record');
+            $request->session()->flash('global-success', 'Successfully Created record');
         }
 
         return $this->index();
@@ -59,7 +61,7 @@ class ProjectTypesController extends Controller
         $projectType->project_type = $request->get('project_type');
 
         if ($projectType->save()) {
-            $request->session()->flash('global-success', 'Successfully Created record');
+            $request->session()->flash('global-success', 'Successfully Updated record');
         }
 
         return $this->index();
@@ -67,13 +69,26 @@ class ProjectTypesController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $projectType = ProjectType::findOrFail($id);
-        if ($projectType->delete()) {
-            $request->session()->flash('global-success', 'Record Deleted Successfully');
-        } else {
-            $request->session()->flash('global-danger', 'You cannot Delete this Record');
+
+
+        try {
+            $projectType = ProjectType::with('projects')->findOrFail($id);
+            if ($projectType->projects()->count()) {
+                $request->session()->flash('global-danger', "There are Projects added to This category");
+                return redirect()->back();
+            }
+        } catch (ModelNotFoundException $e) {
+            $request->session()->flash('global-danger', $e);
+            return redirect()->back();
         }
 
-        return $this->index();
+        if ($projectType->delete()) {
+            $request->session()->flash('global-success', 'Record Deleted Successfully');
+
+        } else {
+            $request->session()->flash('global-warning', 'Problem Deleting Record');
+        }
+
+        return redirect()->route('control-panel.project-types.index');
     }
 }

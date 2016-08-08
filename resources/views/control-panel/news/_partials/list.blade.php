@@ -9,20 +9,18 @@
     </tr>
     </thead>
     <tbody>
-    @if(!empty($newsItems))
-        @foreach($newsItems as $newsItem)
+    @if(!empty($news))
+        @foreach($news as $newsBlock)
             <tr>
-                <td>{!! $newsItem->id !!}</td>
-                <td>{!! $newsItem->date !!}</td>
-                <td>{!! $newsItem->title !!}</td>
-                <td>{!! $newsItem->news !!}</td>
-                <td><img width="75px" src="{!! asset('images/projects/'.$newsItem->id.'.jpg') !!}" alt=""></td>
-                <td>{!! $newsItem->country !!}</td>
+                <td>{!! $newsBlock->id !!}</td>
+                <td>{!! $newsBlock->date !!}</td>
+                <td>{!! $newsBlock->title !!}</td>
+                <td>{!! $newsBlock->news !!}</td>
                 <td>
                     <div class="btn-group">
-                        {!! Form::open(['route'=>['control-panel.projects.destroy', $newsItem->id], 'method'=>'delete']) !!}
+                        {!! Form::open(['route'=>['control-panel.news.destroy', $newsBlock->id], 'method'=>'delete']) !!}
                         <a class="btn btn-sm btn-primary"
-                           href="{!! route('control-panel.projects.edit', $newsItem->id) !!}">
+                           href="{!! route('control-panel.news.edit', $newsBlock->id) !!}">
                             <span class="glyphicon glyphicon-edit"></span>
                         </a>
                         <button class="btn btn-sm btn-danger" type="submit">

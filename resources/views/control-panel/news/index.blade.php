@@ -17,7 +17,7 @@
 @endsection
 
 @section('title')
-    Projects
+    News
 @endsection
 
 @section('sub-title')
@@ -28,7 +28,7 @@
 
 @endsection
 
-@section('projects')
+@section('news')
     active
 @endsection
 

@@ -7,11 +7,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Validator;
-use Intervention\Image\Facades\Image;
 
-class SliderImagesController extends Controller
+class ClientsController extends Controller
 {
     public function index()
     {
@@ -103,7 +100,6 @@ class SliderImagesController extends Controller
 
             $request->session()->flash('global-success', "Record deleted successfully");
         }
-
         return $this->index();
     }
 }

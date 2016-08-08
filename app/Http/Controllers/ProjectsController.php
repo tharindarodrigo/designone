@@ -111,8 +111,8 @@ class ProjectsController extends Controller
                 File::delete('control-panel/images/slider/' . $id . '.jpg');
             }
 
-            $request->session()->flash('global', "Record deleted successfully");
+            $request->session()->flash('global-success', "Record deleted successfully");
         }
-        return redirect()->index();
+        return redirect()->route('control-panel.projects.index');
     }
 }
