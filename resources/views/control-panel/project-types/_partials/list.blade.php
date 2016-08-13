@@ -15,7 +15,7 @@
                     <td>{!! $projectType->project_type !!}</td>
                     <td>
                         <div class="btn-group">
-                            {!! Form::open(['route'=>['control-panel.projects.destroy', $projectType->id], 'method'=>'delete']) !!}
+                            {!! Form::open(['route'=>['control-panel.project-types.destroy', $projectType->id], 'method'=>'delete']) !!}
                             <a class="btn btn-sm btn-primary"
                                href="{!! route('control-panel.project-types.edit', $projectType->id) !!}">
                                 <span class="glyphicon glyphicon-edit"></span>

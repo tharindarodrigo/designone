@@ -5,18 +5,14 @@
 @endsection
 
 @section('title')
-    Projects
+    News
 @endsection
 
 @section('sub-title')
-    test sub title
+    Edit
 @endsection
 
-@section('sub-title')
-
-@endsection
-
-@section('projects')
+@section('news')
     active
 @endsection
 
@@ -29,14 +25,14 @@
                     <h3 class="box-title">General Content</h3>
                 </div>
                 <div class="box-body">
-                    {!! Form::model($newsItem, ['route'=> ['control-panel.projects.update', $newsItem->id], 'method'=>'patch', 'files'=>'true']) !!}
+                    {!! Form::model($newsItem, ['route'=> ['control-panel.news.update', $newsItem->id], 'method'=>'patch', 'files'=>'true']) !!}
 
-                    @include('control-panel.projects._partials.form')
+                    @include('control-panel.news._partials.form')
 
                     <div class="form-group">
                         <div class="btn-group">
                             <button class="btn btn-primary">Update</button>
-                            <a class="btn btn-warning" href="{!! route('control-panel.projects.index') !!}">Cancel</a>
+                            <a class="btn btn-warning" href="{!! route('control-panel.news.index') !!}">Cancel</a>
                         </div>
                     </div>
                     {!! Form::close() !!}
@@ -49,7 +45,7 @@
                     <h3 class="box-title">List</h3>
                 </div>
                 <div class="box-body">
-                    @include('control-panel.projects._partials.list')
+                    @include('control-panel.news._partials.list')
                 </div>
             </div>
         </div>

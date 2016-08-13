@@ -14,8 +14,8 @@ class CreateProjectProjectTypeTable extends Migration
     {
         Schema::create('project_project_type', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
-            $table->integer('project_type_id')->unsigned();
+            $table->integer('project_id')->unsigned()->index();
+            $table->integer('project_type_id')->unsigned()->index();
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('restrict');
