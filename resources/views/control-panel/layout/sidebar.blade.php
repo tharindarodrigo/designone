@@ -37,7 +37,7 @@
                     <i class="fa fa-th"></i> <span>Project Types</span>
                 </a>
             </li>
-            <li class="@yield('newss')">
+            <li class="@yield('news')">
                 <a href="{!! url('control-panel/news') !!}">
                     <i class="fa fa-th"></i> <span>News</span>
                 </a>

@@ -108,7 +108,7 @@ class ProjectsController extends Controller
 
         if ($project->delete()) {
             if (file_exists(public_path() . '/control-panel/images/projects/' . $id . '.jpg')) {
-                File::delete('control-panel/images/slider/' . $id . '.jpg');
+                File::delete('control-panel/images/projects/' . $id . '.jpg');
             }
 
             $request->session()->flash('global-success', "Record deleted successfully");

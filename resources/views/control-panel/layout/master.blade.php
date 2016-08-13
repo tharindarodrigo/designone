@@ -121,6 +121,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{!! asset('control-panel/dist/js/demo.js') !!}"></script>
 
+<script src="{!! asset('control-panel/dist/js/confirm.js') !!}"></script>
+
 @yield('scripts')
 
 </body>

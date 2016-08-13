@@ -70,13 +70,14 @@ class ProjectTypesController extends Controller
     public function destroy(Request $request, $id)
     {
 
-
         try {
+
             $projectType = ProjectType::with('projects')->findOrFail($id);
             if ($projectType->projects()->count()) {
                 $request->session()->flash('global-danger', "There are Projects added to This category");
                 return redirect()->back();
             }
+
         } catch (ModelNotFoundException $e) {
             $request->session()->flash('global-danger', $e);
             return redirect()->back();
@@ -84,7 +85,6 @@ class ProjectTypesController extends Controller
 
         if ($projectType->delete()) {
             $request->session()->flash('global-success', 'Record Deleted Successfully');
-
         } else {
             $request->session()->flash('global-warning', 'Problem Deleting Record');
         }
