@@ -75,24 +75,6 @@
                                          data-bgfit="cover"
                                          data-bgposition="top center" data-bgrepeat="no-repeat">
 
-                                    <!-- LAYER NR. 1 -->
-                                    <div class="tp-caption lfb ltt tp-resizeme"
-                                         data-x="center" data-hoffset="0"
-                                         data-y="center" data-voffset="-125"
-                                         data-speed="600"
-                                         data-start="500"
-                                         data-easing="Power4.easeOut"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-elementdelay="0.01"
-                                         data-endelementdelay="0.1"
-                                         data-endspeed="500"
-                                         data-endeasing="Power4.easeIn"
-                                         style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        <img src="img/t-logo1.png" alt="logo"/>
-
-                                    </div>
-
                                     <!-- LAYER NR. 2 -->
                                     <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
                                         data-x="center" data-hoffset="0"
