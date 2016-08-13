@@ -12,13 +12,10 @@
 */
 
 Route::get('/', function () {
-//    $sliderImages = \App\GeneralContent::all();
     $generalContent = App\GeneralContent::find(1);
     $sliderImages = \App\SliderImage::all();
-    $projectTypes=\App\ProjectType::all();
 
-//    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent','projectTypes'));
+    return view('index', compact('sliderImages', 'generalContent'));
 });
 
 Route::get('/projects', function () {

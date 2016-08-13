@@ -34,6 +34,7 @@ class ProjectsController extends Controller
         }
 
         $project = new Project();
+        $project->name = $request->get('name');
         $project->country = $request->get('country');
         $project->year = $request->get('year');
 
@@ -77,6 +78,7 @@ class ProjectsController extends Controller
         }
 
         $project = Project::find($id);
+        $project->name = $request->get('name');
         $project->country = $request->get('country');
         $project->year = $request->get('year');
 
