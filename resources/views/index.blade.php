@@ -1,43 +1,31 @@
-﻿﻿<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>DesignOne</title>
-    <meta name="description" content=""/>
+    <meta name="description" content="design, architecture, creative"/>
     <meta name="keywords"
-          content="creative, portfolio, template, theme, designed, html5, css3, responsive, mazel, onepage"/>
-    <meta name="author" content="nileforest">
+          content="architecture, design, buildings, creative, projects, houses, restaurant, Sri Lanka"/>
+    <meta name="author" content="Brightron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-
     <!-- Favicone Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
+    {{--<link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
-    <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>
-
+    {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     <!-- angular stuffs -->
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
-
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
-
-
 </head>
-<body>
-
-<!-- Site pre-loader -->
-<section id="preloader">
+<body><section id="preloader">
     <div class="site-spinner"></div>
 </section>
-<!-- End Site pre-loader -->
-
-<!-- Page Wrapper -->
 <div id="page-wraper">
     <div class="wrapper">
         <div id="header" class="header">
