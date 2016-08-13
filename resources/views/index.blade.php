@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>
 
     <!-- angular stuffs -->
-    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
 
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
@@ -26,12 +26,6 @@
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
-
-
-
-
-
-
 
 
 </head>
@@ -88,7 +82,8 @@
                             @foreach($sliderImages as $sliderImage)
                                 <li class="" data-transition="fade" data-slotamount="5" data-masterspeed="700">
                                     <!-- MAIN IMAGE -->
-                                    <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}" alt="SliderImages"
+                                    <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
+                                         alt="SliderImages"
                                          data-bgfit="cover"
                                          data-bgposition="top center" data-bgrepeat="no-repeat">
 
@@ -141,11 +136,10 @@
                                        data-endspeed="500"
                                        data-endeasing="Power4.easeIn"
                                        style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-                                       {!! $sliderImage->description !!}
+                                        {!! $sliderImage->description !!}
                                         <br/>
 
                                     </p>
-
 
 
                                 </li>
@@ -192,7 +186,6 @@
         End Accordian -->
 
 
-
         <!-- NewsFeed Section-->
 
         <section id="testimonials" class="section-padding bg-image overlay-dark dark-bg text-center"
@@ -226,13 +219,13 @@
         Removed!!!
         End Work Process Section -->
 
-      <!--  <hr/> -->
+        <!--  <hr/> -->
         <hr/>
 
 
-
         <!-- Portfolio Section -->
-        <section id="portfolio" class="section-padding-t gray-bg" ng-app="angular-isotope-demo" ng-controller="designOneCtrl" >
+        <section id="portfolio" class="section-padding-t gray-bg" ng-app="angular-isotope-demo"
+                 ng-controller="designOneCtrl">
             <div class="container text-center">
                 <h2>Our <span class="text-light">Portfolio</span></h2>
             </div>
@@ -245,16 +238,20 @@
 
                     <div class="col-md-6">
 
-                        <div style="color:black" class="btn-group" opt-kind ok-key="filter" >
+                        <div style="color:black" class="btn-group" opt-kind ok-key="filter">
+                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"
+                                    class='btn categories btn-default active' ok-sel="*">Show All
+                            </button>
+                            @if(!empty($projectTypes))
+                                @foreach($projectTypes as $projectType)
 
-                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;" class='btn categories btn-default active' ok-sel="*">Show All</button>
-                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".branding">branding</button>
-                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".creative">creative</button>
-                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".transport">transport</button>
-                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"  class='btn categories btn-default' ok-sel=".residence ">residence </button>
+                                    <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"
+                                            class='btn categories btn-default'
+                                            ok-sel=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</button>
 
+                                @endforeach
+                            @endif
                         </div>
-
 
 
                     </div>
@@ -263,18 +260,20 @@
                 <div class="row gallery-popup ng-cloak">
 
                     <div id="isotopeContainer" isotope-container ng-cloak class="ng-cloak">
-                        <div ng-repeat="x in myData" isotope-item class="kindling @{{x.category}}" >
+                        <div ng-repeat="x in myData" isotope-item class="kindling @{{x.category}}">
                             <div class="portfolio-box" style="width:400px;height:200px;margin:5px;">
                                 <a class="portfolio-image-wrap">
-                                    <img src="@{{x.thumb_image}}" alt="" /></a>
+                                    <img src="@{{x.thumb_image}}" alt=""/></a>
                                 <div class="portfolio-caption">
-                                    <div class="portfolio-caption-tb" >
-                                        <div class="portfolio-caption-tb-cell" >
+                                    <div class="portfolio-caption-tb">
+                                        <div class="portfolio-caption-tb-cell">
                                             <h5>@{{x.headingMain}}</h5>
 
                                             <ul class="portfolio-btn-wraper">
                                                 <li>
-                                                    <a class="gallery-popup-link btn btn-color" href="@{{x.large_image}}" title="@{{x.short_describe}}"><i class="fa fa-search"></i></a>
+                                                    <a class="gallery-popup-link btn btn-color"
+                                                       href="@{{x.large_image}}" title="@{{x.short_describe}}"><i
+                                                                class="fa fa-search"></i></a>
                                                 </li>
 
                                             </ul>
@@ -336,7 +335,6 @@
             </div>
         </section>
         <!-- End Counter Section -->
-
 
 
         <!-- Client Logo -->
@@ -526,10 +524,10 @@
 
 <script>
 
-    var app=angular.module("angular-isotope-demo",['iso.directives', 'hljs']);
+    var app = angular.module("angular-isotope-demo", ['iso.directives', 'hljs']);
 
 
-    app.controller("designOneCtrl",function($scope,$http){
+    app.controller("designOneCtrl", function ($scope, $http) {
 
 
         $http.get("/projects").then(function (response) {
@@ -538,10 +536,9 @@
             $scope.myData = response.data.projects;
 
 
+        }, function (response) {
 
-        }, function(response){
-
-            $scope.resp="File not found !!! ";
+            $scope.resp = "File not found !!! ";
 
         });
 
