@@ -13,8 +13,8 @@
     <!-- Favicone Icon -->
     {{--<link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
-    {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
-    <!-- angular stuffs -->
+{{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
+<!-- angular stuffs -->
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
@@ -23,7 +23,8 @@
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
 </head>
-<body><section id="preloader">
+<body>
+<section id="preloader">
     <div class="site-spinner"></div>
 </section>
 <div id="page-wraper">
@@ -49,9 +50,10 @@
                     <ul class="nav-menu-inner">
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        {{--<li><a href="#latest-work">Work</a></li>--}}
-                        <li><a href="#client">Client</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+                        <li><a href="#client">Clients</a></li>
                         <li><a href="#contact-us">Contact</a></li>
+
 
                     </ul>
                 </div>
@@ -197,7 +199,7 @@
         <section id="portfolio" class="section-padding-t gray-bg" ng-app="angular-isotope-demo"
                  ng-controller="designOneCtrl">
             <div class="container text-center">
-                <h2>Our <span class="text-light">Portfolio</span></h2>
+                <h2>Our <span class="text-light">Projects</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
