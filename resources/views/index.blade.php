@@ -106,7 +106,7 @@
                                         data-endelementdelay="0.1"
                                         data-endspeed="500"
                                         data-endeasing="Power4.easeIn"
-                                        style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        style="z-index: 3   ;color: #FFFFFF; max-width: auto; max-height: auto; white-space: nowrap;">
                                         {!! $sliderImage->title !!}
                                     </h2>
 
@@ -123,7 +123,7 @@
                                        data-endelementdelay="0.1"
                                        data-endspeed="500"
                                        data-endeasing="Power4.easeIn"
-                                       style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                       style="z-index: 3; color: #eff5f5 ;max-width: auto; max-height: auto; white-space: nowrap;">
                                         {!! $sliderImage->description !!}
                                         <br/>
 
