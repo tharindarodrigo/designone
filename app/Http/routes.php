@@ -16,9 +16,10 @@ Route::get('/', function () {
     $generalContent = App\GeneralContent::find(1);
     $sliderImages = \App\SliderImage::all();
     $projectTypes=\App\ProjectType::all();
+    $news = \App\News::all();
 
 //    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent','projectTypes'));
+    return view('index', compact('sliderImages', 'generalContent','projectTypes', 'news'));
 });
 
 Route::get('/projects', function () {

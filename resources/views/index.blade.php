@@ -31,11 +31,9 @@
 </head>
 <body>
 
-<!-- Site pre-loader -->
 <section id="preloader">
     <div class="site-spinner"></div>
 </section>
-<!-- End Site pre-loader -->
 
 <!-- Page Wrapper -->
 <div id="page-wraper">
@@ -358,7 +356,6 @@
 
                     @endforeach
                 @endif
-
 
             </div>
         </section>
