@@ -1,41 +1,32 @@
 ﻿﻿<!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>DesignOne</title>
-    <meta name="description" content=""/>
+    <meta name="description" content="design, architecture, creative"/>
     <meta name="keywords"
-          content="creative, portfolio, template, theme, designed, html5, css3, responsive, mazel, onepage"/>
-    <meta name="author" content="nileforest">
+          content="architecture, design, buildings, creative, projects, houses, restaurant, Sri Lanka"/>
+    <meta name="author" content="Brightron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-
     <!-- Favicone Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
+    {{--<link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
-    <link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>
-
-    <!-- angular stuffs -->
+{{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
+<!-- angular stuffs -->
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
-
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
-
-
 </head>
 <body>
-
 <section id="preloader">
     <div class="site-spinner"></div>
 </section>
-
-<!-- Page Wrapper -->
 <div id="page-wraper">
     <div class="wrapper">
         <div id="header" class="header">
@@ -59,9 +50,10 @@
                     <ul class="nav-menu-inner">
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        {{--<li><a href="#latest-work">Work</a></li>--}}
-                        <li><a href="#client">Client</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+                        <li><a href="#client">Clients</a></li>
                         <li><a href="#contact-us">Contact</a></li>
+
 
                     </ul>
                 </div>
@@ -85,24 +77,6 @@
                                          data-bgfit="cover"
                                          data-bgposition="top center" data-bgrepeat="no-repeat">
 
-                                    <!-- LAYER NR. 1 -->
-                                    <div class="tp-caption lfb ltt tp-resizeme"
-                                         data-x="center" data-hoffset="0"
-                                         data-y="center" data-voffset="-125"
-                                         data-speed="600"
-                                         data-start="500"
-                                         data-easing="Power4.easeOut"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-elementdelay="0.01"
-                                         data-endelementdelay="0.1"
-                                         data-endspeed="500"
-                                         data-endeasing="Power4.easeIn"
-                                         style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        <img src="img/t-logo1.png" alt="logo"/>
-
-                                    </div>
-
                                     <!-- LAYER NR. 2 -->
                                     <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
                                         data-x="center" data-hoffset="0"
@@ -116,7 +90,7 @@
                                         data-endelementdelay="0.1"
                                         data-endspeed="500"
                                         data-endeasing="Power4.easeIn"
-                                        style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        style="z-index: 3   ;color: #FFFFFF; max-width: auto; max-height: auto; white-space: nowrap;">
                                         {!! $sliderImage->title !!}
                                     </h2>
 
@@ -133,7 +107,7 @@
                                        data-endelementdelay="0.1"
                                        data-endspeed="500"
                                        data-endeasing="Power4.easeIn"
-                                       style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                                       style="z-index: 3; color: #eff5f5 ;max-width: auto; max-height: auto; white-space: nowrap;">
                                         {!! $sliderImage->description !!}
                                         <br/>
 
@@ -225,7 +199,7 @@
         <section id="portfolio" class="section-padding-t gray-bg" ng-app="angular-isotope-demo"
                  ng-controller="designOneCtrl">
             <div class="container text-center">
-                <h2>Our <span class="text-light">Portfolio</span></h2>
+                <h2>Our <span class="text-light">Projects</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
@@ -356,6 +330,7 @@
 
                     @endforeach
                 @endif
+
 
             </div>
         </section>
