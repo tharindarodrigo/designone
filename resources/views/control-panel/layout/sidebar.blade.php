@@ -43,6 +43,12 @@
                 </a>
             </li>
 
+            <li class="@yield('clients')">
+                <a href="{!! url('control-panel/clients') !!}">
+                    <i class="fa fa-th"></i> <span>Clients</span>
+                </a>
+            </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -60,6 +60,7 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/project-types', 'ProjectTypesController');
     Route::resource('/news', 'NewsController');
     Route::resource('/slider-images', 'SliderImagesController');
+    Route::resource('/clients', 'ClientsController');
 });
 
 

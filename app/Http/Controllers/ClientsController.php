@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\SliderImage;
+use App\Client;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
 
 class ClientsController extends Controller
 {
     public function index()
     {
-        $sliderImages = SliderImage::all();
-        return view('control-panel.slider-images.index', compact('sliderImages'));
+        $clients = Client::all();
+        return view('control-panel.clients.index', compact('clients'));
     }
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), SliderImage::$rules);
+        $validator = Validator::make($request->all(), Client::$rules);
 
         if ($validator->fails()) {
             return redirect()->back()
@@ -26,16 +29,14 @@ class ClientsController extends Controller
                 ->withInput();
         }
 
-        $sliderImage = new SliderImage();
-        $sliderImage->title = $request->get('title');
-        $sliderImage->description = $request->get('description');
-        $sliderImage->status = $request->has('status') ? $request->get('status') : 1 ;
+        $client = new Client();
+        $client->client = $request->get('client');
 
-        if ($sliderImage->save()) {
-            if ($image = Input::file('slider_image')) {
+        if ($client->save()) {
+            if ($image = Input::file('client_logo')) {
                 Image::make($image)
                     ->encode('jpg')
-                    ->save('control-panel/images/slider-images/' . $sliderImage->id . '.jpg');
+                    ->save('control-panel/images/clients/' . $client->id . '.jpg');
             }
 
             $request->session()->flash('global-success', "Record deleted successfully");
@@ -48,33 +49,32 @@ class ClientsController extends Controller
 
     public function edit($id)
     {
-        $sliderImages = SliderImage::all();
-        $sliderImage = SliderImage::find($id);
-        return view('control-panel.slider-images.edit', compact('sliderImage', 'sliderImages'));
+        $clients = Client::all();
+        $client = Client::find($id);
+        return view('control-panel.clients.edit', compact('client', 'clients'));
     }
 
     public function update(Request $request, $id)
     {
 
-        $validator = Validator::make($request->all(), SliderImage::$editRules);
+        $validator = Validator::make($request->all(), Client::$editRules);
 
         if ($validator->fails()) {
-            return redirect('control-panel.slider-images.edit')
+            return redirect('control-panel.clients.edit')
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        $sliderImage = SliderImage::find($id);
-        $sliderImage->title = $request->get('title');
-        $sliderImage->description = $request->get('description');
-        $sliderImage->status = $request->has('status') ? $request->get('status') : 1;
+        $client = Client::find($id);
+        $client->client = $request->get('client');
+        $client->status = $request->has('status') ? $request->get('status') : 1;
 
-        if ($sliderImage->update()) {
+        if ($client->update()) {
 
-            if ($image = Input::file('slider_image')) {
+            if ($image = Input::file('client')) {
                 Image::make($image)
                     ->encode('jpg')
-                    ->save('control-panel/images/slider-images/' . $id . '.jpg');
+                    ->save('control-panel/images/clients/' . $id . '.jpg');
             }
 
             return $this->index();
@@ -87,15 +87,15 @@ class ClientsController extends Controller
     public function destroy(Request $request, $id)
     {
         try {
-            $sliderImage = SliderImage::findOrFail($id);
+            $client = Client::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            $request->session()->flash('global', "The Record wasn't found");
+            $request->session()->flash('global-warning', "The Record wasn't found");
             return redirect()->back();
         }
 
-        if ($sliderImage->delete()) {
-            if (file_exists(public_path() . '/control-panel/images/slider-images/' . $id . '.jpg')) {
-                unlink('control-panel/images/slider-images/' . $id . '.jpg');
+        if ($client->delete()) {
+            if (file_exists(public_path() . '/control-panel/images/clients/' . $id . '.jpg')) {
+                unlink('control-panel/images/clients/' . $id . '.jpg');
             }
 
             $request->session()->flash('global-success', "Record deleted successfully");
