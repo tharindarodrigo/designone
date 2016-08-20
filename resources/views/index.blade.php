@@ -143,7 +143,7 @@
         <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
                  data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">
             <div class="container">
-
+                <h2>Hello</h2>
             </div>
         </section>
         <!-- End Statement1 Section -->
@@ -171,8 +171,8 @@
                                 <div class="testimonial text-center max-width-700">
                                     <div class="page-icon-sm">{!! $newsItem->title !!}</div>
                                     <p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and
-                                records and sat in front of the practising.-->{!! asset($newsItem->body) !!}</p>
-                                    <h6 class="quote-author"><!-- Jeff Dunham --> {!! asset("- ".$newsItem->date) !!}
+                                records and sat in front of the practising.-->{!! $newsItem->news !!}</p>
+                                    <h6 class="quote-author"><!-- Jeff Dunham --> {!! "- ".$newsItem->date !!}
                                     </h6>
                                 </div>
                             </div>
@@ -310,13 +310,14 @@
 
 
         <!-- Client Logo -->
+        @if(!empty($clients))
+
         <section id="client" class="section-padding">
             <div class="container text-center">
                 <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
             </div>
             <div class="container">
 
-                @if(!empty($clients))
                     @foreach($clients as $client)
 
                         <div class="owl-carousel client-carousel">
@@ -329,12 +330,13 @@
                         </div>
 
                     @endforeach
-                @endif
+
 
 
             </div>
         </section>
         <!-- End Client Logo -->
+        @endif
 
         <hr/>
 
