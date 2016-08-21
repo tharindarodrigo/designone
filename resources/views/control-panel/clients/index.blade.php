@@ -17,18 +17,18 @@
 @endsection
 
 @section('title')
-    Projects
-@endsection
-
-@section('sub-title')
-    Edit
+    Clients
 @endsection
 
 @section('sub-title')
 
 @endsection
 
-@section('projects')
+@section('sub-title')
+
+@endsection
+
+@section('clients')
     active
 @endsection
 
@@ -38,7 +38,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Create Project</h3>
+                    <h3 class="box-title">Create Client</h3>
                 </div>
                 <div class="box-body">
                     {!! Form::open(['route'=> ['control-panel.clients.store'], 'files'=>'true']) !!}
@@ -57,7 +57,7 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Projects List</h3>
+                    <h3 class="box-title">Client List</h3>
                 </div>
                 <div class="box-body">
                     @include('control-panel.clients._partials.list')

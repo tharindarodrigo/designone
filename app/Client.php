@@ -11,7 +11,7 @@ class Client extends Model
         'client_logo' => 'required'
     ];
 
-    public static $editrules = [
+    public static $editRules = [
         'client' => 'required'
     ];
 }

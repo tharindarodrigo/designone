@@ -1,5 +1,4 @@
-﻿﻿<!DOCTYPE html>
-<html lang="en">
+﻿<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>DesignOne</title>
@@ -11,10 +10,10 @@
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <!-- Favicone Icon -->
-    {{--<link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
+    {{--<link rel="shortcut icon" type="image/x-icon" hr    ef="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
-{{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
-<!-- angular stuffs -->
+    {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
+    <!-- angular stuffs -->
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
@@ -207,7 +206,6 @@
                     <div class="col-md-4">
                     </div>
 
-
                     <div class="col-md-6">
 
                         <div style="color:black" class="btn-group" opt-kind ok-key="filter">
@@ -312,11 +310,11 @@
         <!-- Client Logo -->
         @if(!empty($clients))
 
-        <section id="client" class="section-padding">
-            <div class="container text-center">
-                <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
-            </div>
-            <div class="container">
+            <section id="client" class="section-padding">
+                <div class="container text-center">
+                    <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
+                </div>
+                <div class="container">
 
                     @foreach($clients as $client)
 
@@ -332,10 +330,9 @@
                     @endforeach
 
 
-
-            </div>
-        </section>
-        <!-- End Client Logo -->
+                </div>
+            </section>
+            <!-- End Client Logo -->
         @endif
 
         <hr/>

@@ -47,6 +47,11 @@ class ProjectsController extends Controller
                 Image::make($image)
                     ->encode('jpg')
                     ->save('control-panel/images/projects/' . $project->id . '.jpg');
+
+                Image::make($image)
+                    ->encode('jpg')
+                    ->resize(320, 240)
+                    ->save('control-panel/images/projects/thumb/' . $project->id . '.jpg');
             }
         }
 
@@ -63,7 +68,7 @@ class ProjectsController extends Controller
             $checkedProjectTypes[] = $projectType->id;
         }
 
-        return view('control-panel.projects.edit', compact('projects', 'project','checkedProjectTypes'));
+        return view('control-panel.projects.edit', compact('projects', 'project', 'checkedProjectTypes'));
     }
 
     public function update(Request $request, $id)
@@ -90,13 +95,17 @@ class ProjectsController extends Controller
                 Image::make($image)
                     ->encode('jpg')
                     ->save('control-panel/images/projects/' . $project->id . '.jpg');
+                Image::make($image)
+                    ->resize(780, 508)
+                    ->encode('jpg')
+                    ->save('control-panel/images/projects/thumb/' . $project->id . '.jpg');
             }
 
             return $this->index();
 
         }
 
-        return redirect()->back();
+        return $this->index();
     }
 
     public function destroy(Request $request, $id)

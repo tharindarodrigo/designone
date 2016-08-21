@@ -37,6 +37,7 @@ class ClientsController extends Controller
                 Image::make($image)
                     ->encode('jpg')
                     ->save('control-panel/images/clients/' . $client->id . '.jpg');
+
             }
 
             $request->session()->flash('global-success', "Record deleted successfully");
@@ -67,7 +68,7 @@ class ClientsController extends Controller
 
         $client = Client::find($id);
         $client->client = $request->get('client');
-        $client->status = $request->has('status') ? $request->get('status') : 1;
+//        $client->status = $request->has('status') ? $request->get('status') : 1;
 
         if ($client->update()) {
 

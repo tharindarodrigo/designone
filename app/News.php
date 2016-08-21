@@ -10,7 +10,7 @@ class News extends Model
 
     public $fillable = ['title','date','news'];
 
-    protected $rules = [
+    public static $rules = [
       'title'=>'required',
       'date'=>'required',
       'news'=>'required'

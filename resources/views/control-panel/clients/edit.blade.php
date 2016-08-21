@@ -9,7 +9,7 @@
 @endsection
 
 @section('sub-title')
-
+    Edit
 @endsection
 
 @section('sub-title')
@@ -29,7 +29,7 @@
                     <h3 class="box-title">Edit Client</h3>
                 </div>
                 <div class="box-body">
-                    {!! Form::model($client, ['route'=> ['control-panel.clients.update', $project->id], 'method'=>'patch', 'files'=>'true']) !!}
+                    {!! Form::model($client, ['route'=> ['control-panel.clients.update', $client->id], 'method'=>'patch', 'files'=>'true']) !!}
 
                     @include('control-panel.clients._partials.form')
 

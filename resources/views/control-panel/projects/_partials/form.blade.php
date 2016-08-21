@@ -4,6 +4,13 @@
     <span class="help-block">{{$errors->first('year', ':message')}}</span>
 </div>
 
+<div class="form-group {{$errors->first('name') ? 'has-error' : ''}}">
+    <label for="year">Name</label>
+    {!! Form::text('name', null, ['class'=>'form-control']) !!}
+    <span class="help-block">{{$errors->first('name', ':message')}}</span>
+</div>
+
+
 <div class="form-group" {{$errors->first('project-type') ? 'has-error' : ''}}>
     <label for="type">Project Types</label>
     @foreach(\App\ProjectType::all() as $projectType)

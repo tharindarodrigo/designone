@@ -20,7 +20,7 @@
                     <div class="btn-group">
                         {!! Form::open(['route'=>['control-panel.clients.destroy', $client->id], 'method'=>'delete']) !!}
                         <a class="btn btn-sm btn-primary"
-                           href="{!! route('control-panel.projects.edit', $client->id) !!}">
+                           href="{!! route('control-panel.clients.edit', $client->id) !!}">
                             <span class="glyphicon glyphicon-edit"></span>
                         </a>
                         <button class="btn btn-sm btn-danger" type="submit">

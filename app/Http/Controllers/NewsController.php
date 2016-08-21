@@ -46,10 +46,10 @@ class NewsController extends Controller
         $newsItem = News::find($id);
         $newsItem->title = $request->get('title');
         $newsItem->date = $request->get('date');
-        $newsItem->sub_title = $request->get('news');
+        $newsItem->news = $request->get('news');
 
         if ($newsItem->update()) {
-            $request->seesion()->flash('global-success','Record Updated Successfully');
+            $request->session()->flash('global-success','Record Updated Successfully');
         }else {
             $request->session()->flash('global-danger', 'Record deleted successfully');
         }
