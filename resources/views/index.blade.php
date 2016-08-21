@@ -12,8 +12,8 @@
     <!-- Favicone Icon -->
     {{--<link rel="shortcut icon" type="image/x-icon" hr    ef="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
-    {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
-    <!-- angular stuffs -->
+{{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
+<!-- angular stuffs -->
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
@@ -203,10 +203,9 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-md-4">
-                    </div>
 
-                    <div class="col-md-6">
+
+                    <div class="col-md-10 col-md-offset-3">
 
                         <div style="color:black" class="btn-group" opt-kind ok-key="filter">
                             <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"
@@ -224,6 +223,7 @@
                         </div>
 
 
+
                     </div>
                 </div>
                 <!-- ISOTOPECONTAINER -->
@@ -231,13 +231,13 @@
 
                     <div id="isotopeContainer" isotope-container ng-cloak class="ng-cloak">
                         <div ng-repeat="x in myData" isotope-item class="kindling @{{x.category}}">
-                            <div class="portfolio-box" style="width:400px;height:200px;margin:5px;">
+                            <div class="portfolio-box" style="width:337px;height:250px;">
                                 <a class="portfolio-image-wrap">
                                     <img src="@{{x.thumb_image}}" alt=""/></a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-tb">
                                         <div class="portfolio-caption-tb-cell">
-                                            <h5>@{{x.headingMain}}</h5>
+                                            <h5>check @{{x.headingMain}}</h5>
 
                                             <ul class="portfolio-btn-wraper">
                                                 <li>
