@@ -18,9 +18,35 @@ Route::get('/', function () {
     $projectTypes=\App\ProjectType::all();
     $newsItems = \App\News::all();
 
+    $projects = \App\Project::with('projectTypes')->get();
+    $portfolio = [];
+    foreach ($projects as $project) {
+        $projectTypeClasses = [];
+
+        //Append
+        foreach ($project->projectTypes as $projectType) {
+            $projectTypeClasses[] = snake_case($projectType->project_type);
+        }
+
+        $projectTypeClasses = implode(" ", $projectTypeClasses);
+
+        $portfolio[] = [
+            'headingMain' => $project->name ? $project->name: 'Heading'.$project->id,
+            'short_describe' => 'Short project description',
+            'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',
+            'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
+            'categories' => $projectTypeClasses
+        ];
+
+    }
+
+
+
 //    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent','projectTypes', 'newsItems'));
+    return view('index', compact('sliderImages', 'generalContent','projectTypes', 'newsItems', 'portfolio', 'projects'));
 });
+
+Route::post('/send-mail', 'GeneralContentsController@sendMail');
 
 Route::get('/projects', function () {
     $projects = \App\Project::with('projectTypes')->get();
@@ -48,12 +74,12 @@ Route::get('/projects', function () {
     return ["projects"=>$angularList];
 });
 
+
 Route::group(['prefix' => 'control-panel'], function () {
 
     Route::get('/test', function () {
         return view('control-panel.test');
     });
-
 
     Route::resource('/general-contents', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');
@@ -61,6 +87,7 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/news', 'NewsController');
     Route::resource('/slider-images', 'SliderImagesController');
     Route::resource('/clients', 'ClientsController');
+
 });
 
 

@@ -49,6 +49,7 @@
                     <ul class="nav-menu-inner">
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#news">News</a></li>
                         <li><a href="#portfolio">Projects</a></li>
                         <li><a href="#client">Clients</a></li>
                         <li><a href="#contact-us">Contact</a></li>
@@ -139,27 +140,18 @@
         <!-- End About Section -->
 
         <!-- Statement1 Section -->
-        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">
-            <div class="container">
-                <h2>Hello</h2>
-            </div>
-        </section>
-        <!-- End Statement1 Section -->
-
-        <!-- Team Section
-        Removed !!!
-         End Team Section -->
-        <!--<hr/>-->
-
-        <!--Accordian
-         Removed !!!
-        End Accordian -->
+        {{--<section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
+                 {{--data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">--}}
+            {{--<div class="container">--}}
+                {{--<h2>Hello</h2>--}}
+            {{--</div>--}}
+        {{--</section>--}}
+        >
 
 
-        <!-- NewsFeed Section-->
+        {{--NewsFeed Section--}}
 
-        <section id="testimonials" class="section-padding bg-image overlay-dark dark-bg text-center"
+        <section id="news" class="section-padding bg-image overlay-dark dark-bg text-center"
                  data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/05.jpg') !!}">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
@@ -194,70 +186,67 @@
         <hr/>
 
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section-padding-t gray-bg" ng-app="angular-isotope-demo"
-                 ng-controller="designOneCtrl">
+        {{--Portfolio--}}
+
+        <section id="portfolio" class="section-padding-t gray-bg">
             <div class="container text-center">
-                <h2>Our <span class="text-light">Projects</span></h2>
+                <h2>Our <span class="text-light">Portfolio</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
+                    <ul class="portfolio-filter categories-filter">
+                        <li><a class="categories active" data-filter="*">All</a></li>
+                        @if(!empty($projectTypes))
+                            @foreach($projectTypes as $projectType)
+                                <li><a class="categories" data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a></li>
+                            @endforeach
+                        @endif
+                    </ul>
 
-                    <div class="col-md-4">
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <div style="color:black" class="btn-group" opt-kind ok-key="filter">
-                            <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"
-                                    class='btn categories btn-default active' ok-sel="*">Show All
-                            </button>
-                            @if(!empty($projectTypes))
-                                @foreach($projectTypes as $projectType)
-
-                                    <button type='button' style="boarder:black solid 1px;padding:5px;margin:5px;"
-                                            class='btn categories btn-default'
-                                            ok-sel=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</button>
-
-                                @endforeach
-                            @endif
-                        </div>
-
-
-                    </div>
                 </div>
-                <!-- ISOTOPECONTAINER -->
-                <div class="row gallery-popup ng-cloak">
-
-                    <div id="isotopeContainer" isotope-container ng-cloak class="ng-cloak">
-                        <div ng-repeat="x in myData" isotope-item class="kindling @{{x.category}}">
-                            <div class="portfolio-box" style="width:400px;height:200px;margin:5px;">
-                                <a class="portfolio-image-wrap">
-                                    <img src="@{{x.thumb_image}}" alt=""/></a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-tb">
-                                        <div class="portfolio-caption-tb-cell">
-                                            <h5>@{{x.headingMain}}</h5>
-
-                                            <ul class="portfolio-btn-wraper">
-                                                <li>
-                                                    <a class="gallery-popup-link btn btn-color"
-                                                       href="@{{x.large_image}}" title="@{{x.short_describe}}"><i
-                                                                class="fa fa-search"></i></a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
+                <div class="portfolio-grid-fit row gallery-popup">
+                    <!------->
+                    @foreach($portfolio as $item)
+                    <div class="portfolio-item {!! $item['categories'] !!}">
+                        <div class="portfolio-box">
+                            <a class="portfolio-image-wrap">
+                                <img src="{!! asset($item['thumb_image']) !!}" alt=""/></a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-tb">
+                                    <div class="portfolio-caption-tb-cell">
+                                        <h5>Digital Camera mockup</h5>
+                                        <p>Mockup - Photography - Graphic - Branding</p>
+                                        <ul class="portfolio-btn-wraper">
+                                            <li>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="{!! asset($item['large_image']) !!}" title="{!! $item['headingMain'] !!}"><i
+                                                            class="fa fa-search"></i></a>
+                                            </li>
+                                            <li>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                                            </li>
+                                            <li>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                            </li>
+                                            <li>
+                                                <a class="btn btn-black" target="_blank"
+                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    @endforeach
 
-                </div>  <!-- isotop container End  -->
+
+                </div>
             </div>
         </section>
+
         <!-- End Portfolio Section -->
 
         <!-- Action Box Section -->
@@ -277,33 +266,33 @@
         End Service Section -->
 
         <!-- Counter Section -->
-        <section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"
-                 data-background-img="{!! asset('img/full/14.jpg') !!}">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>
-                        <h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>
-                        <h5 class="counter-sub-title">Awards</h5>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>
-                        <h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>
-                        <h5 class="counter-sub-title">Clients</h5>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>
-                        <h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>
-                        <h5 class="counter-sub-title">Projects</h5>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>
-                        <h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>
-                        <h5 class="counter-sub-title">Teams</h5>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
+                 {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
+            {{--<div class="container text-center">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
+                        {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
+                        {{--<h5 class="counter-sub-title">Awards</h5>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
+                        {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
+                        {{--<h5 class="counter-sub-title">Clients</h5>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
+                        {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
+                        {{--<h5 class="counter-sub-title">Projects</h5>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
+                        {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
+                        {{--<h5 class="counter-sub-title">Teams</h5>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</section>--}}
         <!-- End Counter Section -->
 
 
@@ -322,7 +311,7 @@
                             <div class="item">
                                 <div class="client-logo">
                                     <a href="#">
-                                        <img src="{!! asset("img/logos/".$clients->image.".png") !!}" alt=""/></a>
+                                        <img src="{!! asset("control-panel/images/clients/".$clients->image.".png") !!}" alt=""/></a>
                                 </div>
                             </div>
                         </div>
@@ -349,7 +338,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="row">
-                            <form id="contact" class="contact-form" role="form">
+                                {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
                                 <div class="col-md-12 text-center">
                                     <h5 class="successContent">
                                         <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
@@ -371,7 +360,7 @@
                                     </div>
                                     <div class="form-field-wrapper">
                                         <input class="input-md form-full" id="form-subject" type="text"
-                                               name="form-subject" placeholder="Subject"/>
+                                               name="subject" placeholder="Subject"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-0">
@@ -385,7 +374,7 @@
                                             id="form-submit" name="submit">Submit
                                     </button>
                                 </div>
-                            </form>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
@@ -405,23 +394,23 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
                         <h5 class="features-title">Address</h5>
                         <p>
-                            {!! asset($generalContent->address) !!}
+                            {!! $generalContent->address !!}
                         </p>
                     </div>
                     <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
                         <h5 class="features-title">Office Hours</h5>
                         <p>
-                            {!! asset($generalContent->officeHours) !!}
+                            {!! $generalContent->id !!}
                         </p>
                     </div>
                     <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
                         <h5 class="features-title">Contact</h5>
                         <p class="contact-link">
-                            <a href="mailto:{!! asset($generalContent->email) !!}"><span
-                                        class="text-bold">Email :</span>{!! asset($generalContent->email) !!}</a><br/>
-                            <a><span class="text-bold">Call :</span> {!! asset($generalContent->contactNo) !!}</a>
+                            <a href="mailto:{!! $generalContent->email !!}"><span
+                                        class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
+                            <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a>
                         </p>
                     </div>
                 </div>
@@ -493,28 +482,6 @@
 <script src="{!! asset('http://yandex.st/highlightjs/8.0/highlight.min.js') !!}"></script>
 <script src="{!! asset('http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js') !!}"></script>
 
-<script>
-
-    var app = angular.module("angular-isotope-demo", ['iso.directives', 'hljs']);
-
-
-    app.controller("designOneCtrl", function ($scope, $http) {
-
-
-        $http.get("/projects").then(function (response) {
-
-
-            $scope.myData = response.data.projects;
-
-
-        }, function (response) {
-
-            $scope.resp = "File not found !!! ";
-
-        });
-
-    });
-</script>
 
 </body>
 </html>

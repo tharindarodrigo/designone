@@ -35,8 +35,8 @@ class ClientsController extends Controller
         if ($client->save()) {
             if ($image = Input::file('client_logo')) {
                 Image::make($image)
-                    ->encode('jpg')
-                    ->save('control-panel/images/clients/' . $client->id . '.jpg');
+                    ->encode('png')
+                    ->save('control-panel/images/clients/' . $client->id . '.png');
 
             }
 
@@ -72,10 +72,10 @@ class ClientsController extends Controller
 
         if ($client->update()) {
 
-            if ($image = Input::file('client')) {
+            if ($image = Input::file('client_logo')) {
                 Image::make($image)
-                    ->encode('jpg')
-                    ->save('control-panel/images/clients/' . $id . '.jpg');
+                    ->encode('png')
+                    ->save('control-panel/images/clients/' . $id . '.png');
             }
 
             return $this->index();

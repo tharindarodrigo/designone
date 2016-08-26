@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
 
 class GeneralContentsController extends Controller
@@ -78,6 +79,18 @@ class GeneralContentsController extends Controller
         }
 
         return $this->index();
+    }
+
+    public function sendMail(Request $request)
+    {
+
+        dd($request->all());
+        Mail::raw('mail', function ($message) use ($request) {
+            $message
+                ->from($request->get('email'), $request->get('name'))
+                ->to('tharindarodrigo@gmail.com')
+                ->subject($request->get('subject'));
+        });
     }
 
 
