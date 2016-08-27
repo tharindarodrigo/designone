@@ -15,8 +15,9 @@ Route::get('/', function () {
 //    $sliderImages = \App\GeneralContent::all();
     $generalContent = App\GeneralContent::find(1);
     $sliderImages = \App\SliderImage::all();
-    $projectTypes=\App\ProjectType::all();
+    $projectTypes = \App\ProjectType::all();
     $newsItems = \App\News::all();
+    $clients = \App\Client::all();
 
     $projects = \App\Project::with('projectTypes')->get();
     $portfolio = [];
@@ -31,49 +32,29 @@ Route::get('/', function () {
         $projectTypeClasses = implode(" ", $projectTypeClasses);
 
         $portfolio[] = [
-            'headingMain' => $project->name ? $project->name: 'Heading'.$project->id,
+            'heading' => !empty($project->name) ? $project->name  : 'Heading' . $project->id,
+            'country'=> $project->country,
+            'year'=> $project->year,
             'short_describe' => 'Short project description',
             'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',
             'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
             'categories' => $projectTypeClasses
+
         ];
 
     }
 
 
-
 //    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent','projectTypes', 'newsItems', 'portfolio', 'projects'));
+    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients'));
 });
 
 Route::post('/send-mail', 'GeneralContentsController@sendMail');
 
-Route::get('/projects', function () {
-    $projects = \App\Project::with('projectTypes')->get();
-    $angularList = [];
-    foreach ($projects as $project) {
-        $projectTypeClasses = [];
 
-        //Append
-        foreach ($project->projectTypes as $projectType) {
-            $projectTypeClasses[] = snake_case($projectType->project_type);
-        }
+Route::auth();
 
-        $projectTypeClasses = implode(" ", $projectTypeClasses);
-
-        $angularList[] = [
-            'headingMain' => $project->project_name ? $project->name: 'Heading'.$project->id,
-            'short_describe' => 'Short project description',
-            'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',
-            'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
-            'category' => $projectTypeClasses
-        ];
-
-    }
-
-    return ["projects"=>$angularList];
-});
-
+Route::get('/home', 'HomeController@index');
 
 Route::group(['prefix' => 'control-panel'], function () {
 
@@ -90,7 +71,28 @@ Route::group(['prefix' => 'control-panel'], function () {
 
 });
 
+Route::get('/projects', function () {
+    $projects = \App\Project::with('projectTypes')->get();
+    $angularList = [];
+    foreach ($projects as $project) {
+        $projectTypeClasses = [];
 
-//Route::auth();
-//
-//Route::get('/home', 'HomeController@index');
+        //Append
+        foreach ($project->projectTypes as $projectType) {
+            $projectTypeClasses[] = snake_case($projectType->project_type);
+        }
+
+        $projectTypeClasses = implode(" ", $projectTypeClasses);
+
+        $angularList[] = [
+            'headingMain' => $project->project_name ? $project->name : 'Heading' . $project->id,
+            'short_describe' => 'Short project description',
+            'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',
+            'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
+            'category' => $projectTypeClasses
+        ];
+
+    }
+
+    return ["projects" => $angularList];
+});

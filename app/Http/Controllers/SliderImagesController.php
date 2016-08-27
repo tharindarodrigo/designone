@@ -41,7 +41,7 @@ class SliderImagesController extends Controller
                     ->save('control-panel/images/slider-images/' . $sliderImage->id . '.jpg');
             }
 
-            $request->session()->flash('global-success', "Record deleted successfully");
+            $request->session()->flash('global-success', "Record added successfully");
 
         }
 
@@ -80,9 +80,14 @@ class SliderImagesController extends Controller
                     ->save('control-panel/images/slider-images/' . $id . '.jpg');
             }
 
+            $request->session()->flash('global-success', "Record added successfully");
+
             return $this->index();
 
         }
+
+        $request->session()->flash('global-danger', "Image Upload failed");
+
 
         return redirect()->back();
     }

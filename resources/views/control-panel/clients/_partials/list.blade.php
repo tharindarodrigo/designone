@@ -14,7 +14,7 @@
                 <td>{!! $client->id !!}</td>
                 <td>{!! $client->client !!}</td>
 
-                <td><img width="100px" src="{!! asset('control-panel/images/clients/'.$client->id.'.jpg') !!}" alt="">
+                <td><img width="100px" src="{!! asset('control-panel/images/clients/'.$client->id.'.png') !!}" alt="">
                 </td>
                 <td>
                     <div class="btn-group">

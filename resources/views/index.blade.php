@@ -1,4 +1,4 @@
-﻿﻿<html lang="en">
+﻿<html>
 <head>
     <meta charset="utf-8"/>
     <title>DesignOne</title>
@@ -10,7 +10,7 @@
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <!-- Favicone Icon -->
-    {{--<link rel="shortcut icon" type="image/x-icon" hr    ef="{!! asset('img/favicon.ico') !!}"/>--}}
+    <link rel="shortcut icon" type="image/x-icon" hr ef="{!! asset('img/favicon.ico') !!}"/>
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     <!-- angular stuffs -->
@@ -70,7 +70,7 @@
                         @if(!empty($sliderImages))
                             {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
-                                <li class="" data-transition="fade" data-slotamount="5" data-masterspeed="700">
+                                <li class="" data-transition="slidevertical" data-slotamount="5" data-masterspeed="700">
                                     <!-- MAIN IMAGE -->
                                     <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
                                          alt="SliderImages"
@@ -129,24 +129,53 @@
         <!-- End Intro Section-->
 
         <!-- About Section -->
+        {{--<section id="about" class="section-padding text-center">--}}
+            {{--<div class="container mb-60">--}}
+                {{--<h2>About <span class="text-light">Us</span></h2>--}}
+                {{--<p class="max-width-700 lead">{!! $generalContent->about !!}</p>--}}
+            {{--</div>--}}
+
+
+        {{--</section>--}}
         <section id="about" class="section-padding text-center">
             <div class="container mb-60">
-                <h2>About <span class="text-light">Us</span></h2>
-                <p class="max-width-700 lead">{!! $generalContent->about !!}</p>
+                <div class="row text-center">
+                    <h2>About <span class="text-light">Us</span></h2>
+
+                    <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup" />
+                    </div>
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
+                        <div class="spacer-15"></div>
+                        <h6 class="page-title-alt color mb-10">Architecture Planning Interiors</h6>
+                        <h2 class="page-title mb-25">design<span class="text-light">One</span></h2>
+                        <p class="mb-35">{!! $generalContent->about !!}</p>
+                        {{--<img src="img/signature.png" alt="signature" />--}}
+                    </div>
+                </div>
             </div>
-
-
         </section>
         <!-- End About Section -->
 
+
         <!-- Statement1 Section -->
+        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center" data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
+            <div class="container">
+                <p class="max-width-700 lead">You can download our portfolio below</p>
+                <a class="btn btn-md btn-color">Download</a>
+            </div>
+        </section>
+
+        <!-- End About Section -->
+
+        {{--<!-- Statement1 Section -->--}}
         {{--<section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
-                 {{--data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">--}}
-            {{--<div class="container">--}}
-                {{--<h2>Hello</h2>--}}
-            {{--</div>--}}
+        {{--data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">--}}
+        {{--<div class="container">--}}
+        {{--<h2>Hello</h2>--}}
+        {{--</div>--}}
         {{--</section>--}}
-        >
+
 
 
         {{--NewsFeed Section--}}
@@ -198,7 +227,9 @@
                         <li><a class="categories active" data-filter="*">All</a></li>
                         @if(!empty($projectTypes))
                             @foreach($projectTypes as $projectType)
-                                <li><a class="categories" data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a></li>
+                                <li><a class="categories"
+                                       data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
+                                </li>
                             @endforeach
                         @endif
                     </ul>
@@ -207,39 +238,41 @@
                 <div class="portfolio-grid-fit row gallery-popup">
                     <!------->
                     @foreach($portfolio as $item)
-                    <div class="portfolio-item {!! $item['categories'] !!}">
-                        <div class="portfolio-box">
-                            <a class="portfolio-image-wrap">
-                                <img src="{!! asset($item['thumb_image']) !!}" alt=""/></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-tb">
-                                    <div class="portfolio-caption-tb-cell">
-                                        <h5>Digital Camera mockup</h5>
-                                        <p>Mockup - Photography - Graphic - Branding</p>
-                                        <ul class="portfolio-btn-wraper">
-                                            <li>
-                                                <a class="gallery-popup-link btn btn-color"
-                                                   href="{!! asset($item['large_image']) !!}" title="{!! $item['headingMain'] !!}"><i
-                                                            class="fa fa-search"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="btn btn-black" target="_blank"
-                                                   href="https://www.dribbble.com/"><i class="fa fa-dribbble"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="btn btn-black" target="_blank"
-                                                   href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="btn btn-black" target="_blank"
-                                                   href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
-                                            </li>
-                                        </ul>
+                        <div class="portfolio-item {!! $item['categories'] !!}">
+                            <div class="portfolio-box">
+                                <a class="portfolio-image-wrap">
+                                    <img src="{!! asset($item['thumb_image']) !!}" alt=""/></a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-tb">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5>{!! $item['heading'] !!}</h5>
+                                            <p>{!! $item['country'].' '.$item['year'] !!}</p>
+                                            <ul class="portfolio-btn-wraper">
+                                                <li>
+                                                    <a class="gallery-popup-link btn btn-color"
+                                                       href="{!! asset($item['large_image']) !!}"
+                                                       title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i
+                                                                class="fa fa-search"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a class="btn btn-black" target="_blank"
+                                                       href="https://www.dribbble.com/"><i
+                                                                class="fa fa-dribbble"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a class="btn btn-black" target="_blank"
+                                                       href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a class="btn btn-black" target="_blank"
+                                                       href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
 
 
@@ -249,16 +282,16 @@
 
         <!-- End Portfolio Section -->
 
-        <!-- Action Box Section -->
-        <section id="action-box2" class="action-box action-black">
-            <div class="container">
-                <div class="row action-box-left">
-                    <h4 class="action-box-title">
-                        <!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>
-                </div>
+        {{--<!-- Action Box Section -->--}}
+        {{--<section id="action-box2" class="action-box action-black">--}}
+            {{--<div class="container">--}}
+                {{--<div class="row action-box-left">--}}
+                    {{--<h4 class="action-box-title">--}}
+                        {{--<!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>--}}
+                {{--</div>--}}
 
-            </div>
-        </section>
+            {{--</div>--}}
+        {{--</section>--}}
         <!-- Action Box Section -->
 
         <!-- Service Section
@@ -267,31 +300,31 @@
 
         <!-- Counter Section -->
         {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
-                 {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
-            {{--<div class="container text-center">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
-                        {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
-                        {{--<h5 class="counter-sub-title">Awards</h5>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
-                        {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
-                        {{--<h5 class="counter-sub-title">Clients</h5>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
-                        {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
-                        {{--<h5 class="counter-sub-title">Projects</h5>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-                        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
-                        {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
-                        {{--<h5 class="counter-sub-title">Teams</h5>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+        {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
+        {{--<div class="container text-center">--}}
+        {{--<div class="row">--}}
+        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
+        {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
+        {{--<h5 class="counter-sub-title">Awards</h5>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
+        {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
+        {{--<h5 class="counter-sub-title">Clients</h5>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
+        {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
+        {{--<h5 class="counter-sub-title">Projects</h5>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
+        {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
+        {{--<h5 class="counter-sub-title">Teams</h5>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
         {{--</section>--}}
         <!-- End Counter Section -->
 
@@ -305,18 +338,18 @@
                 </div>
                 <div class="container">
 
-                    @foreach($clients as $client)
-
-                        <div class="owl-carousel client-carousel">
+                    <div class="owl-carousel client-carousel">
+                        @foreach($clients as $client)
                             <div class="item">
                                 <div class="client-logo">
                                     <a href="#">
-                                        <img src="{!! asset("control-panel/images/clients/".$clients->image.".png") !!}" alt=""/></a>
+                                        <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
+                                             alt=""/></a>
                                 </div>
                             </div>
-                        </div>
 
-                    @endforeach
+                        @endforeach
+                    </div>
 
 
                 </div>
@@ -338,42 +371,42 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="row">
-                                {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
-                                <div class="col-md-12 text-center">
-                                    <h5 class="successContent">
-                                        <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
-                                        sent successfully.
-                                    </h5>
-                                    <h5 class="errorContent" style="color: #e1534f;">
-                                        <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
-                                        form please check!
-                                    </h5>
+                            {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
+                            <div class="col-md-12 text-center">
+                                <h5 class="successContent">
+                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
+                                    sent successfully.
+                                </h5>
+                                <h5 class="errorContent" style="color: #e1534f;">
+                                    <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
+                                    form please check!
+                                </h5>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-field-wrapper">
+                                    <input class="input-md form-full" id="form-name" type="text" name="form-name"
+                                           placeholder="Your Name" required/>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-field-wrapper">
-                                        <input class="input-md form-full" id="form-name" type="text" name="form-name"
-                                               placeholder="Your Name" required/>
-                                    </div>
-                                    <div class="form-field-wrapper">
-                                        <input class="input-md form-full" id="form-email" type="email" name="form-email"
-                                               placeholder="Email" required/>
-                                    </div>
-                                    <div class="form-field-wrapper">
-                                        <input class="input-md form-full" id="form-subject" type="text"
-                                               name="subject" placeholder="Subject"/>
-                                    </div>
+                                <div class="form-field-wrapper">
+                                    <input class="input-md form-full" id="form-email" type="email" name="form-email"
+                                           placeholder="Email" required/>
                                 </div>
-                                <div class="col-md-6 mb-0">
-                                    <div class="form-field-wrapper">
+                                <div class="form-field-wrapper">
+                                    <input class="input-md form-full" id="form-subject" type="text"
+                                           name="subject" placeholder="Subject"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-0">
+                                <div class="form-field-wrapper">
                                         <textarea class="input-md form-full" id="form-message" rows="7"
                                                   name="form-message" placeholder="Your Message" required></textarea>
-                                    </div>
                                 </div>
-                                <div class="col-md-12 text-center">
-                                    <button class="btn-contact-submit btn btn-md btn-color" type="submit"
-                                            id="form-submit" name="submit">Submit
-                                    </button>
-                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button class="btn-contact-submit btn btn-md btn-color" type="submit"
+                                        id="form-submit" name="submit">Submit
+                                </button>
+                            </div>
                             {!! Form::close() !!}
                         </div>
                     </div>
@@ -394,14 +427,14 @@
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
                         <h5 class="features-title">Address</h5>
                         <p>
-                            {!! $generalContent->address !!}
+                            <a>{!! str_replace(',','<br/>',$generalContent->address) !!}</a>
                         </p>
                     </div>
                     <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
                         <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
                         <h5 class="features-title">Office Hours</h5>
                         <p>
-                            {!! $generalContent->id !!}
+                            <a>Mon - Fri 9.00 AM to 5.00 PM</a>
                         </p>
                     </div>
                     <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
@@ -410,7 +443,9 @@
                         <p class="contact-link">
                             <a href="mailto:{!! $generalContent->email !!}"><span
                                         class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
-                            <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a>
+                            <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a><br/>
+                            <a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -422,11 +457,13 @@
         <footer id="footer" class="footer section-padding gray-bg">
             <div class="container text-center">
 
-
+                <a class="scroll-top" href="#intro">
+                    <img src="{!! asset('img/logo-light.png')!!}" alt="mazel">
+                </a>
                 <!-- Copyright -->
                 <p class="copyright mb-25">
-                    &copy; 2016 <a><b> Design One </b></a>. All Rights Reserved.<br>
-
+                    &copy; {!! date('Y') !!} <a><b> designONE </b></a>. All Rights Reserved.<br>
+Solution By <a href="brightron.net">Brightron</a>
                 </p>
                 <!-- Copyright -->
 
@@ -476,11 +513,11 @@
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
 <!-- angular stuffs -->
-<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>
-<script src="{!! asset('scripts/vendor/jquery.isotope.js') !!}"></script>
-<script src="{!! asset('scripts/angular-isotope.js') !!}"></script>
-<script src="{!! asset('http://yandex.st/highlightjs/8.0/highlight.min.js') !!}"></script>
-<script src="{!! asset('http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js') !!}"></script>
+{{--<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>--}}
+{{--<script src="{!! asset('scripts/vendor/jquery.isotope.js') !!}"></script>--}}
+{{--<script src="{!! asset('scripts/angular-isotope.js') !!}"></script>--}}
+{{--<script src="{!! asset('http://yandex.st/highlightjs/8.0/highlight.min.js') !!}"></script>--}}
+{{--<script src="{!! asset('http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js') !!}"></script>--}}
 
 
 </body>
