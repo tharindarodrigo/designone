@@ -5684,9 +5684,13 @@ button.close {
   background: transparent;
   border: 0;
 }
+
+/*
 .modal-open {
   overflow: hidden;
-}
+}*/
+
+
 .modal {
   position: fixed;
   top: 0;
