@@ -18,6 +18,7 @@ Route::get('/', function () {
     $projectTypes = \App\ProjectType::all();
     $newsItems = \App\News::all();
     $clients = \App\Client::all();
+    $teamMembers = \App\TeamMember::all();
 
     $projects = \App\Project::with('projectTypes')->get();
     $portfolio = [];
@@ -46,7 +47,7 @@ Route::get('/', function () {
 
 
 //    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients'));
+    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients', 'teamMembers'));
 });
 
 Route::post('/send-mail', 'GeneralContentsController@sendMail');
@@ -68,6 +69,7 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/news', 'NewsController');
     Route::resource('/slider-images', 'SliderImagesController');
     Route::resource('/clients', 'ClientsController');
+    Route::resource('/team-members', 'TeamMembersController');
 
 });
 

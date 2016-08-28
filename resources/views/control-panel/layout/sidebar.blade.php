@@ -42,6 +42,11 @@
                     <i class="fa fa-th"></i> <span>News</span>
                 </a>
             </li>
+            <li class="@yield('team-members')">
+                <a href="{!! url('control-panel/team-members') !!}">
+                    <i class="fa fa-th"></i> <span>Team Members</span>
+                </a>
+            </li>
 
             <li class="@yield('clients')">
                 <a href="{!! url('control-panel/clients') !!}">

@@ -10,7 +10,7 @@
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <!-- Favicone Icon -->
-    <link rel="shortcut icon" type="image/x-icon" hr ef="{!! asset('img/favicon.ico') !!}"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     <!-- angular stuffs -->
@@ -21,6 +21,7 @@
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- SLIDER REVOLUTION CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 </head>
 <body>
 <section id="preloader">
@@ -49,17 +50,42 @@
                     <ul class="nav-menu-inner">
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#news">News</a></li>
+                        <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
                         <li><a href="#portfolio">Projects</a></li>
+                        <li><a href="#team">Team</a></li>
                         <li><a href="#client">Clients</a></li>
                         <li><a href="#contact-us">Contact</a></li>
-
 
                     </ul>
                 </div>
                 <!-- End Navigation Menu -->
             </div>
         </div>
+
+        <div class="modal right fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="color: #dddddd;">DesignOne News Bar</h4>
+                    </div>
+
+                    <div class="modal-body" style=" color: #cccccc;">
+                        @foreach($newsItems as $newsItem)
+                            <div>
+                                <h3 style="color: #dddddd;">{!! $newsItem->title !!} -
+                                    <small>{!! $newsItem->date !!}</small>
+                                </h3>
+                                <p style="color:inherit">{!! $newsItem->news !!}</p>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
         <!--Intro Section-->
         <section id="intro">
             <!--Slider Hero-->
@@ -130,10 +156,10 @@
 
         <!-- About Section -->
         {{--<section id="about" class="section-padding text-center">--}}
-            {{--<div class="container mb-60">--}}
-                {{--<h2>About <span class="text-light">Us</span></h2>--}}
-                {{--<p class="max-width-700 lead">{!! $generalContent->about !!}</p>--}}
-            {{--</div>--}}
+        {{--<div class="container mb-60">--}}
+        {{--<h2>About <span class="text-light">Us</span></h2>--}}
+        {{--<p class="max-width-700 lead">{!! $generalContent->about !!}</p>--}}
+        {{--</div>--}}
 
 
         {{--</section>--}}
@@ -143,12 +169,16 @@
                     <h2>About <span class="text-light">Us</span></h2>
 
                     <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s" data-wow-duration="1s">
-                        <img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup" />
+                        <img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup"/>
                     </div>
                     <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
                         <div class="spacer-15"></div>
-                        <h6 class="page-title-alt color mb-10">Architecture Planning Interiors</h6>
-                        <h2 class="page-title mb-25">design<span class="text-light">One</span></h2>
+                        {{--<h6 class="page-title-alt color mb-10">Architecture Planning Interiors</h6>--}}
+                        <div>
+                            <img src="{!! asset('img/logo-dark.png') !!}" width="350" alt="mockup"/>
+                        </div>
+                        <br>
+                        {{--<h2 class="page-title mb-25">design<span class="text-light">One</span></h2>--}}
                         <p class="mb-35">{!! $generalContent->about !!}</p>
                         {{--<img src="img/signature.png" alt="signature" />--}}
                     </div>
@@ -159,7 +189,8 @@
 
 
         <!-- Statement1 Section -->
-        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center" data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
+        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
             <div class="container">
                 <p class="max-width-700 lead">You can download our portfolio below</p>
                 <a class="btn btn-md btn-color">Download</a>
@@ -180,38 +211,30 @@
 
         {{--NewsFeed Section--}}
 
-        <section id="news" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/05.jpg') !!}">
-            <div class="container">
-                <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
+        {{--<section id="news" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
+        {{--data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/05.jpg') !!}">--}}
+        {{--<div class="container">--}}
+        {{--<div class="owl-carousel testimonial-carousel nf-carousel-theme white">--}}
 
-                    @if(!empty($newsItems))
-                        @foreach($newsItems as $newsItem)
-                            <div class="item">
-                                <div class="testimonial text-center max-width-700">
-                                    <div class="page-icon-sm">{!! $newsItem->title !!}</div>
-                                    <p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and
-                                records and sat in front of the practising.-->{!! $newsItem->news !!}</p>
-                                    <h6 class="quote-author"><!-- Jeff Dunham --> {!! "- ".$newsItem->date !!}
-                                    </h6>
-                                </div>
-                            </div>
+        {{--@if(!empty($newsItems))--}}
+        {{--@foreach($newsItems as $newsItem)--}}
+        {{--<div class="item">--}}
+        {{--<div class="testimonial text-center max-width-700">--}}
+        {{--<div class="page-icon-sm">{!! $newsItem->title !!}</div>--}}
+        {{--<p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and--}}
+        {{--records and sat in front of the practising.-->{!! $newsItem->news !!}</p>--}}
+        {{--<h6 class="quote-author"><!-- Jeff Dunham --> {!! "- ".$newsItem->date !!}--}}
+        {{--</h6>--}}
+        {{--</div>--}}
+        {{--</div>--}}
 
-                        @endforeach
-                    @endif
+        {{--@endforeach--}}
+        {{--@endif--}}
 
-                </div>
-            </div>
-        </section>
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</section>--}}
 
-
-        <!-- End NewsFeed Section -->
-
-        <!-- Work Process Section
-        Removed!!!
-        End Work Process Section -->
-
-        <!--  <hr/> -->
         <hr/>
 
 
@@ -282,206 +305,253 @@
 
         <!-- End Portfolio Section -->
 
-        {{--<!-- Action Box Section -->--}}
-        {{--<section id="action-box2" class="action-box action-black">--}}
-            {{--<div class="container">--}}
-                {{--<div class="row action-box-left">--}}
-                    {{--<h4 class="action-box-title">--}}
-                        {{--<!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>--}}
-                {{--</div>--}}
-
-            {{--</div>--}}
-        {{--</section>--}}
-        <!-- Action Box Section -->
-
-        <!-- Service Section
-         Removed !!!
-        End Service Section -->
-
-        <!-- Counter Section -->
-        {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
-        {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
-        {{--<div class="container text-center">--}}
-        {{--<div class="row">--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Awards</h5>--}}
-        {{--</div>--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Clients</h5>--}}
-        {{--</div>--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Projects</h5>--}}
-        {{--</div>--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Teams</h5>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        {{--</section>--}}
-        <!-- End Counter Section -->
-
-
-        <!-- Client Logo -->
-        @if(!empty($clients))
-
-            <section id="client" class="section-padding">
-                <div class="container text-center">
-                    <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
+        @if(!empty($teamMembers))
+            <section id="team" class="section-padding text-center">
+                <div class="container">
+                    <h2 class="page-title">Our <span class="text-light">Team</span></h2>
                 </div>
                 <div class="container">
-
-                    <div class="owl-carousel client-carousel">
-                        @foreach($clients as $client)
-                            <div class="item">
-                                <div class="client-logo">
-                                    <a href="#">
-                                        <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                             alt=""/></a>
+                    <div class="row">
+                        <!--Team Carousel -->
+                        <div class="owl-carousel team-carousel nf-carousel-theme">
+                            @foreach($teamMembers as $teamMember)
+                                <div class="item">
+                                    <div class="team-item">
+                                        <div class="team-item-img">
+                                            <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}" alt=""/>
+                                            <div class="team-item-detail">
+                                                <div class="team-item-detail-inner light-color">
+                                                    <h5>Michael Lee</h5>
+                                                    <p>To portal for some of the world's most high-value net.</p>
+                                                    <ul class="social">
+                                                        <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                                        class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="https://www.twitter.com/" target="_blank"><i
+                                                                        class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="https://www.dribbble.com/" target="_blank"><i
+                                                                        class="fa fa-dribbble"></i></a></li>
+                                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
+                                                                        class="fa fa-pinterest"></i></a></li>
+                                                        <li><a href="https://www.behance.net/" target="_blank"><i
+                                                                        class="fa fa-behance"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="team-item-info">
+                                            <h6>{!! $teamMember->name !!}</h6>
+                                            <p class="">{!! $teamMember->designation !!}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                        @endforeach
+                            @endforeach
+                        </div>
+                        <!--End Team Carousel --->
                     </div>
-
-
                 </div>
             </section>
-            <!-- End Client Logo -->
-        @endif
+            @endif
 
-        <hr/>
+            {{--<!-- Action Box Section -->--}}
+            {{--<section id="action-box2" class="action-box action-black">--}}
+            {{--<div class="container">--}}
+            {{--<div class="row action-box-left">--}}
+            {{--<h4 class="action-box-title">--}}
+            {{--<!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>--}}
+            {{--</div>--}}
+
+            {{--</div>--}}
+            {{--</section>--}}
+                    <!-- Action Box Section -->
+
+            <!-- Service Section
+             Removed !!!
+            End Service Section -->
+
+            <!-- Counter Section -->
+            {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
+            {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
+            {{--<div class="container text-center">--}}
+            {{--<div class="row">--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Awards</h5>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Clients</h5>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Projects</h5>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Teams</h5>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</section>--}}
+            <!-- End Counter Section -->
 
 
-        <!-- Contact Form -->
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
-                 data-background-img="{!! asset('img/full/20.jpg') !!}" data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row text-center">
-                    <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
-                    <h2 class="page-title">Get In <span class="text-light">Touch</span></h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="row">
-                            {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
-                            <div class="col-md-12 text-center">
-                                <h5 class="successContent">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
-                                    sent successfully.
-                                </h5>
-                                <h5 class="errorContent" style="color: #e1534f;">
-                                    <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
-                                    form please check!
-                                </h5>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name"
-                                           placeholder="Your Name" required/>
+            <!-- Client Logo -->
+            @if(!empty($clients))
+
+                <section id="client" class="section-padding">
+                    <div class="container text-center">
+                        <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
+                    </div>
+                    <div class="container">
+
+                        <div class="owl-carousel client-carousel">
+                            @foreach($clients as $client)
+                                <div class="item">
+                                    <div class="client-logo">
+                                        <a href="#">
+                                            <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
+                                                 alt=""/></a>
+                                    </div>
                                 </div>
-                                <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email"
-                                           placeholder="Email" required/>
+
+                            @endforeach
+                        </div>
+
+
+                    </div>
+                </section>
+                <!-- End Client Logo -->
+            @endif
+
+            <hr/>
+
+
+            <!-- Contact Form -->
+            <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
+                     data-background-img="{!! asset('img/full/20.jpg') !!}" data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row text-center">
+                        <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
+                        <h2 class="page-title">Get In <span class="text-light">Touch</span></h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="row">
+                                {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
+                                <div class="col-md-12 text-center">
+                                    <h5 class="successContent">
+                                        <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
+                                        sent successfully.
+                                    </h5>
+                                    <h5 class="errorContent" style="color: #e1534f;">
+                                        <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
+                                        form please check!
+                                    </h5>
                                 </div>
-                                <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-subject" type="text"
-                                           name="subject" placeholder="Subject"/>
+                                <div class="col-md-6">
+                                    <div class="form-field-wrapper">
+                                        <input class="input-md form-full" id="form-name" type="text" name="form-name"
+                                               placeholder="Your Name" required/>
+                                    </div>
+                                    <div class="form-field-wrapper">
+                                        <input class="input-md form-full" id="form-email" type="email" name="form-email"
+                                               placeholder="Email" required/>
+                                    </div>
+                                    <div class="form-field-wrapper">
+                                        <input class="input-md form-full" id="form-subject" type="text"
+                                               name="subject" placeholder="Subject"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 mb-0">
-                                <div class="form-field-wrapper">
+                                <div class="col-md-6 mb-0">
+                                    <div class="form-field-wrapper">
                                         <textarea class="input-md form-full" id="form-message" rows="7"
                                                   name="form-message" placeholder="Your Message" required></textarea>
+                                    </div>
                                 </div>
+                                <div class="col-md-12 text-center">
+                                    <button class="btn-contact-submit btn btn-md btn-color" type="submit"
+                                            id="form-submit" name="submit">Submit
+                                    </button>
+                                </div>
+                                {!! Form::close() !!}
                             </div>
-                            <div class="col-md-12 text-center">
-                                <button class="btn-contact-submit btn btn-md btn-color" type="submit"
-                                        id="form-submit" name="submit">Submit
-                                </button>
-                            </div>
-                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- End Contact Form -->
+            </section>
+            <!-- End Contact Form -->
 
-        <!-- Map section -->
-        <section class="map" id="map"></section>
-        <!-- End Map section -->
+            <!-- Map section -->
+            <section class="map" id="map"></section>
+            <!-- End Map section -->
 
-        <!--Contact Info Section-->
-        <section id="contct-info" class="section-padding">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-                        <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
-                        <h5 class="features-title">Address</h5>
-                        <p>
-                            <a>{!! str_replace(',','<br/>',$generalContent->address) !!}</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
-                        <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
-                        <h5 class="features-title">Office Hours</h5>
-                        <p>
-                            <a>Mon - Fri 9.00 AM to 5.00 PM</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
-                        <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
-                        <h5 class="features-title">Contact</h5>
-                        <p class="contact-link">
-                            <a href="mailto:{!! $generalContent->email !!}"><span
-                                        class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
-                            <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a><br/>
-                            <a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}
-                            </a>
-                        </p>
+            <!--Contact Info Section-->
+            <section id="contct-info" class="section-padding">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
+                            <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
+                            <h5 class="features-title">Address</h5>
+                            <p>
+                                <a>{!! str_replace(',','<br/>',$generalContent->address) !!}</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
+                            <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
+                            <h5 class="features-title">Office Hours</h5>
+                            <p>
+                                <a>Mon - Fri 9.00 AM to 5.00 PM</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
+                            <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
+                            <h5 class="features-title">Contact</h5>
+                            <p class="contact-link">
+                                <a href="mailto:{!! $generalContent->email !!}"><span
+                                            class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
+                                <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a><br/>
+                                <a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- End Contact Info Section-->
+            </section>
+            <!-- End Contact Info Section-->
 
-        <!--Footer Section-->
-        <footer id="footer" class="footer section-padding gray-bg">
-            <div class="container text-center">
+            <!--Footer Section-->
+            <footer id="footer" class="footer section-padding gray-bg">
+                <div class="container text-center">
 
-                <a class="scroll-top" href="#intro">
-                    <img src="{!! asset('img/logo-light.png')!!}" alt="mazel">
-                </a>
-                <!-- Copyright -->
-                <p class="copyright mb-25">
-                    &copy; {!! date('Y') !!} <a><b> designONE </b></a>. All Rights Reserved.<br>
-Solution By <a href="brightron.net">Brightron</a>
-                </p>
-                <!-- Copyright -->
+                    <a class="scroll-top" href="#intro">
+                        <img src="{!! asset('img/logo-light.png')!!}" alt="designonestudio" width="300">
+                    </a>
+                    <!-- Copyright -->
+                    <p class="copyright mb-25">
+                        &copy; {!! date('Y') !!} <a><b> designONE </b></a>. All Rights Reserved.<br>
+                        Solution By <a href="brightron.net">Brightron</a>
+                    </p>
+                    <!-- Copyright -->
 
-                <!-- Social -->
-                <ul class="social">
-                    <li>
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-                    </li>
+                    <!-- Social -->
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </li>
 
-                </ul>
-                <!-- End Social -->
+                    </ul>
+                    <!-- End Social -->
 
-            </div>
-        </footer>
-        <!-- End Footer Section-->
+                </div>
+            </footer>
+            <!-- End Footer Section-->
 
     </div>
 </div>
@@ -511,7 +581,11 @@ Solution By <a href="brightron.net">Brightron</a>
 {{--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>--}}
 {{--<script src="js/map.js') !!}" type="text/javascript"></script>--}}
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#newsModal').trigger('click');
+    });
+</script>
 <!-- angular stuffs -->
 {{--<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>--}}
 {{--<script src="{!! asset('scripts/vendor/jquery.isotope.js') !!}"></script>--}}
