@@ -243,7 +243,7 @@
 
         <section id="portfolio" class="section-padding-t gray-bg">
             <div class="container text-center">
-                <h2>Our <span class="text-light">Portfolio</span></h2>
+                <h2>Our <span class="text-light">Works</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
@@ -321,24 +321,24 @@
                                         <div class="team-item-img">
                                             <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
                                                  alt=""/>
-                                            <div class="team-item-detail">
-                                                <div class="team-item-detail-inner light-color">
-                                                    <h5>Michael Lee</h5>
-                                                    <p>To portal for some of the world's most high-value net.</p>
-                                                    <ul class="social">
-                                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                                        class="fa fa-facebook"></i></a></li>
-                                                        <li><a href="https://www.twitter.com/" target="_blank"><i
-                                                                        class="fa fa-twitter"></i></a></li>
-                                                        <li><a href="https://www.dribbble.com/" target="_blank"><i
-                                                                        class="fa fa-dribbble"></i></a></li>
-                                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                                        class="fa fa-pinterest"></i></a></li>
-                                                        <li><a href="https://www.behance.net/" target="_blank"><i
-                                                                        class="fa fa-behance"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            {{--<div class="team-item-detail">--}}
+                                                {{--<div class="team-item-detail-inner light-color">--}}
+                                                    {{--<h5>Michael Lee</h5>--}}
+                                                    {{--<p>To portal for some of the world's most high-value net.</p>--}}
+                                                    {{--<ul class="social">--}}
+                                                        {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
+                                                                        {{--class="fa fa-facebook"></i></a></li>--}}
+                                                        {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
+                                                                        {{--class="fa fa-twitter"></i></a></li>--}}
+                                                        {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
+                                                                        {{--class="fa fa-dribbble"></i></a></li>--}}
+                                                        {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
+                                                                        {{--class="fa fa-pinterest"></i></a></li>--}}
+                                                        {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
+                                                                        {{--class="fa fa-behance"></i></a></li>--}}
+                                                    {{--</ul>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                         </div>
                                         <div class="team-item-info">
                                             <h6>{!! $teamMember->name !!}</h6>
@@ -580,8 +580,8 @@
 <script src="{!! asset('js/plugins/wow.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.validate.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('/contact-form.js') !!}" type="text/javascript"></script>
-{{--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>--}}
-{{--<script src="js/map.js') !!}" type="text/javascript"></script>--}}
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
 
