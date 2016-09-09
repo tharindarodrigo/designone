@@ -522,7 +522,7 @@ i.right {
 }
 
     .btn-color:hover {
-        background-color: #d2b17f;
+        background-color: #555555;
         border-color: transparent;
         color: #fff;
     }
@@ -1779,8 +1779,8 @@ form label.error {
 
 /* Logo Style   ||-------------------*/
 .logo {
-    float: left;
-    text-align: left;
+    float: right;
+    text-align: right;
     display: inline-block;
 }
 
@@ -1842,7 +1842,7 @@ form label.error {
 
 .nav-menu-icon {
     display: none;
-    float: right;
+    float: left;
 }
 
     .nav-menu-icon a {
@@ -1884,7 +1884,7 @@ form label.error {
 
     .nav-menu-icon, .header-fixed .nav-menu-icon {
         display: inline-block;
-        float: right;
+        float: left;
     }
 
     .nav-menu ul.nav-menu-inner li a, .header-fixed .nav-menu ul.nav-menu-inner li a {

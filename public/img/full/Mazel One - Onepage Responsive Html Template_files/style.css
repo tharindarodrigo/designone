@@ -1842,7 +1842,7 @@ form label.error {
 
 .nav-menu-icon {
     display: none;
-    float: right;
+    float: left;
 }
 
     .nav-menu-icon a {

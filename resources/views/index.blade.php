@@ -32,11 +32,11 @@
         <div id="header" class="header">
             <div class="header-inner">
                 <!-- Logo -->
-                <div class="logo">
-                    <a href="#">
-                        <img src="{!! asset('img/logo-light.png')!!}"/>
-                    </a>
-                </div>
+                {{--<div class="logo">--}}
+                    {{--<a href="#" >--}}
+                        {{----}}
+                    {{--</a>--}}
+                {{--</div>--}}
                 <!-- End Logo -->
 
                 <!--Navigation Icon-->
@@ -48,6 +48,7 @@
                 <!-- Navigation Menu -->
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
+                        <li><img src="{!! asset('img/logo-light.png')!!}" height="25px" style="margin-top:5px ;"/></li>
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
@@ -167,7 +168,7 @@
         <section id="about" class="section-padding text-center">
             <div class="container mb-60">
                 <div class="row text-center">
-                    <h2>About <span class="text-light">Us</span></h2>
+                    <h2 class="text-right">About <span class="text-light">Us</span></h2>
 
                     <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s" data-wow-duration="1s">
                         <img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup"/>
@@ -243,7 +244,7 @@
 
         <section id="portfolio" class="section-padding-t gray-bg">
             <div class="container text-center">
-                <h2>Our <span class="text-light">Works</span></h2>
+                <h2>Our <span class="text-light">Work</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
@@ -453,8 +454,7 @@
                                     <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
                                     form please check!
                                 </h5>
-                            </div>
-                            <div class="col-md-6">
+
                                 <div class="form-field-wrapper">
                                     <input class="input-md form-full" id="form-name" type="text" name="form-name"
                                            placeholder="Your Name" required/>
@@ -467,14 +467,16 @@
                                     <input class="input-md form-full" id="form-subject" type="text"
                                            name="subject" placeholder="Subject"/>
                                 </div>
-                            </div>
-                            <div class="col-md-6 mb-0">
+
                                 <div class="form-field-wrapper">
                                         <textarea class="input-md form-full" id="form-message" rows="7"
                                                   name="form-message" placeholder="Your Message" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
+                                <div class="form-field-wrapper">
+                                    <label style="color: #fff;"><input type="checkbox" name="request_portfolio" class="input-md form-full" onclick="alert('Hello')">Request Portfolio</label>
+                                </div>
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit"
                                         id="form-submit" name="submit">Submit
                                 </button>

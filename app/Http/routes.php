@@ -22,20 +22,27 @@ Route::get('/', function () {
 
     $projects = \App\Project::with('projectTypes')->get();
     $portfolio = [];
+    $recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
+
     foreach ($projects as $project) {
         $projectTypeClasses = [];
 
         //Append
+
         foreach ($project->projectTypes as $projectType) {
             $projectTypeClasses[] = snake_case($projectType->project_type);
         }
 
         $projectTypeClasses = implode(" ", $projectTypeClasses);
+        if (date('y') - $project->year <= 3) {
+
+            $projectTypeClasses .= ' recent';
+        }
 
         $portfolio[] = [
-            'heading' => !empty($project->name) ? $project->name  : 'Heading' . $project->id,
-            'country'=> $project->country,
-            'year'=> $project->year,
+            'heading' => !empty($project->name) ? $project->name : 'Heading' . $project->id,
+            'country' => $project->country,
+            'year' => $project->year,
             'short_describe' => 'Short project description',
             'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',
             'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
@@ -73,28 +80,4 @@ Route::group(['prefix' => 'control-panel'], function () {
 
 });
 
-Route::get('/projects', function () {
-    $projects = \App\Project::with('projectTypes')->get();
-    $angularList = [];
-    foreach ($projects as $project) {
-        $projectTypeClasses = [];
 
-        //Append
-        foreach ($project->projectTypes as $projectType) {
-            $projectTypeClasses[] = snake_case($projectType->project_type);
-        }
-
-        $projectTypeClasses = implode(" ", $projectTypeClasses);
-
-        $angularList[] = [
-            'headingMain' => $project->project_name ? $project->name : 'Heading' . $project->id,
-            'short_describe' => 'Short project description',
-            'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',
-            'large_image' => 'control-panel/images/projects/' . $project->id . '.jpg',
-            'category' => $projectTypeClasses
-        ];
-
-    }
-
-    return ["projects" => $angularList];
-});
