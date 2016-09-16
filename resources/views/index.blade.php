@@ -12,8 +12,8 @@
     <!-- Favicone Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
-{{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
-<!-- angular stuffs -->
+    {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
+    <!-- angular stuffs -->
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
     <!-- Css -->
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 </head>
-<body>
+<body style="font-family: font-family: 'Swis721 LtCn BT',sans-serif;">
 <section id="preloader">
     <div class="site-spinner"></div>
 </section>
@@ -33,9 +33,9 @@
             <div class="header-inner">
                 <!-- Logo -->
                 {{--<div class="logo">--}}
-                    {{--<a href="#" >--}}
-                        {{----}}
-                    {{--</a>--}}
+                {{--<a href="#" >--}}
+                {{----}}
+                {{--</a>--}}
                 {{--</div>--}}
                 <!-- End Logo -->
 
@@ -163,12 +163,12 @@
         {{--<p class="max-width-700 lead">{!! $generalContent->about !!}</p>--}}
         {{--</div>--}}
 
-
         {{--</section>--}}
+
         <section id="about" class="section-padding text-center">
             <div class="container mb-60">
                 <div class="row text-center">
-                    <h2 class="text-right">About <span class="text-light">Us</span></h2>
+                    <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2>
 
                     <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s" data-wow-duration="1s">
                         <img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup"/>
@@ -181,7 +181,7 @@
                         </div>
                         <br>
                         {{--<h2 class="page-title mb-25">design<span class="text-light">One</span></h2>--}}
-                        <p class="mb-35">{!! $generalContent->about !!}</p>
+                        <p class="">{!! $generalContent->about !!}</p>
                         {{--<img src="img/signature.png" alt="signature" />--}}
                     </div>
                 </div>
@@ -190,14 +190,7 @@
         <!-- End About Section -->
 
 
-        <!-- Statement1 Section -->
-        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
-            <div class="container">
-                <p class="max-width-700 lead">You can download our portfolio below</p>
-                <a class="btn btn-md btn-color">Download</a>
-            </div>
-        </section>
+
 
         <!-- End About Section -->
 
@@ -243,13 +236,14 @@
         {{--Portfolio--}}
 
         <section id="portfolio" class="section-padding-t gray-bg">
-            <div class="container text-center">
+            <div class="container text-center" style="font-family: inherit">
                 <h2>Our <span class="text-light">Work</span></h2>
             </div>
             <div class="container-fluid">
                 <div class="row">
                     <ul class="portfolio-filter categories-filter">
                         <li><a class="categories active" data-filter="*">All</a></li>
+                        <li><a class="categories" data-filter=".recent">Recent</a></li>
                         @if(!empty($projectTypes))
                             @foreach($projectTypes as $projectType)
                                 <li><a class="categories"
@@ -262,11 +256,48 @@
                 </div>
                 <div class="portfolio-grid-fit row gallery-popup">
                     <!------->
+                    {{--@foreach($recentProjects as $item)--}}
+                        {{--<div class="portfolio-item recent">--}}
+                            {{--<div class="portfolio-box" style="border: thick;">--}}
+                                {{--<a class="portfolio-image-wrap">--}}
+                                    {{--<img src="{!! asset($item['thumb_image']) !!}" /></a>--}}
+                                {{--<div class="portfolio-caption">--}}
+                                    {{--<div class="portfolio-caption-tb">--}}
+                                        {{--<div class="portfolio-caption-tb-cell">--}}
+                                            {{--<h5>{!! $item['heading'] !!}</h5>--}}
+                                            {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
+                                            {{--<ul class="portfolio-btn-wraper">--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="gallery-popup-link btn btn-color"--}}
+                                                       {{--href="{!! asset($item['large_image']) !!}"--}}
+                                                       {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
+                                                                {{--class="fa fa-search"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.dribbble.com/"><i--}}
+                                                                {{--class="fa fa-dribbble"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                                                {{--</li>--}}
+                                            {{--</ul>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--@endforeach--}}
                     @foreach($portfolio as $item)
                         <div class="portfolio-item {!! $item['categories'] !!}">
-                            <div class="portfolio-box">
+                            <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
-                                    <img src="{!! asset($item['thumb_image']) !!}" alt=""/></a>
+                                    <img src="{!! asset($item['thumb_image']) !!}" /></a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-tb">
                                         <div class="portfolio-caption-tb-cell">
@@ -305,12 +336,24 @@
             </div>
         </section>
 
-        <!-- End Portfolio Section -->
+
+        {{--End Portfolio Section --}}
+
+        <!-- Statement1 Section -->
+        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg" >
+            <div class="container" >
+                <p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>
+                <a class="btn btn-md btn-color">Download</a>
+            </div>
+        </section>
+
+
 
         @if(!empty($teamMembers))
             <section id="team" class="section-padding text-center">
                 <div class="container">
-                    <h2 class="page-title">Our <span class="text-light">Team</span></h2>
+                    <h2 class="page-title">Busy <span class="text-light">Team</span></h2>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -323,22 +366,22 @@
                                             <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
                                                  alt=""/>
                                             {{--<div class="team-item-detail">--}}
-                                                {{--<div class="team-item-detail-inner light-color">--}}
-                                                    {{--<h5>Michael Lee</h5>--}}
-                                                    {{--<p>To portal for some of the world's most high-value net.</p>--}}
-                                                    {{--<ul class="social">--}}
-                                                        {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
-                                                                        {{--class="fa fa-facebook"></i></a></li>--}}
-                                                        {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
-                                                                        {{--class="fa fa-twitter"></i></a></li>--}}
-                                                        {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
-                                                                        {{--class="fa fa-dribbble"></i></a></li>--}}
-                                                        {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
-                                                                        {{--class="fa fa-pinterest"></i></a></li>--}}
-                                                        {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
-                                                                        {{--class="fa fa-behance"></i></a></li>--}}
-                                                    {{--</ul>--}}
-                                                {{--</div>--}}
+                                            {{--<div class="team-item-detail-inner light-color">--}}
+                                            {{--<h5>Michael Lee</h5>--}}
+                                            {{--<p>To portal for some of the world's most high-value net.</p>--}}
+                                            {{--<ul class="social">--}}
+                                            {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
+                                            {{--class="fa fa-facebook"></i></a></li>--}}
+                                            {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
+                                            {{--class="fa fa-twitter"></i></a></li>--}}
+                                            {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
+                                            {{--class="fa fa-dribbble"></i></a></li>--}}
+                                            {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
+                                            {{--class="fa fa-pinterest"></i></a></li>--}}
+                                            {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
+                                            {{--class="fa fa-behance"></i></a></li>--}}
+                                            {{--</ul>--}}
+                                            {{--</div>--}}
                                             {{--</div>--}}
                                         </div>
                                         <div class="team-item-info">
@@ -353,209 +396,215 @@
                     </div>
                 </div>
             </section>
-        @endif
+            @endif
 
-        {{--<!-- Action Box Section -->--}}
-        {{--<section id="action-box2" class="action-box action-black">--}}
-        {{--<div class="container">--}}
-        {{--<div class="row action-box-left">--}}
-        {{--<h4 class="action-box-title">--}}
-        {{--<!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>--}}
-        {{--</div>--}}
+            {{--<!-- Action Box Section -->--}}
+            {{--<section id="action-box2" class="action-box action-black">--}}
+            {{--<div class="container">--}}
+            {{--<div class="row action-box-left">--}}
+            {{--<h4 class="action-box-title">--}}
+            {{--<!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>--}}
+            {{--</div>--}}
 
-        {{--</div>--}}
-        {{--</section>--}}
-    <!-- Action Box Section -->
+            {{--</div>--}}
+            {{--</section>--}}
+                    <!-- Action Box Section -->
 
-        <!-- Service Section
-         Removed !!!
-        End Service Section -->
+            <!-- Service Section
+             Removed !!!
+            End Service Section -->
 
-        <!-- Counter Section -->
-        {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
-        {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
-        {{--<div class="container text-center">--}}
-        {{--<div class="row">--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Awards</h5>--}}
-        {{--</div>--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Clients</h5>--}}
-        {{--</div>--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Projects</h5>--}}
-        {{--</div>--}}
-        {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
-        {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
-        {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
-        {{--<h5 class="counter-sub-title">Teams</h5>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        {{--</section>--}}
-    <!-- End Counter Section -->
+            <!-- Counter Section -->
+            {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
+            {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
+            {{--<div class="container text-center">--}}
+            {{--<div class="row">--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-cup"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->awardCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Awards</h5>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-heart"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->clientCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Clients</h5>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-case"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->projectCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Projects</h5>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 col-sm-6 mb-sm-30">--}}
+            {{--<div class="alt-icon-top counter-icon"><i class="icon icon-basic-lightbulb"></i></div>--}}
+            {{--<h1 class="counter-title counter-num">{!! $generalContent->teamCount !!}</h1>--}}
+            {{--<h5 class="counter-sub-title">Teams</h5>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</section>--}}
+            <!-- End Counter Section -->
 
 
-        <!-- Client Logo -->
-        @if(!empty($clients))
+            <!-- Client Logo -->
+            @if(!empty($clients))
 
-            <section id="client" class="section-padding">
-                <div class="container text-center">
-                    <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
-                </div>
-                <div class="container">
-
-                    <div class="owl-carousel client-carousel">
-                        @foreach($clients as $client)
-                            <div class="item">
-                                <div class="client-logo">
-                                    <a href="#">
-                                        <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                             alt=""/></a>
-                                </div>
-                            </div>
-
-                        @endforeach
+                <section id="client" class="section-padding">
+                    <div class="container text-center">
+                        <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
                     </div>
+                    <div class="container">
 
-
-                </div>
-            </section>
-            <!-- End Client Logo -->
-        @endif
-
-        <hr/>
-
-
-        <!-- Contact Form -->
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
-                 data-background-img="{!! asset('img/full/20.jpg') !!}" data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row text-center">
-                    <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
-                    <h2 class="page-title">Get In <span class="text-light">Touch</span></h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="row">
-                            {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
-                            <div class="col-md-12 text-center">
-                                <h5 class="successContent">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
-                                    sent successfully.
-                                </h5>
-                                <h5 class="errorContent" style="color: #e1534f;">
-                                    <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
-                                    form please check!
-                                </h5>
-
-                                <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name"
-                                           placeholder="Your Name" required/>
-                                </div>
-                                <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email"
-                                           placeholder="Email" required/>
-                                </div>
-                                <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-subject" type="text"
-                                           name="subject" placeholder="Subject"/>
+                        <div class="owl-carousel client-carousel">
+                            @foreach($clients as $client)
+                                <div class="item">
+                                    <div class="client-logo">
+                                        <a href="#">
+                                            <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
+                                                 alt=""/></a>
+                                    </div>
                                 </div>
 
-                                <div class="form-field-wrapper">
+                            @endforeach
+                        </div>
+
+
+                    </div>
+                </section>
+                <!-- End Client Logo -->
+            @endif
+
+            <hr/>
+
+
+            <!-- Contact Form -->
+            <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
+                     data-background-img="{!! asset('img/full/33.jpg') !!}" data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row text-center">
+                        <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
+                        <h2 class="page-title">Get In <span class="text-light">Touch</span></h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="row">
+                                {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
+                                <div class="col-md-12 text-center">
+                                    <h5 class="successContent">
+                                        <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
+                                        sent successfully.
+                                    </h5>
+                                    <h5 class="errorContent" style="color: #e1534f;">
+                                        <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
+                                        form please check!
+                                    </h5>
+
+                                    <div class="form-field-wrapper">
+                                        <input class="input-md form-full" id="form-name" type="text" name="form-name"
+                                               placeholder="Your Name" required/>
+                                    </div>
+                                    <div class="form-field-wrapper">
+                                        <input class="input-md form-full" id="form-email" type="email" name="form-email"
+                                               placeholder="Email" required/>
+                                    </div>
+                                    <div class="form-field-wrapper">
+                                        <input class="input-md form-full" id="form-subject" type="text"
+                                               name="subject" placeholder="Subject"/>
+                                    </div>
+
+                                    <div class="form-field-wrapper">
                                         <textarea class="input-md form-full" id="form-message" rows="7"
                                                   name="form-message" placeholder="Your Message" required></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <div class="form-field-wrapper">
-                                    <label style="color: #fff;"><input type="checkbox" name="request_portfolio" class="input-md form-full" onclick="alert('Hello')">Request Portfolio</label>
+                                <div class="col-md-12 text-center">
+                                    {{--<div class="form-field-wrapper">--}}
+                                        {{--<label style="color: #fff;"><input type="checkbox" name="request_portfolio"--}}
+                                                                           {{--class="input-md form-full"--}}
+                                                                           {{--onclick="alert('Hello')">Request--}}
+                                            {{--Portfolio</label>--}}
+                                    {{--</div>--}}
+                                    <button class="btn-contact-submit btn btn-md btn-color" type="submit"
+                                            id="form-submit" name="submit">Submit
+                                    </button>
                                 </div>
-                                <button class="btn-contact-submit btn btn-md btn-color" type="submit"
-                                        id="form-submit" name="submit">Submit
-                                </button>
+                                {!! Form::close() !!}
                             </div>
-                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- End Contact Form -->
+            </section>
+            <!-- End Contact Form -->
 
-        <!-- Map section -->
-        <section class="map" id="map"></section>
-        <!-- End Map section -->
+            <!-- Map section -->
+            <section class="map" id="map"></section>
+            <!-- End Map section -->
 
-        <!--Contact Info Section-->
-        <section id="contct-info" class="section-padding">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-                        <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
-                        <h5 class="features-title">Address</h5>
-                        <p>
-                            <a>{!! str_replace(',','<br/>',$generalContent->address) !!}</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
-                        <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
-                        <h5 class="features-title">Office Hours</h5>
-                        <p>
-                            <a>Mon - Fri 9.00 AM to 5.00 PM</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
-                        <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
-                        <h5 class="features-title">Contact</h5>
-                        <p class="contact-link">
-                            <a href="mailto:{!! $generalContent->email !!}"><span
-                                        class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
-                            <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a><br/>
-                            <a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}
-                            </a>
-                        </p>
+            <!--Contact Info Section-->
+            <section id="contct-info" class="section-padding">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
+                            <div class="alt-icon-sm-top"><i class="icon icon-basic-geolocalize-05"></i></div>
+                            <h5 class="features-title">Address</h5>
+                            <p>
+                                <a>{!! str_replace(',','<br/>',$generalContent->address) !!}</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
+                            <div class="alt-icon-sm-top"><i class="icon icon-basic-alarm"></i></div>
+                            <h5 class="features-title">Office Hours</h5>
+                            <p>
+                                <a>Mon - Fri 9.00 AM to 5.00 PM</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-sm-30 wow fadeIn" data-wow-delay="0.6s" data-wow-duration="2s">
+                            <div class="alt-icon-sm-top"><i class="icon icon-basic-headset"></i></div>
+                            <h5 class="features-title">Contact</h5>
+                            <p class="contact-link">
+                                <a href="mailto:{!! $generalContent->email !!}"><span
+                                            class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
+                                <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a><br/>
+                                <a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- End Contact Info Section-->
+            </section>
+            <!-- End Contact Info Section-->
 
-        <!--Footer Section-->
-        <footer id="footer" class="footer section-padding gray-bg">
-            <div class="container text-center">
+            <!--Footer Section-->
+            <footer id="footer" class="footer section-padding gray-bg">
+                <div class="container text-center">
 
-                <a class="scroll-top" href="#intro">
-                    <img src="{!! asset('img/logo-light.png')!!}" alt="designonestudio" width="300">
-                </a>
-                <!-- Copyright -->
-                <p class="copyright mb-25">
-                    &copy; {!! date('Y') !!} <a><b> designONE </b></a>. All Rights Reserved.<br>
-                    Solution By <a href="brightron.net">Brightron</a>
-                </p>
-                <!-- Copyright -->
+                    <a class="scroll-top" href="#intro">
+                        <img src="{!! asset('img/logo-light.png')!!}" alt="designonestudio" width="300">
+                    </a>
+                    <!-- Copyright -->
+                    <p class="copyright mb-25">
+                        &copy; {!! date('Y') !!} <a><b> designONE </b></a>. All Rights Reserved.<br>
+                        Solution By <a href="http://brightron.net">Brightron</a>
+                    </p>
+                    <!-- Copyright -->
 
-                <!-- Social -->
-                <ul class="social">
-                    <li>
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-                    </li>
+                    <!-- Social -->
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/designone.lk/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        {{--<li>--}}
+                            {{--<a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>--}}
+                        {{--</li>--}}
+                        <li>
+                            <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </li>
 
-                </ul>
-                <!-- End Social -->
+                    </ul>
+                    <!-- End Social -->
 
-            </div>
-        </footer>
-        <!-- End Footer Section-->
+                </div>
+            </footer>
+            <!-- End Footer Section-->
 
     </div>
 </div>
@@ -587,7 +636,6 @@
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
 
-
 <script type="text/javascript">
     /* $(document).ready(function () {
      $('#newsModal').trigger('click');
@@ -599,14 +647,16 @@
         x = 0;
         $(document).scroll(function () {
             ++x;
-            if(x>20){$('#myModal').modal('hide');}
+            if (x > 20) {
+                $('#myModal').modal('hide');
+            }
 
         });
     });
 
-   /* $(document).scroll(function () {
-        $('#myModal').modal('hide');
-    });*/
+    /* $(document).scroll(function () {
+     $('#myModal').modal('hide');
+     });*/
 
 </script>
 <!-- angular stuffs -->

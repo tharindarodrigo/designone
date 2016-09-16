@@ -56,7 +56,7 @@
 /* General Style   ||-------------------*/
 body {
     color: #666666;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Swis721 LtCn BT', sans-serif;
     font-weight: 400;
     font-size: 14px;
     /*line-height: 1.42857;*/
@@ -1731,6 +1731,7 @@ form label.error {
 }
 
     .header.header-prepare {
+        /*background-color: rgba(200, 200, 200, 1);*/
         background-color: rgba(51, 51, 51, 0.90);
     }
 
@@ -1831,13 +1832,13 @@ form label.error {
             .nav-menu ul.nav-menu-inner li a {
                 display: block;
                 color: #fff;
-                font-size: 13px;
+                font-size: 16px;
                 line-height: 1;
                 padding: 43px 12px;
-                font-weight: 700;
+                font-weight: 500;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                font-family: "Raleway",sans-serif;
+                font-family: "Swis721 LtCn BT",sans-serif;
             }
 
 .nav-menu-icon {

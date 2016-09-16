@@ -22,7 +22,7 @@ Route::get('/', function () {
 
     $projects = \App\Project::with('projectTypes')->get();
     $portfolio = [];
-    $recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
+    //$recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
 
     foreach ($projects as $project) {
         $projectTypeClasses = [];
@@ -34,8 +34,8 @@ Route::get('/', function () {
         }
 
         $projectTypeClasses = implode(" ", $projectTypeClasses);
-        if (date('y') - $project->year <= 3) {
-
+        if (date('Y') - $project->year <= 3) {
+//dd(date('Y')-$project->year);
             $projectTypeClasses .= ' recent';
         }
 
@@ -54,7 +54,7 @@ Route::get('/', function () {
 
 
 //    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients', 'teamMembers'));
+    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients', 'teamMembers', 'recentProjects'));
 });
 
 Route::post('/send-mail', 'GeneralContentsController@sendMail');
