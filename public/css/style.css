@@ -54,9 +54,17 @@
 /*-------------------------------------------------------------------------------------------*/
 
 /* General Style   ||-------------------*/
+
+@font-face {
+    font-family: 'Swiss 721 Light Condensed BT';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Swiss 721 Light Condensed BT'), url('../fonts/fontAwesome_icon_font/swiss%20721%20LT%20CN%20BTl.woff') format('woff');
+}
 body {
     color: #666666;
-    font-family: 'Swis721 LtCn BT', sans-serif;
+  /*  font-family: 'Swis721 LtCn BT', sans-serif;*/
+    font-family:'Swiss 721 Light Condensed BT';
     font-weight: 400;
     font-size: 14px;
     /*line-height: 1.42857;*/

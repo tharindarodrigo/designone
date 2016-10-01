@@ -167,10 +167,19 @@
 
         <section id="about" class="section-padding text-center">
             <div class="container mb-60">
+                 <div class="row text-center">
+                  <div class="col-md-6">
+                  </div>
+                    <div class="col-md-6">
+                         <h2 class="text-center" style="font-family:inherit" >About <span class="text-light">Us</span></h2>
+                    </div>
+                 </div>
                 <div class="row text-center">
-                    <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2>
+                    <!-- <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2> -->
+
 
                     <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+
                         <img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup"/>
                     </div>
                     <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
