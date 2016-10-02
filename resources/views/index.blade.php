@@ -48,7 +48,7 @@
                 <!-- Navigation Menu -->
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
-                        <li><img src="{!! asset('img/logo-light.png')!!}" height="25px" style="margin-top:5px ;"/></li>
+                        <li><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
@@ -171,7 +171,7 @@
                   <div class="col-md-6">
                   </div>
                     <div class="col-md-6">
-                         <h2 class="text-center" style="font-family:inherit" >About <span class="text-light">Us</span></h2>
+                         <h2 class="text-center" >About <span class="text-light">Us</span></h2>
                     </div>
                  </div>
                 <div class="row text-center">
@@ -185,12 +185,12 @@
                     <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
                         <div class="spacer-15"></div>
                         {{--<h6 class="page-title-alt color mb-10">Architecture Planning Interiors</h6>--}}
-                        <div>
-                            <img src="{!! asset('img/logo-dark.png') !!}" width="350" alt="mockup"/>
-                        </div>
+                        {{--<div>--}}
+                            {{--<img src="{!! asset('img/logo-dark.png') !!}" width="350" alt="mockup"/>--}}
+                        {{--</div>--}}
                         <br>
                         {{--<h2 class="page-title mb-25">design<span class="text-light">One</span></h2>--}}
-                        <p class="">{!! $generalContent->about !!}</p>
+                        <p style="text-align: justify">{!! $generalContent->about !!}</p>
                         {{--<img src="img/signature.png" alt="signature" />--}}
                     </div>
                 </div>
@@ -245,7 +245,7 @@
         {{--Portfolio--}}
 
         <section id="portfolio" class="section-padding-t gray-bg">
-            <div class="container text-center" style="font-family: inherit">
+            <div class="container text-left" style="font-family: inherit">
                 <h2>Our <span class="text-light">Work</span></h2>
             </div>
             <div class="container-fluid">
@@ -303,7 +303,7 @@
                         {{--</div>--}}
                     {{--@endforeach--}}
                     @foreach($portfolio as $item)
-                        <div class="portfolio-item {!! $item['categories'] !!}">
+                        <div class="portfolio-item {!! $item['categories'] !!}" style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
                                     <img src="{!! asset($item['thumb_image']) !!}" /></a>
@@ -360,7 +360,7 @@
 
 
         @if(!empty($teamMembers))
-            <section id="team" class="section-padding text-center">
+            <section id="team" class="section-padding text-right">
                 <div class="container">
                     <h2 class="page-title">Busy <span class="text-light">Team</span></h2>
                 </div>
@@ -369,10 +369,10 @@
                         <!--Team Carousel -->
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
-                                <div class="item">
-                                    <div class="team-item">
+                                <div class="item" style="width:300px;">
+                                    <div class="team-item" style="    padding-left: 5px; padding-right: 5px;">
                                         <div class="team-item-img">
-                                            <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
+                                            <img width="" src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
                                                  alt=""/>
                                             {{--<div class="team-item-detail">--}}
                                             {{--<div class="team-item-detail-inner light-color">--}}
