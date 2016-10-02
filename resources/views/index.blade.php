@@ -263,7 +263,11 @@
                     </ul>
 
                 </div>
-                <div class="portfolio-grid-fit row gallery-popup">
+
+                <div  class="portfolio-grid-fit row gallery-popup">
+
+                    <div class="col-md-1"></div>
+                    <div class="col-md-9">
                     <!------->
                     {{--@foreach($recentProjects as $item)--}}
                         {{--<div class="portfolio-item recent">--}}
@@ -301,9 +305,10 @@
                                 {{--</div>--}}
                             {{--</div>--}}
                         {{--</div>--}}
+
                     {{--@endforeach--}}
                     @foreach($portfolio as $item)
-                        <div class="portfolio-item {!! $item['categories'] !!}">
+                        <div style="margin: 10px;" class="portfolio-item {!! $item['categories'] !!}">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
                                     <img src="{!! asset($item['thumb_image']) !!}" /></a>
@@ -342,6 +347,7 @@
 
 
                 </div>
+
             </div>
         </section>
 
@@ -369,9 +375,9 @@
                         <!--Team Carousel -->
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
-                                <div class="item">
-                                    <div class="team-item">
-                                        <div class="team-item-img">
+                                <div class="item"">
+                                    <div style="margin: 9px; class="team-item">
+                                        <div  class="team-item-img">
                                             <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
                                                  alt=""/>
                                             {{--<div class="team-item-detail">--}}
