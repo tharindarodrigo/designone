@@ -375,7 +375,7 @@
                         <!--Team Carousel -->
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
-                                <div class="item"">
+                                <div class="item">
                                     <div style="margin: 9px; class="team-item">
                                         <div  class="team-item-img">
                                             <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
