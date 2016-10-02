@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="461826c6-3d77-4948-b4cc-a14582c37899" name="brightron" url="http://brightron.net">
-        <fileTransfer host="brightron.net" port="21" accessType="SFTP" password="dfeddfcfdfdedfc7dfcfdfc3dfc4dfd9dfc3dfcedfcfdf9bdf98df99" username="brightron">
+        <fileTransfer host="brightron.net" port="21" accessType="SFTP" password="dfeddfcfdfdedfc7dfcfdfc3dfc4dfd9dfc3dfcedfcfdf9bdf98df89" username="brightron">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
