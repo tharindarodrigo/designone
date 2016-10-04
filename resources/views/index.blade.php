@@ -190,7 +190,7 @@
                         {{--</div>--}}
                         <br>
                         {{--<h2 class="page-title mb-25">design<span class="text-light">One</span></h2>--}}
-                        <p style="text-align: justify">{!! $generalContent->about !!}</p>
+{{--                        <p style="text-align: justify">{!! $generalContent->about !!}</p>--}}
                         {{--<img src="img/signature.png" alt="signature" />--}}
                     </div>
                 </div>
@@ -203,7 +203,7 @@
 
         {{-- End About Section --}}
 
-        {{--{{-- Statement1 Section --}}--}}
+        {{-- Statement1 Section --}}
         {{--<section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
         {{--data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">--}}
         {{--<div class="container">--}}
@@ -226,8 +226,8 @@
         {{--<div class="testimonial text-center max-width-700">--}}
         {{--<div class="page-icon-sm">{!! $newsItem->title !!}</div>--}}
         {{--<p class="lead">{{--I got a dummy for Christmas and started teaching myself. I got books and--}}
-        {{--records and sat in front of the practising.--}}{!! $newsItem->news !!}</p>--}}
-        {{--<h6 class="quote-author">{{-- Jeff Dunham --}} {!! "- ".$newsItem->date !!}--}}
+        {{--records and sat in front of the practising. $newsItem->news !!}</p>--}}
+        {{--<h6 class="quote-author"> Jeff Dunha {!! "- ".$newsItem->date !!}--}}
         {{--</h6>--}}
         {{--</div>--}}
         {{--</div>--}}

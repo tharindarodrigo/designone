@@ -59,7 +59,8 @@
     font-family: 'Swiss 721 Light Condensed BT';
     font-style: normal;
     font-weight: normal;
-    src: local('Swiss 721 Light Condensed BT'), url('../fonts/fontAwesome_icon_font/swiss%20721%20LT%20CN%20BTl.woff') format('woff');
+    font-size: 14px;
+    src: local('Swiss 721 Light Condensed BT'), url('../fonts/fontAwesome_icon_font/swiss-721-LT-CN-BTl.woff') format('woff');
 }
 body {
     color: #666666;
