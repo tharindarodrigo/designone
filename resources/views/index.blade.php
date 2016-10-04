@@ -1,25 +1,25 @@
-﻿﻿<html>
+﻿<html>
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-16"/>
     <title>DesignOne</title>
     <meta name="description" content="design, architecture, creative"/>
     <meta name="keywords"
           content="architecture, design, buildings, creative, projects, houses, restaurant, Sri Lanka"/>
     <meta name="author" content="Brightron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-    <!--[if IE]>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <!-- Favicone Icon -->
+    {{--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--}}
+    {{-- Favicone Icon --}}
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
-    <!-- angular stuffs -->
+    {{-- angular stuffs --}}
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
-    <!-- Css -->
+    {{-- Css --}}
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
-    <!-- SLIDER REVOLUTION CSS SETTINGS -->
+    {{-- SLIDER REVOLUTION CSS SETTINGS --}}
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 </head>
@@ -31,21 +31,21 @@
     <div class="wrapper">
         <div id="header" class="header">
             <div class="header-inner">
-                <!-- Logo -->
+                {{-- Logo --}}
                 {{--<div class="logo">--}}
                 {{--<a href="#" >--}}
                 {{----}}
                 {{--</a>--}}
                 {{--</div>--}}
-                <!-- End Logo -->
+                {{-- End Logo --}}
 
-                <!--Navigation Icon-->
+                {{--Navigation Icon--}}
                 <div class="nav-menu-icon">
                     <a><i class="fa fa-bars"></i></a>
                 </div>
-                <!--End Navigation Icon-->
+                {{--End Navigation Icon--}}
 
-                <!-- Navigation Menu -->
+                {{-- Navigation Menu --}}
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
                         <li><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
@@ -59,7 +59,7 @@
 
                     </ul>
                 </div>
-                <!-- End Navigation Menu -->
+                {{-- End Navigation Menu --}}
             </div>
         </div>
 
@@ -85,27 +85,27 @@
                         @endforeach
                     </div>
 
-                </div><!-- modal-content -->
-            </div><!-- modal-dialog -->
-        </div><!-- modal -->
-        <!--Intro Section-->
+                </div>{{-- modal-content --}}
+            </div>{{-- modal-dialog --}}
+        </div>{{-- modal --}}
+        {{--Intro Section--}}
         <section id="intro">
-            <!--Slider Hero-->
+            {{--Slider Hero--}}
             <div class="tp-banner-container">
                 <div class="intro-tp-banner">
                     <ul>
-                        <!-- SLIDE  -->
+                        {{-- SLIDE  --}}
                         @if(!empty($sliderImages))
                             {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
                                 <li class="" data-transition="slidevertical" data-slotamount="5" data-masterspeed="700">
-                                    <!-- MAIN IMAGE -->
+                                    {{-- MAIN IMAGE --}}
                                     <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
                                          alt="SliderImages"
                                          data-bgfit="cover"
                                          data-bgposition="top center" data-bgrepeat="no-repeat">
 
-                                    <!-- LAYER NR. 2 -->
+                                    {{-- LAYER NR. 2 --}}
                                     <h2 class="tp-caption lfb ltt tp-resizeme sc-title"
                                         data-x="center" data-hoffset="0"
                                         data-y="center" data-voffset="-25"
@@ -122,7 +122,7 @@
                                         {!! $sliderImage->title !!}
                                     </h2>
 
-                                    <!-- LAYER NR. 3 -->
+                                    {{-- LAYER NR. 3 --}}
                                     <p class="tp-caption lfb ltt tp-resizeme sc-paragraph-lead"
                                        data-x="center" data-hoffset="0"
                                        data-y="center" data-voffset="40"
@@ -151,12 +151,12 @@
                     <div class="tp-bannertimer"></div>
                 </div>
             </div>
-            <!-- End Slider Hero-->
+            {{-- End Slider Hero--}}
 
         </section>
-        <!-- End Intro Section-->
+        {{-- End Intro Section--}}
 
-        <!-- About Section -->
+        {{-- About Section --}}
         {{--<section id="about" class="section-padding text-center">--}}
         {{--<div class="container mb-60">--}}
         {{--<h2>About <span class="text-light">Us</span></h2>--}}
@@ -175,7 +175,7 @@
                     </div>
                  </div>
                 <div class="row text-center">
-                    <!-- <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2> -->
+                    {{-- <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2> --}}
 
 
                     <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s" data-wow-duration="1s">
@@ -196,14 +196,14 @@
                 </div>
             </div>
         </section>
-        <!-- End About Section -->
+        {{-- End About Section --}}
 
 
 
 
-        <!-- End About Section -->
+        {{-- End About Section --}}
 
-        {{--<!-- Statement1 Section -->--}}
+        {{--{{-- Statement1 Section --}}--}}
         {{--<section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
         {{--data-stellar-background-ratio="0.5" data-background-img="{!! asset('img/full/33.jpg') !!}">--}}
         {{--<div class="container">--}}
@@ -225,9 +225,9 @@
         {{--<div class="item">--}}
         {{--<div class="testimonial text-center max-width-700">--}}
         {{--<div class="page-icon-sm">{!! $newsItem->title !!}</div>--}}
-        {{--<p class="lead"><!--I got a dummy for Christmas and started teaching myself. I got books and--}}
-        {{--records and sat in front of the practising.-->{!! $newsItem->news !!}</p>--}}
-        {{--<h6 class="quote-author"><!-- Jeff Dunham --> {!! "- ".$newsItem->date !!}--}}
+        {{--<p class="lead">{{--I got a dummy for Christmas and started teaching myself. I got books and--}}
+        {{--records and sat in front of the practising.--}}{!! $newsItem->news !!}</p>--}}
+        {{--<h6 class="quote-author">{{-- Jeff Dunham --}} {!! "- ".$newsItem->date !!}--}}
         {{--</h6>--}}
         {{--</div>--}}
         {{--</div>--}}
@@ -264,7 +264,7 @@
 
                 </div>
                 <div class="portfolio-grid-fit row gallery-popup">
-                    <!------->
+                    {{-------}}
                     {{--@foreach($recentProjects as $item)--}}
                         {{--<div class="portfolio-item recent">--}}
                             {{--<div class="portfolio-box" style="border: thick;">--}}
@@ -348,7 +348,7 @@
 
         {{--End Portfolio Section --}}
 
-        <!-- Statement1 Section -->
+        {{-- Statement1 Section --}}
         <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
                  data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg" >
             <div class="container" >
@@ -366,7 +366,7 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <!--Team Carousel -->
+                        {{--Team Carousel --}}
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
                                 <div class="item" style="width:300px;">
@@ -401,29 +401,29 @@
                                 </div>
                             @endforeach
                         </div>
-                        <!--End Team Carousel --->
+                        {{--End Team Carousel ---}}
                     </div>
                 </div>
             </section>
             @endif
 
-            {{--<!-- Action Box Section -->--}}
+            {{--{{-- Action Box Section --}}--}}
             {{--<section id="action-box2" class="action-box action-black">--}}
             {{--<div class="container">--}}
             {{--<div class="row action-box-left">--}}
             {{--<h4 class="action-box-title">--}}
-            {{--<!--Designs filled with creativity and innovation--> {!! $generalContent->portfolioDescription !!}</h4>--}}
+            {{--{{--Designs filled with creativity and innovation--}} {!! $generalContent->portfolioDescription !!}</h4>--}}
             {{--</div>--}}
 
             {{--</div>--}}
             {{--</section>--}}
-                    <!-- Action Box Section -->
+                    {{-- Action Box Section --}}
 
-            <!-- Service Section
+            {{-- Service Section
              Removed !!!
-            End Service Section -->
+            End Service Section --}}
 
-            <!-- Counter Section -->
+            {{-- Counter Section --}}
             {{--<section id="counter" class="section-padding bg-image overlay-dark dark-bg" data-stellar-background-ratio="0.5"--}}
             {{--data-background-img="{!! asset('img/full/14.jpg') !!}">--}}
             {{--<div class="container text-center">--}}
@@ -451,10 +451,10 @@
             {{--</div>--}}
             {{--</div>--}}
             {{--</section>--}}
-            <!-- End Counter Section -->
+            {{-- End Counter Section --}}
 
 
-            <!-- Client Logo -->
+            {{-- Client Logo --}}
             @if(!empty($clients))
 
                 <section id="client" class="section-padding">
@@ -479,13 +479,13 @@
 
                     </div>
                 </section>
-                <!-- End Client Logo -->
+                {{-- End Client Logo --}}
             @endif
 
             <hr/>
 
 
-            <!-- Contact Form -->
+            {{-- Contact Form --}}
             <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
                      data-background-img="{!! asset('img/full/33.jpg') !!}" data-stellar-background-ratio="0.5">
                 <div class="container">
@@ -542,13 +542,13 @@
                     </div>
                 </div>
             </section>
-            <!-- End Contact Form -->
+            {{-- End Contact Form --}}
 
-            <!-- Map section -->
+            {{-- Map section --}}
             <section class="map" id="map"></section>
-            <!-- End Map section -->
+            {{-- End Map section --}}
 
-            <!--Contact Info Section-->
+            {{--Contact Info Section--}}
             <section id="contct-info" class="section-padding">
                 <div class="container text-center">
                     <div class="row">
@@ -580,23 +580,23 @@
                     </div>
                 </div>
             </section>
-            <!-- End Contact Info Section-->
+            {{-- End Contact Info Section--}}
 
-            <!--Footer Section-->
+            {{--Footer Section--}}
             <footer id="footer" class="footer section-padding gray-bg">
                 <div class="container text-center">
 
                     <a class="scroll-top" href="#intro">
                         <img src="{!! asset('img/logo-light.png')!!}" alt="designonestudio" width="300">
                     </a>
-                    <!-- Copyright -->
+                    {{-- Copyright --}}
                     <p class="copyright mb-25">
                         &copy; {!! date('Y') !!} <a><b> designONE </b></a>. All Rights Reserved.<br>
                         Solution By <a href="http://brightron.net">Brightron</a>
                     </p>
-                    <!-- Copyright -->
+                    {{-- Copyright --}}
 
-                    <!-- Social -->
+                    {{-- Social --}}
                     <ul class="social">
                         <li>
                             <a href="https://www.facebook.com/designone.lk/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -609,17 +609,17 @@
                         </li>
 
                     </ul>
-                    <!-- End Social -->
+                    {{-- End Social --}}
 
                 </div>
             </footer>
-            <!-- End Footer Section-->
+            {{-- End Footer Section--}}
 
     </div>
 </div>
-<!-- End Page Wraper -->
+{{-- End Page Wraper --}}
 
-<!-- Js -->
+{{-- Js --}}
 <script src="{!! asset('js/jquery-1.11.2.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.easing.1.3.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/bootstrap.min.js') !!}" type="text/javascript"></script>
@@ -631,10 +631,10 @@
 <script src="{!! asset('js/plugins/jquery.countTo.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/owl.carousel.min.js') !!}" type="text/javascript"></script>
 
-<!-- SLIDER REVOLUTION SCRIPTS  -->
+{{-- SLIDER REVOLUTION SCRIPTS  --}}
 <script src="{!! asset('rs-plugin/js/jquery.themepunch.tools.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('rs-plugin/js/jquery.themepunch.revolution.min.js') !!}" type="text/javascript"></script>
-<!-- End SLIDER REVOLUTION SCRIPTS  -->
+{{-- End SLIDER REVOLUTION SCRIPTS  --}}
 <script src="{!! asset('js/plugins/jquery.magnific-popup.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.singlePageNav.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/wow.min.js') !!}" type="text/javascript"></script>
@@ -668,7 +668,7 @@
      });*/
 
 </script>
-<!-- angular stuffs -->
+{{-- angular stuffs --}}
 {{--<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>--}}
 {{--<script src="{!! asset('scripts/vendor/jquery.isotope.js') !!}"></script>--}}
 {{--<script src="{!! asset('scripts/angular-isotope.js') !!}"></script>--}}
