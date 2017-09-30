@@ -422,7 +422,7 @@
         @if(!empty($clients))
 
             <section id="client" class="section-padding">
-                <div class="container text-center">
+                <div class="container text-left">
                     <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
                 </div>
                 <div class="container">
