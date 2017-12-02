@@ -25,10 +25,23 @@
 
     <style type="text/css">
         @media screen and (max-width: 600px) {
-            .menu_down {
-                float: right;
+            .mobile_logo {
+                visibility: hidden;
+            }
+            .desktop_logo {
+                visibility: visible;
             }
         }
+
+        @media screen and (min-width: 600px) {
+            .mobile_logo {
+                visibility: visible;
+            }
+            .desktop_logo {
+                visibility: hidden;
+            }
+        }
+
     </style>
 </head>
 <body style="font-family: font-family: 'Swis721 LtCn BT',sans-serif;">
@@ -39,10 +52,10 @@
     <div class="wrapper">
         <div id="header" class="header">
             <div class="header-inner">
-                <div class="logo">
-                <a href="#" >
-                    <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
-                </a>
+                <div class="logo mobile_logo">
+                    <a href="#" >
+                        <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
+                    </a>
                 </div>
 
                 {{--Navigation Icon--}}
@@ -54,7 +67,7 @@
                 {{-- Navigation Menu --}}
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
-                        <li><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
+                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
