@@ -26,7 +26,7 @@
     <style type="text/css">
         @media screen and (max-width: 600px) {
             .menu_down {
-                float:
+                float: right;
             }
         }
     </style>
