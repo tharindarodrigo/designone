@@ -222,7 +222,7 @@
                 {{--<h2>Our <span class="text-light">Work</span></h2>--}}
             {{--</div>--}}
             <div class="container-fluid">
-                <div class="row">
+                {{--<div class="row">--}}
                     <ul class="portfolio-filter categories-filter text-left">
                         <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
                         <li><a class="categories active" data-filter="*">All</a></li>
@@ -236,7 +236,7 @@
                         @endif
                     </ul>
 
-                </div>
+                {{--</div>--}}
                 <div class="portfolio-grid-fit row gallery-popup">
                     {{-------}}
                     {{--@foreach($recentProjects as $item)--}}
