@@ -221,7 +221,7 @@
             {{--<div class="container text-left" style="font-family: inherit">--}}
                 {{--<h2>Our <span class="text-light">Work</span></h2>--}}
             {{--</div>--}}
-            <div class="container-fluid">
+            <div class="container">
                 {{--<div class="row">--}}
                     <ul class="portfolio-filter categories-filter text-left">
                         <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
