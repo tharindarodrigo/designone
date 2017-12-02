@@ -218,64 +218,27 @@
         {{--Portfolio--}}
 
         <section id="portfolio" class="section-padding-t gray-bg">
-            {{--<div class="container text-left" style="font-family: inherit">--}}
-                {{--<h2>Our <span class="text-light">Work</span></h2>--}}
-            {{--</div>--}}
-            <div class="container">
+            <div class="container text-left" style="font-family: inherit">
+                <ul class="portfolio-filter categories-filter text-left">
+                    <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
+                    <li><a class="categories active" data-filter="*">All</a></li>
+                    <li><a class="categories" data-filter=".recent">Recent</a></li>
+                    @if(!empty($projectTypes))
+                        @foreach($projectTypes as $projectType)
+                            <li><a class="categories"
+                                   data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+            </div>
+            <div class="container-fluid">
                 {{--<div class="row">--}}
-                    <ul class="portfolio-filter categories-filter text-left">
-                        <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
-                        <li><a class="categories active" data-filter="*">All</a></li>
-                        <li><a class="categories" data-filter=".recent">Recent</a></li>
-                        @if(!empty($projectTypes))
-                            @foreach($projectTypes as $projectType)
-                                <li><a class="categories"
-                                       data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
-                                </li>
-                            @endforeach
-                        @endif
-                    </ul>
+
 
                 {{--</div>--}}
                 <div class="portfolio-grid-fit row gallery-popup">
-                    {{-------}}
-                    {{--@foreach($recentProjects as $item)--}}
-                    {{--<div class="portfolio-item recent">--}}
-                    {{--<div class="portfolio-box" style="border: thick;">--}}
-                    {{--<a class="portfolio-image-wrap">--}}
-                    {{--<img src="{!! asset($item['thumb_image']) !!}" /></a>--}}
-                    {{--<div class="portfolio-caption">--}}
-                    {{--<div class="portfolio-caption-tb">--}}
-                    {{--<div class="portfolio-caption-tb-cell">--}}
-                    {{--<h5>{!! $item['heading'] !!}</h5>--}}
-                    {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
-                    {{--<ul class="portfolio-btn-wraper">--}}
-                    {{--<li>--}}
-                    {{--<a class="gallery-popup-link btn btn-color"--}}
-                    {{--href="{!! asset($item['large_image']) !!}"--}}
-                    {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
-                    {{--class="fa fa-search"></i></a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                    {{--<a class="btn btn-black" target="_blank"--}}
-                    {{--href="https://www.dribbble.com/"><i--}}
-                    {{--class="fa fa-dribbble"></i></a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                    {{--<a class="btn btn-black" target="_blank"--}}
-                    {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                    {{--<a class="btn btn-black" target="_blank"--}}
-                    {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
-                    {{--</li>--}}
-                    {{--</ul>--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-                    {{--@endforeach--}}
+
                     @foreach($portfolio as $item)
                         <div class="portfolio-item {!! $item['categories'] !!}"
                              style="background-color: #FFF; padding: 2px;">
