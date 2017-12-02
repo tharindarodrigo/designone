@@ -22,6 +22,19 @@
     {{-- SLIDER REVOLUTION CSS SETTINGS --}}
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
+
+    <style type="text/css">
+        @media screen and (max-width: 600px) {
+            .main_title {
+                visibility: hidden;
+                clear: both;
+                float: left;
+                margin: 10px auto 5px 20px;
+                width: 28%;
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body style="font-family: font-family: 'Swis721 LtCn BT',sans-serif;">
 <section id="preloader">
@@ -98,7 +111,7 @@
                         @if(!empty($sliderImages))
                             {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
-                                <li class="" data-transition="slidevertical" data-slotamount="5" data-masterspeed="700">
+                                <li class="" data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700">
                                     {{-- MAIN IMAGE --}}
                                     <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
                                          alt="SliderImages"
@@ -211,7 +224,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ul class="portfolio-filter categories-filter">
-                        <li><h2>Our <span class="text-light">Work</span></h2></li>
+                        <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
                         <li><a class="categories active" data-filter="*">All</a></li>
                         <li><a class="categories" data-filter=".recent">Recent</a></li>
                         @if(!empty($projectTypes))
