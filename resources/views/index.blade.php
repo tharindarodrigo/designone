@@ -218,12 +218,12 @@
         {{--Portfolio--}}
 
         <section id="portfolio" class="section-padding-t gray-bg">
-            <div class="container text-left" style="font-family: inherit">
-                <h2>Our <span class="text-light">Work</span></h2>
-            </div>
+            {{--<div class="container text-left" style="font-family: inherit">--}}
+                {{--<h2>Our <span class="text-light">Work</span></h2>--}}
+            {{--</div>--}}
             <div class="container-fluid">
                 <div class="row">
-                    <ul class="portfolio-filter categories-filter">
+                    <ul class="portfolio-filter categories-filter text-left">
                         <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
                         <li><a class="categories active" data-filter="*">All</a></li>
                         <li><a class="categories" data-filter=".recent">Recent</a></li>
