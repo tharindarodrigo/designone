@@ -25,13 +25,8 @@
 
     <style type="text/css">
         @media screen and (max-width: 600px) {
-            .main_title {
-                visibility: hidden;
-                clear: both;
-                float: left;
-                margin: 10px auto 5px 20px;
-                width: 28%;
-                display: none;
+            .menu_down {
+                float:
             }
         }
     </style>
@@ -220,8 +215,8 @@
         <section id="portfolio" class="section-padding-t gray-bg">
             <div class="container text-left" style="font-family: inherit">
                 <ul class="portfolio-filter categories-filter text-left">
-                    <li><h2 class=".main_title">Our <span class="text-light">Work</span></h2></li>
-                    <li><a class="categories active" data-filter="*">All</a></li>
+                    <li><h2>Our <span class="text-light">Work</span></h2></li>
+                    <li class="menu_down" ><a class="categories active" data-filter="*">All</a></li>
                     <li><a class="categories" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
