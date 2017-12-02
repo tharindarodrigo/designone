@@ -39,13 +39,11 @@
     <div class="wrapper">
         <div id="header" class="header">
             <div class="header-inner">
-                {{-- Logo --}}
-                {{--<div class="logo">--}}
-                {{--<a href="#" >--}}
-                {{----}}
-                {{--</a>--}}
-                {{--</div>--}}
-                {{-- End Logo --}}
+                <div class="logo">
+                <a href="#" >
+                    <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
+                </a>
+                </div>
 
                 {{--Navigation Icon--}}
                 <div class="nav-menu-icon">
