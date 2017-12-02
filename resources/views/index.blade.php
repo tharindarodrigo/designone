@@ -140,8 +140,6 @@
                                         <br/>
 
                                     </p>
-
-
                                 </li>
                             @endforeach
                         @endif
@@ -213,6 +211,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ul class="portfolio-filter categories-filter">
+                        <li><h2>Our <span class="text-light">Work</span></h2></li>
                         <li><a class="categories active" data-filter="*">All</a></li>
                         <li><a class="categories" data-filter=".recent">Recent</a></li>
                         @if(!empty($projectTypes))
