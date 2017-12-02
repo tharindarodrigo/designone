@@ -252,19 +252,19 @@
                                                        title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i
                                                                 class="fa fa-search"></i></a>
                                                 </li>
-                                                <li>
-                                                    <a class="btn btn-black" target="_blank"
-                                                       href="https://www.dribbble.com/"><i
-                                                                class="fa fa-dribbble"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="btn btn-black" target="_blank"
-                                                       href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="btn btn-black" target="_blank"
-                                                       href="https://www.behance.net/"><i class="fa fa-behance"></i></a>
-                                                </li>
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.dribbble.com/"><i--}}
+                                                                {{--class="fa fa-dribbble"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                                                {{--</li>--}}
                                             </ul>
                                         </div>
                                     </div>
