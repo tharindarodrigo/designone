@@ -26,19 +26,19 @@
     <style type="text/css">
         @media screen and (max-width: 600px) {
             .mobile_logo {
-                visibility: hidden;
-            }
+                 visibility: visible;
+             }
             .desktop_logo {
-                visibility: visible;
+                visibility: hidden;
             }
         }
 
         @media screen and (min-width: 600px) {
             .mobile_logo {
-                visibility: visible;
+                visibility: hidden;
             }
             .desktop_logo {
-                visibility: hidden;
+                visibility: visible;
             }
         }
 
