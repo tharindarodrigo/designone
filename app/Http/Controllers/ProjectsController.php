@@ -121,17 +121,18 @@ class ProjectsController extends Controller
 
                 if ($width > $length) {
                     if ($width > 1280) {
-                        $x = $x->resize(null, 1280, function ($constraint) {
+                        $x = $x->resize(1280, null, function ($constraint) {
                             $constraint->aspectRatio();
                         });
                     }
                 } else {
                     if ($length > 1280) {
-                        $x = $x->resize(1280, null, function ($constraint) {
+                        $x = $x->resize(null, 1280, function ($constraint) {
                             $constraint->aspectRatio();
                         });
                     }
                 }
+
 
                 $x->save('control-panel/images/projects/' . $project->id . '.jpg');
 
