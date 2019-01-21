@@ -113,9 +113,28 @@ class ProjectsController extends Controller
             $project->projectTypes()->sync($request->get('project_type'));
 
             if ($image = Input::file('project_photo')) {
-                Image::make($image)
-                    ->encode('jpg')
-                    ->save('control-panel/images/projects/' . $project->id . '.jpg');
+                $x = Image::make($image);
+                $width = $x->width();
+                $length = $x->height();
+
+                $x->encode('jpg');
+
+                if ($width > $length) {
+                    if ($width > 1280) {
+                        $x = $x->resize(null, 1280, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
+                    }
+                } else {
+                    if ($length > 1280) {
+                        $x = $x->resize(1280, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
+                    }
+                }
+
+                $x->save('control-panel/images/projects/' . $project->id . '.jpg');
+
                 Image::make($image)
                     ->resize(320, 240)
                     ->encode('jpg')
