@@ -48,7 +48,7 @@ class ProjectsController extends Controller
 
                 $x = Image::make($image);
                 $width = $x->width();
-                $length = $x->length();
+                $length = $x->height();
 
                 $x->encode('jpg');
 
@@ -117,7 +117,7 @@ class ProjectsController extends Controller
                     ->encode('jpg')
                     ->save('control-panel/images/projects/' . $project->id . '.jpg');
                 Image::make($image)
-                    ->resize(780, 508)
+                    ->resize(320, 240)
                     ->encode('jpg')
                     ->save('control-panel/images/projects/thumb/' . $project->id . '.jpg');
             }
