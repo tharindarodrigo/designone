@@ -50,7 +50,7 @@ class ProjectsController extends Controller
                 $width = $x->width();
                 $length = $x->height();
 
-                $x->encode('jpg');
+                $x = $x->encode('jpg');
 
                 if ($width > $length) {
                     if ($width > 1280) {
@@ -117,7 +117,7 @@ class ProjectsController extends Controller
                 $width = $x->width();
                 $length = $x->height();
 
-                $x->encode('jpg');
+                $x = $x->encode('jpg');
 
                 if ($width > $length) {
                     if ($width > 1280) {
