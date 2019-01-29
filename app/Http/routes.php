@@ -14,7 +14,7 @@
 Route::get('/', function () {
 //    $sliderImages = \App\GeneralContent::all();
     $generalContent = App\GeneralContent::find(1);
-    $sliderImages = \App\SliderImage::all();
+    $sliderImages = \App\SliderImage::orderBy('id', 'desc')->get();
     $projectTypes = \App\ProjectType::all();
     $newsItems = \App\News::all();
     $clients = \App\Client::all();
