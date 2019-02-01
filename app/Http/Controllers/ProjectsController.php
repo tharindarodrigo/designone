@@ -158,7 +158,7 @@ class ProjectsController extends Controller
             return redirect()->back();
         }
 
-        $project->projectTypes()->detatch();
+        $project->projectTypes()->detach();
 
         if ($project->delete()) {
             if (file_exists(public_path() . '/control-panel/images/projects/' . $id . '.jpg')) {
