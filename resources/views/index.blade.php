@@ -250,7 +250,8 @@
                              style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
-                                    <img src="{!! asset($item['thumb_image']) !!}"/></a>
+                                    <img src="{!! asset($item['thumb_image']) !!}"/>
+                                </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-tb">
                                         <div class="portfolio-caption-tb-cell">
