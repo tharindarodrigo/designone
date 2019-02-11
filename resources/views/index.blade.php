@@ -300,7 +300,7 @@
                         <div class="s-portfolio__item cbp-item motion graphic">
 
                             <div class="s-portfolio__img-effect">
-                                <img src="{!! asset($item['image_thumb']) !!}" alt="Portfolio Image">
+                                <img src="{!! asset($item['thumb_image']) !!}" alt="Portfolio Image">
                             </div>
                             <div class="s-portfolio__caption-hover--cc">
                                 <div class="g-margin-b-25--xs">
@@ -309,7 +309,7 @@
                                 </div>
                                 <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
                                     <li>
-                                        <a href="{!! $item['image_large'] !!}"
+                                        <a href="{!! $item['large_image'] !!}"
                                            class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
                                            data-title="Portfolio Item <br/> by KeenThemes Inc.">
                                             <i class="ti-fullscreen"></i>
