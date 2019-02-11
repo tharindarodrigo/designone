@@ -267,29 +267,29 @@
 
 
                 {{--</div>--}}
-                <div class="portfolio-grid-fit row gallery-popup">
+                {{--<div class="portfolio-grid-fit row gallery-popup">--}}
 
-                    @foreach($portfolio as $item)
-                        <div class="portfolio-item {!! $item['categories'] !!}"
-                             style="background-color: #FFF; padding: 2px;">
-                            <div class="portfolio-box" style="border: thick;">
-                                <a class="portfolio-image-wrap">
-                                    <img src="{!! asset($item['thumb_image']) !!}"
-                                         height="{{ Image::make($item['thumb_image'])->height() }}"
-                                         width="{{ Image::make($item['thumb_image'])->height() }}"/>
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-tb">
-                                        <div class="portfolio-caption-tb-cell">
-                                            <h5>{!! $item['heading'] !!}</h5>
-                                            <p>{!! $item['country'].' '.$item['year'] !!}</p>
-                                            <ul class="portfolio-btn-wraper">
-                                                <li>
-                                                    <a class="gallery-popup-link btn btn-color"
-                                                       href="{!! asset($item['large_image']) !!}"
-                                                       title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i
-                                                                class="fa fa-search"></i></a>
-                                                </li>
+                    {{--@foreach($portfolio as $item)--}}
+                        {{--<div class="portfolio-item {!! $item['categories'] !!}"--}}
+                             {{--style="background-color: #FFF; padding: 2px;">--}}
+                            {{--<div class="portfolio-box" style="border: thick;">--}}
+                                {{--<a class="portfolio-image-wrap">--}}
+                                    {{--<img src="{!! asset($item['thumb_image']) !!}"--}}
+                                         {{--height="{{ Image::make($item['thumb_image'])->height() }}"--}}
+                                         {{--width="{{ Image::make($item['thumb_image'])->height() }}"/>--}}
+                                {{--</a>--}}
+                                {{--<div class="portfolio-caption">--}}
+                                    {{--<div class="portfolio-caption-tb">--}}
+                                        {{--<div class="portfolio-caption-tb-cell">--}}
+                                            {{--<h5>{!! $item['heading'] !!}</h5>--}}
+                                            {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
+                                            {{--<ul class="portfolio-btn-wraper">--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="gallery-popup-link btn btn-color"--}}
+                                                       {{--href="{!! asset($item['large_image']) !!}"--}}
+                                                       {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
+                                                                {{--class="fa fa-search"></i></a>--}}
+                                                {{--</li>--}}
                                                 {{--<li>--}}
                                                 {{--<a class="btn btn-black" target="_blank"--}}
                                                 {{--href="https://www.dribbble.com/"><i--}}
@@ -303,15 +303,14 @@
                                                 {{--<a class="btn btn-black" target="_blank"--}}
                                                 {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
                                                 {{--</li>--}}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
+                                            {{--</ul>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--@endforeach--}}
+                {{--</div>--}}
 
                 <div id="js__grid-portfolio-gallery" class="cbp">
                     @foreach($portfolio as $item)
