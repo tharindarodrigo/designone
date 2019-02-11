@@ -23,10 +23,10 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 
-    <link href="{!! asset('themify/themify.css')!!}" rel="stylesheet" type="text/css"/>
-    <link href="{!! asset('scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{!! asset('swiper/swiper.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('cubeportfolio/css/cubeportfolio.min.css') !!}">
+    <link href="{!! asset('vendor/themify/themify.css')!!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('vendor/scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{!! asset('vendor/swiper/swiper.min.css') !!}">
+    <link rel="stylesheet" href="{!! asset('vendor/cubeportfolio/css/cubeportfolio.min.css') !!}">
 
     <style type="text/css">
         @media screen and (max-width: 600px) {
