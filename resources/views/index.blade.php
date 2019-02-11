@@ -250,7 +250,7 @@
                              style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
-                                    <img src="{!! asset($item['thumb_image']) !!}" height="240"/>
+                                    <img src="{!! asset($item['thumb_image']) !!}" height="{{ \Intervention\Image\Image::make($item['thumb_image'])->height() }}" width="{{ \Intervention\Image\Image::make($item['thumb_image'])->height() }}"/>
                                 </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-tb">
