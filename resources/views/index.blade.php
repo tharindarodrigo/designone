@@ -16,6 +16,8 @@
     {{-- angular stuffs --}}
 {{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
     {{-- Css --}}
+    <link href="{!! asset('css/style2.css')!!}" rel="stylesheet" type="text/css"/>
+
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
@@ -28,7 +30,6 @@
     <link rel="stylesheet" href="{!! asset('vendor/swiper/swiper.min.css') !!}">
     <link rel="stylesheet" href="{!! asset('vendor/cubeportfolio/css/cubeportfolio.min.css') !!}">
 
-    <link href="{!! asset('css/style2.css')!!}" rel="stylesheet" type="text/css"/>
 
 
     <style type="text/css">
