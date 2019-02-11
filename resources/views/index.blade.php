@@ -1,6 +1,6 @@
 ﻿﻿<html>
 <head>
-    <meta charset="utf-16"/>
+    <meta charset="utf-8"/>
     <title>DesignOne</title>
     <meta name="description" content="design, architecture, creative"/>
     <meta name="keywords"
