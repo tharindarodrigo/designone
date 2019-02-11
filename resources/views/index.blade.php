@@ -249,20 +249,24 @@
             </div>
 
             {{--<div class="container g-padding-y-100--xs">--}}
-                <div class="s-portfolio">
-                    <div id="js__filters-portfolio-gallery" class="s-portfolio__filter-v1 cbp-l-filters-text cbp-l-filters-center">
-                        <div data-filter="*" class="s-portfolio__filter-v1-item cbp-filter-item cbp-filter-item-active">Show All</div>
-
-                        <li><a class="categories" data-filter=".recent">Recent</a></li>
-                        @if(!empty($projectTypes))
-                            @foreach($projectTypes as $projectType)
-                                <li><a class="s-portfolio__filter-v1-item cbp-filter-item"
-                                       data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
-                                </li>
-                            @endforeach
-                        @endif
+            <div class="s-portfolio section-padding-t gray-bg">
+                <div id="js__filters-portfolio-gallery"
+                     class="s-portfolio__filter-v1 cbp-l-filters-text cbp-l-filters-center">
+                    <div data-filter="*" class="s-portfolio__filter-v1-item cbp-filter-item cbp-filter-item-active">Show
+                        All
                     </div>
+
+                    <li><a class="s-portfolio__filter-v1-item cbp-filter-item" data-filter="*">All</a></li>
+                    <li><a class="s-portfolio__filter-v1-item cbp-filter-item" data-filter=".recent">Recent</a></li>
+                    @if(!empty($projectTypes))
+                        @foreach($projectTypes as $projectType)
+                            <li><a class="s-portfolio__filter-v1-item cbp-filter-item"
+                                   data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
+                            </li>
+                        @endforeach
+                    @endif
                 </div>
+            </div>
             {{--</div>--}}
 
             <div class="container-fluid">
@@ -272,47 +276,47 @@
                 {{--</div>--}}
                 {{--<div class="portfolio-grid-fit row gallery-popup">--}}
 
-                    {{--@foreach($portfolio as $item)--}}
-                        {{--<div class="portfolio-item {!! $item['categories'] !!}"--}}
-                             {{--style="background-color: #FFF; padding: 2px;">--}}
-                            {{--<div class="portfolio-box" style="border: thick;">--}}
-                                {{--<a class="portfolio-image-wrap">--}}
-                                    {{--<img src="{!! asset($item['thumb_image']) !!}"--}}
-                                         {{--height="{{ Image::make($item['thumb_image'])->height() }}"--}}
-                                         {{--width="{{ Image::make($item['thumb_image'])->height() }}"/>--}}
-                                {{--</a>--}}
-                                {{--<div class="portfolio-caption">--}}
-                                    {{--<div class="portfolio-caption-tb">--}}
-                                        {{--<div class="portfolio-caption-tb-cell">--}}
-                                            {{--<h5>{!! $item['heading'] !!}</h5>--}}
-                                            {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
-                                            {{--<ul class="portfolio-btn-wraper">--}}
-                                                {{--<li>--}}
-                                                    {{--<a class="gallery-popup-link btn btn-color"--}}
-                                                       {{--href="{!! asset($item['large_image']) !!}"--}}
-                                                       {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
-                                                                {{--class="fa fa-search"></i></a>--}}
-                                                {{--</li>--}}
-                                                {{--<li>--}}
-                                                {{--<a class="btn btn-black" target="_blank"--}}
-                                                {{--href="https://www.dribbble.com/"><i--}}
-                                                {{--class="fa fa-dribbble"></i></a>--}}
-                                                {{--</li>--}}
-                                                {{--<li>--}}
-                                                {{--<a class="btn btn-black" target="_blank"--}}
-                                                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
-                                                {{--</li>--}}
-                                                {{--<li>--}}
-                                                {{--<a class="btn btn-black" target="_blank"--}}
-                                                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
-                                                {{--</li>--}}
-                                            {{--</ul>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--@endforeach--}}
+                {{--@foreach($portfolio as $item)--}}
+                {{--<div class="portfolio-item {!! $item['categories'] !!}"--}}
+                {{--style="background-color: #FFF; padding: 2px;">--}}
+                {{--<div class="portfolio-box" style="border: thick;">--}}
+                {{--<a class="portfolio-image-wrap">--}}
+                {{--<img src="{!! asset($item['thumb_image']) !!}"--}}
+                {{--height="{{ Image::make($item['thumb_image'])->height() }}"--}}
+                {{--width="{{ Image::make($item['thumb_image'])->height() }}"/>--}}
+                {{--</a>--}}
+                {{--<div class="portfolio-caption">--}}
+                {{--<div class="portfolio-caption-tb">--}}
+                {{--<div class="portfolio-caption-tb-cell">--}}
+                {{--<h5>{!! $item['heading'] !!}</h5>--}}
+                {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
+                {{--<ul class="portfolio-btn-wraper">--}}
+                {{--<li>--}}
+                {{--<a class="gallery-popup-link btn btn-color"--}}
+                {{--href="{!! asset($item['large_image']) !!}"--}}
+                {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
+                {{--class="fa fa-search"></i></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                {{--<a class="btn btn-black" target="_blank"--}}
+                {{--href="https://www.dribbble.com/"><i--}}
+                {{--class="fa fa-dribbble"></i></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                {{--<a class="btn btn-black" target="_blank"--}}
+                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                {{--<a class="btn btn-black" target="_blank"--}}
+                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                {{--</li>--}}
+                {{--</ul>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--@endforeach--}}
                 {{--</div>--}}
 
                 <div id="js__grid-portfolio-gallery" class="cbp">
