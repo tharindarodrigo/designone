@@ -290,7 +290,6 @@
                         </div>
                     @endforeach
 
-
                 </div>
             </div>
         </section>
@@ -302,13 +301,43 @@
                     <li><a class="categories" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
-                            <li><a class="bttn"
+                            <li><a class="button"
                                    data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
                             </li>
                         @endforeach
                     @endif
                 </ul>
             </div>
+            <div class="grid">
+
+                @foreach($portfolio as $item)
+                    <div class="element-item {!! $item['categories'] !!}"
+                         style="background-color: #FFF; padding: 2px;">
+                        <div class="portfolio-box" style="border: thick;">
+                            <a class="portfolio-image-wrap">
+                                <img src="{!! asset($item['thumb_image']) !!}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-tb">
+                                    <div class="portfolio-caption-tb-cell">
+                                        <h5>{!! $item['heading'] !!}</h5>
+                                        <p>{!! $item['country'].' '.$item['year'] !!}</p>
+                                        <ul class="portfolio-btn-wraper">
+                                            <li>
+                                                <a class="gallery-popup-link btn btn-color"
+                                                   href="{!! asset($item['large_image']) !!}"
+                                                   title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i
+                                                            class="fa fa-search"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
         </section>
 
 
