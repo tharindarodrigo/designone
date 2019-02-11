@@ -71,7 +71,7 @@ class ProjectsController extends Controller
 
                 Image::make($image)
                     ->encode('jpg')
-                    ->resize(320, 240)
+                    ->resize(null, 240)
                     ->save('control-panel/images/projects/thumb/' . $project->id . '.jpg');
             }
         }
