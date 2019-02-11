@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 
-    <link href="{!! asset('themify/themify.css')!!}" rel="stylesheet" type="text/css"/>
-    <link href="{!! asset('scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>
+    {{--<link href="{!! asset('themify/themify.css')!!}" rel="stylesheet" type="text/css"/>--}}
+    {{--<link href="{!! asset('scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>--}}
     <link rel="stylesheet" href="{!! asset('swiper/swiper.min.css') !!}">
     <link rel="stylesheet" href="{!! asset('cubeportfolio/css/cubeportfolio.min.css') !!}">
 
@@ -648,15 +648,15 @@
 <script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
-<script type="text/javascript" src="{!! asset('vendor/jquery.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/jquery.migrate.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/jquery.smooth-scroll.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/jquery.back-to-top.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/scrollbar/jquery.scrollbar.min.js') !!}"></script>
+{{--<script type="text/javascript" src="{!! asset('vendor/jquery.min.js') !!}"></script>--}}
+{{--<script type="text/javascript" src="{!! asset('vendor/jquery.migrate.min.js') !!}"></script>--}}
+{{--<script type="text/javascript" src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>--}}
+{{--<script type="text/javascript" src="{!! asset('vendor/jquery.smooth-scroll.min.js') !!}"></script>--}}
+{{--<script type="text/javascript" src="{!! asset('vendor/jquery.back-to-top.min.js') !!}"></script>--}}
+{{--<script type="text/javascript" src="{!! asset('vendor/scrollbar/jquery.scrollbar.min.js') !!}"></script>--}}
 <script type="text/javascript" src="{!! asset('vendor/swiper/swiper.jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('vendor/cubeportfolio/js/jquery.cubeportfolio.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/jquery.wow.min.js') !!}"></script>
+{{--<script type="text/javascript" src="{!! asset('vendor/jquery.wow.min.js') !!}"></script>--}}
 <script type="text/javascript" src="{!! asset('js/components/portfolio-3-col.min.js') !!}"></script>
 
 <script type="text/javascript">
