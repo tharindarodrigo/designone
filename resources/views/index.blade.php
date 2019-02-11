@@ -28,8 +28,9 @@
     <style type="text/css">
         @media screen and (max-width: 600px) {
             .mobile_logo {
-                 visibility: visible;
-             }
+                visibility: visible;
+            }
+
             .desktop_logo {
                 visibility: hidden;
             }
@@ -39,6 +40,7 @@
             .mobile_logo {
                 visibility: hidden;
             }
+
             .desktop_logo {
                 visibility: visible;
             }
@@ -55,7 +57,7 @@
         <div id="header" class="header">
             <div class="header-inner">
                 <div class="logo mobile_logo">
-                    <a href="#" >
+                    <a href="#">
                         <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
                     </a>
                 </div>
@@ -69,7 +71,8 @@
                 {{-- Navigation Menu --}}
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
-                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
+                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px"
+                                                      style="margin-top:-5px ;"/></li>
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
@@ -119,7 +122,8 @@
                         @if(!empty($sliderImages))
                             {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
-                                <li class="" data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700">
+                                <li class="" data-transition="slidehorizontal" data-slotamount="5"
+                                    data-masterspeed="700">
                                     {{-- MAIN IMAGE --}}
                                     <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
                                          alt="SliderImages"
@@ -229,7 +233,7 @@
             <div class="container text-left" style="font-family: inherit">
                 <ul class="portfolio-filter categories-filter text-left">
                     <li><h2>Our <span class="text-light">Work</span></h2></li>
-                    <li class="menu_down" ><a class="categories active" data-filter="*">All</a></li>
+                    <li class="menu_down"><a class="categories active" data-filter="*">All</a></li>
                     <li><a class="categories" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
@@ -252,7 +256,9 @@
                              style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
-                                    <img src="{!! asset($item['thumb_image']) !!}" height="{{ Image::make($item['thumb_image'])->height() }}" width="{{ Image::make($item['thumb_image'])->height() }}"/>
+                                    <img src="{!! asset($item['thumb_image']) !!}"
+                                         height="{{ Image::make($item['thumb_image'])->height() }}"
+                                         width="{{ Image::make($item['thumb_image'])->height() }}"/>
                                 </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-tb">
@@ -267,22 +273,55 @@
                                                                 class="fa fa-search"></i></a>
                                                 </li>
                                                 {{--<li>--}}
-                                                    {{--<a class="btn btn-black" target="_blank"--}}
-                                                       {{--href="https://www.dribbble.com/"><i--}}
-                                                                {{--class="fa fa-dribbble"></i></a>--}}
+                                                {{--<a class="btn btn-black" target="_blank"--}}
+                                                {{--href="https://www.dribbble.com/"><i--}}
+                                                {{--class="fa fa-dribbble"></i></a>--}}
                                                 {{--</li>--}}
                                                 {{--<li>--}}
-                                                    {{--<a class="btn btn-black" target="_blank"--}}
-                                                       {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                                                {{--<a class="btn btn-black" target="_blank"--}}
+                                                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
                                                 {{--</li>--}}
                                                 {{--<li>--}}
-                                                    {{--<a class="btn btn-black" target="_blank"--}}
-                                                       {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                                                {{--<a class="btn btn-black" target="_blank"--}}
+                                                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
                                                 {{--</li>--}}
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+
+                <div id="js__grid-portfolio-gallery" class="cbp">
+                    @foreach($portfolio as $item)
+                        <div class="s-portfolio__item cbp-item motion graphic">
+
+                            <div class="s-portfolio__img-effect">
+                                <img src="{!! asset($item['image_thumb']) !!}" alt="Portfolio Image">
+                            </div>
+                            <div class="s-portfolio__caption-hover--cc">
+                                <div class="g-margin-b-25--xs">
+                                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Portfolio Item</h4>
+                                    <p class="g-color--white-opacity">by KeenThemes Inc.</p>
+                                </div>
+                                <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
+                                    <li>
+                                        <a href="{!! $item['image_large'] !!}"
+                                           class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
+                                           data-title="Portfolio Item <br/> by KeenThemes Inc.">
+                                            <i class="ti-fullscreen"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+                                           class="s-icon s-icon--sm s-icon s-icon--white-bg g-radius--circle">
+                                            <i class="ti-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     @endforeach
