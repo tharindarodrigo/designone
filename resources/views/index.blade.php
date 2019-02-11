@@ -296,13 +296,13 @@
         </section>
         <section>
             <div class="container text-left filters-button-group" style="font-family: inherit">
-                <ul class="portfolio-filter text-left">
+                <ul class="portfolio-filter categories-filter text-left">
                     <li><h2>Our <span class="text-light">Work</span></h2></li>
                     <li class="menu_down"><a class="categories active" data-filter="*">All</a></li>
                     <li><a class="categories" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
-                            <li><a class="categories"
+                            <li><a class="bttn"
                                    data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
                             </li>
                         @endforeach
