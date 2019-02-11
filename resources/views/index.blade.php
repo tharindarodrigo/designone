@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     {{-- angular stuffs --}}
-{{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
+    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
     {{-- Css --}}
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
@@ -23,20 +23,11 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 
-    <link href="{!! asset('vendor/themify/themify.css')!!}" rel="stylesheet" type="text/css"/>
-    <link href="{!! asset('vendor/scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{!! asset('vendor/swiper/swiper.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('vendor/cubeportfolio/css/cubeportfolio.min.css') !!}">
-
-    <link href="{!! asset('css/styles.css')!!}" rel="stylesheet" type="text/css"/>
-
-
     <style type="text/css">
         @media screen and (max-width: 600px) {
             .mobile_logo {
-                visibility: visible;
-            }
-
+                 visibility: visible;
+             }
             .desktop_logo {
                 visibility: hidden;
             }
@@ -46,7 +37,6 @@
             .mobile_logo {
                 visibility: hidden;
             }
-
             .desktop_logo {
                 visibility: visible;
             }
@@ -63,7 +53,7 @@
         <div id="header" class="header">
             <div class="header-inner">
                 <div class="logo mobile_logo">
-                    <a href="#">
+                    <a href="#" >
                         <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
                     </a>
                 </div>
@@ -77,8 +67,7 @@
                 {{-- Navigation Menu --}}
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
-                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px"
-                                                      style="margin-top:-5px ;"/></li>
+                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
@@ -128,8 +117,7 @@
                         @if(!empty($sliderImages))
                             {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
-                                <li class="" data-transition="slidehorizontal" data-slotamount="5"
-                                    data-masterspeed="700">
+                                <li class="" data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700">
                                     {{-- MAIN IMAGE --}}
                                     <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
                                          alt="SliderImages"
@@ -239,7 +227,7 @@
             <div class="container text-left" style="font-family: inherit">
                 <ul class="portfolio-filter categories-filter text-left">
                     <li><h2>Our <span class="text-light">Work</span></h2></li>
-                    <li class="menu_down"><a class="categories active" data-filter="*">All</a></li>
+                    <li class="menu_down" ><a class="categories active" data-filter="*">All</a></li>
                     <li><a class="categories" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
@@ -250,105 +238,49 @@
                     @endif
                 </ul>
             </div>
-
-            {{--<div class="container g-padding-y-100--xs">--}}
-            <div class="s-portfolio section-padding-t gray-bg">
-                <div id="js__filters-portfolio-gallery"
-                     class="s-portfolio__filter-v1 cbp-l-filters-text cbp-l-filters-center">
-                    <div data-filter="*" class="s-portfolio__filter-v1-item cbp-filter-item cbp-filter-item-active">Show
-                        All
-                    </div>
-
-                    <li><a class="s-portfolio__filter-v1-item cbp-filter-item" data-filter="*">All</a></li>
-                    <li><a class="s-portfolio__filter-v1-item cbp-filter-item" data-filter=".recent">Recent</a></li>
-                    @if(!empty($projectTypes))
-                        @foreach($projectTypes as $projectType)
-                            <li><a class="s-portfolio__filter-v1-item cbp-filter-item"
-                                   data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
-                            </li>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-            {{--</div>--}}
-
             <div class="container-fluid">
                 {{--<div class="row">--}}
 
 
                 {{--</div>--}}
-                {{--<div class="portfolio-grid-fit row gallery-popup">--}}
+                <div class="portfolio-grid-fit row gallery-popup">
 
-                {{--@foreach($portfolio as $item)--}}
-                {{--<div class="portfolio-item {!! $item['categories'] !!}"--}}
-                {{--style="background-color: #FFF; padding: 2px;">--}}
-                {{--<div class="portfolio-box" style="border: thick;">--}}
-                {{--<a class="portfolio-image-wrap">--}}
-                {{--<img src="{!! asset($item['thumb_image']) !!}"--}}
-                {{--height="{{ Image::make($item['thumb_image'])->height() }}"--}}
-                {{--width="{{ Image::make($item['thumb_image'])->height() }}"/>--}}
-                {{--</a>--}}
-                {{--<div class="portfolio-caption">--}}
-                {{--<div class="portfolio-caption-tb">--}}
-                {{--<div class="portfolio-caption-tb-cell">--}}
-                {{--<h5>{!! $item['heading'] !!}</h5>--}}
-                {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
-                {{--<ul class="portfolio-btn-wraper">--}}
-                {{--<li>--}}
-                {{--<a class="gallery-popup-link btn btn-color"--}}
-                {{--href="{!! asset($item['large_image']) !!}"--}}
-                {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
-                {{--class="fa fa-search"></i></a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a class="btn btn-black" target="_blank"--}}
-                {{--href="https://www.dribbble.com/"><i--}}
-                {{--class="fa fa-dribbble"></i></a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a class="btn btn-black" target="_blank"--}}
-                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a class="btn btn-black" target="_blank"--}}
-                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--@endforeach--}}
-                {{--</div>--}}
-
-                <div id="js__grid-portfolio-gallery" class="cbp">
                     @foreach($portfolio as $item)
-                        <div class="s-portfolio__item cbp-item {!! $item['categories'] !!}">
-
-                            <div class="s-portfolio__img-effect">
-                                <img src="{!! asset($item['thumb_image']) !!}" alt="Portfolio Image">
-                            </div>
-                            <div class="s-portfolio__caption-hover--cc">
-                                <div class="g-margin-b-25--xs">
-                                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Portfolio Item</h4>
-                                    <p class="g-color--white-opacity">by KeenThemes Inc.</p>
+                        <div class="portfolio-item {!! $item['categories'] !!}"
+                             style="background-color: #FFF; padding: 2px;">
+                            <div class="portfolio-box" style="border: thick;">
+                                <a class="portfolio-image-wrap">
+                                    <img src="{!! asset($item['thumb_image']) !!}" height="{{ Image::make($item['thumb_image'])->height() }}" width="{{ Image::make($item['thumb_image'])->height() }}"/>
+                                </a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-tb">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5>{!! $item['heading'] !!}</h5>
+                                            <p>{!! $item['country'].' '.$item['year'] !!}</p>
+                                            <ul class="portfolio-btn-wraper">
+                                                <li>
+                                                    <a class="gallery-popup-link btn btn-color"
+                                                       href="{!! asset($item['large_image']) !!}"
+                                                       title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i
+                                                                class="fa fa-search"></i></a>
+                                                </li>
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.dribbble.com/"><i--}}
+                                                                {{--class="fa fa-dribbble"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a class="btn btn-black" target="_blank"--}}
+                                                       {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                                                {{--</li>--}}
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-                                    <li>
-                                        <a href="{!! $item['large_image'] !!}"
-                                           class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                                           data-title="Portfolio Item <br/> by KeenThemes Inc.">
-                                            <i class="ti-fullscreen"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-                                           class="s-icon s-icon--sm s-icon s-icon--white-bg g-radius--circle">
-                                            <i class="ti-link"></i>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     @endforeach
@@ -484,6 +416,7 @@
                                              alt=""/></a>
                                 </div>
                             </div>
+
                         @endforeach
                     </div>
 
@@ -631,8 +564,7 @@
 {{-- End Page Wraper --}}
 
 {{-- Js --}}
-{{--<script src="{!! asset('js/jquery-1.11.2.min.js') !!}" type="text/javascript"></script>--}}
-<script type="text/javascript" src="{!! asset('vendor/jquery.min.js') !!}"></script>
+<script src="{!! asset('js/jquery-1.11.2.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.easing.1.3.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/bootstrap.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.fitvids.js') !!}" type="text/javascript"></script>
@@ -656,16 +588,6 @@
 <script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
-{{--<script type="text/javascript" src="{!! asset('vendor/jquery.min.js') !!}"></script>--}}
-{{--<script type="text/javascript" src="{!! asset('vendor/jquery.migrate.min.js') !!}"></script>--}}
-{{--<script type="text/javascript" src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>--}}
-{{--<script type="text/javascript" src="{!! asset('vendor/jquery.smooth-scroll.min.js') !!}"></script>--}}
-{{--<script type="text/javascript" src="{!! asset('vendor/jquery.back-to-top.min.js') !!}"></script>--}}
-<script type="text/javascript" src="{!! asset('vendor/scrollbar/jquery.scrollbar.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/swiper/swiper.jquery.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('vendor/cubeportfolio/js/jquery.cubeportfolio.min.js') !!}"></script>
-{{--<script type="text/javascript" src="{!! asset('vendor/jquery.wow.min.js') !!}"></script>--}}
-<script type="text/javascript" src="{!! asset('js/components/portfolio-3-col.min.js') !!}"></script>
 
 <script type="text/javascript">
     /* $(document).ready(function () {
