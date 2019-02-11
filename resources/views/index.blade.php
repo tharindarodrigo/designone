@@ -243,10 +243,10 @@
 
 
                 {{--</div>--}}
-                <div class="portfolio-grid-fit row gallery-popup grid">
+                <div class="portfolio-grid-fit row gallery-popup">
 
                     @foreach($portfolio as $item)
-                        <div class="grid-item {!! $item['categories'] !!}"
+                        <div class="portfolio-item {!! $item['categories'] !!}"
                              style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
@@ -597,13 +597,12 @@
     /* $(document).ready(function () {
      $('#newsModal').trigger('click');
      });*/
-    $('.grid').isotope({
-        itemSelector: '.grid-item',
+    $('.portfolio-grid-fit').isotope({
+        itemSelector: '.portfolio-item',
         masonry: {
-            columnWidth: 150,
-            horizontalOrder: false,
-        },
-        layoutMode: 'fitColumns'
+            columnWidth: 100,
+            horizontalOrder: true,
+        }
     });
     $(document).ready(function () {
         //  $('#newsModal').trigger('click');
