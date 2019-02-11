@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     {{-- angular stuffs --}}
-    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
+{{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
     {{-- Css --}}
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{!! asset('vendor/swiper/swiper.min.css') !!}">
     <link rel="stylesheet" href="{!! asset('vendor/cubeportfolio/css/cubeportfolio.min.css') !!}">
 
-    <link href="{!! asset('css/styles.css')!!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('css/style2.css')!!}" rel="stylesheet" type="text/css"/>
 
 
     <style type="text/css">
@@ -252,7 +252,7 @@
             </div>
 
             {{--<div class="container g-padding-y-100--xs">--}}
-            <div class="s-portfolio section-padding-t gray-bg">
+            <div class="s-portfolio section-padding-t gray-bg portfolio-filter categories-filter">
                 <div id="js__filters-portfolio-gallery"
                      class="s-portfolio__filter-v1 cbp-l-filters-text cbp-l-filters-center">
                     <div data-filter="*" class="s-portfolio__filter-v1-item cbp-filter-item cbp-filter-item-active">Show
