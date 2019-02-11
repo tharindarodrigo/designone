@@ -9,7 +9,7 @@ var Portfolio = function() {
       layoutMode: 'grid',
       mediaQueries: [{
         width: 1500,
-        cols: 4
+        cols: 3
       }, {
         width: 1100,
         cols: 3
