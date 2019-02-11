@@ -650,7 +650,7 @@
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
 <script type="text/javascript" src="{!! asset('vendor/jquery.min.js') !!}"></script>
-{{--<script type="text/javascript" src="{!! asset('vendor/jquery.migrate.min.js') !!}"></script>--}}
+<script type="text/javascript" src="{!! asset('vendor/jquery.migrate.min.js') !!}"></script>
 {{--<script type="text/javascript" src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>--}}
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.smooth-scroll.min.js') !!}"></script>--}}
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.back-to-top.min.js') !!}"></script>--}}
