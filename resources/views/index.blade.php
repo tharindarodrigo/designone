@@ -1,6 +1,6 @@
-﻿﻿<html>
+﻿<html lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-16"/>
     <title>DesignOne</title>
     <meta name="description" content="design, architecture, creative"/>
     <meta name="keywords"
@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     {{-- angular stuffs --}}
-    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
+{{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
     {{-- Css --}}
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
