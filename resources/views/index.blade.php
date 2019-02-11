@@ -666,7 +666,7 @@
 <script type="text/javascript" src="{!! asset('vendor/swiper/swiper.jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('vendor/cubeportfolio/js/jquery.cubeportfolio.min.js') !!}"></script>
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.wow.min.js') !!}"></script>--}}
-<script type="text/javascript" src="{!! asset('js/components/portfolio-3-col.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('js/components/portfolio-4-col-slider.js') !!}"></script>
 
 <script type="text/javascript">
     /* $(document).ready(function () {
