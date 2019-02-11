@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('rs-plugin/css/settings.css')!!}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 
-    {{--<link href="{!! asset('themify/themify.css')!!}" rel="stylesheet" type="text/css"/>--}}
-    {{--<link href="{!! asset('scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>--}}
+    <link href="{!! asset('themify/themify.css')!!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{!! asset('swiper/swiper.min.css') !!}">
     <link rel="stylesheet" href="{!! asset('cubeportfolio/css/cubeportfolio.min.css') !!}">
 
@@ -233,22 +233,22 @@
         {{--Portfolio--}}
 
         <section id="portfolio" class="section-padding-t gray-bg">
-            {{--<div class="container text-left" style="font-family: inherit">--}}
-                {{--<ul class="portfolio-filter categories-filter text-left">--}}
-                    {{--<li><h2>Our <span class="text-light">Work</span></h2></li>--}}
-                    {{--<li class="menu_down"><a class="categories active" data-filter="*">All</a></li>--}}
-                    {{--<li><a class="categories" data-filter=".recent">Recent</a></li>--}}
-                    {{--@if(!empty($projectTypes))--}}
-                        {{--@foreach($projectTypes as $projectType)--}}
-                            {{--<li><a class="categories"--}}
-                                   {{--data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>--}}
-                            {{--</li>--}}
-                        {{--@endforeach--}}
-                    {{--@endif--}}
-                {{--</ul>--}}
-            {{--</div>--}}
+            <div class="container text-left" style="font-family: inherit">
+                <ul class="portfolio-filter categories-filter text-left">
+                    <li><h2>Our <span class="text-light">Work</span></h2></li>
+                    <li class="menu_down"><a class="categories active" data-filter="*">All</a></li>
+                    <li><a class="categories" data-filter=".recent">Recent</a></li>
+                    @if(!empty($projectTypes))
+                        @foreach($projectTypes as $projectType)
+                            <li><a class="categories"
+                                   data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+            </div>
 
-            <div class="container g-padding-y-100--xs">
+            {{--<div class="container g-padding-y-100--xs">--}}
                 <div class="s-portfolio">
                     <div id="js__filters-portfolio-gallery" class="s-portfolio__filter-v1 cbp-l-filters-text cbp-l-filters-center">
                         <div data-filter="*" class="s-portfolio__filter-v1-item cbp-filter-item cbp-filter-item-active">Show All</div>
@@ -263,7 +263,7 @@
                         @endif
                     </div>
                 </div>
-            </div>
+            {{--</div>--}}
 
             <div class="container-fluid">
                 {{--<div class="row">--}}
@@ -317,7 +317,7 @@
 
                 <div id="js__grid-portfolio-gallery" class="cbp">
                     @foreach($portfolio as $item)
-                        <div class="s-portfolio__item cbp-item motion graphic">
+                        <div class="s-portfolio__item cbp-item {!! $item['categories'] !!}">
 
                             <div class="s-portfolio__img-effect">
                                 <img src="{!! asset($item['thumb_image']) !!}" alt="Portfolio Image">
@@ -654,7 +654,7 @@
 {{--<script type="text/javascript" src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>--}}
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.smooth-scroll.min.js') !!}"></script>--}}
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.back-to-top.min.js') !!}"></script>--}}
-{{--<script type="text/javascript" src="{!! asset('vendor/scrollbar/jquery.scrollbar.min.js') !!}"></script>--}}
+<script type="text/javascript" src="{!! asset('vendor/scrollbar/jquery.scrollbar.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('vendor/swiper/swiper.jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('vendor/cubeportfolio/js/jquery.cubeportfolio.min.js') !!}"></script>
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.wow.min.js') !!}"></script>--}}
