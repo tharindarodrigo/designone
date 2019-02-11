@@ -1,4 +1,4 @@
-﻿<html>
+﻿﻿<html>
 <head>
     <meta charset="utf-16"/>
     <title>DesignOne</title>
@@ -16,8 +16,6 @@
     {{-- angular stuffs --}}
 {{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
     {{-- Css --}}
-    {{--<link href="{!! asset('css/style2.css')!!}" rel="stylesheet" type="text/css"/>--}}
-
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/plugins/animate.css')!!}" rel="stylesheet" type="text/css"/>
@@ -30,6 +28,7 @@
     <link rel="stylesheet" href="{!! asset('vendor/swiper/swiper.min.css') !!}">
     <link rel="stylesheet" href="{!! asset('vendor/cubeportfolio/css/cubeportfolio.min.css') !!}">
 
+    <link href="{!! asset('css/styles.css')!!}" rel="stylesheet" type="text/css"/>
 
 
     <style type="text/css">
@@ -264,7 +263,7 @@
                     <li><a class="s-portfolio__filter-v1-item cbp-filter-item" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
-                            <li><a class="s-portfolio__filter-v1-item cbp-filter-item categories"
+                            <li><a class="s-portfolio__filter-v1-item cbp-filter-item"
                                    data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>
                             </li>
                         @endforeach
@@ -666,7 +665,7 @@
 <script type="text/javascript" src="{!! asset('vendor/swiper/swiper.jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('vendor/cubeportfolio/js/jquery.cubeportfolio.min.js') !!}"></script>
 {{--<script type="text/javascript" src="{!! asset('vendor/jquery.wow.min.js') !!}"></script>--}}
-<script type="text/javascript" src="{!! asset('js/components/portfolio-3-col.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('js/components/portfolio-3-col.min.js') !!}"></script>
 
 <script type="text/javascript">
     /* $(document).ready(function () {
