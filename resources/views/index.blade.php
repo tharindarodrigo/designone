@@ -600,9 +600,10 @@
     $('.grid').isotope({
         itemSelector: '.grid-item',
         masonry: {
-            columnWidth: 100,
-            horizontalOrder: true,
-        }
+            columnWidth: 150,
+            horizontalOrder: false,
+        },
+        layoutMode: 'fitColumns'
     });
     $(document).ready(function () {
         //  $('#newsModal').trigger('click');
