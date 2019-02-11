@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     {{-- angular stuffs --}}
-{{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
+    {{--    <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>--}}
     {{-- Css --}}
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/bootstrap.css')!!}" rel="stylesheet" type="text/css"/>
@@ -26,8 +26,9 @@
     <style type="text/css">
         @media screen and (max-width: 600px) {
             .mobile_logo {
-                 visibility: visible;
-             }
+                visibility: visible;
+            }
+
             .desktop_logo {
                 visibility: hidden;
             }
@@ -37,6 +38,7 @@
             .mobile_logo {
                 visibility: hidden;
             }
+
             .desktop_logo {
                 visibility: visible;
             }
@@ -53,7 +55,7 @@
         <div id="header" class="header">
             <div class="header-inner">
                 <div class="logo mobile_logo">
-                    <a href="#" >
+                    <a href="#">
                         <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
                     </a>
                 </div>
@@ -67,7 +69,8 @@
                 {{-- Navigation Menu --}}
                 <div class="nav-menu singlepage-nav">
                     <ul class="nav-menu-inner">
-                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/></li>
+                        <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px"
+                                                      style="margin-top:-5px ;"/></li>
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
@@ -117,7 +120,8 @@
                         @if(!empty($sliderImages))
                             {{--{{dd('asdasda')}}--}}
                             @foreach($sliderImages as $sliderImage)
-                                <li class="" data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700">
+                                <li class="" data-transition="slidehorizontal" data-slotamount="5"
+                                    data-masterspeed="700">
                                     {{-- MAIN IMAGE --}}
                                     <img src="{!! asset('control-panel/images/slider-images/'.$sliderImage->id.'.jpg') !!}"
                                          alt="SliderImages"
@@ -227,7 +231,7 @@
             <div class="container text-left" style="font-family: inherit">
                 <ul class="portfolio-filter categories-filter text-left">
                     <li><h2>Our <span class="text-light">Work</span></h2></li>
-                    <li class="menu_down" ><a class="categories active" data-filter="*">All</a></li>
+                    <li class="menu_down"><a class="categories active" data-filter="*">All</a></li>
                     <li><a class="categories" data-filter=".recent">Recent</a></li>
                     @if(!empty($projectTypes))
                         @foreach($projectTypes as $projectType)
@@ -250,7 +254,9 @@
                              style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
-                                    <img src="{!! asset($item['thumb_image']) !!}" height="{{ Image::make($item['thumb_image'])->height() }}" width="{{ Image::make($item['thumb_image'])->height() }}"/>
+                                    <img src="{!! asset($item['thumb_image']) !!}"
+                                         height="{{ Image::make($item['thumb_image'])->height() }}"
+                                         width="{{ Image::make($item['thumb_image'])->height() }}"/>
                                 </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-tb">
@@ -265,17 +271,17 @@
                                                                 class="fa fa-search"></i></a>
                                                 </li>
                                                 {{--<li>--}}
-                                                    {{--<a class="btn btn-black" target="_blank"--}}
-                                                       {{--href="https://www.dribbble.com/"><i--}}
-                                                                {{--class="fa fa-dribbble"></i></a>--}}
+                                                {{--<a class="btn btn-black" target="_blank"--}}
+                                                {{--href="https://www.dribbble.com/"><i--}}
+                                                {{--class="fa fa-dribbble"></i></a>--}}
                                                 {{--</li>--}}
                                                 {{--<li>--}}
-                                                    {{--<a class="btn btn-black" target="_blank"--}}
-                                                       {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                                                {{--<a class="btn btn-black" target="_blank"--}}
+                                                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
                                                 {{--</li>--}}
                                                 {{--<li>--}}
-                                                    {{--<a class="btn btn-black" target="_blank"--}}
-                                                       {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                                                {{--<a class="btn btn-black" target="_blank"--}}
+                                                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
                                                 {{--</li>--}}
                                             </ul>
                                         </div>
