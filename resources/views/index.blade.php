@@ -27,7 +27,7 @@
     <link href="{!! asset('themify/themify.css') !!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('scrollbar/scrollbar.min.css') !!}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{!! asset('swiper/swiper.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('cubeportfolio/css/cubeportfolio.min.css')  !!}">
+    <link rel="stylesheet" href="{!! asset('cubeportfolio/css/cubeportfolio.min.css') !!}">
 
     <style type="text/css">
         @media screen and (max-width: 600px) {
@@ -649,7 +649,7 @@
 <script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 
-<script type="text/javascript" src="{!! asset('/swiper/swiper.jquery.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('swiper/swiper.jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('cubeportfolio/js/jquery.cubeportfolio.min.js') !!}"></script>
 <script type="text/javascript">
     /* $(document).ready(function () {
