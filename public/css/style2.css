@@ -1,176 +1,176 @@
 /*----------------------------------
 	Common HTML elements and more for easier usage
 ------------------------------------*/
-html {
-  overflow-x: hidden;
-}
+/*html {*/
+  /*overflow-x: hidden;*/
+/*}*/
 
-html, html a, body {
-  -webkit-font-smoothing: antialiased;
-}
+/*html, html a, body {*/
+  /*-webkit-font-smoothing: antialiased;*/
+/*}*/
 
-html {
-  font-size: 16px;
-  -webkit-tap-highlight-color: transparent;
-}
+/*html {*/
+  /*font-size: 16px;*/
+  /*-webkit-tap-highlight-color: transparent;*/
+/*}*/
 
-body {
-  font-size: 1rem;
-  font-family: Lato, sans-serif;
-  color: #222324;
-  line-height: 1.6;
-  background-color: #fff;
-}
+/*body {*/
+  /*font-size: 1rem;*/
+  /*font-family: Lato, sans-serif;*/
+  /*color: #222324;*/
+  /*line-height: 1.6;*/
+  /*background-color: #fff;*/
+/*}*/
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  font-family: Montserrat, sans-serif;
-  line-height: 1.2;
-  color: #242424;
-  margin-top: 0;
-  margin-bottom: .5rem;
-}
+/*!* Typography *!*/
+/*h1, h2, h3, h4, h5, h6 {*/
+  /*font-weight: 400;*/
+  /*font-family: Montserrat, sans-serif;*/
+  /*line-height: 1.2;*/
+  /*color: #242424;*/
+  /*margin-top: 0;*/
+  /*margin-bottom: .5rem;*/
+/*}*/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: capitalize;
-  margin-bottom: 0.75rem;
-}
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*h4,*/
+/*h5,*/
+/*h6 {*/
+  /*text-transform: capitalize;*/
+  /*margin-bottom: 0.75rem;*/
+/*}*/
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  color: #242424;
-  transition-duration: 200ms;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-}
+/*h1 a,*/
+/*h2 a,*/
+/*h3 a,*/
+/*h4 a,*/
+/*h5 a,*/
+/*h6 a {*/
+  /*color: #242424;*/
+  /*transition-duration: 200ms;*/
+  /*transition-property: all;*/
+  /*transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);*/
+/*}*/
 
-h1 a:focus, h1 a:hover,
-h2 a:focus,
-h2 a:hover,
-h3 a:focus,
-h3 a:hover,
-h4 a:focus,
-h4 a:hover,
-h5 a:focus,
-h5 a:hover,
-h6 a:focus,
-h6 a:hover {
-  color: #13b1cd;
-  transition-duration: 200ms;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-}
+/*h1 a:focus, h1 a:hover,*/
+/*h2 a:focus,*/
+/*h2 a:hover,*/
+/*h3 a:focus,*/
+/*h3 a:hover,*/
+/*h4 a:focus,*/
+/*h4 a:hover,*/
+/*h5 a:focus,*/
+/*h5 a:hover,*/
+/*h6 a:focus,*/
+/*h6 a:hover {*/
+  /*color: #13b1cd;*/
+  /*transition-duration: 200ms;*/
+  /*transition-property: all;*/
+  /*transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);*/
+/*}*/
 
-h1 {
-  font-size: 2.5rem;
-}
+/*h1 {*/
+  /*font-size: 2.5rem;*/
+/*}*/
 
-h2 {
-  font-size: 2rem;
-}
+/*h2 {*/
+  /*font-size: 2rem;*/
+/*}*/
 
-h3 {
-  font-size: 1.75rem;
-}
+/*h3 {*/
+  /*font-size: 1.75rem;*/
+/*}*/
 
-h4 {
-  font-size: 1.5rem;
-}
+/*h4 {*/
+  /*font-size: 1.5rem;*/
+/*}*/
 
-h5 {
-  font-size: 1.25rem;
-}
+/*h5 {*/
+  /*font-size: 1.25rem;*/
+/*}*/
 
-h6 {
-  font-size: 1rem;
-}
+/*h6 {*/
+  /*font-size: 1rem;*/
+/*}*/
 
-em,
-li {
-  font-size: 1rem;
-  font-weight: 300;
-  color: #242424;
-}
+/*em,*/
+/*li {*/
+  /*font-size: 1rem;*/
+  /*font-weight: 300;*/
+  /*color: #242424;*/
+/*}*/
 
-em > a,
-li > a {
-  color: #242424;
-}
+/*em > a,*/
+/*li > a {*/
+  /*color: #242424;*/
+/*}*/
 
-em > a:hover,
-li > a:hover {
-  color: #13b1cd;
-}
+/*em > a:hover,*/
+/*li > a:hover {*/
+  /*color: #13b1cd;*/
+/*}*/
 
-small {
-  color: #656565;
-}
+/*small {*/
+  /*color: #656565;*/
+/*}*/
 
-label {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: #242424;
-  margin-bottom: .25rem;
-}
+/*label {*/
+  /*font-size: 0.8125rem;*/
+  /*font-weight: 700;*/
+  /*color: #242424;*/
+  /*margin-bottom: .25rem;*/
+/*}*/
 
-i {
-  line-height: 1;
-}
+/*i {*/
+  /*line-height: 1;*/
+/*}*/
 
-/* Paragraph */
-p {
-  font-size: 0.9375rem;
-  font-weight: 300;
-  color: #656565;
-  line-height: 1.6;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
+/*!* Paragraph *!*/
+/*p {*/
+  /*font-size: 0.9375rem;*/
+  /*font-weight: 300;*/
+  /*color: #656565;*/
+  /*line-height: 1.6;*/
+  /*margin-top: 0;*/
+  /*margin-bottom: 1rem;*/
+/*}*/
 
-/* Links */
-a {
-  color: #13b1cd;
-  text-decoration: none;
-}
+/*!* Links *!*/
+/*a {*/
+  /*color: #13b1cd;*/
+  /*text-decoration: none;*/
+/*}*/
 
-a:focus, a:hover {
-  color: #1095ac;
-  text-decoration: none;
-}
+/*a:focus, a:hover {*/
+  /*color: #1095ac;*/
+  /*text-decoration: none;*/
+/*}*/
 
-a:focus {
-  outline: none;
-}
+/*a:focus {*/
+  /*outline: none;*/
+/*}*/
 
-/*----------------------------------
-  Selection
-------------------------------------*/
-::selection {
-  color: #fff;
-  background: #13b1cd;
-  text-shadow: none;
-}
+/*!*----------------------------------*/
+  /*Selection*/
+/*------------------------------------*!*/
+/*::selection {*/
+  /*color: #fff;*/
+  /*background: #13b1cd;*/
+  /*text-shadow: none;*/
+/*}*/
 
-::-webkit-selection {
-  color: #fff;
-  background: #13b1cd;
-  text-shadow: none;
-}
+/*::-webkit-selection {*/
+  /*color: #fff;*/
+  /*background: #13b1cd;*/
+  /*text-shadow: none;*/
+/*}*/
 
-:active,
-:focus {
-  outline: none;
-}
+/*:active,*/
+/*:focus {*/
+  /*outline: none;*/
+/*}*/
 
 /*----------------------------------
   Button
