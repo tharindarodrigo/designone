@@ -243,10 +243,10 @@
 
 
                 {{--</div>--}}
-                <div class="portfolio-grid-fit row gallery-popup">
+                <div class="portfolio-grid-fit row gallery-popup grid">
 
                     @foreach($portfolio as $item)
-                        <div class="portfolio-item {!! $item['categories'] !!}"
+                        <div class="grid-item {!! $item['categories'] !!}"
                              style="background-color: #FFF; padding: 2px;">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
@@ -589,13 +589,21 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/masonry.js') !!}" type="text/javascript"></script>
+
 
 
 <script type="text/javascript">
     /* $(document).ready(function () {
      $('#newsModal').trigger('click');
      });*/
-
+    $('.grid').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: 100,
+            horizontalOrder: true,
+        }
+    });
     $(document).ready(function () {
         //  $('#newsModal').trigger('click');
 //        $('#myModal').modal('show');
