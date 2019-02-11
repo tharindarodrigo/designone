@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{!! asset('vendor/swiper/swiper.min.css') !!}">
     <link rel="stylesheet" href="{!! asset('vendor/cubeportfolio/css/cubeportfolio.min.css') !!}">
 
+    <link href="{!! asset('css/styles.css')!!}" rel="stylesheet" type="text/css"/>
+
+
     <style type="text/css">
         @media screen and (max-width: 600px) {
             .mobile_logo {
