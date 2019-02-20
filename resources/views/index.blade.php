@@ -267,7 +267,7 @@
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;
                                                 </button>
-                                                <h4 class="modal-title">{{$item['heading']}}</h4>
+                                                <h4 class="modal-title" style="color: #ffffff;">{{$item['heading']}}</h4>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="w3-content w3-display-container">
