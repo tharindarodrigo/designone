@@ -1,16 +1,13 @@
-﻿﻿
-<html>
+﻿﻿<html lang="en">
 <head>
-    <meta charset="utf-16"/>
+    {{--<meta charset="utf-16"/>--}}
     <title>DesignOne</title>
     <meta name="description" content="design, architecture, creative"/>
     <meta name="keywords"
           content="architecture, design, buildings, creative, projects, houses, restaurant, Sri Lanka"/>
     <meta name="author" content="Brightron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-    {{--[if IE]>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--}}
-    {{-- Favicone Icon --}}
+
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
@@ -60,7 +57,6 @@
                         <img src="{!! asset('img/logo.png')!!}" height="27px" style="margin-top:-5px ;"/>
                     </a>
                 </div>
-
                 {{--Navigation Icon--}}
                 <div class="nav-menu-icon">
                     <a><i class="fa fa-bars"></i></a>
