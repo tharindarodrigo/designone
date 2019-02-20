@@ -84,7 +84,7 @@ class GeneralContentsController extends Controller
     public function sendMail(Request $request)
     {
 
-        dd($request->all());
+//        dd($request->all());
         Mail::raw('mail', function ($message) use ($request) {
             $message
                 ->from($request->get('email'), $request->get('name'))
