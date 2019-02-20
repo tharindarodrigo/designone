@@ -564,8 +564,8 @@
                             <a href="mailto:{!! $generalContent->email !!}"><span
                                         class="text-bold">Email :</span>{!! $generalContent->email !!}</a><br/>
                             <a><span class="text-bold">Call :</span> {!! $generalContent->phone1 !!}</a><br/>
-                            <a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}
-                            </a>
+                            {{--<a><span class="text-bold">Fax :</span> {!! $generalContent->fax !!}--}}
+                            {{--</a>--}}
                         </p>
                     </div>
                 </div>
