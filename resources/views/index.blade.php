@@ -360,10 +360,10 @@
                             @foreach($teamMembers as $teamMember)
                                 <div class="item" style="width:300px;">
                                     <div class="team-item" style="    padding-left: 5px; padding-right: 5px;">
-                                        <div class="team-item-img">
+                                        <div class="team-item-img" style="align-content: center">
                                             <img width=""
                                                  src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
-                                                 alt=""/>
+                                                 alt="" align="center"/>
                                             {{--<div class="team-item-detail">--}}
                                             {{--<div class="team-item-detail-inner light-color">--}}
                                             {{--<h5>Michael Lee</h5>--}}
