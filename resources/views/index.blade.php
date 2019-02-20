@@ -378,7 +378,7 @@
 
         {{-- Statement1 Section --}}
         <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpg">
             <div class="container">
                 <p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>
                 <a class="btn btn-md btn-color">Download</a>
@@ -697,11 +697,8 @@
         x[slideIndex - 1].style.display = "block";
     }
 </script>
-<script type="text/javascript">
-
-
-</script>
 {{-- angular stuffs --}}
+
 {{--<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>--}}
 {{--<script src="{!! asset('scripts/vendor/jquery.isotope.js') !!}"></script>--}}
 {{--<script src="{!! asset('scripts/angular-isotope.js') !!}"></script>--}}
