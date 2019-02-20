@@ -18,7 +18,7 @@ Route::get('/', function () {
     $projectTypes = \App\ProjectType::all();
     $newsItems = \App\News::all();
     $clients = \App\Client::all();
-    $teamMembers = \App\TeamMember::all();
+    $teamMembers = \App\TeamMember::orderBy('order','asc')->get();
 
     $projects = \App\Project::with('projectTypes')->orderBy('year', 'desc')->get();
     $portfolio = [];

@@ -5,6 +5,7 @@
         <th>Name</th>
         <th>Designation</th>
         <th>Thumb</th>
+        <th>Order</th>
         <th>Controls</th>
     </tr>
     </thead>
@@ -15,6 +16,7 @@
                 <td>{!! $teamMember->id !!}</td>
                 <td>{!! $teamMember->name !!}</td>
                 <td>{!! $teamMember->designation !!}</td>
+                <td>{!! $teamMember->order !!}</td>
                 <td>{!! $teamMember->status==0 ? 'Inactive' : 'active'!!}</td>
                 <td><img width="100px" src="{!! asset('control-panel/images/team-members/'.$teamMember->id.'.jpg') !!}"
                          alt=""></td>
