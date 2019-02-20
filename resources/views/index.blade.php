@@ -378,7 +378,7 @@
 
         {{-- Statement1 Section --}}
         <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpg">
+                 data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpeg">
             <div class="container">
                 <p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>
                 <a class="btn btn-md btn-color">Download</a>
@@ -516,7 +516,7 @@
 
         {{-- Contact Form --}}
         <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
-                 data-background-img="{!! asset('img/full/33.jpg') !!}" data-stellar-background-ratio="0.5">
+                 data-background-img="{!! asset('img/full/Slider.jpeg') !!}" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row text-center">
                     <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
