@@ -42,6 +42,7 @@ Route::get('/', function () {
         $portfolio[] = [
             'heading' => !empty($project->name) ? $project->name : 'Heading' . $project->id,
             'country' => $project->country,
+            'project_id' => $project->id,
             'year' => $project->year,
             'short_describe' => 'Short project description',
             'thumb_image' => 'control-panel/images/projects/thumb/' . $project->id . '.jpg',

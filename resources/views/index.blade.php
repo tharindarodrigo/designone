@@ -248,7 +248,7 @@
 
                     @foreach($portfolio as $item)
                         <div class="portfolio-item {!! $item['categories'] !!}"
-                             style="background-color: #FFF; padding: 2px;">
+                             style="background-color: #FFF; padding: 2px; ">
                             <div class="portfolio-box" style="border: thick;">
                                 <a class="portfolio-image-wrap">
                                     <img src="{!! asset($item['thumb_image']) !!}"/>
@@ -350,7 +350,7 @@
 
         @if(!empty($teamMembers))
             <section id="team" class="section-padding" style="padding-bottom:0px;">
-                <div class="container">
+                <div class="container-fluid">
                     <h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>
                 </div>
                 <div class="container">
