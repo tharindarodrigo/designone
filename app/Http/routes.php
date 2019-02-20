@@ -14,13 +14,14 @@
 Route::get('/', function () {
 //    $sliderImages = \App\GeneralContent::all();
     $generalContent = App\GeneralContent::find(1);
+    $projectGroups = \App\Project::all();
     $sliderImages = \App\SliderImage::all();
     $projectTypes = \App\ProjectType::all();
     $newsItems = \App\News::all();
     $clients = \App\Client::all();
     $teamMembers = \App\TeamMember::orderBy('order','asc')->get();
 
-    $projects = \App\Project::with('projectTypes')->orderBy('year', 'desc')->get();
+    $projects = \App\Project::with('projectTypes')->groupBy('name')->orderBy('year', 'desc')->get();
     $portfolio = [];
     //$recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
 
@@ -40,6 +41,7 @@ Route::get('/', function () {
         }
 
         $portfolio[] = [
+            'name'=> $project->name,
             'heading' => !empty($project->name) ? $project->name : 'Heading' . $project->id,
             'country' => $project->country,
             'project_id' => $project->id,
@@ -55,7 +57,7 @@ Route::get('/', function () {
 
 
 //    dd($sliderImages);
-    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients', 'teamMembers', 'recentProjects'));
+    return view('index', compact('sliderImages', 'generalContent', 'projectTypes', 'newsItems', 'portfolio', 'projects', 'clients', 'teamMembers', 'recentProjects', 'projectGroups'));
 });
 
 Route::post('/send-mail', 'GeneralContentsController@sendMail');
@@ -80,6 +82,16 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/clients', 'ClientsController');
     Route::resource('/team-members', 'TeamMembersController');
 
+});
+
+Route::get('xxx', function(){
+    $p = \App\Project::groupBy('name')->get();
+    $projects = \App\Project::all();
+
+    return [
+        'group'=> $p,
+        'projects'=> $projects->where('name', $p->first()->name)
+    ];
 });
 
 

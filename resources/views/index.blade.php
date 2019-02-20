@@ -1,4 +1,5 @@
-﻿﻿<html lang="en">
+﻿﻿
+<html lang="en">
 <head>
     {{--<meta charset="utf-16"/>--}}
     <title>DesignOne</title>
@@ -7,7 +8,7 @@
           content="architecture, design, buildings, creative, projects, houses, restaurant, Sri Lanka"/>
     <meta name="author" content="Brightron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
@@ -22,6 +23,11 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/model.css')!!}" media="screen"/>
 
     <style type="text/css">
+
+        .mySlides {
+            display: none;
+        }
+
         @media screen and (max-width: 600px) {
             .mobile_logo {
                 visibility: visible;
@@ -250,38 +256,70 @@
                         <div class="portfolio-item {!! $item['categories'] !!}"
                              style="background-color: #FFF; padding: 2px; ">
                             <div class="portfolio-box" style="border: thick;">
-                                <a class="portfolio-image-wrap">
+                                <a class="portfolio-image-wrap" data-toggle="modal"
+                                   data-target="#myModal{{$item['project_id']}}">
                                     <img src="{!! asset($item['thumb_image']) !!}"/>
                                 </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-tb">
-                                        <div class="portfolio-caption-tb-cell">
-                                            <h5>{!! $item['heading'] !!}</h5>
-                                            <p>{!! $item['country'].' '.$item['year'] !!}</p>
-                                            <ul class="portfolio-btn-wraper">
-                                                <li>
-                                                    <a class="gallery-popup-link btn btn-color"
-                                                       href="{!! asset($item['large_image']) !!}"
-                                                       title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i
-                                                                class="fa fa-search"></i></a>
-                                                </li>
-                                                {{--<li>--}}
-                                                {{--<a class="btn btn-black" target="_blank"--}}
-                                                {{--href="https://www.dribbble.com/"><i--}}
-                                                {{--class="fa fa-dribbble"></i></a>--}}
-                                                {{--</li>--}}
-                                                {{--<li>--}}
-                                                {{--<a class="btn btn-black" target="_blank"--}}
-                                                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
-                                                {{--</li>--}}
-                                                {{--<li>--}}
-                                                {{--<a class="btn btn-black" target="_blank"--}}
-                                                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
-                                                {{--</li>--}}
-                                            </ul>
+                                <div id="myModal{{$item['project_id']}}" class="modal fade" role="dialog">
+                                    <div class="modal-dialog  modal-lg">
+
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;
+                                                </button>
+                                                <h4 class="modal-title">{{$item['heading']}}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="w3-content w3-display-container">
+                                                    @foreach(App\Project::where('name', $item['name'])->get() as $projectImage)
+                                                        <img class="mySlides" src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}" style="width:100%">
+
+                                                    @endforeach
+                                                    <button class="w3-button w3-black w3-display-left"
+                                                            onclick="plusDivs(-1)">&#10094;
+                                                    </button>
+                                                    <button class="w3-button w3-black w3-display-right"
+                                                            onclick="plusDivs(1)">&#10095;
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer" style="color: #fff;">
+                                                {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
+                                                {!! $item['country'].' '.$item['year'] !!}
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
+                                {{--<div class="portfolio-caption">--}}
+                                {{--<div class="portfolio-caption-tb">--}}
+                                {{--<div class="portfolio-caption-tb-cell">--}}
+                                {{--<h5>{!! $item['heading'] !!}</h5>--}}
+                                {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
+                                {{--<ul class="portfolio-btn-wraper">--}}
+                                {{--<li>--}}
+                                {{--<a class="gallery-popup-link btn btn-color"--}}
+                                {{--href="{!! asset($item['large_image']) !!}"--}}
+                                {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
+                                {{--class="fa fa-search"></i></a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                {{--<a class="btn btn-black" target="_blank"--}}
+                                {{--href="https://www.dribbble.com/"><i--}}
+                                {{--class="fa fa-dribbble"></i></a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                {{--<a class="btn btn-black" target="_blank"--}}
+                                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                {{--<a class="btn btn-black" target="_blank"--}}
+                                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
+                                {{--</li>--}}
+                                {{--</ul>--}}
+                                {{--</div>--}}
+                                {{--</div>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
                     @endforeach
@@ -636,7 +674,29 @@
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 {{--<script src="{!! asset('js/masonry.js') !!}" type="text/javascript"></script>--}}
 
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
 
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
 <script type="text/javascript">
 
 
