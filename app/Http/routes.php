@@ -64,11 +64,12 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/control', function () {
+    return view('control-panel.test');
+});
+
 Route::group(['prefix' => 'control-panel'], function () {
 
-    Route::get('/test', function () {
-        return view('control-panel.test');
-    });
 
     Route::resource('/general-contents', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');

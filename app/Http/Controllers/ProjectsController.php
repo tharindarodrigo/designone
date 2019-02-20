@@ -70,8 +70,12 @@ class ProjectsController extends Controller
                 $x->save('control-panel/images/projects/' . $project->id . '.jpg');
 
                 Image::make($image)
+                    ->resize(null, 240, function($constraint){
+                        $constraint->aspectRatio();
+                    })
+                    ->resizeCanvas(320, null)
+//                    ->resizeCanvas(320, null, 'center', true, '333333')
                     ->encode('jpg')
-                    ->resize(320, 240)
                     ->save('control-panel/images/projects/thumb/' . $project->id . '.jpg');
             }
         }

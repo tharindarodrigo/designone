@@ -47,7 +47,7 @@
 
     </style>
 </head>
-<body style="font-family: font-family: 'Swis721 LtCn BT',sans-serif;">
+<body style="font-family: 'Swis721 LtCn BT',sans-serif;">
 <section id="preloader">
     <div class="site-spinner"></div>
 </section>
@@ -142,7 +142,7 @@
                                         data-endelementdelay="0.1"
                                         data-endspeed="500"
                                         data-endeasing="Power4.easeIn"
-                                        style="z-index: 3   ;color: #FFFFFF; max-width: auto; max-height: auto; white-space: nowrap;">
+                                        style="z-index: 3; color: #FFFFFF; max-width: auto; max-height: auto; white-space: nowrap;">
                                         {!! $sliderImage->title !!}
                                     </h2>
 
@@ -294,49 +294,49 @@
             </div>
         </section>
         {{--<section>--}}
-            {{--<div class="container text-left filters-button-group" style="font-family: inherit">--}}
-                {{--<ul class="portfolio-filter categories-filter text-left">--}}
-                    {{--<li><h2>Our <span class="text-light">Work</span></h2></li>--}}
-                    {{--<li class="menu_down"><a class="categories active" data-filter="*">All</a></li>--}}
-                    {{--<li><a class="categories" data-filter=".recent">Recent</a></li>--}}
-                    {{--@if(!empty($projectTypes))--}}
-                        {{--@foreach($projectTypes as $projectType)--}}
-                            {{--<li><a class="button"--}}
-                                   {{--data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>--}}
-                            {{--</li>--}}
-                        {{--@endforeach--}}
-                    {{--@endif--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-            {{--<div class="grid">--}}
+        {{--<div class="container text-left filters-button-group" style="font-family: inherit">--}}
+        {{--<ul class="portfolio-filter categories-filter text-left">--}}
+        {{--<li><h2>Our <span class="text-light">Work</span></h2></li>--}}
+        {{--<li class="menu_down"><a class="categories active" data-filter="*">All</a></li>--}}
+        {{--<li><a class="categories" data-filter=".recent">Recent</a></li>--}}
+        {{--@if(!empty($projectTypes))--}}
+        {{--@foreach($projectTypes as $projectType)--}}
+        {{--<li><a class="button"--}}
+        {{--data-filter=".{!! snake_case($projectType->project_type) !!}">{!! $projectType->project_type !!}</a>--}}
+        {{--</li>--}}
+        {{--@endforeach--}}
+        {{--@endif--}}
+        {{--</ul>--}}
+        {{--</div>--}}
+        {{--<div class="grid">--}}
 
-                {{--@foreach($portfolio as $item)--}}
-                    {{--<div class="element-item {!! $item['categories'] !!}"--}}
-                         {{--style="background-color: #FFF; padding: 2px;">--}}
-                        {{--<div class="portfolio-box" style="border: thick;">--}}
-                            {{--<a class="portfolio-image-wrap">--}}
-                                {{--<img src="{!! asset($item['thumb_image']) !!}"/>--}}
-                            {{--</a>--}}
-                            {{--<div class="portfolio-caption">--}}
-                                {{--<div class="portfolio-caption-tb">--}}
-                                    {{--<div class="portfolio-caption-tb-cell">--}}
-                                        {{--<h5>{!! $item['heading'] !!}</h5>--}}
-                                        {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
-                                        {{--<ul class="portfolio-btn-wraper">--}}
-                                            {{--<li>--}}
-                                                {{--<a class="gallery-popup-link btn btn-color"--}}
-                                                   {{--href="{!! asset($item['large_image']) !!}"--}}
-                                                   {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
-                                                            {{--class="fa fa-search"></i></a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--@endforeach--}}
-            {{--</div>--}}
+        {{--@foreach($portfolio as $item)--}}
+        {{--<div class="element-item {!! $item['categories'] !!}"--}}
+        {{--style="background-color: #FFF; padding: 2px;">--}}
+        {{--<div class="portfolio-box" style="border: thick;">--}}
+        {{--<a class="portfolio-image-wrap">--}}
+        {{--<img src="{!! asset($item['thumb_image']) !!}"/>--}}
+        {{--</a>--}}
+        {{--<div class="portfolio-caption">--}}
+        {{--<div class="portfolio-caption-tb">--}}
+        {{--<div class="portfolio-caption-tb-cell">--}}
+        {{--<h5>{!! $item['heading'] !!}</h5>--}}
+        {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
+        {{--<ul class="portfolio-btn-wraper">--}}
+        {{--<li>--}}
+        {{--<a class="gallery-popup-link btn btn-color"--}}
+        {{--href="{!! asset($item['large_image']) !!}"--}}
+        {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
+        {{--class="fa fa-search"></i></a>--}}
+        {{--</li>--}}
+        {{--</ul>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--@endforeach--}}
+        {{--</div>--}}
         {{--</section>--}}
 
 
