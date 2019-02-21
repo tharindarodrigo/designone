@@ -84,7 +84,7 @@ class GeneralContentsController extends Controller
     public function sendMail(Request $request)
     {
 
-        $body ="From: {$request->get('name')} \nEmail: {$request->get('email')} \n {$request->get('message_body')}";
+        $body ="From: {$request->get('name')} \nEmail: {$request->get('email')} \n\n{$request->get('message_body')}";
 //        dd($request->all());
         Mail::send([],[], function ($message) use ($request, $body) {
             $message
