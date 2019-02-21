@@ -448,7 +448,7 @@
 
         @if(!empty($teamMembers))
             <section id="team" class="section-padding" style="padding-bottom:0px;">
-                <div class="container-fluid">
+                <div class="container">
                     <h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>
                 </div>
                 <div class="container">
