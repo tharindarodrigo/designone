@@ -85,12 +85,15 @@ class GeneralContentsController extends Controller
     {
 
 //        dd($request->all());
-        Mail::raw('mail', function ($message) use ($request) {
+        Mail::send([],[], function ($message) use ($request) {
             $message
-                ->from($request->get('email'), $request->get('name'))
-                ->to('tharindarodrigo@gmail.com')
-                ->subject($request->get('subject'));
+//                ->from($request->get('email'), $request->get('name'))
+                ->to('info@designone.lk')
+                ->subject($request->get('subject'))
+                ->setBody($request->get('message_body'));
         });
+
+        return redirect()->to('/');
     }
 
 

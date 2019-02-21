@@ -611,7 +611,7 @@
 
                                 <div class="form-field-wrapper">
                                         <textarea class="input-md form-full" id="form-message" rows="7"
-                                                  name="form-message" placeholder="Your Message" required></textarea>
+                                                  name="message_body" placeholder="Your Message" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
