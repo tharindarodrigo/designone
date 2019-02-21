@@ -20,7 +20,7 @@ class GeneralContentsController extends Controller
      */
     public function index()
     {
-i
+
         try {
             GeneralContent::findOrFail(1);
             return redirect()->route('control-panel.general-contents.edit', [1]);
