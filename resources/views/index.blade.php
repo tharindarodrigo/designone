@@ -267,19 +267,79 @@
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;
                                                 </button>
-                                                <h4 class="modal-title" style="color: #ffffff;">{{$item['heading']}}</h4>
+                                                <h4 class="modal-title"
+                                                    style="color: #ffffff;">{{$item['heading']}}</h4>
                                             </div>
                                             <div class="modal-body">
+                                                {{--<div class="owl-carousel content-carousel content-slider owl-theme"--}}
+                                                {{--style="opacity: 1; display: block;">--}}
+                                                {{--<div class="owl-wrapper-outer autoHeight" style="height: 305px;">--}}
+                                                {{--<div class="owl-wrapper"--}}
+                                                {{--style="width: 8094px; left: 0px; display: block; transition: all 1000ms ease; transform: translate3d(0px, 0px, 0px);">--}}
+                                                {{--@foreach(App\Project::where('name', $item['name'])->get() as $projectImage)--}}
+                                                {{--<img class="mySlides" src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}" style="width:100%">--}}
+
+                                                {{--<div class="owl-item" style="width: 1349px;">--}}
+                                                {{--<div class="item">--}}
+                                                {{--<div class="container">--}}
+                                                {{--<div class="row">--}}
+                                                {{--<div class="col-md-6 mb-sm-30">--}}
+                                                {{--<img src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}"--}}
+                                                {{--alt="">--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-md-5 col-md-offset-1">--}}
+                                                {{--<h4 class="content-title">Project--}}
+                                                {{--name--}}
+                                                {{--&amp; Title</h4>--}}
+                                                {{--<p>Cras dapibus Vivamus elementum--}}
+                                                {{--semper--}}
+                                                {{--nisi Aenean vulputate eleifend--}}
+                                                {{--tellus Aenean leo ligula,--}}
+                                                {{--porttitor--}}
+                                                {{--eu consequat vitae Phasellus--}}
+                                                {{--viverra--}}
+                                                {{--nulla ut metus varius--}}
+                                                {{--laoreet.</p>--}}
+                                                {{--<ul class="list-inside">--}}
+                                                {{--<li>Branding Design</li>--}}
+                                                {{--<li>Web Design</li>--}}
+                                                {{--</ul>--}}
+                                                {{--<a target="_blank"--}}
+                                                {{--href="http://google.com/"--}}
+                                                {{--class="btn btn-md btn-black">Visit--}}
+                                                {{--Site--}}
+                                                {{--<i class="fa fa-external-link right"></i></a>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--@endforeach--}}
+
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+
+
+                                                {{--<div class="owl-controls clickable">--}}
+                                                {{--<div class="owl-buttons">--}}
+                                                {{--<div class="owl-prev"><i class="fa fa-angle-left"></i></div>--}}
+                                                {{--<div class="owl-next"><i class="fa fa-angle-right"></i>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
                                                 <div class="w3-content w3-display-container">
                                                     @foreach(App\Project::where('name', $item['name'])->get() as $projectImage)
-                                                        <img class="mySlides" src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}" style="width:100%">
+                                                        <img class="mySlides{{$item['project_id']}}"
+                                                             src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}"
+                                                             style="width:100%">
 
                                                     @endforeach
                                                     <button class="w3-button w3-black w3-display-left"
-                                                            onclick="plusDivs(-1)">&#10094;
+                                                            onclick="plusDivs{!! $item['project_id'] !!}(-1)">&#10094;
                                                     </button>
                                                     <button class="w3-button w3-black w3-display-right"
-                                                            onclick="plusDivs(1)">&#10095;
+                                                            onclick="plusDivs{!! $item['project_id'] !!}(1)">&#10095;
                                                     </button>
                                                 </div>
                                             </div>
@@ -676,15 +736,22 @@
 
 <script>
     var slideIndex = 1;
-    showDivs(slideIndex);
+    @foreach($portfolio as $item)
+    showDivs(slideIndex, '{!! "mySlides".$item['project_id'] !!}');
 
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
+    @endforeach
+
+    @foreach($portfolio as $item)
+    function plusDivs{!! $item['project_id'] !!}(n) {
+        showDivs(slideIndex += n, '{!! "mySlides".$item['project_id'] !!}');
     }
 
-    function showDivs(n) {
+    @endforeach
+
+
+    function showDivs(n, classname) {
         var i;
-        var x = document.getElementsByClassName("mySlides");
+        var x = document.getElementsByClassName(classname);
         if (n > x.length) {
             slideIndex = 1
         }
