@@ -86,8 +86,8 @@ class GeneralContentsController extends Controller
 
         $body =
             "From: {$request->get('name')}
-        Email: {$request->get('email')} 
-        ";
+    Email: {$request->get('email')} 
+    ";
 //        dd($request->all());
         Mail::send([],[], function ($message) use ($request, $body) {
             $message
