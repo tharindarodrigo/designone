@@ -74,7 +74,7 @@
                     <ul class="nav-menu-inner">
                         <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px"
                                                       style="margin-top:-5px ;"/></li>
-                        <li><a href="#intro">Home</a></li>
+                        <li><a href="#intro" id="intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
                         <li><a href="#portfolio">Projects</a></li>
@@ -634,7 +634,7 @@
         {{-- End Contact Form --}}
 
         {{-- Map section --}}
-        <section class="map" id="map"></section>
+        {{--<section class="map" id="map"></section>--}}
         {{-- End Map section --}}
 
         {{--Contact Info Section--}}
@@ -719,6 +719,10 @@
 <script src="{!! asset('js/plugins/jquery.fs.tipper.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.countTo.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/owl.carousel.min.js') !!}" type="text/javascript"></script>
+<script type="text/javascript">
+    $('#intro a').trigger('click');
+
+</script>
 
 {{-- SLIDER REVOLUTION SCRIPTS  --}}
 <script src="{!! asset('rs-plugin/js/jquery.themepunch.tools.min.js') !!}" type="text/javascript"></script>
@@ -728,13 +732,15 @@
 <script src="{!! asset('js/plugins/jquery.singlePageNav.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/wow.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.validate.min.js') !!}" type="text/javascript"></script>
-<script src="{!! asset('/contact-form.js') !!}" type="text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
-<script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/contact-form.js') !!}" type="text/javascript"></script>
+{{--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>--}}
+{{--<script src="{!! asset('js/map.js') !!}" type="text/javascript"></script>--}}
 <script src="{!! asset('js/theme.js') !!}" type="text/javascript"></script>
 {{--<script src="{!! asset('js/masonry.js') !!}" type="text/javascript"></script>--}}
 
+
 <script>
+
     var slideIndex = 1;
     @foreach($portfolio as $item)
     showDivs(slideIndex, '{!! "mySlides".$item['project_id'] !!}');
@@ -764,6 +770,8 @@
         x[slideIndex - 1].style.display = "block";
     }
 </script>
+
+
 {{-- angular stuffs --}}
 
 {{--<script src="{!! asset('scripts/vendor/angular.min.js') !!}"></script>--}}
