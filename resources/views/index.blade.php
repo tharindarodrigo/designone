@@ -597,11 +597,11 @@
                                 </h5>
 
                                 <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name"
+                                    <input class="input-md form-full" id="form-name" type="text" name="name"
                                            placeholder="Your Name" required/>
                                 </div>
                                 <div class="form-field-wrapper">
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email"
+                                    <input class="input-md form-full" id="form-email" type="email" name="email"
                                            placeholder="Email" required/>
                                 </div>
                                 <div class="form-field-wrapper">
