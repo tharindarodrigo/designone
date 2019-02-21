@@ -90,7 +90,7 @@ class GeneralContentsController extends Controller
 //        dd($request->all());
         Mail::send([],[], function ($message) use ($request, $body) {
             $message
-                ->to('info@designone.lk')
+                ->to('tharindarodrigo@gmail.com')
 //                ->cc($request->get('email'), $request->get('name'))
 
                 ->subject($request->get('subject'))
