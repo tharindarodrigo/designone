@@ -84,7 +84,8 @@ class GeneralContentsController extends Controller
     public function sendMail(Request $request)
     {
 
-        $body = "From: {$request->get('name')}
+        $body =
+            "From: {$request->get('name')}
         Email: {$request->get('email')} 
         ";
 //        dd($request->all());
