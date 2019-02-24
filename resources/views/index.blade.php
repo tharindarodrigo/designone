@@ -634,7 +634,15 @@
         {{-- End Contact Form --}}
 
         {{-- Map section --}}
-        {{--<section class="map" id="map"></section>--}}
+        <section>
+            <div class="row">
+                <div class="container-fluid">
+                    <a href="https://goo.gl/maps/XimaR4XsiK22" target="_blank">
+                        <img src="{!! asset('img/Map.jpg')  !!}" alt="" width="100%" >
+                    </a>
+                </div>
+            </div>
+        </section>
         {{-- End Map section --}}
 
         {{--Contact Info Section--}}
