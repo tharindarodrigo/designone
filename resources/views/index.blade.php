@@ -436,13 +436,13 @@
         {{--End Portfolio Section --}}
 
         {{-- Statement1 Section --}}
-        <section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"
-                 data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpeg">
-            <div class="container">
-                <p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>
-                <a class="btn btn-md btn-color">Download</a>
-            </div>
-        </section>
+        {{--<section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
+                 {{--data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpeg">--}}
+            {{--<div class="container">--}}
+                {{--<p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>--}}
+                {{--<a class="btn btn-md btn-color">Download</a>--}}
+            {{--</div>--}}
+        {{--</section>--}}
 
 
         @if(!empty($teamMembers))
@@ -551,13 +551,14 @@
                 </div>
                 <div class="container">
 
-                    <div class="owl-carousel client-carousel">
+                    <div class="owl-carousel">
                         @foreach($clients as $client)
                             <div class="item">
                                 <div class="client-logo">
                                     <a href="#">
                                         <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                             alt=""/></a>
+                                             alt=""/>
+                                    </a>
                                 </div>
                             </div>
 
@@ -618,6 +619,7 @@
                                 {{--<label style="color: #fff;"><input type="checkbox" name="request_portfolio"--}}
                                 {{--class="input-md form-full"--}}
                                 {{--onclick="alert('Hello')">Request--}}
+
                                 {{--Portfolio</label>--}}
                                 {{--</div>--}}
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit"

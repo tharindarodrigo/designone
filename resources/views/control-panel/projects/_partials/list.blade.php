@@ -2,9 +2,11 @@
     <thead>
     <tr>
         <th>#</th>
+        <th>Name</th>
         <th>Year</th>
         <th>Type</th>
         <th>country</th>
+        <th>Order</th>
         <th>Thumb</th>
         <th>Controls</th>
     </tr>
@@ -14,7 +16,9 @@
         @foreach($projects as $project)
             <tr>
                 <td>{!! $project->id !!}</td>
+                <td>{!! $project->name !!}</td>
                 <td>{!! $project->year !!}</td>
+                <td>{!! $project->order !!}</td>
                 <td align="left">
 
                     @foreach($project->projectTypes as $projectType)
