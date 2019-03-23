@@ -270,63 +270,7 @@
                                                     style="color: #ffffff;">{{$item['heading']}}</h4>
                                             </div>
                                             <div class="modal-body">
-                                                {{--<div class="owl-carousel content-carousel content-slider owl-theme"--}}
-                                                {{--style="opacity: 1; display: block;">--}}
-                                                {{--<div class="owl-wrapper-outer autoHeight" style="height: 305px;">--}}
-                                                {{--<div class="owl-wrapper"--}}
-                                                {{--style="width: 8094px; left: 0px; display: block; transition: all 1000ms ease; transform: translate3d(0px, 0px, 0px);">--}}
-                                                {{--@foreach(App\Project::where('name', $item['name'])->get() as $projectImage)--}}
-                                                {{--<img class="mySlides" src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}" style="width:100%">--}}
 
-                                                {{--<div class="owl-item" style="width: 1349px;">--}}
-                                                {{--<div class="item">--}}
-                                                {{--<div class="container">--}}
-                                                {{--<div class="row">--}}
-                                                {{--<div class="col-md-6 mb-sm-30">--}}
-                                                {{--<img src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}"--}}
-                                                {{--alt="">--}}
-                                                {{--</div>--}}
-                                                {{--<div class="col-md-5 col-md-offset-1">--}}
-                                                {{--<h4 class="content-title">Project--}}
-                                                {{--name--}}
-                                                {{--&amp; Title</h4>--}}
-                                                {{--<p>Cras dapibus Vivamus elementum--}}
-                                                {{--semper--}}
-                                                {{--nisi Aenean vulputate eleifend--}}
-                                                {{--tellus Aenean leo ligula,--}}
-                                                {{--porttitor--}}
-                                                {{--eu consequat vitae Phasellus--}}
-                                                {{--viverra--}}
-                                                {{--nulla ut metus varius--}}
-                                                {{--laoreet.</p>--}}
-                                                {{--<ul class="list-inside">--}}
-                                                {{--<li>Branding Design</li>--}}
-                                                {{--<li>Web Design</li>--}}
-                                                {{--</ul>--}}
-                                                {{--<a target="_blank"--}}
-                                                {{--href="http://google.com/"--}}
-                                                {{--class="btn btn-md btn-black">Visit--}}
-                                                {{--Site--}}
-                                                {{--<i class="fa fa-external-link right"></i></a>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--@endforeach--}}
-
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-
-
-                                                {{--<div class="owl-controls clickable">--}}
-                                                {{--<div class="owl-buttons">--}}
-                                                {{--<div class="owl-prev"><i class="fa fa-angle-left"></i></div>--}}
-                                                {{--<div class="owl-next"><i class="fa fa-angle-right"></i>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--</div>--}}
                                                 <div class="w3-content w3-display-container">
                                                     @foreach(App\Project::where('name', $item['name'])->get() as $projectImage)
                                                         <img class="mySlides{{$item['project_id']}}"
@@ -350,35 +294,6 @@
 
                                     </div>
                                 </div>
-                                {{--<div class="portfolio-caption">--}}
-                                {{--<div class="portfolio-caption-tb">--}}
-                                {{--<div class="portfolio-caption-tb-cell">--}}
-                                {{--<h5>{!! $item['heading'] !!}</h5>--}}
-                                {{--<p>{!! $item['country'].' '.$item['year'] !!}</p>--}}
-                                {{--<ul class="portfolio-btn-wraper">--}}
-                                {{--<li>--}}
-                                {{--<a class="gallery-popup-link btn btn-color"--}}
-                                {{--href="{!! asset($item['large_image']) !!}"--}}
-                                {{--title="{!! $item['heading'].' - '.$item['country'].' ('.$item['year'].')' !!}"><i--}}
-                                {{--class="fa fa-search"></i></a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                {{--<a class="btn btn-black" target="_blank"--}}
-                                {{--href="https://www.dribbble.com/"><i--}}
-                                {{--class="fa fa-dribbble"></i></a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                {{--<a class="btn btn-black" target="_blank"--}}
-                                {{--href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                {{--<a class="btn btn-black" target="_blank"--}}
-                                {{--href="https://www.behance.net/"><i class="fa fa-behance"></i></a>--}}
-                                {{--</li>--}}
-                                {{--</ul>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
                             </div>
                         </div>
                     @endforeach
@@ -437,11 +352,11 @@
 
         {{-- Statement1 Section --}}
         {{--<section id="Statement1" class="section-padding bg-image overlay-dark dark-bg text-center"--}}
-                 {{--data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpeg">--}}
-            {{--<div class="container">--}}
-                {{--<p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>--}}
-                {{--<a class="btn btn-md btn-color">Download</a>--}}
-            {{--</div>--}}
+        {{--data-stellar-background-ratio="0.5" data-background-img="img/full/Slider.jpeg">--}}
+        {{--<div class="container">--}}
+        {{--<p class="max-width-700 lead" style="font-family: inherit">You can download our portfolio below</p>--}}
+        {{--<a class="btn btn-md btn-color">Download</a>--}}
+        {{--</div>--}}
         {{--</section>--}}
 
 
@@ -551,15 +466,11 @@
                 </div>
                 <div class="container">
 
-                    <div class="owl-carousel">
+                    <div class="row">
                         @foreach($clients as $client)
-                            <div class="item">
-                                <div class="client-logo">
-                                    <a href="#">
-                                        <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                             alt=""/>
-                                    </a>
-                                </div>
+                            <div class="col-md-2">
+                                <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
+                                     alt="" class="img-thumbnail"/>
                             </div>
 
                         @endforeach
@@ -615,13 +526,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
-                                {{--<div class="form-field-wrapper">--}}
-                                {{--<label style="color: #fff;"><input type="checkbox" name="request_portfolio"--}}
-                                {{--class="input-md form-full"--}}
-                                {{--onclick="alert('Hello')">Request--}}
 
-                                {{--Portfolio</label>--}}
-                                {{--</div>--}}
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit"
                                         id="form-submit" name="submit">Submit
                                 </button>
@@ -639,7 +544,7 @@
             <div class="row">
                 <div class="container-fluid">
                     <a href="https://goo.gl/maps/XimaR4XsiK22" target="_blank">
-                        <img src="{!! asset('img/Map.jpg')  !!}" alt="" width="100%" >
+                        <img src="{!! asset('img/Map.jpg')  !!}" alt="" width="100%">
                     </a>
                 </div>
             </div>
