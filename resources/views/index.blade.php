@@ -475,7 +475,7 @@
                                     <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
                                          alt="" class="img-thumbnail"/>
                                 </div>
-                                @if($i %6 == 0)
+                                @if($i %6 == 5)
                             </div>
                         @endif
                     @endforeach
