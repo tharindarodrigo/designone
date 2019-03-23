@@ -476,6 +476,7 @@
                                          alt="" class="img-thumbnail" style="width: 165px; height: 165px"/>
                                 </div>
                                 @if($i %6 == 5)
+                                    <br>
                             </div>
                         @endif
                     @endforeach
