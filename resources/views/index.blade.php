@@ -471,9 +471,9 @@
                         @if($i %6 == 0)
                             <div class="row">
                                 @endif
-                                <div class="col-md-2 col-sm-6" style="align-content: center; vertical-align: center">
+                                <div class="col-md-2 col-sm-6" style="align-content: center; vertical-align: middle;">
                                     <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                         alt="" class="img-thumbnail"/>
+                                         alt="" class="img-thumbnail" height="200" width="200"/>
                                 </div>
                                 @if($i %6 == 5)
                             </div>
