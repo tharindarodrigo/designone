@@ -466,16 +466,18 @@
                 </div>
                 <div class="container">
 
-                    <div class="row">
-                        @foreach($clients as $client)
-                            <div class="col-md-2 col-sm-6" style="align-content: center">
-                                <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                     alt="" class="img-thumbnail"/>
+                    @foreach($clients as $client)
+                        @if($loop->index %6 == 0)
+                            <div class="row">
+                        @endif
+                                <div class="col-md-2 col-sm-6" style="align-content: center">
+                                    <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
+                                         alt="" class="img-thumbnail"/>
+                                </div>
+                        @if($loop->index %6 == 0)
                             </div>
-
-                        @endforeach
-                    </div>
-
+                        @endif
+                    @endforeach
 
                 </div>
             </section>
