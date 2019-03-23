@@ -471,7 +471,7 @@
                         @if($i %6 == 0)
                             <div class="row">
                                 @endif
-                                <div class="col-md-2 col-sm-6" style="align-content: center">
+                                <div class="col-md-2 col-sm-6" style="align-content: center; vertical-align: center">
                                     <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
                                          alt="" class="img-thumbnail"/>
                                 </div>
