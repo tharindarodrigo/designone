@@ -32,6 +32,12 @@
     <span class="help-block">{{$errors->first('country', ':message')}}</span>
 </div>
 
+<div class="form-group {{$errors->first('order') ? 'has-error' : ''}}">
+    <label for="order">Order</label>
+    {!! Form::text('order', null, ['class'=>'form-control']) !!}
+    <span class="help-block">{{$errors->first('order', ':message')}}</span>
+</div>
+
 <div class="form-group {{$errors->first('project_photo') ? 'has-error' : ''}}">
     <label for="project_photo">Project photo</label>
     {!! Form::file('project_photo', ['class'=>'primary']) !!}
