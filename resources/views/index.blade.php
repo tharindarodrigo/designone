@@ -468,9 +468,9 @@
 
                     <div class="row">
                         @foreach($clients as $client)
-                            <div class="col-md-2 col-sm-6">
+                            <div class="col-md-2 col-sm-6" style="align-content: center">
                                 <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                     alt="" class=""/>
+                                     alt="" class="img-thumbnail"/>
                             </div>
 
                         @endforeach
