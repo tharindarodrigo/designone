@@ -9,6 +9,7 @@
         th {
             text-align: center;
         }
+
         td {
             text-align: center;
             vertical-align: bottom;
@@ -68,8 +69,8 @@
 @endsection
 
 @section('scripts')
-    <script src="../../../../public/control-panel/plugins/datatables/dataTables.bootstrap.js"></script>
-    <script src="../../../../public/control-panel/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="{{ asset('public/control-panel/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('public/control-panel/plugins/datatables/jquery.dataTables.js') }}"></script>
 @endsection
 
 
