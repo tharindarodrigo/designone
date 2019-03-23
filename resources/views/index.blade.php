@@ -465,16 +465,17 @@
                     <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
                 </div>
                 <div class="container">
-
+                    <?php $i = -1?>
                     @foreach($clients as $client)
-                        @if($loop->index %6 == 0)
+                        <?php $i++; ?>
+                        @if($i %6 == 0)
                             <div class="row">
-                        @endif
+                                @endif
                                 <div class="col-md-2 col-sm-6" style="align-content: center">
                                     <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
                                          alt="" class="img-thumbnail"/>
                                 </div>
-                        @if($loop->index %6 == 0)
+                                @if($i %6 == 0)
                             </div>
                         @endif
                     @endforeach
