@@ -369,8 +369,8 @@
                         {{--Team Carousel --}}
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
-                                <div class="item" style="width:300px;">
-                                    <div class="team-item" style="    padding-left: 5px; padding-right: 5px;">
+                                <div class="item">
+                                    <div class="team-item" style="padding-left: 5px; padding-right: 5px;">
                                         <div class="team-item-img" style="align-content: center">
                                             <img width=""
                                                  src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
@@ -465,13 +465,13 @@
                 </div>
                 <div class="container">
 
-                    <div class="owl-carousel client-carousel owl-controls">
+                    <div class="owl-carousel client-carousel owl-buttons">
                         @foreach($clients as $client)
-                            <div class="item">
-                                <div class="client-logo">
-                                    <a href="#">
+                                <div class="item">
+                                    <div class="client-logo">
                                         <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                             alt=""/></a>
+                                             alt=""/>
+                                    </div>
                                 </div>
                             </div>
 
