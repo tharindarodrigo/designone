@@ -135,7 +135,7 @@
         {
             display: none;
             float: left;
-            /*height: 100%;*/
+            /*height: %;*/
             min-height: 1px;
         }
         [dir='rtl'] .slick-slide
@@ -827,7 +827,7 @@
             arrows: false,
             // dots: true,
             pauseOnHover: false,
-            variableWidth: true,
+            variableWidth: false,
             responsive: [{
                 breakpoint: 768,
                 settings: {
