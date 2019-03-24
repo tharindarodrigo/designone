@@ -169,7 +169,6 @@
                             @endforeach
                         @endif
 
-
                     </ul>
                     <div class="tp-bannertimer"></div>
                 </div>
@@ -548,7 +547,7 @@
             <div class="row">
                 <div class="container-fluid">
                     <a href="https://goo.gl/maps/XimaR4XsiK22" target="_blank">
-                        <img src="{!! asset('img/Map.jpg')  !!}" alt="" width="100%">
+                        <img src="{!! asset('img/map2.jpg')  !!}" alt="" width="100%">
                     </a>
                 </div>
             </div>
