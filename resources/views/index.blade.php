@@ -465,7 +465,7 @@
                 </div>
                 <div class="container">
 
-                    <div class="owl-carousel client-carousel">
+                    <div class="owl-carousel client-carousel owl-controls">
                         @foreach($clients as $client)
                             <div class="item">
                                 <div class="client-logo">
