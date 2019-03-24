@@ -99,3 +99,7 @@ Route::get('xxx', function(){
 });
 
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
