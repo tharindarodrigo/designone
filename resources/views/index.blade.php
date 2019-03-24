@@ -494,8 +494,8 @@
                         {{--Team Carousel --}}
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
-                                <div class="item" style="width:300px;">
-                                    <div class="team-item" style="    padding-left: 5px; padding-right: 5px;">
+                                <div class="item">
+                                    <div class="team-item" style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">
                                         <div class="team-item-img" style="align-content: center">
                                             <img width=""
                                                  src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
@@ -830,6 +830,28 @@
 <script>
     $(document).ready(function(){
         $('.customer-logos').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            // dots: true,
+            pauseOnHover: false,
+            variableWidth: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+
+        $('.the-team').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: true,
