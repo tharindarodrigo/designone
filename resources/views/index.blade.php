@@ -48,6 +48,125 @@
         }
 
     </style>
+
+    <style>
+        /*h2 {*/
+        /*text-align: center;*/
+        /*padding: 20px;*/
+        /*}*/
+
+        /* Slider */
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-slider {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .slick-list {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slick-list:focus {
+            outline: none;
+        }
+
+        .slick-list.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .slick-slider .slick-track,
+        .slick-slider .slick-list {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slick-track {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+
+        .slick-track:before,
+        .slick-track:after {
+            display: table;
+            content: '';
+        }
+
+        .slick-track:after {
+            clear: both;
+        }
+
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+
+        .slick-slide {
+            display: none;
+            float: left;
+            min-height: 1px;
+        }
+
+        [dir='rtl'] .slick-slide {
+            float: right;
+        }
+
+        .slick-slide img {
+            display: block;
+        }
+
+        .slick-slide.slick-loading img {
+            display: none;
+        }
+
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+
+        .slick-initialized .slick-slide {
+            display: block;
+        }
+
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+
+        .slick-vertical .slick-slide {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body style="font-family: 'Swis721 LtCn BT',sans-serif;">
 <section id="preloader">
@@ -369,8 +488,8 @@
                         {{--Team Carousel --}}
                         <div class="owl-carousel team-carousel nf-carousel-theme">
                             @foreach($teamMembers as $teamMember)
-                                <div class="item">
-                                    <div class="team-item" style="padding-left: 5px; padding-right: 5px;">
+                                <div class="item" style="width:300px;">
+                                    <div class="team-item" style="    padding-left: 5px; padding-right: 5px;">
                                         <div class="team-item-img" style="align-content: center">
                                             <img width=""
                                                  src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
@@ -459,24 +578,32 @@
         {{-- Client Logo --}}
         @if(!empty($clients))
 
+
+
+
             <section id="client" class="section-padding">
                 <div class="container text-left">
                     <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
                 </div>
                 <div class="container">
 
-                    <div class="owl-carousel client-carousel owl-buttons">
+                    {{--<div class="owl-carousel client-carousel owl-controls owl-theme">--}}
+                    {{--@foreach($clients as $client)--}}
+                    {{--<div class="item">--}}
+                    {{--<div class="client-logo">--}}
+                    {{--<img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"--}}
+                    {{--alt=""/>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--@endforeach--}}
+                    {{--</div>--}}
+                    <section class="customer-logos slider">
                         @foreach($clients as $client)
-                                <div class="item">
-                                    <div class="client-logo">
-                                        <img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"
-                                             alt=""/>
-                                    </div>
-                                </div>
+                            <div class="slide"><img
+                                        src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}">
                             </div>
-
                         @endforeach
-                    </div>
+                    </section>
                 </div>
             </section>
             {{-- End Client Logo --}}
@@ -632,6 +759,7 @@
 <script src="{!! asset('js/plugins/jquery.appear.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.fs.tipper.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.countTo.js') !!}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 <script src="{!! asset('js/plugins/owl.carousel.min.js') !!}" type="text/javascript"></script>
 <script type="text/javascript">
     $('#intro a').trigger('click');
@@ -684,7 +812,30 @@
         x[slideIndex - 1].style.display = "block";
     }
 </script>
-
+<script>
+    $(document).ready(function () {
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+    });
+</script>
 
 {{-- angular stuffs --}}
 
