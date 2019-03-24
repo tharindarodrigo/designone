@@ -13,7 +13,7 @@ class AddOrderColumnToProjects extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->integer('order')->nullable();
+            $table->integer('order')->nullable()->default(2);;
         });
     }
 
