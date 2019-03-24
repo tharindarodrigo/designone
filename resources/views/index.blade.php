@@ -464,21 +464,7 @@
                     <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
                 </div>
                 <div class="container">
-                    {{--<?php $i = -1?>--}}
-                    {{--@foreach($clients as $client)--}}
-                        {{--<?php $i++; ?>--}}
-                        {{--@if($i %6 == 0)--}}
-                            {{--<div class="row">--}}
-                                {{--@endif--}}
-                                {{--<div class="col-md-2 col-sm-6" style="align-content: center; vertical-align: middle;">--}}
-                                    {{--<img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"--}}
-                                         {{--alt="" class="img-thumbnail" style="width: 165px; height: 165px"/>--}}
-                                {{--</div>--}}
-                                {{--@if($i %6 == 5)--}}
-                            {{--</div>--}}
-                            {{--<br>--}}
-                        {{--@endif--}}
-                    {{--@endforeach--}}
+
                     <div class="owl-carousel client-carousel">
                         @foreach($clients as $client)
                             <div class="item">
