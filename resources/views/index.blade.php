@@ -371,7 +371,6 @@
             <div class="container-fluid">
                 {{--<div class="row">--}}
 
-
                 {{--</div>--}}
                 <div class="portfolio-grid-fit row gallery-popup">
 
@@ -396,7 +395,7 @@
                                             <div class="modal-body">
 
                                                 <div class="w3-content w3-display-container">
-                                                    @foreach(App\Project::where('name', $item['name'])->get() as $projectImage)
+                                                    @foreach(App\Project::where('name', $item['name'])->orderBy('order')->get() as $projectImage)
                                                         <img class="mySlides{{$item['project_id']}}"
                                                              src="{{ asset('control-panel/images/projects/' . $projectImage->id . '.jpg') }}"
                                                              style="width:100%">

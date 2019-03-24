@@ -11,6 +11,7 @@ class Project extends Model
         'year' => 'required',
         'project_type' => 'required',
         'project_photo' => 'required|image'
+//        'order'=>''
     ];
 
     public static $editRules = [

@@ -21,7 +21,11 @@ Route::get('/', function () {
     $clients = \App\Client::all();
     $teamMembers = \App\TeamMember::orderBy('order','asc')->get();
 
-    $projects = \App\Project::with('projectTypes')->groupBy('name')->orderBy('year', 'desc')->get();
+    $projects = \App\Project::with('projectTypes')->where('order', 1)
+//        ->orderBy('order')
+        ->orderBy('year', 'desc')
+        ->groupBy('name')
+        ->get();
     $portfolio = [];
     //$recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
 

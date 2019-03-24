@@ -36,6 +36,7 @@ class ProjectsController extends Controller
         $project = new Project();
         $project->name = $request->get('name');
         $project->country = $request->get('country');
+        $project->order = $request->get('order');
         $project->year = $request->get('year');
 
         if ($project->save()) {
@@ -110,6 +111,7 @@ class ProjectsController extends Controller
         $project = Project::find($id);
         $project->name = $request->get('name');
         $project->country = $request->get('country');
+        $project->order = $request->get('order');
         $project->year = $request->get('year');
 
         if ($project->update()) {
