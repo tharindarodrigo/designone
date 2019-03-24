@@ -770,7 +770,6 @@
 <script src="{!! asset('js/plugins/jquery.appear.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.fs.tipper.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/plugins/jquery.countTo.js') !!}" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 <script src="{!! asset('js/plugins/owl.carousel.min.js') !!}" type="text/javascript"></script>
 <script type="text/javascript">
     $('#intro a').trigger('click');
@@ -823,10 +822,15 @@
         x[slideIndex - 1].style.display = "block";
     }
 </script>
+
+{{--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--}}
+{{--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>--}}
+{{--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 <script>
     $(document).ready(function(){
         $('.customer-logos').slick({
-            slidesToShow: 6,
+            slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 1500,
@@ -840,7 +844,7 @@
                     slidesToShow: 4
                 }
             }, {
-                breakpoint: 520,
+                breakpoint: 425,
                 settings: {
                     slidesToShow: 3
                 }
