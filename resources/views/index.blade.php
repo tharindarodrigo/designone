@@ -954,6 +954,11 @@
                 settings: {
                     slidesToShow: 1
                 }
+            },{
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 4
+                }
             }, {
                 breakpoint: 425,
                 settings: {
