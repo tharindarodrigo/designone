@@ -925,19 +925,21 @@
             responsive: [{
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 4
+                    slidesToShow: 4,
+                    slidesToScroll: 1
                 }
             }, {
                 breakpoint: 425,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    slidesToScroll: 1
                 }
             }]
         });
 
         $('.the-team').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
+            // slidesToShow: 4,
+            // slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 1500,
             arrows: true,
@@ -950,7 +952,7 @@
             responsive: [{
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 4
+                    slidesToShow: 1
                 }
             }, {
                 breakpoint: 425,
