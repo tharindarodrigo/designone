@@ -556,51 +556,51 @@
                 </div>
             </section>
             {{--<section id="team" class="section-padding" style="padding-bottom:0px;">--}}
-                {{--<div class="container">--}}
-                    {{--<h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>--}}
-                {{--</div>--}}
-                {{--<div class="container">--}}
-                    {{--<div class="row">--}}
-                        {{--Team Carousel --}}
-                        {{--<div class="owl-carousel team-carousel nf-carousel-theme">--}}
-                            {{--@foreach($teamMembers as $teamMember)--}}
-                                {{--<div class="item">--}}
-                                    {{--<div class="team-item"--}}
-                                         {{--style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">--}}
-                                        {{--<div class="team-item-img" style="align-content: center">--}}
-                                            {{--<img width=""--}}
-                                                 {{--src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"--}}
-                                                 {{--alt="" align="center"/>--}}
-                                            {{--<div class="team-item-detail">--}}
-                                            {{--<div class="team-item-detail-inner light-color">--}}
-                                            {{--<h5>Michael Lee</h5>--}}
-                                            {{--<p>To portal for some of the world's most high-value net.</p>--}}
-                                            {{--<ul class="social">--}}
-                                            {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-facebook"></i></a></li>--}}
-                                            {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-twitter"></i></a></li>--}}
-                                            {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-dribbble"></i></a></li>--}}
-                                            {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-pinterest"></i></a></li>--}}
-                                            {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
-                                            {{--class="fa fa-behance"></i></a></li>--}}
-                                            {{--</ul>--}}
-                                            {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="team-item-info">--}}
-                                            {{--<h6>{!! $teamMember->name !!}</h6>--}}
-                                            {{--<p class="">{!! $teamMember->designation !!}</p>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--@endforeach--}}
-                        {{--</div>--}}
-                        {{--End Team Carousel ---}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            {{--<div class="container">--}}
+            {{--<h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>--}}
+            {{--</div>--}}
+            {{--<div class="container">--}}
+            {{--<div class="row">--}}
+            {{--Team Carousel --}}
+            {{--<div class="owl-carousel team-carousel nf-carousel-theme">--}}
+            {{--@foreach($teamMembers as $teamMember)--}}
+            {{--<div class="item">--}}
+            {{--<div class="team-item"--}}
+            {{--style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">--}}
+            {{--<div class="team-item-img" style="align-content: center">--}}
+            {{--<img width=""--}}
+            {{--src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"--}}
+            {{--alt="" align="center"/>--}}
+            {{--<div class="team-item-detail">--}}
+            {{--<div class="team-item-detail-inner light-color">--}}
+            {{--<h5>Michael Lee</h5>--}}
+            {{--<p>To portal for some of the world's most high-value net.</p>--}}
+            {{--<ul class="social">--}}
+            {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
+            {{--class="fa fa-facebook"></i></a></li>--}}
+            {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
+            {{--class="fa fa-twitter"></i></a></li>--}}
+            {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
+            {{--class="fa fa-dribbble"></i></a></li>--}}
+            {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
+            {{--class="fa fa-pinterest"></i></a></li>--}}
+            {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
+            {{--class="fa fa-behance"></i></a></li>--}}
+            {{--</ul>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="team-item-info">--}}
+            {{--<h6>{!! $teamMember->name !!}</h6>--}}
+            {{--<p class="">{!! $teamMember->designation !!}</p>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--@endforeach--}}
+            {{--</div>--}}
+            {{--End Team Carousel ---}}
+            {{--</div>--}}
+            {{--</div>--}}
             {{--</section>--}}
         @endif
 
@@ -938,28 +938,37 @@
         });
 
         $('.the-team').slick({
-            // slidesToShow: 4,
-            // slidesToScroll: 1,
+            slidesToShow: 4,
+            slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 1500,
             arrows: true,
             // dots: true,
-            mobileFirst: true,
+            mobileFirst: false,
             prevArrow: "<button type='button' class='slick-prev pull-left' style='margin-top: 19%'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
             nextArrow: "<button type='button' class='slick-next pull-right' style='margin-top: -19%'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
             pauseOnHover: false,
             variableWidth: false,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1008,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: "unslick"
                 }
-            }, {
-                breakpoint: 425,
-                settings: {
-                    slidesToShow: 1
-                }
-            }]
+            ]
         });
     });
 </script>
