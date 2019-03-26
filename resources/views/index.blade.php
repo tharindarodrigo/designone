@@ -673,8 +673,8 @@
 
 
             <section id="client" class="section-padding">
-                <div class="container text-left">
-                    <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
+                <div class="container">
+                    <h2 class="page-title text-left">Happy <span class="text-light">Clients</span></h2>
                 </div>
                 <div class="container">
 
