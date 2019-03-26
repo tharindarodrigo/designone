@@ -543,27 +543,7 @@
                 </div>
                 <div class="container">
 
-                    {{--<div class="owl-carousel client-carousel owl-controls owl-theme">--}}
-                    {{--@foreach($clients as $client)--}}
-                    {{--<div class="item">--}}
-                    {{--<div class="client-logo">--}}
-                    {{--<img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"--}}
-                    {{--alt=""/>--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-                    {{--@endforeach--}}
-                    {{--</div>--}}
-                    {{--<div id="wrap">--}}
-                    {{--<ul id="slider">--}}
-                    {{--<li class="slide-item"><img--}}
-                    {{--data-lazy="http://blanks.site/assets/images/uploads/post19_1.jpg" alt="画像"></li>--}}
-                    {{--<li class="slide-item"><img--}}
-                    {{--data-lazy="http://blanks.site/assets/images/uploads/post19_2.jpg" alt="画像"></li>--}}
-                    {{--<li class="slide-item"><img--}}
-                    {{--data-lazy="http://blanks.site/assets/images/uploads/post19_3.jpg" alt="画像"></li>--}}
-                    {{--</ul>--}}
-                    {{--</div>--}}
-                    {{--<div class="wrap">--}}
+
                     <ul class="the-team">
                         @foreach($teamMembers as $teamMember)
                             <li><img
@@ -690,7 +670,6 @@
 
 
 
-
             <section id="client" class="section-padding">
                 <div class="container text-left">
                     <h2 class="page-title">Happy <span class="text-light">Clients</span></h2>
@@ -707,24 +686,23 @@
                     {{--</div>--}}
                     {{--@endforeach--}}
                     {{--</div>--}}
-                    <section class="customer-logos slider">
-                        @foreach($clients as $client)
-                            <div class="slide">
-                                <div><img
-                                            src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}">
-                                </div>
+                    <ul class="customer-logos">
 
-                            </div>
+                        @foreach($clients as $client)
+                            <li><img
+                                        src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}">
+                            </li>
+
                         @endforeach
-                    </section>
+                    </ul>
                     {{--<div class="paginator-center text-color text-center">--}}
                     {{--<h6>VER MAS LANZAMIENTOS</h6>--}}
                     {{--<ul>--}}
                     {{--<li class="prev"></li>--}}
                     {{--<li class="next"></li>--}}
                     {{--</ul>--}}
-                    {{--</div>--}}
                 </div>
+
             </section>
             {{-- End Client Logo --}}
         @endif
