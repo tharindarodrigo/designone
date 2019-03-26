@@ -935,7 +935,7 @@
             arrows: true,
             // dots: true,
             mobileFirst: true,
-            prevArrow: "<img src=\"{!! asset('img/arrow-left.jpeg')  !!}\" class=\"slide-arrow prev-arrow\">",
+            prevArrow: "<button class=\"slide-arrow prev-arrow\"></button>",
             nextArrow: "<button class=\"slide-arrow next-arrow\"></button>",
             pauseOnHover: false,
             variableWidth: false,
