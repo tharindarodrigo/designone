@@ -96,7 +96,9 @@ class GeneralContentsController extends Controller
 
         });
 
-        return redirect()->to('/');
+        session()->flash('email', 'success');
+
+        return redirect()->to('/#contact-us');
     }
 
 

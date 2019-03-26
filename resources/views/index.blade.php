@@ -712,10 +712,14 @@
                         <div class="row">
                             {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
                             <div class="col-md-12 text-center">
-                                <h5 class="successContent">
+
+
+                                @if(session()->get('email'))
+                                <h5 class="">
                                     <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
                                     sent successfully.
                                 </h5>
+                                @endif
                                 <h5 class="errorContent" style="color: #e1534f;">
                                     <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
                                     form please check!
