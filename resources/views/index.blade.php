@@ -52,12 +52,12 @@
     </style>
 
     <style>
-        /*h2 {*/
-        /*text-align: center;*/
-        /*padding: 20px;*/
-        /*}*/
+        h2 {
+        text-align: center;
+        padding: 20px;
+        }
 
-        /* Slider */
+
 
         .slick-slide {
             margin: 0px 20px;
@@ -206,7 +206,7 @@
         }
 
         .prev-arrow {
-            left: -40px;
+            left: -20px;
             width: 0;
             height: 0;
             border-left: 0 solid transparent;
@@ -216,7 +216,7 @@
         }
 
         .next-arrow {
-            right: -40px;
+            right: -20px;
             width: 0;
             height: 0;
             border-right: 0 solid transparent;
@@ -667,6 +667,7 @@
 
         {{-- Client Logo --}}
         @if(!empty($clients))
+
 
 
 
