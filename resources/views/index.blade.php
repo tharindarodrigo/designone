@@ -935,7 +935,8 @@
             arrows: true,
             // dots: true,
             mobileFirst: true,
-            prevArrow: "<button class=\"slide-arrow prev-arrow\"></button>",
+            prevArrow: "<
+            class=\"slide-arrow prev-arrow\"></button>",
             nextArrow: "<button class=\"slide-arrow next-arrow\"></button>",
             pauseOnHover: false,
             variableWidth: false,
