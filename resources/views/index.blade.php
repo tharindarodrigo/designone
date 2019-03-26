@@ -170,37 +170,59 @@
             display: none;
         }
 
+
     </style>
     <style>
-        .paginator {
-            position: relative;
-            float: right;
-            margin-bottom: 20px;
-
-        li {
-            margin-top: 20px;
-            position: relative;
-            float: left;
-
-            margin-right: 20px;
-
-        &
-        .prev {
-            display: block;
-            height: 20px;
-            width: 20px;
-            background: url('../img/back.png') no-repeat;
+        #wrap {
+            background-color: #ddd;
+            padding: 50px 0;
         }
 
-        &
-        .next {
-            display: block;
-            height: 20px;
-            width: 20px;
-            background: url('../img/next.png') no-repeat;
+        #slider {
+            width: 300px;
+            margin: 0 auto;
         }
 
+        #slider img {
+            width: 100%;
         }
+
+        button {
+            margin: 0;
+            padding: 0;
+            background: none;
+            border: none;
+            border-radius: 0;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .slide-arrow {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+        }
+
+        .prev-arrow {
+            left: -40px;
+            width: 0;
+            height: 0;
+            border-left: 0 solid transparent;
+            border-right: 15px solid #113463;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .next-arrow {
+            right: -40px;
+            width: 0;
+            height: 0;
+            border-right: 0 solid transparent;
+            border-left: 15px solid #113463;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
         }
     </style>
 
@@ -531,21 +553,32 @@
                     {{--</div>--}}
                     {{--@endforeach--}}
                     {{--</div>--}}
-                    <section class="the-team slider">
+                    {{--<div id="wrap">--}}
+                    {{--<ul id="slider">--}}
+                    {{--<li class="slide-item"><img--}}
+                    {{--data-lazy="http://blanks.site/assets/images/uploads/post19_1.jpg" alt="画像"></li>--}}
+                    {{--<li class="slide-item"><img--}}
+                    {{--data-lazy="http://blanks.site/assets/images/uploads/post19_2.jpg" alt="画像"></li>--}}
+                    {{--<li class="slide-item"><img--}}
+                    {{--data-lazy="http://blanks.site/assets/images/uploads/post19_3.jpg" alt="画像"></li>--}}
+                    {{--</ul>--}}
+                    {{--</div>--}}
+                    {{--<div class="wrap">--}}
+                    <ul class="the-team">
                         @foreach($teamMembers as $teamMember)
-                            <div class="slide">
-                                <div><img
-                                            src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}">
-
-                                </div>
+                            <li><img
+                                        src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}">
                                 <div style="text-align: center">
                                     <br>
                                     <h6>{!! $teamMember->name !!}</h6>
                                     <p class="">{!! $teamMember->designation !!}</p>
                                 </div>
-                            </div>
+                            </li>
+
+                            {{--</div>--}}
                         @endforeach
-                    </section>
+                    </ul>
+
                     {{--<div class="paginator-center text-color text-center">--}}
                     {{--<h6>VER MAS LANZAMIENTOS</h6>--}}
                     {{--<ul>--}}
@@ -556,51 +589,51 @@
                 </div>
             </section>
             {{--<section id="team" class="section-padding" style="padding-bottom:0px;">--}}
-                {{--<div class="container">--}}
-                    {{--<h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>--}}
-                {{--</div>--}}
-                {{--<div class="container">--}}
-                    {{--<div class="row">--}}
-                        {{--Team Carousel --}}
-                        {{--<div class="owl-carousel team-carousel nf-carousel-theme">--}}
-                            {{--@foreach($teamMembers as $teamMember)--}}
-                                {{--<div class="item">--}}
-                                    {{--<div class="team-item"--}}
-                                         {{--style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">--}}
-                                        {{--<div class="team-item-img" style="align-content: center">--}}
-                                            {{--<img width=""--}}
-                                                 {{--src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"--}}
-                                                 {{--alt="" align="center"/>--}}
-                                            {{--<div class="team-item-detail">--}}
-                                            {{--<div class="team-item-detail-inner light-color">--}}
-                                            {{--<h5>Michael Lee</h5>--}}
-                                            {{--<p>To portal for some of the world's most high-value net.</p>--}}
-                                            {{--<ul class="social">--}}
-                                            {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-facebook"></i></a></li>--}}
-                                            {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-twitter"></i></a></li>--}}
-                                            {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-dribbble"></i></a></li>--}}
-                                            {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
-                                            {{--class="fa fa-pinterest"></i></a></li>--}}
-                                            {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
-                                            {{--class="fa fa-behance"></i></a></li>--}}
-                                            {{--</ul>--}}
-                                            {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="team-item-info">--}}
-                                            {{--<h6>{!! $teamMember->name !!}</h6>--}}
-                                            {{--<p class="">{!! $teamMember->designation !!}</p>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--@endforeach--}}
-                        {{--</div>--}}
-                        {{--End Team Carousel ---}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            {{--<div class="container">--}}
+            {{--<h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>--}}
+            {{--</div>--}}
+            {{--<div class="container">--}}
+            {{--<div class="row">--}}
+            {{--Team Carousel --}}
+            {{--<div class="owl-carousel team-carousel nf-carousel-theme">--}}
+            {{--@foreach($teamMembers as $teamMember)--}}
+            {{--<div class="item">--}}
+            {{--<div class="team-item"--}}
+            {{--style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">--}}
+            {{--<div class="team-item-img" style="align-content: center">--}}
+            {{--<img width=""--}}
+            {{--src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"--}}
+            {{--alt="" align="center"/>--}}
+            {{--<div class="team-item-detail">--}}
+            {{--<div class="team-item-detail-inner light-color">--}}
+            {{--<h5>Michael Lee</h5>--}}
+            {{--<p>To portal for some of the world's most high-value net.</p>--}}
+            {{--<ul class="social">--}}
+            {{--<li><a href="https://www.facebook.com/" target="_blank"><i--}}
+            {{--class="fa fa-facebook"></i></a></li>--}}
+            {{--<li><a href="https://www.twitter.com/" target="_blank"><i--}}
+            {{--class="fa fa-twitter"></i></a></li>--}}
+            {{--<li><a href="https://www.dribbble.com/" target="_blank"><i--}}
+            {{--class="fa fa-dribbble"></i></a></li>--}}
+            {{--<li><a href="https://www.pinterest.com/" target="_blank"><i--}}
+            {{--class="fa fa-pinterest"></i></a></li>--}}
+            {{--<li><a href="https://www.behance.net/" target="_blank"><i--}}
+            {{--class="fa fa-behance"></i></a></li>--}}
+            {{--</ul>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="team-item-info">--}}
+            {{--<h6>{!! $teamMember->name !!}</h6>--}}
+            {{--<p class="">{!! $teamMember->designation !!}</p>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--@endforeach--}}
+            {{--</div>--}}
+            {{--End Team Carousel ---}}
+            {{--</div>--}}
+            {{--</div>--}}
             {{--</section>--}}
         @endif
 
@@ -715,10 +748,10 @@
 
 
                                 @if(session()->get('email'))
-                                <h5 class="">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
-                                    sent successfully.
-                                </h5>
+                                    <h5 class="">
+                                        <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
+                                        sent successfully.
+                                    </h5>
                                 @endif
                                 <h5 class="errorContent" style="color: #e1534f;">
                                     <i class="fa fa-exclamation-circle left"></i>There was a problem validating the
@@ -922,8 +955,8 @@
             arrows: true,
             // dots: true,
             mobileFirst: true,
-            prevArrow: "<button type='button' class='slick-prev pull-left' style='margin-top: 11%'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-            nextArrow: "<button type='button' class='slick-next pull-right' style='margin-top: -11%'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+            prevArrow: "<button class=\"slide-arrow prev-arrow\"></button>",
+            nextArrow: "<button class=\"slide-arrow next-arrow\"></button>",
             pauseOnHover: false,
             variableWidth: false,
             responsive: [{
@@ -949,8 +982,8 @@
             arrows: true,
             // dots: true,
             mobileFirst: true,
-            prevArrow: "<button type='button' class='slick-prev pull-left' style='margin-top: 19%'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-            nextArrow: "<button type='button' class='slick-next pull-right' style='margin-top: -19%'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+            prevArrow: "<button class=\"slide-arrow prev-arrow\"></button>",
+            nextArrow: "<button class=\"slide-arrow next-arrow\"></button>",
             pauseOnHover: false,
             variableWidth: false,
             responsive: [{
@@ -958,7 +991,7 @@
                 settings: {
                     slidesToShow: 1
                 }
-            },{
+            }, {
                 breakpoint: 1000,
                 settings: {
                     slidesToShow: 4
@@ -980,7 +1013,6 @@
 {{--<script src="{!! asset('scripts/angular-isotope.js') !!}"></script>--}}
 {{--<script src="{!! asset('http://yandex.st/highlightjs/8.0/highlight.min.js') !!}"></script>--}}
 {{--<script src="{!! asset('http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js') !!}"></script>--}}
-
 
 </body>
 </html>
