@@ -48,6 +48,7 @@
             }
         }
 
+
     </style>
 
     <style>
@@ -66,8 +67,7 @@
             width: 100%;
         }
 
-        .slick-slider
-        {
+        .slick-slider {
             position: relative;
             display: block;
             box-sizing: border-box;
@@ -82,27 +82,25 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .slick-list
-        {
+        .slick-list {
             position: relative;
             display: block;
             overflow: hidden;
             margin: 0;
             padding: 0;
         }
-        .slick-list:focus
-        {
+
+        .slick-list:focus {
             outline: none;
         }
-        .slick-list.dragging
-        {
+
+        .slick-list.dragging {
             cursor: pointer;
             cursor: hand;
         }
 
         .slick-slider .slick-track,
-        .slick-slider .slick-list
-        {
+        .slick-slider .slick-list {
             -webkit-transform: translate3d(0, 0, 0);
             -moz-transform: translate3d(0, 0, 0);
             -ms-transform: translate3d(0, 0, 0);
@@ -110,69 +108,102 @@
             transform: translate3d(0, 0, 0);
         }
 
-        .slick-track
-        {
+        .slick-track {
             position: relative;
             top: 0;
             left: 0;
             display: block;
         }
+
         .slick-track:before,
-        .slick-track:after
-        {
+        .slick-track:after {
             display: table;
             content: '';
         }
-        .slick-track:after
-        {
+
+        .slick-track:after {
             clear: both;
         }
-        .slick-loading .slick-track
-        {
+
+        .slick-loading .slick-track {
             visibility: hidden;
         }
 
-        .slick-slide
-        {
+        .slick-slide {
             display: none;
             float: left;
             /*height: %;*/
             min-height: 1px;
         }
-        [dir='rtl'] .slick-slide
-        {
+
+        [dir='rtl'] .slick-slide {
             float: right;
         }
-        .slick-slide img
-        {
+
+        .slick-slide img {
             display: block;
         }
-        .slick-slide.slick-loading img
-        {
+
+        .slick-slide.slick-loading img {
             display: none;
         }
-        .slick-slide.dragging img
-        {
+
+        .slick-slide.dragging img {
             pointer-events: none;
         }
-        .slick-initialized .slick-slide
-        {
+
+        .slick-initialized .slick-slide {
             display: block;
         }
-        .slick-loading .slick-slide
-        {
+
+        .slick-loading .slick-slide {
             visibility: hidden;
         }
-        .slick-vertical .slick-slide
-        {
+
+        .slick-vertical .slick-slide {
             display: block;
             height: auto;
             border: 1px solid transparent;
         }
+
         .slick-arrow.slick-hidden {
             display: none;
         }
+
     </style>
+    <style>
+        .paginator {
+            position: relative;
+            float: right;
+            margin-bottom: 20px;
+
+        li {
+            margin-top: 20px;
+            position: relative;
+            float: left;
+
+            margin-right: 20px;
+
+        &
+        .prev {
+            display: block;
+            height: 20px;
+            width: 20px;
+            background: url('../img/back.png') no-repeat;
+        }
+
+        &
+        .next {
+            display: block;
+            height: 20px;
+            width: 20px;
+            background: url('../img/next.png') no-repeat;
+        }
+
+        }
+        }
+    </style>
+
 </head>
 <body style="font-family: 'Swis721 LtCn BT',sans-serif;">
 <section id="preloader">
@@ -484,21 +515,62 @@
 
 
         @if(!empty($teamMembers))
-            <section id="team" class="section-padding" style="padding-bottom:0px;">
+            <section id="team" class="section-padding-t">
                 <div class="container">
                     <h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>
                 </div>
                 <div class="container">
-                    <div class="row">
+
+                    {{--<div class="owl-carousel client-carousel owl-controls owl-theme">--}}
+                    {{--@foreach($clients as $client)--}}
+                    {{--<div class="item">--}}
+                    {{--<div class="client-logo">--}}
+                    {{--<img src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}"--}}
+                    {{--alt=""/>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--@endforeach--}}
+                    {{--</div>--}}
+                    <section class="the-team slider">
+                        @foreach($teamMembers as $teamMember)
+                            <div class="slide">
+                                <div><img
+                                            src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}">
+
+                                </div>
+                                <div style="text-align: center">
+                                    <br>
+                                    <h6>{!! $teamMember->name !!}</h6>
+                                    <p class="">{!! $teamMember->designation !!}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </section>
+                    {{--<div class="paginator-center text-color text-center">--}}
+                    {{--<h6>VER MAS LANZAMIENTOS</h6>--}}
+                    {{--<ul>--}}
+                    {{--<li class="prev"></li>--}}
+                    {{--<li class="next"></li>--}}
+                    {{--</ul>--}}
+                    {{--</div>--}}
+                </div>
+            </section>
+            {{--<section id="team" class="section-padding" style="padding-bottom:0px;">--}}
+                {{--<div class="container">--}}
+                    {{--<h2 class="page-title text-right">Busy <span class="text-light">Team</span></h2>--}}
+                {{--</div>--}}
+                {{--<div class="container">--}}
+                    {{--<div class="row">--}}
                         {{--Team Carousel --}}
-                        <div class="owl-carousel team-carousel nf-carousel-theme">
-                            @foreach($teamMembers as $teamMember)
-                                <div class="item">
-                                    <div class="team-item" style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">
-                                        <div class="team-item-img" style="align-content: center">
-                                            <img width=""
-                                                 src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"
-                                                 alt="" align="center"/>
+                        {{--<div class="owl-carousel team-carousel nf-carousel-theme">--}}
+                            {{--@foreach($teamMembers as $teamMember)--}}
+                                {{--<div class="item">--}}
+                                    {{--<div class="team-item"--}}
+                                         {{--style="padding-left: 5px; padding-right: 5px; align-items: center; align-content: center">--}}
+                                        {{--<div class="team-item-img" style="align-content: center">--}}
+                                            {{--<img width=""--}}
+                                                 {{--src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}"--}}
+                                                 {{--alt="" align="center"/>--}}
                                             {{--<div class="team-item-detail">--}}
                                             {{--<div class="team-item-detail-inner light-color">--}}
                                             {{--<h5>Michael Lee</h5>--}}
@@ -517,19 +589,19 @@
                                             {{--</ul>--}}
                                             {{--</div>--}}
                                             {{--</div>--}}
-                                        </div>
-                                        <div class="team-item-info">
-                                            <h6>{!! $teamMember->name !!}</h6>
-                                            <p class="">{!! $teamMember->designation !!}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+                                        {{--</div>--}}
+                                        {{--<div class="team-item-info">--}}
+                                            {{--<h6>{!! $teamMember->name !!}</h6>--}}
+                                            {{--<p class="">{!! $teamMember->designation !!}</p>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--@endforeach--}}
+                        {{--</div>--}}
                         {{--End Team Carousel ---}}
-                    </div>
-                </div>
-            </section>
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</section>--}}
         @endif
 
         {{--{{-- Action Box Section --}}
@@ -604,11 +676,21 @@
                     {{--</div>--}}
                     <section class="customer-logos slider">
                         @foreach($clients as $client)
-                            <div class="slide"><img
-                                        src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}">
+                            <div class="slide">
+                                <div><img
+                                            src="{!! asset("control-panel/images/clients/".$client->id.".png") !!}">
+                                </div>
+
                             </div>
                         @endforeach
                     </section>
+                    {{--<div class="paginator-center text-color text-center">--}}
+                    {{--<h6>VER MAS LANZAMIENTOS</h6>--}}
+                    {{--<ul>--}}
+                    {{--<li class="prev"></li>--}}
+                    {{--<li class="next"></li>--}}
+                    {{--</ul>--}}
+                    {{--</div>--}}
                 </div>
             </section>
             {{-- End Client Logo --}}
@@ -827,14 +909,17 @@
 {{--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.customer-logos').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 1500,
-            arrows: false,
+            arrows: true,
             // dots: true,
+            mobileFirst: true,
+            prevArrow: "<button type='button' class='slick-prev pull-left' style='margin-top: 11%'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+            nextArrow: "<button type='button' class='slick-next pull-right' style='margin-top: -11%'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
             pauseOnHover: false,
             variableWidth: false,
             responsive: [{
@@ -855,8 +940,11 @@
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 1500,
-            arrows: false,
+            arrows: true,
             // dots: true,
+            mobileFirst: true,
+            prevArrow: "<button type='button' class='slick-prev pull-left' style='margin-top: 19%'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+            nextArrow: "<button type='button' class='slick-next pull-right' style='margin-top: -19%'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
             pauseOnHover: false,
             variableWidth: false,
             responsive: [{
