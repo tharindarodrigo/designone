@@ -9,6 +9,11 @@
     {!! Form::text('designation', null, ['class'=>'form-control']) !!}
     <span class="help-block">{{$errors->first('designation', ':message')}}</span>
 </div>
+<div class="form-group {{$errors->first('description') ? 'has-error' : ''}}" >
+    <label for="description">Description</label>
+    {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
+    <span class="help-block">{{$errors->first('description', ':message')}}</span>
+</div>
 <div class="form-group {{$errors->first('order') ? 'has-error' : ''}}" >
     <label for="description">Order (Will be ordered ascending)</label>
     {!! Form::text('order', null, ['class'=>'form-control']) !!}

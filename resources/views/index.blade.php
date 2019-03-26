@@ -552,6 +552,7 @@
                                     <br>
                                     <h6>{!! $teamMember->name !!}</h6>
                                     <p class="">{!! $teamMember->designation !!}</p>
+                                    <p class="">{!! $teamMember->description !!}</p>
                                 </div>
                             </li>
 

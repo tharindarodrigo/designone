@@ -30,10 +30,11 @@ class TeamMembersController extends Controller
         }
 
         $teamMember = new TeamMember();
-        $teamMember->name= $request->get('name');
-        $teamMember->designation= $request->get('designation');
-        $teamMember->order= $request->get('order');
-        $teamMember->status = $request->has('status') ? $request->get('status') : 1 ;
+        $teamMember->name = $request->get('name');
+        $teamMember->designation = $request->get('designation');
+        $teamMember->description = $request->get('description');
+        $teamMember->order = $request->get('order');
+        $teamMember->status = $request->has('status') ? $request->get('status') : 1;
 
         if ($teamMember->save()) {
             if ($image = Input::file('team_member_image')) {
@@ -69,10 +70,12 @@ class TeamMembersController extends Controller
         }
 
         $teamMember = TeamMember::find($id);
-        $teamMember->name= $request->get('name');
-        $teamMember->designation= $request->get('designation');
-        $teamMember->order= $request->get('order');
-        $teamMember->status = $request->has('status') ? $request->get('status') : 1 ;
+        $teamMember->name = $request->get('name');
+        $teamMember->designation = $request->get('designation');
+        $teamMember->description = $request->get('description');
+        $teamMember->order = $request->get('order');
+
+        $teamMember->status = $request->has('status') ? $request->get('status') : 1;
 
         if ($teamMember->update()) {
 
