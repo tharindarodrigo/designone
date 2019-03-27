@@ -558,9 +558,9 @@
 
                     <ul class="the-team">
                         @foreach($teamMembers as $teamMember)
-                            <li><img
-                                        src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}">
+                            <li>
                                 <div style="text-align: center">
+                                    <img src="{!! asset('control-panel/images/team-members/'. $teamMember->id.'.jpg') !!}">
                                     <br>
                                     <h6>{!! $teamMember->name !!}</h6>
                                     <p class="">{!! $teamMember->designation !!}</p>
@@ -725,9 +725,9 @@
 
 
         {{-- Contact Form --}}
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60"
-                 data-background-img="{!! asset('img/full/Slider.jpeg') !!}" data-stellar-background-ratio="0.5">
-            <div class="container">
+        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60" style="background-image: url({!! asset('img/full/Slider.jpeg') !!})"
+                 data-background-img="" data-stellar-background-ratio="0.5">
+            <div class="container" >
                 <div class="row text-center">
                     <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
                     <h2 class="page-title">Get In <span class="text-light">Touch</span></h2>
