@@ -39,19 +39,6 @@
 
         }
 
-        @media only screen
-        and (min-device-width: 375px)
-        and (max-device-width: 667px)
-        and (orientation: portrait) {
-            .my-background-image {
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-                width: 600px;
-            }
-        }
-
         @media screen and (min-width: 600px) {
             .mobile_logo {
                 visibility: hidden;
