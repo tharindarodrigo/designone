@@ -48,6 +48,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
+                width: 600px;
             }
         }
 
