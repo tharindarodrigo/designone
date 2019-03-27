@@ -37,7 +37,6 @@
                 visibility: hidden;
             }
 
-
         }
 
         @media only screen
@@ -45,7 +44,10 @@
         and (max-device-width: 667px)
         and (orientation: portrait) {
             .my-background-image {
-                max-width: 600px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
             }
         }
 
