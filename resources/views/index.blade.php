@@ -725,7 +725,7 @@
 
 
         {{-- Contact Form --}}
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60" style="background-image: url({!! asset('img/full/Slider.jpeg') !!})"
+        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60" style="background-image: url({!! asset('img/full/Slider.jpeg') !!}); width: 1920px; height: auto"
                  data-background-img="" data-stellar-background-ratio="0.5">
             <div class="container" >
                 <div class="row text-center">
@@ -952,7 +952,7 @@
             responsive: [{
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 2
                 }
             }, {
                 breakpoint: 1000,
@@ -962,7 +962,7 @@
             }, {
                 breakpoint: 425,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 2
                 }
             }]
         });
