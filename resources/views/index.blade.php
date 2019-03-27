@@ -36,6 +36,10 @@
             .desktop_logo {
                 visibility: hidden;
             }
+
+            .my-background-image {
+                max-width: 600px;
+            }
         }
 
         @media screen and (min-width: 600px) {
@@ -45,6 +49,10 @@
 
             .desktop_logo {
                 visibility: visible;
+            }
+
+            .my-background-image {
+                min-width: 600px;
             }
         }
 
@@ -725,9 +733,9 @@
 
 
         {{-- Contact Form --}}
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60" style="background-image: url({!! asset('img/full/Slider.jpeg') !!})"
+        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60 my-background-image" style="background-image: url({!! asset('img/full/Slider.jpeg') !!})"
                  data-background-img="" data-stellar-background-ratio="0.5">
-            <div class="container" >
+            <div class="container">
                 <div class="row text-center">
                     <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
                     <h2 class="page-title">Get In <span class="text-light">Touch</span></h2>
