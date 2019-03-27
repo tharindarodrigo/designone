@@ -115,6 +115,8 @@
             display: block;
         }
 
+
+
         .slick-track:before,
         .slick-track:after {
             display: table;
@@ -170,6 +172,16 @@
             display: none;
         }
 
+
+        .slick-track {
+            display: flex;
+        }
+        .slick-track .slick-slide {
+            display: flex;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
 
     </style>
     <style>
@@ -726,7 +738,6 @@
                             {!! Form::open(['url'=> 'send-mail', 'method' =>'post']) !!}
                             <div class="col-md-12 text-center">
 
-
                                 @if(session()->get('email'))
                                     <h5 class="">
                                         <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been
@@ -928,8 +939,7 @@
 <script>
     $(document).ready(function () {
         $('.customer-logos').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
+
             autoplay: true,
             autoplaySpeed: 1500,
             arrows: true,
@@ -942,14 +952,17 @@
             responsive: [{
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
+                    slidesToShow: 1
+                }
+            }, {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 4
                 }
             }, {
                 breakpoint: 425,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
+                    slidesToShow: 1
                 }
             }]
         });
