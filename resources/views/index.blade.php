@@ -37,6 +37,13 @@
                 visibility: hidden;
             }
 
+
+        }
+
+        @media only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (orientation: portrait) {
             .my-background-image {
                 max-width: 600px;
             }
@@ -51,9 +58,9 @@
                 visibility: visible;
             }
 
-            .my-background-image {
-                min-width: 600px;
-            }
+            /*.my-background-image {*/
+                /*min-width: 600px;*/
+            /*}*/
         }
 
 
@@ -61,10 +68,9 @@
 
     <style>
         h2 {
-        text-align: center;
-        padding: 20px;
+            text-align: center;
+            padding: 20px;
         }
-
 
 
         .slick-slide {
@@ -122,7 +128,6 @@
             left: 0;
             display: block;
         }
-
 
 
         .slick-track:before,
@@ -184,6 +189,7 @@
         .slick-track {
             display: flex;
         }
+
         .slick-track .slick-slide {
             display: flex;
             height: auto;
@@ -733,8 +739,9 @@
 
 
         {{-- Contact Form --}}
-        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60 my-background-image" style="background-image: url({!! asset('img/full/Slider.jpeg') !!})"
-                 data-background-img="" data-stellar-background-ratio="0.5">
+        <section id="contact-us" class="section-padding dark-bg bg-image overlay-dark60 my-background-image"
+                 data-background-img="background-image: url({!! asset('img/full/Slider.jpeg') !!})"
+                 data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row text-center">
                     <h6 class="page-title-alt color mb-15">Wanna say hello? </h6>
