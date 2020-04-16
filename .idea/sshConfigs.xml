@@ -3,6 +3,7 @@
   <component name="SshConfigs">
     <configs>
       <sshConfig authType="PASSWORD" host="brightron.net" id="045a9db7-5e1f-4473-9057-c63b5498dddd" port="21" customName="brightron" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="brightron.net" id="b2ea8981-baf3-41e9-b2b4-8123bab73f7a" port="21" customName="brightron" nameFormat="CUSTOM" username="brightron" />
     </configs>
   </component>
 </project>

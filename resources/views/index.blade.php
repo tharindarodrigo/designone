@@ -11,7 +11,6 @@
 {{--    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
-    {{-- angular stuffs --}}
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
     {{-- Css --}}
     <link href="{!! asset('css/style.css')!!}" rel="stylesheet" type="text/css"/>
@@ -268,7 +267,7 @@
                         <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px"
                                                       style="margin-top:-5px ;"/></li>
                         <li><a href="#intro" id="intro">Home</a></li>
-                        <li><a href="#about">About</a></li>
+{{--                        <li><a href="#about">About</a></li>--}}
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
                         <li><a href="#portfolio">Projects</a></li>
                         <li><a href="#team">Team</a></li>
@@ -850,13 +849,13 @@
                 {{-- Social --}}
                 <ul class="social">
                     <li>
-                        <a href="https://www.facebook.com/designone.lk/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/designone.lk/" target="_blank"><img src="{{ asset('img/fb.png') }}" alt=""></a>
                     </li>
                     {{--<li>--}}
                     {{--<a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>--}}
                     {{--</li>--}}
                     <li>
-                        <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="{{ asset('img/insta.png') }}" alt=""></a>
                     </li>
 
                 </ul>
