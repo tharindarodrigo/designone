@@ -75,8 +75,7 @@ Route::get('/control', function () {
     return view('control-panel.test');
 });
 
-Route::group(['prefix' => 'control-panel'], function () {
-
+Route::group(['prefix' => 'control-panel' ,'middleware'=>'auth'], function () {
 
     Route::resource('/general-contents', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');
@@ -86,7 +85,7 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/clients', 'ClientsController');
     Route::resource('/team-members', 'TeamMembersController');
 
-})->middleware('auth');
+});
 
 Route::get('xxx', function(){
     $p = \App\Project::groupBy('name')->get();
