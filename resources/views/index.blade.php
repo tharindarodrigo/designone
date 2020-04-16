@@ -8,7 +8,7 @@
     <meta name="author" content="Brightron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-{{--    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
+    {{--    <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/favicon.ico') !!}"/>--}}
     <link rel="icon" type="image/png" href="{!! asset('img/favicon.png')  !!}"/>
     {{--<link rel="apple-touch-icon" href="{!! asset('img/favicon.png') !!}"/>--}}
     <link href="{!! asset('css/style-ang.css')!!}" rel="stylesheet" type="text/css"/>
@@ -267,7 +267,7 @@
                         <li class="desktop_logo"><img src="{!! asset('img/logo.png')!!}" height="27px"
                                                       style="margin-top:-5px ;"/></li>
                         <li><a href="#intro" id="intro">Home</a></li>
-{{--                        <li><a href="#about">About</a></li>--}}
+                        {{--                        <li><a href="#about">About</a></li>--}}
                         <li><a href="#news" id="newsModal" data-toggle="modal" data-target="#myModal">News</a></li>
                         <li><a href="#portfolio">Projects</a></li>
                         <li><a href="#team">Team</a></li>
@@ -847,18 +847,14 @@
                 {{-- Copyright --}}
 
                 {{-- Social --}}
-                <ul class="social">
-                    <li>
-                        <a href="https://www.facebook.com/designone.lk/" target="_blank"><img src="{{ asset('img/fb.png') }}" alt="" width="20"> </a>
-                    </li>
-                    {{--<li>--}}
-                    {{--<a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>--}}
-                    {{--</li>--}}
-                    <li>
-                        <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="{{ asset('img/insta.png') }}" alt="" width="20"></a>
-                    </li>
+                <div>
+                    <a href="https://www.facebook.com/designone.lk/" target="_blank"><img
+                                src="{{ asset('img/fb.png') }}" alt="" width="20"> </a>
 
-                </ul>
+                    <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="{{ asset('img/insta.png') }}"
+                                                                                    alt="" width="20"></a>
+
+                </div>
                 {{-- End Social --}}
 
             </div>
