@@ -849,13 +849,13 @@
                 {{-- Social --}}
                 <ul class="social">
                     <li>
-                        <a href="https://www.facebook.com/designone.lk/" target="_blank"><img src="{{ asset('img/fb.png') }}" alt=""></a>
+                        <a href="https://www.facebook.com/designone.lk/" target="_blank"><img src="{{ asset('img/fb.png') }}" alt="" width="20"> </a>
                     </li>
                     {{--<li>--}}
                     {{--<a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>--}}
                     {{--</li>--}}
                     <li>
-                        <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="{{ asset('img/insta.png') }}" alt=""></a>
+                        <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="{{ asset('img/insta.png') }}" alt="" width="20"></a>
                     </li>
 
                 </ul>
