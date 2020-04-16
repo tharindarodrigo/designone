@@ -848,11 +848,11 @@
 
                 {{-- Social --}}
                 <div>
-                    <a href="https://www.facebook.com/designone.lk/" target="_blank"><img
-                                src="{{ asset('img/fb.png') }}" alt="" width="40"> </a>
+                    <a href="https://www.facebook.com/designone.lk/" target="_blank">
+                        <img src="{{ asset('img/fb.png') }}" width="40"></a>
 
-                    <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="{{ asset('img/insta.png') }}"
-                                                                                    alt="" width="40"></a>
+                    <a href="https://www.instagram.com/?hl=en" target="_blank">
+                        <img src="{{ asset('img/insta.png') }}" alt="" width="40"></a>
 
                 </div>
                 {{-- End Social --}}
