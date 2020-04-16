@@ -1,9 +1,7 @@
 @extends('control-panel.layout.master')
 
 @section('styles')
-    <style src="../../../../public/plugins/datatables/dataTables.bootstrap.css"></style>
-
-    <style src="../../../../public/plugins/datatables/jquery.dataTables.css"></style>
+    <link src="{{ asset('//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css') }}">
 
     <style type="text/css">
         th {
@@ -69,8 +67,12 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/control-panel/plugins/datatables/dataTables.bootstrap.js') }}"></script>
-    <script src="{{ asset('public/control-panel/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#projects_table').DataTable();
+        } );
+    </script>
 @endsection
 
 

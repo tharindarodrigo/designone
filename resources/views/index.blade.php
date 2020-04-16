@@ -49,7 +49,7 @@
             }
 
             /*.my-background-image {*/
-                /*min-width: 600px;*/
+            /*min-width: 600px;*/
             /*}*/
         }
 
@@ -287,7 +287,7 @@
 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true" style="background-color: white;width: 50px;">&times;</span>
+                                    aria-hidden="true" style="background-color: white;width: 50px;">&times;</span>about
                         </button>
                         <h4 class="modal-title" id="myModalLabel" style="color: #dddddd;">DesignOne News Bar</h4>
                     </div>
@@ -381,44 +381,45 @@
 
         {{--</section>--}}
 
-        <section id="about" class="section-padding text-center" style="padding-bottom:0px;">
-            <div class="container mb-50">
-                <div class="row text-center">
+        @if(1==2)
+            <section id="about" class="section-padding text-center" style="padding-bottom:0px;">
+                <div class="container mb-50">
+                    <div class="row text-center">
 
-                    <div class="col-md-offset-6">
-                        <h2 class="text-center">About <span class="text-light">Us</span></h2>
-                    </div>
-                </div>
-                <div class="row text-center" style="vertical-align: middle;">
-                    {{-- <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2> --}}
-                    <div class="col-md-6">
-                        <div class="spacer-30"></div>
-                        <br>
-                        <div class="media">
-                            <iframe style=""
-                                    src="https://www.youtube.com/embed/k9EyPfc0FXc?rel=1&amp;controls=1&amp;showinfo=0"
-                                    frameborder="0"></iframe>
-                            {{--<img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup"/>--}}
+                        <div class="col-md-offset-6">
+                            <h2 class="text-center">About <span class="text-light">Us</span></h2>
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
-                        <div class="spacer-15"></div>
-                        {{--<h6 class="page-title-alt color mb-10">Architecture Planning Interiors</h6>--}}
-                        {{--<div>--}}
-                        {{--<img src="{!! asset('img/logo-dark.png') !!}" width="350" alt="mockup"/>--}}
-                        {{--</div>--}}
-                        <br>
-                        {{--<h2 class="page-title mb-25">design<span class="text-light">One</span></h2>--}}
-                        <p style="text-align: justify">{!! $generalContent->about !!}</p>
-                        {{--<img src="img/signature.png" alt="signature" />--}}
+                    <div class="row text-center" style="vertical-align: middle;">
+                        {{-- <h2 class="text-right" style="font-family: inherit">About <span class="text-light">Us</span></h2> --}}
+                        <div class="col-md-6">
+                            <div class="spacer-30"></div>
+                            <br>
+                            <div class="media">
+                                <iframe style=""
+                                        src="https://www.youtube.com/embed/k9EyPfc0FXc?rel=1&amp;controls=1&amp;showinfo=0"
+                                        frameborder="0"></iframe>
+                                {{--<img src="{!! asset('img/archi.png') !!}" style="max-width: 457px; width: 100%;" alt="mockup"/>--}}
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
+                            <div class="spacer-15"></div>
+                            {{--<h6 class="page-title-alt color mb-10">Architecture Planning Interiors</h6>--}}
+                            {{--<div>--}}
+                            {{--<img src="{!! asset('img/logo-dark.png') !!}" width="350" alt="mockup"/>--}}
+                            {{--</div>--}}
+                            <br>
+                            {{--<h2 class="page-title mb-25">design<span class="text-light">One</span></h2>--}}
+                            <p style="text-align: justify">{!! $generalContent->about !!}</p>
+                            {{--<img src="img/signature.png" alt="signature" />--}}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
-        <hr/>
-
+            <hr/>
+        @endif
 
         {{--Portfolio--}}
 

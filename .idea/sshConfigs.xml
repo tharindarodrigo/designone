@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="brightron.net" id="045a9db7-5e1f-4473-9057-c63b5498dddd" port="21" customName="brightron" nameFormat="CUSTOM" />
+    </configs>
+  </component>
+</project>
