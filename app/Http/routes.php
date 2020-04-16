@@ -86,7 +86,7 @@ Route::group(['prefix' => 'control-panel'], function () {
     Route::resource('/clients', 'ClientsController');
     Route::resource('/team-members', 'TeamMembersController');
 
-});
+})->middleware('auth');
 
 Route::get('xxx', function(){
     $p = \App\Project::groupBy('name')->get();
