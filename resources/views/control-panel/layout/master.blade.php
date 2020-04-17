@@ -123,7 +123,14 @@
 
 <script src="{!! asset('control-panel/dist/js/confirm.js') !!}"></script>
 
-@yield('scripts')
+<script type="text/javascript" src="{{ asset('//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#projects_table').DataTable();
+    } );
+</script>
+
+@stack('scripts')
 
 </body>
 </html>

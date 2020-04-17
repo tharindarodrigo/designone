@@ -1,7 +1,7 @@
 @extends('control-panel.layout.master')
 
 @section('styles')
-    <link src="{{ asset('//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css') }}">
 
     <style type="text/css">
         th {
@@ -66,14 +66,14 @@
     </div>
 @endsection
 
-@section('scripts')
-    <script type="text/javascript" src="{{ asset('//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready( function () {
-            $('#projects_table').DataTable();
-        } );
-    </script>
-@endsection
+{{--@push('scripts')--}}
+{{--    <script type="text/javascript" src="{{ asset('//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js') }}"></script>--}}
+{{--    <script type="text/javascript">--}}
+{{--        $(document).ready( function () {--}}
+{{--            $('#projects_table').DataTable();--}}
+{{--        } );--}}
+{{--    </script>--}}
+{{--@push--}}
 
 
 
