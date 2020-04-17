@@ -71,11 +71,11 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/control', function () {
-    return view('control-panel.test');
+Route::get('/control-panel', function () {
+    return redirect()->to('control-panel/projects');
 });
 
-Route::group(['prefix' => 'admin' ,'middleware'=>'auth'], function () {
+Route::group(['prefix' => 'control-panel' ,'middleware'=>'auth'], function () {
 
     Route::resource('/general-contents', 'GeneralContentsController');
     Route::resource('/projects', 'ProjectsController');
