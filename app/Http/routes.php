@@ -27,7 +27,7 @@ Route::get('/', function () {
         ->groupBy('name')
         ->get();
     $portfolio = [];
-    //$recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
+    $recentProjects = App\Project::where('year', '>', date('y') - 3)->get();
 
     foreach ($projects as $project) {
         $projectTypeClasses = [];
